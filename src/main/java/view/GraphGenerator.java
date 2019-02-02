@@ -1,179 +1,207 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import java.util.Random;
+
+import org.graphstream.algorithm.generator.Generator;
+import org.graphstream.algorithm.generator.RandomGenerator;
+import org.graphstream.ui.view.Viewer;
+import org.graphstream.ui.swingViewer.ViewPanel;
+import org.graphstream.ui.view.ViewerListener;
+import org.graphstream.ui.view.ViewerPipe;
+import org.graphstream.graph.Graph;
+import java.util.ArrayList;
+import org.graphstream.algorithm.ConnectedComponents;
+import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
+import java.util.*;
+import java.awt.Color ;
+import org.graphstream.graph.*;
+import org.graphstream.graph.implementations.*;
+import model.MyFullGenerator;
+
+public class GraphGenerator extends JPanel implements ViewerListener{
+
+	public ViewPanel view;
+	public Viewer viewer;
+	public Graph graph;
+	public int i;
+	public ViewerPipe pipeIn;
+	public ConnectedComponents cc;
+	public Map compCol;
+	public Random rand;
+//	public RandomGenerator gen;
+
+	private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
+
+	public GraphGenerator(){
+
+		graph = new MultiGraph("Strongly connected components");
+		compCol = new HashMap();
+		rand = new Random();
+
+		String css = "edge .notintree {size:1px;fill-color:gray;} " +
+		"edge .intree {size:3px;fill-color:black;}";
+
+		graph.setAttribute("ui.stylesheet", css);
+
+		String cssNode = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ;z-index: 0; text-color: black;}";
+		graph.setAttribute("ui.stylesheet", cssNode);
 
 
-/**
-* Home is the class where the Home panel is built implements Observer
-*/
-public class GraphGenerator extends JPanel  {
+		viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_ANOTHER_THREAD);
+		pipeIn = viewer.newViewerPipe();
+		pipeIn.addViewerListener(this);
+		pipeIn.addSink(graph);
+		view = viewer.addDefaultView(false);
+		graph.setStrict(false);
+		graph.setAutoCreate( true );
+		viewer.enableAutoLayout();
+		i = 0;
+		cc = new ConnectedComponents();
+		cc.init(graph);
+		// pipeIn.pump();
 
-  private JTextField newProjectNameField;
-  private DefaultListModel listModel;
-  private JList projectsList;
-  private Algorithm algorithm;
+	}
 
-  /**
-  * Constructs a new Home panel
-  *
-  * @param  frame  the frame containing the panel
-  */
-  public GraphGenerator(JFrame frame){
+	public static String randomAlphaNumeric(int count, String alpha) {
+		StringBuilder builder = new StringBuilder();
+		while (count-- != 0) {
+			int character = (int)(Math.random()*alpha.length());
+			builder.append(alpha.charAt(character));
+		}
+		return builder.toString();
+	}
 
-    this.listModel = new DefaultListModel();
-
-    this.setLayout(new BorderLayout());
-
-    JPanel welcomePanel = new JPanel();
-    JPanel rightPanel = new JPanel();
-    JPanel rightSouthPanel = new JPanel();
-    algorithm = new Algorithm();
-
-    JLabel welcomeLabel = new JLabel("Graph Generator");
-    welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
-
-    this.projectsList = new JList(listModel);
-    projectsList.setName("projectsList");
-
-    this.newProjectNameField = new JTextField("Enter inequality...", 20);
-    this.newProjectNameField.setName("jtfProjectNField");
+	public void addRandomNodes(int n) {
+		String nodes = randomAlphaNumeric(n, ALPHA);
 
 
-    JPanel emptyPanel = new JPanel(new FlowLayout());
-    JLabel emptyLabel = new JLabel("                    ");
-    emptyPanel.add(emptyLabel);
+		System.out.println(nodes);
+//		ArrayList<String> list = new ArrayList<String>();//Creating arraylist
+			for (int i = 0; i < n -4 & i > 26 || i < n - 1; ) {
+				if (i < 26) {
+					ArrayList<String> list = new ArrayList<String>();
+					System.out.println(nodes.charAt(i));
+					System.out.println(nodes.charAt(i+1));
+					list.add(Character.toString(nodes.charAt(i)));//Adding object in arraylist
+					list.add("<");
+					list.add(Character.toString(nodes.charAt(i + 1)));
+					addNodes(list);
+					i = i + 1;
+			}else {
 
-    GridLayout LayoutaddProject  = new GridLayout(2,1);
-    JPanel paneladdProject = new JPanel(LayoutaddProject);
+				ArrayList<String> list = new ArrayList<String>();
+				StringBuilder sb = new StringBuilder();
+				StringBuilder sb2 = new StringBuilder();
+				sb.append(nodes.charAt(i));
+				sb.append(nodes.charAt(i + 1));
+				sb2.append(nodes.charAt(i+ 2));
+				sb2.append(nodes.charAt(i + 3));
+//
+				list.add( sb.toString());//Adding object in arraylist
+				list.add("<");
+				list.add(sb2.toString());
+				addNodes(list);
+				i = i + 2;
+			}
+		}
 
-    FlowLayout LayoutnewProjectNameField  = new FlowLayout(FlowLayout.LEFT);
-    JPanel panelnewProjectNameField = new JPanel(LayoutnewProjectNameField);
-    panelnewProjectNameField.add(newProjectNameField);
-
-    paneladdProject.add(panelnewProjectNameField);
-    paneladdProject.add(projectsList);
-
-    BorderLayout projectAdding  = new BorderLayout();
-    JPanel panelprojectAdding = new JPanel(projectAdding);
-    panelprojectAdding.add(emptyPanel,BorderLayout.NORTH);
-    panelprojectAdding.add(paneladdProject, BorderLayout.CENTER);
-
-
-    TitledBorder title;
-    Border thatBorder1 = new LineBorder(new Color(153, 218, 250));
-
-    GridLayout operations  = new GridLayout(3,1);
-    JPanel panelOperations = new JPanel(operations);
-
-    panelOperations.add( panelprojectAdding);
+	}
 
 
-    Border thatBorder2 = new TitledBorder(thatBorder1,"<html><b> Enter Inequalities:</html><b>" );
-    panelOperations.setBorder(thatBorder2);
 
-    GridLayout gridCent = new GridLayout(1,2);
-    JPanel panelGrid = new JPanel(gridCent);
-    panelGrid.add(panelOperations);
-    panelGrid.add(algorithm.view);
+//		 	graph.addNode(nodes.substring(i, i + 1));
 
-    welcomePanel.setLayout(new FlowLayout());
-    welcomePanel.add(welcomeLabel);
+//		for(int i = 0; i < n; i++){
+//			gen.nextEvents();
+//		}
+//
+//		gen.end()
 
-    this.add( welcomePanel, BorderLayout.NORTH);
-    this.add(  panelGrid, BorderLayout.CENTER);
+	public void addNodes(ArrayList<String> arrayEquation){
+		System.out.println("I am here");
 
-    frame.add(this);
-  }
+		graph.addEdge("" + i + "", arrayEquation.get(0), arrayEquation.get(2), true);
+		Node first = graph.getNode(arrayEquation.get(0));
+		Node second = graph.getNode(arrayEquation.get(2));
+		first.setAttribute("ui.label",first.getId());
+		first.setAttribute("weight", 1);
+		second.setAttribute("ui.label",second.getId());
+		second.setAttribute("weight", 1);
+		i++;
+		pipeIn.pump();
 
-  /**
-  * Adds controllers to the elements in the panel
-  *
-  * @param controller adds the supplied object as a controller for this view
-  */
-  // public void addControllers(HomeController controller){
-  //
-  // 	newProjectNameField.addActionListener(controller);
-  // 	addNewProjectButton.addActionListener(controller);
-  //   	deleteProjectButton.addActionListener(controller);
-  //   	changeProjectButton.addActionListener(controller);
-  // }
-  //
-  // /**
-  // * Adds mouseListeners to the elements in the panel
-  // *
-  // * @param controller adds the supplied controller as a mouse listener
-  // */
-  // public void addMouseListener(HomeController controller){
-  //
-  // 	projectsList.addMouseListener(controller);
-  // 	newProjectNameField.addMouseListener(controller);
-  //
-  //   	deleteProjectNameField.addMouseListener(controller);
-  //  		newchangeProjectNameField.addMouseListener(controller);
-  //   	oldchangeProjectNameField.addMouseListener(controller);
-  // }
 
-  /**
-  * Sets the panel
-  *
-  * @param p the panel to be set
-  */
-  public void setPanel(JPanel p){
-    removeAll();
-    revalidate();
-    repaint();
-    add(p, BorderLayout.CENTER);
-  }
+		// String nodes = "abcdefgh";
+		// String edges = "abbccddccgdhhdhggffgbfefbeea";
+		//
 
-  /**
-  * Returns the selected project
-  *
-  * @return    the project
-  */
-  // public Projects getListSelectedValue(){
-  // 	return (Projects) projectsList.getSelectedValue();
-  // }
-  //
-  // /**
-  // * Updates the JList containinf the list of projects
-  // *
-  // * @param  ps  the list of projects
-  // */
-  // private void UpdateJList(ArrayList<Projects> ps){
-  // 	listModel.clear();
-  //     for(Projects p : ps){
-  //         listModel.addElement(p);
-  //     }
-  //     projectsList.setModel(listModel);
-  // }
 
-  /**
-  * Clears the projectName field
-  */
-  public void clearProjectNameField(){
-    newProjectNameField.setText("Enter inequality...");
-  };
+		TarjanStronglyConnectedComponents tscc = new TarjanStronglyConnectedComponents();
+		tscc.init(graph);
+		tscc.compute();
 
-  /**
-  * Returns the project name
-  *
-  * @return    the name
-  */
-  public String getProjectNameField(){
-    return newProjectNameField.getText();
-  };
+
+		for (Node n : graph.getEachNode()){
+			// n.addAttribute("label", n.getAttribute(tscc.getSCCIndexAttribute()));
+			if(compCol.containsKey(n.getAttribute(tscc.getSCCIndexAttribute()))){
+
+				// double[] c = {(Math.random()), 0.8f, 0.9f};
+				// compCol.put(n.getAttribute(tscc.getSCCIndexAttribute()), c);
+				Color randomColor = (Color)
+				compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
+				n.addAttribute("ui.style", "fill-color:rgba("+randomColor.getRed()+","+randomColor.getGreen()+","+randomColor.getBlue()+",200);" );
+
+			}else{
+				System.out.println("Random color");
+
+
+				// If you want pleasing, pastel colors, it is best to use the HLS system.
+
+				final float hue = rand.nextFloat();
+				// Saturation between 0.1 and 0.3
+				final float saturation = (rand.nextInt(2000) + 1000) / 10000f;
+				final float luminance = 0.9f;
+				final Color randomColor = Color.getHSBColor(hue, saturation, luminance);
+
+				compCol.put(n.getAttribute(tscc.getSCCIndexAttribute()), randomColor);
+				n.addAttribute("ui.style", "fill-color:rgba("+randomColor.getRed()+","+randomColor.getGreen()+","+randomColor.getBlue()+",200);" );
+			}
+			// }else{
+			// 	double[] color = compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
+			// 	n.addAttribute("ui.style", "fill-color:rgba("+color[0]+","+color[1]+","+color[2]+",200);" );
+			// }
+
+			System.out.println( n.getAttribute(tscc.getSCCIndexAttribute()));
+			// n.addAttribute("label", n.getAttribute(tscc.getSCCIndexAttribute()));
+		}
+
+
+	}
+
+	// public someColor(){
+	// 	Color.getHSBColor((float) (Math.random()), 0.8f, 0.9f);
+	// }
+
+	public ViewerPipe getPipe() {
+		return pipeIn;
+	}
+
+
+	public void viewClosed(String id) {
+		System.out.println("here");
+	}
+
+	public void buttonPushed(String id) {
+		System.out.println("Button pushed on node "+id);
+	}
+
+	public void buttonReleased(String id) {
+		System.out.println("Button released on node "+id);
+	}
+
+
+	public ViewPanel getView(){
+		return view;
+	}
 }

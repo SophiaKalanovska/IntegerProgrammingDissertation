@@ -1,5 +1,8 @@
+model/Parser.class
 Main.class
-view/Container.class
-view/Algorithm.class
+model/Inequalities.class
+controller/GUILayoutController.class
 view/GraphGenerator.class
-InequalitiesInput.class
+model/MyFullGenerator.class
+view/Container.class
+view/GUILayout.class

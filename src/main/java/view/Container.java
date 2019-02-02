@@ -3,7 +3,7 @@ package view;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Dimension;
-
+import controller.*;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -11,17 +11,15 @@ import java.awt.Dimension;
 */
 public class Container extends JFrame {
 
-	/**
-	* Constructs the frame an loads a home panel
-	*
-	* @param info the ProjectWallet to be displayed
-	*/
 	public Container(){
 
 		//ProjectWallet info = new ProjectWallet();
 		// Home home = new Home(this);
 
-		GraphGenerator graphgen = new GraphGenerator(this);
+		GraphGenerator alg = new GraphGenerator();
+		GUILayout graphgen = new GUILayout(this, alg);
+
+		GUILayoutController controller = new GUILayoutController(graphgen,this, alg);
 		setPanel(graphgen);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
