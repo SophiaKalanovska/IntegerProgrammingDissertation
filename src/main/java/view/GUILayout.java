@@ -1,6 +1,5 @@
 package view;
-
-import model.*;
+import controller.GUILayoutController;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -10,15 +9,12 @@ import java.awt.GridLayout;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.util.ArrayList;
 
-import controller.GUILayoutController;
+
 
 
 /**
@@ -26,74 +22,38 @@ import controller.GUILayoutController;
 */
 public class GUILayout extends JPanel  {
 
-  private JTextField enterInequality;
   private JTextField randomNumberInequality;
-  private DefaultListModel listModel;
-  private JList projectsList;
   private GraphGenerator graphGenerator;
+  private ManualInequalities manualInequalities;
 
   /**
   * Constructs a new Home panel
   *
   * @param  frame  the frame containing the panel
   */
-  public GUILayout(JFrame frame, GraphGenerator alg){
+  public GUILayout(JFrame frame, GraphGenerator alg, ManualInequalities manualInequalities){
 
-    this.listModel = new DefaultListModel();
+    this.manualInequalities = manualInequalities;
+
+      JLabel welcomeLabel = new JLabel("Graph Generator");
+      welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
+
 
     this.setLayout(new BorderLayout());
 
     JPanel welcomePanel = new JPanel();
     JPanel rightPanel = new JPanel();
-    JPanel rightSouthPanel = new JPanel();
     graphGenerator = alg;
-
-    JLabel welcomeLabel = new JLabel("Graph Generator");
-    welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
-    this.projectsList = new JList(listModel);
-    projectsList.setName("projectsList");
-
-    this.enterInequality = new JTextField("Enter inequality...", 20);
-    this.enterInequality.setName("inequalityField");
-
-
-    JPanel emptyPanel = new JPanel(new FlowLayout());
-    JLabel emptyLabel = new JLabel("                    ");
-    emptyPanel.add(emptyLabel);
-    emptyPanel.setBackground(Color.white);
-
-    GridLayout LayoutaddProject  = new GridLayout(2,1);
-    JPanel paneladdProject = new JPanel(LayoutaddProject);
-
-    FlowLayout LayoutenterInequality  = new FlowLayout(FlowLayout.LEFT);
-    JPanel panelenterInequality = new JPanel(LayoutenterInequality);
-    panelenterInequality.add(enterInequality);
-    panelenterInequality.setBackground(Color.white);
-
-    paneladdProject.add(panelenterInequality);
-    paneladdProject.add(projectsList);
-
-    BorderLayout projectAdding  = new BorderLayout();
-    JPanel panelprojectAdding = new JPanel(projectAdding);
-    panelprojectAdding.add(emptyPanel,BorderLayout.NORTH);
-    panelprojectAdding.add(paneladdProject, BorderLayout.CENTER);
 
 
     Border thatBorder1 = new LineBorder(new Color(153, 218, 250));
 
-    GridLayout operations  = new GridLayout(3,1);
-    JPanel panelOperations = new JPanel(operations);
-
-    panelOperations.add( panelprojectAdding);
-    panelOperations.setBackground(Color.white);
-
-
     Border thatBorder2 = new TitledBorder(thatBorder1,"<html><b> Enter Inequalities:</html><b>" );
-    panelOperations.setBorder(thatBorder2);
+    manualInequalities.setBorder(thatBorder2);
 
     GridLayout gridCent = new GridLayout(1,2);
     JPanel panelGrid = new JPanel(gridCent);
-    panelGrid.add(panelOperations);
+    panelGrid.add(manualInequalities);
 
     GridLayout graphSolution  = new GridLayout(1,1);
     JPanel panelgraphSolution = new JPanel(graphSolution);
@@ -123,7 +83,6 @@ public class GUILayout extends JPanel  {
 
 
     panelgraphSolution.add(graphGenerator.getView());
-
     panelgraphSolution.setBorder(thatBorder3);
 
     panelGrid.add(panelgraphSolution);
@@ -147,26 +106,14 @@ public class GUILayout extends JPanel  {
   }
 
 
-  private void UpdateJList(ArrayList<Inequalities> in){
-    listModel.clear();
-    for(Inequalities i : in){
-      listModel.addElement(i);
-    }
-    projectsList.setModel(listModel);
-  }
-
-
   public void addControllers(GUILayoutController controller){
-    System.out.println("controlller added");
-    enterInequality.addActionListener(controller);
-    randomNumberInequality.addActionListener(controller);
+      System.out.println("controller added");
+      randomNumberInequality.addActionListener(controller);
   }
 
 
   public void addMouseListener(GUILayoutController controller){
     System.out.println("mouselistener added");
-    projectsList.addMouseListener(controller);
-    enterInequality.addMouseListener(controller);
     randomNumberInequality.addMouseListener(controller);
   }
 

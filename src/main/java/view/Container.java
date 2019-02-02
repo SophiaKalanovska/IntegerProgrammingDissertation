@@ -17,10 +17,12 @@ public class Container extends JFrame {
 		// Home home = new Home(this);
 
 		GraphGenerator alg = new GraphGenerator();
-		GUILayout graphgen = new GUILayout(this, alg);
+		ManualInequalities manualInequalities= new ManualInequalities();
+        GUILayout graphgen = new GUILayout(this, alg, manualInequalities);
 
 		GUILayoutController controller = new GUILayoutController(graphgen,this, alg);
-		setPanel(graphgen);
+        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(manualInequalities, alg);
+        setPanel(graphgen);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(900, 600));
