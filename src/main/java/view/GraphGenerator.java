@@ -2,9 +2,6 @@ package view;
 
 import javax.swing.JPanel;
 import java.util.Random;
-
-import org.graphstream.algorithm.generator.Generator;
-import org.graphstream.algorithm.generator.RandomGenerator;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.ui.swingViewer.ViewPanel;
 import org.graphstream.ui.view.ViewerListener;
@@ -17,19 +14,17 @@ import java.util.*;
 import java.awt.Color ;
 import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
-import model.MyFullGenerator;
 
 public class GraphGenerator extends JPanel implements ViewerListener{
 
-	public ViewPanel view;
-	public Viewer viewer;
-	public Graph graph;
-	public int i;
-	public ViewerPipe pipeIn;
-	public ConnectedComponents cc;
-	public Map compCol;
-	public Random rand;
-//	public RandomGenerator gen;
+	private ViewPanel view;
+	private Viewer viewer;
+	private Graph graph;
+	private int i;
+	private ViewerPipe pipeIn;
+	private ConnectedComponents cc;
+	private Map compCol;
+	private Random rand;
 
 	private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
 
@@ -73,53 +68,49 @@ public class GraphGenerator extends JPanel implements ViewerListener{
 	}
 
 	public void addRandomNodes(int n) {
-		String nodes = randomAlphaNumeric(n, ALPHA);
+		String nodes = randomAlphaNumeric(n+1, ALPHA);
 
 
 		System.out.println(nodes);
-//		ArrayList<String> list = new ArrayList<String>();//Creating arraylist
-			for (int i = 0; i < n -4 & i > 26 || i < n - 1; ) {
-				if (i < 26) {
+			for (int i = 0;i < n - 1 && graph.getNodeCount() < 18; ) {
+
 					ArrayList<String> list = new ArrayList<String>();
-					System.out.println(nodes.charAt(i));
-					System.out.println(nodes.charAt(i+1));
-					list.add(Character.toString(nodes.charAt(i)));//Adding object in arraylist
+					list.add(Character.toString(nodes.charAt(i)));
 					list.add("<");
 					list.add(Character.toString(nodes.charAt(i + 1)));
 					addNodes(list);
-					i = i + 1;
-			}else {
 
-				ArrayList<String> list = new ArrayList<String>();
-				StringBuilder sb = new StringBuilder();
-				StringBuilder sb2 = new StringBuilder();
-				sb.append(nodes.charAt(i));
-				sb.append(nodes.charAt(i + 1));
-				sb2.append(nodes.charAt(i+ 2));
-				sb2.append(nodes.charAt(i + 3));
-//
-				list.add( sb.toString());//Adding object in arraylist
-				list.add("<");
-				list.add(sb2.toString());
-				addNodes(list);
-				i = i + 2;
+					i = i + 1;
 			}
+			// add if the number of inequalities are more than 30
+			System.out.println("nodes so far" + graph.getNodeCount());
+			if (graph.getNodeCount() > 17 || n > 30){
+				for (int i = n-1; i > 26; ) {
+					System.out.println(i);
+					ArrayList<String> list = new ArrayList<String>();
+					StringBuilder sb = new StringBuilder();
+					StringBuilder sb2 = new StringBuilder();
+					sb.append(nodes.charAt(i));
+					sb.append(nodes.charAt(i - 1));
+					sb2.append(nodes.charAt(i- 2));
+					sb2.append(nodes.charAt(i - 3));
+//
+					list.add( sb.toString());
+					list.add("<");
+					if (i < 29){
+						list.add(Character.toString(nodes.charAt(i - 10)));
+					}else{
+						list.add(sb2.toString());
+					}
+					addNodes(list);
+					i = i - 2;
+				}
+			}
+
 		}
 
-	}
-
-
-
-//		 	graph.addNode(nodes.substring(i, i + 1));
-
-//		for(int i = 0; i < n; i++){
-//			gen.nextEvents();
-//		}
-//
-//		gen.end()
 
 	public void addNodes(ArrayList<String> arrayEquation){
-		System.out.println("I am here");
 
 		graph.addEdge("" + i + "", arrayEquation.get(0), arrayEquation.get(2), true);
 		Node first = graph.getNode(arrayEquation.get(0));
@@ -131,62 +122,32 @@ public class GraphGenerator extends JPanel implements ViewerListener{
 		i++;
 		pipeIn.pump();
 
-
-		// String nodes = "abcdefgh";
-		// String edges = "abbccddccgdhhdhggffgbfefbeea";
-		//
-
-
 		TarjanStronglyConnectedComponents tscc = new TarjanStronglyConnectedComponents();
 		tscc.init(graph);
 		tscc.compute();
 
 
 		for (Node n : graph.getEachNode()){
-			// n.addAttribute("label", n.getAttribute(tscc.getSCCIndexAttribute()));
 			if(compCol.containsKey(n.getAttribute(tscc.getSCCIndexAttribute()))){
-
-				// double[] c = {(Math.random()), 0.8f, 0.9f};
-				// compCol.put(n.getAttribute(tscc.getSCCIndexAttribute()), c);
 				Color randomColor = (Color)
 				compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
 				n.addAttribute("ui.style", "fill-color:rgba("+randomColor.getRed()+","+randomColor.getGreen()+","+randomColor.getBlue()+",200);" );
-
 			}else{
 				System.out.println("Random color");
-
-
-				// If you want pleasing, pastel colors, it is best to use the HLS system.
-
 				final float hue = rand.nextFloat();
-				// Saturation between 0.1 and 0.3
 				final float saturation = (rand.nextInt(2000) + 1000) / 10000f;
 				final float luminance = 0.9f;
 				final Color randomColor = Color.getHSBColor(hue, saturation, luminance);
-
 				compCol.put(n.getAttribute(tscc.getSCCIndexAttribute()), randomColor);
 				n.addAttribute("ui.style", "fill-color:rgba("+randomColor.getRed()+","+randomColor.getGreen()+","+randomColor.getBlue()+",200);" );
 			}
-			// }else{
-			// 	double[] color = compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
-			// 	n.addAttribute("ui.style", "fill-color:rgba("+color[0]+","+color[1]+","+color[2]+",200);" );
-			// }
-
-			System.out.println( n.getAttribute(tscc.getSCCIndexAttribute()));
-			// n.addAttribute("label", n.getAttribute(tscc.getSCCIndexAttribute()));
 		}
-
-
 	}
 
-	// public someColor(){
-	// 	Color.getHSBColor((float) (Math.random()), 0.8f, 0.9f);
-	// }
 
 	public ViewerPipe getPipe() {
 		return pipeIn;
 	}
-
 
 	public void viewClosed(String id) {
 		System.out.println("here");
@@ -199,7 +160,6 @@ public class GraphGenerator extends JPanel implements ViewerListener{
 	public void buttonReleased(String id) {
 		System.out.println("Button released on node "+id);
 	}
-
 
 	public ViewPanel getView(){
 		return view;
