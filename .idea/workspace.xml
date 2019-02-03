@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManualInequalitiesController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ManualInequalitiesController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="201">
+              <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InequalitiesList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InequalitiesList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="433">
@@ -185,15 +183,16 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Parser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Container.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1366" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="153" />
+    <option name="y" value="112" />
+    <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -387,7 +386,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="153" y="112" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
@@ -608,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -672,6 +661,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#2910#2911#0" expanded="true" />
             <element signature="e#2954#2955#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,7 +12,6 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
     private InequalitiesList inequalitiesList;
     private String enterInequality;
-    private String jtfProjectTField;
     private Parser parser;
 
     /**
@@ -27,18 +26,6 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
         ManualInequalitiesGUI.addControllers(this);
         ManualInequalitiesGUI.addMouseListener(this);
     }
-
-    private String geInequality(){
-        return this.enterInequality;
-    }
-    /**
-     * Returns a String conatining the input of the user
-     *
-     * @return string with the input
-     */
-    // private String geJTFProjectTField(){
-    //   return this.enterInequality;
-    // }
 
     /**
      * Mouse listener for the ManualIntegerInequalities panel
@@ -62,7 +49,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
         if (e.getSource() instanceof JButton) {
-            JButton enter = (JButton) e.getSource();
+//            JButton enter = (JButton) e.getSource();
         }
         else if (e.getSource() instanceof JTextField){
             JTextField enter = (JTextField) e.getSource();
@@ -70,7 +57,6 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
             this.parser = new Parser(enterInequality);
             try {
                 Inequality parsedExpression = parser.parse();
-                this.jtfProjectTField = parsedExpression.getExpreission();
                 inequalitiesList.addInequality(parsedExpression);
             }catch(Exception r){
                 System.out.println(r.getMessage());
