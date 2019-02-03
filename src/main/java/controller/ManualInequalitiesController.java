@@ -13,26 +13,19 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     private InequalitiesList inequalitiesList;
     private String enterInequality;
     private String jtfProjectTField;
-    private ManualInequalitiesGUI ManualInequalitiesGUI;
     private Parser parser;
-    private GraphGUI graph;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI, GraphGUI graph){
+    public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI){
 
-
-        this.ManualInequalitiesGUI = ManualInequalitiesGUI;
         this.inequalitiesList = inequalitiesList;
-        this.graph = graph;
 
         ManualInequalitiesGUI.addControllers(this);
         ManualInequalitiesGUI.addMouseListener(this);
-
-
     }
 
     private String geInequality(){
@@ -77,9 +70,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
             this.parser = new Parser(enterInequality);
             try {
                 Inequality parsedExpression = parser.parse();
-                graph.addNodes(parsedExpression.getParsedExpression());
-                graph.getPipe().pump();
-                this.jtfProjectTField = ManualInequalitiesGUI.getEnterInequality();
+                this.jtfProjectTField = parsedExpression.getExpreission();
                 inequalitiesList.addInequality(parsedExpression);
             }catch(Exception r){
                 System.out.println(r.getMessage());

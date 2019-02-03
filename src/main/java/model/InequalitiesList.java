@@ -1,5 +1,7 @@
 package model;
 
+import view.GraphGUI;
+
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -11,6 +13,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
 
     private ArrayList<Inequality> inequalitiesContainer;
+    private GraphGUI graph;
 //private HashMap<String, Projects> projectMap;
 
 
@@ -18,8 +21,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      * Creates a InequalitiesList object
      *
      */
-    public InequalitiesList()
+    public InequalitiesList(GraphGUI graph)
     {
+        this.graph = graph;
         inequalitiesContainer = new ArrayList<Inequality>();
         //projectMap = new HashMap<String, Projects>();
     }
@@ -44,9 +48,19 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     public void addInequality(Inequality x)
     {
         //projectMap.put(x.toString(), x);
-        this.inequalitiesContainer.add(x);
-        setChanged();
-        notifyObservers();
+        boolean insert = true;
+        for (int i = 0; i <inequalitiesContainer.size() ; i++) {
+            if (((inequalitiesContainer.get(i)).getExpreission().equals(x.getExpreission()))) {
+                insert = false;
+            }
+        }
+        if (insert == true) {
+            this.inequalitiesContainer.add(x);
+            graph.addNodes(x.getParsedExpression());
+            graph.getPipe().pump();
+            setChanged();
+            notifyObservers();
+        }
     }
 
 

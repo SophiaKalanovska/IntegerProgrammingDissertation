@@ -14,13 +14,14 @@ public class Container extends JFrame {
 	public Container(){
 
         //class creation
-        final InequalitiesList inequalitiesList = new InequalitiesList();
+
 		GraphGUI graph = new GraphGUI();
+        final InequalitiesList inequalitiesList = new InequalitiesList(graph);
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
         ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
         LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI);
-        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graph);
+        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
 
         //controller creation
 		RandomInequalitiesController controller = new RandomInequalitiesController(randomInequalitiesGUI, graph);
