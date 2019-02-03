@@ -14,8 +14,9 @@ import model.*;
 public class ManualInequalitiesController implements ActionListener, MouseListener {
 
     //private ArrayList<Projects> projectData;
-    // private ProjectWallet projectWallet;
+    private InequalitiesList inequalitiesList;
     private String enterInequality;
+    private String jtfProjectTField;
     private ManualInequalitiesGUI ManualInequalitiesGUI;
     private JPanel currentPanel;
     private Parser parser;
@@ -26,10 +27,11 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
      *
      * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public ManualInequalitiesController(ManualInequalitiesGUI ManualInequalitiesGUI, GraphGenerator alg){
+    public ManualInequalitiesController(InequalitiesList inequalitiesList,ManualInequalitiesGUI ManualInequalitiesGUI, GraphGenerator alg){
 
 
         this.ManualInequalitiesGUI = ManualInequalitiesGUI;
+        this.inequalitiesList = inequalitiesList;
         this.alg = alg;
 
         ManualInequalitiesGUI.addControllers(this);
@@ -122,66 +124,24 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
         if (e.getSource() instanceof JButton) {
             JButton enter = (JButton) e.getSource();
-            //
-            //   if(enter.getName().equals("jbAddProject")) {
-            //     //System.out.println("button press");
-            //     this.jtfProjectTField = ManualIntegerInequalities.getProjectNameField();
-            //     projectWallet.createNewProject(this.jtfProjectTField);
-            //     // System.out.println("We have these in the wallet now added");
-            //     // for (Projects x: projectWallet.getProjectWallet())
-            //     // {
-            //     //   System.out.println(x.getName());
-            //     // }
-            //     ManualIntegerInequalities.clearProjectNameField();
-            //   }
-            //
-            //   if(enter.getName().equals("jbDeleteProject")) {
-            //     //System.out.println("button press");
-            //     this.jtfProjectTField = ManualIntegerInequalities.getProjectDeleteField();
-            //     System.out.println(jtfProjectTField);
-            //     projectWallet.deleteProject(this.jtfProjectTField);
-            //     // System.out.println("We have these in the wallet now");
-            //     //
-            //     // for (Projects x: projectWallet.getProjectWallet())
-            //     // {
-            //     //   System.out.println(x.getName());
-            //     // }
-            //     ManualIntegerInequalities.clearProjectDeleteField();
-            //   }
-            //
-            //   if (enter.getName().equals("jbChangeProject")){
-            //
-            //     this.oldField = ManualIntegerInequalities.getOldChangeProjectNameField();
-            //     this.newField = ManualIntegerInequalities.getNewChangeProjectNameField();
-            //     projectWallet.change(oldField, newField);
-            //     ManualIntegerInequalities.clearOldProjectNameField();
-            //     ManualIntegerInequalities.clearDesiredProjectNameField();
-            //   }
+
         }
-
-
-
         else if (e.getSource() instanceof JTextField){
             JTextField enter = (JTextField) e.getSource();
-            if (enter.getName().equals("randomNumberInequality")){
-//                RandomGraphGenerator rg = new RandomGraphGenerator();
-                int numberOfRandomNodes =  Integer.parseInt(enter.getText());
-                alg.addRandomNodes(numberOfRandomNodes);
-//                rg.addNode();
-                // alg.addNodesRandom(numberOfRandomNodes);
-            }else{
                 enterInequality = enter.getText();
                 this.parser = new Parser(enterInequality);
                 try {
-                    ArrayList<String> parsedExpression = parser.parse();
-                    alg.addNodes(parsedExpression);
+                    Inequality parsedExpression = new Inequality(parser.parse());
+                    alg.addNodes(parsedExpression.getParsedExpression());
                     alg.getPipe().pump();
+                    this.jtfProjectTField = ManualInequalitiesGUI.getEnterInequality();
+                    inequalitiesList.addProject(parsedExpression);
                 }catch(Exception r){
                     System.out.println(r.getMessage());
                 }
                 // parser.parse();
                 System.out.println("enter in text field");
-                //  projectWallet.createNewProject(enter.getText());
+                //  inequalitiesList.createNewProject(enter.getText());
 
             }
 
@@ -189,4 +149,4 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
     }
 
-}
+

@@ -1,10 +1,11 @@
 model/Parser.class
 Main.class
-model/Inequalities.class
 controller/GUILayoutController.class
 view/GraphGenerator.class
+model/Inequality.class
 view/RandomInequalitiesGUI.class
 controller/ManualInequalitiesController.class
 view/Container.class
+model/InequalitiesList.class
 view/ManualInequalitiesGUI.class
 view/GUILayout.class

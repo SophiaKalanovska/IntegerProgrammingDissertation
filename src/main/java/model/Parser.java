@@ -22,7 +22,7 @@ public class Parser{
     ArrayList<String> start = parse_inequality();
 
     if (pos == srcOriginal.length()){
-      System.out.println(start);
+//      System.out.println(start);
       return start;
     }else{
        throw new Exception( " Source does not match the grammar . " );

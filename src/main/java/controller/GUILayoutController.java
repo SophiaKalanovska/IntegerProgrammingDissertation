@@ -18,7 +18,7 @@ import model.*;
 public class GUILayoutController implements ActionListener, MouseListener {
 
     //private ArrayList<Projects> projectData;
-    // private ProjectWallet projectWallet;
+    // private InequalitiesList projectWallet;
     private String enterInequality;
     private RandomInequalitiesGUI randomInequalitiesGUI;
     private JFrame container;

@@ -1,5 +1,7 @@
 package view;
 
+import model.InequalitiesList;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Color;
@@ -18,12 +20,18 @@ import javax.swing.JPanel;
 */
 public class GUILayout extends JPanel  {
 
+    private InequalitiesList info;
+    private InequalitiesList observer;
+    private ManualInequalitiesGUI manualInequalitiesGUI;
+
   /**
   * Constructs a new Home panel
   * @param  frame  the frame containing the panel
   */
   public GUILayout(JFrame frame, GraphGenerator graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities){
 
+
+    this.manualInequalitiesGUI = manualInequalitiesGUI;
 
     //welcome label
     JLabel welcomeLabel = new JLabel("Graph Generator");
@@ -77,5 +85,7 @@ public class GUILayout extends JPanel  {
     repaint();
     add(p, BorderLayout.CENTER);
   }
+
+
 
 }

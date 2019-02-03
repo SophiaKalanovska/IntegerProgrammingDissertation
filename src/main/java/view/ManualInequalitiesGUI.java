@@ -1,23 +1,29 @@
 package view;
 
 import controller.ManualInequalitiesController;
-//import model.Inequalities;
+import model.Inequality;
+import model.InequalitiesList;
 import java.awt.FlowLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.Observable;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import java.util.Observer;
 
 
 
 /**
  * Home is the class where the Home panel is built implements Observer
  */
-public class ManualInequalitiesGUI extends JPanel {
+public class ManualInequalitiesGUI extends JPanel implements Observer {
+
+    private InequalitiesList info;
+    private InequalitiesList observer;
 
     private JTextField enterInequality;
     private DefaultListModel listModel;
@@ -66,26 +72,36 @@ public class ManualInequalitiesGUI extends JPanel {
         enterInequality.addMouseListener(controller);
     }
 
-//
-//
-//    private void UpdateJList(ArrayList<Inequalities> in){
-//        listModel.clear();
-//        for(Inequalities i : in){
-//            listModel.addElement(i);
-//        }
-//        projectsList.setModel(listModel);
+//    public Inequalitiy getListSelectedValue(){
+//        return (Inequalities) projectsList.getSelectedValue();
 //    }
 
 
-    // @Override
-    // public void update(Observable obs, Object obj) {
-    // 			observer = (ProjectWallet) obs;
-    // 			UpdateJList(observer.getProjectWallet());
-    // 			//this.clearProjectNameField();
-    //
-    // 			repaint();
-    // 			revalidate();
-    // }
+
+    private void UpdateJList(ArrayList<String> in){
+        listModel.clear();
+        for(String i : in){
+            listModel.addElement(i);
+        }
+        projectsList.setModel(listModel);
+    }
+
+
+    public String getEnterInequality() {
+        return enterInequality.getText();
+    }
+
+    @Override
+    public void update(Observable obs, Object obj) {
+        observer = (InequalitiesList) obs;
+        UpdateJList(observer.getProjectWallet());
+        //this.clearProjectNameField();
+
+        repaint();
+        revalidate();
+    }
+
+
 
 
 }

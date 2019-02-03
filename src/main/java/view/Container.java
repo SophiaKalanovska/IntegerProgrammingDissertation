@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
+import model.InequalitiesList;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -13,10 +14,8 @@ public class Container extends JFrame {
 
 	public Container(){
 
-		//ProjectWallet info = new ProjectWallet();
-		// Home home = new Home(this);
-
         //class creation
+        final InequalitiesList inequalitiesList = new InequalitiesList();
 		GraphGenerator graph = new GraphGenerator();
 		ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
@@ -24,7 +23,11 @@ public class Container extends JFrame {
 
         //controller creation
 		GUILayoutController controller = new GUILayoutController(randomInequalitiesGUI,this, graph);
-        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(manualInequalitiesGUI, graph);
+        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(inequalitiesList, manualInequalitiesGUI, graph);
+
+
+        inequalitiesList.addObserver(manualInequalitiesGUI);
+        inequalitiesList.tryUpdate();
         setPanel(graphgen);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
