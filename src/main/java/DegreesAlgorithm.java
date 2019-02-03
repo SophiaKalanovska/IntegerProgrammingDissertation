@@ -1,4 +1,4 @@
-// import org.graphstream.algorithm.GraphGenerator ;
+// import org.graphstream.algorithm.GraphGUI ;
 // import org.graphstream.graph.*;
 // import org.graphstream.algorithm.DynamicAlgorithm;
 //

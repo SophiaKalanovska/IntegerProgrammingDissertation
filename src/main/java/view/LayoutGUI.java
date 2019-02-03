@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 /**
 * Home is the class where the Home panel is built implements Observer
 */
-public class GUILayout extends JPanel  {
+public class LayoutGUI extends JPanel  {
 
     private InequalitiesList info;
     private InequalitiesList observer;
@@ -28,7 +28,7 @@ public class GUILayout extends JPanel  {
   * Constructs a new Home panel
   * @param  frame  the frame containing the panel
   */
-  public GUILayout(JFrame frame, GraphGenerator graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities){
+  public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities){
 
 
     this.manualInequalitiesGUI = manualInequalitiesGUI;
@@ -56,8 +56,8 @@ public class GUILayout extends JPanel  {
     graphPanel.setBorder(thatBorder2);
     graphPanel.setBackground(Color.white);
 
-    Border thatBorder3 = new TitledBorder(thatBorder,"<html><b> Generate Random Inequalities:</html><b>" );
-    panelrandomNumberInequalities.setBorder(thatBorder3);
+//    Border thatBorder3 = new TitledBorder(thatBorder,"<html><b> Generate Random Inequalities:</html><b>" );
+
 
 
     // put the manual inequalities and the graph in a panel
@@ -71,7 +71,7 @@ public class GUILayout extends JPanel  {
     this.setLayout(new BorderLayout());
     this.add(welcomePanel, BorderLayout.NORTH);
     this.add(center, BorderLayout.CENTER);
-    this.add( panelrandomNumberInequalities, BorderLayout.SOUTH);
+//    this.add( panelrandomNumberInequalities, BorderLayout.SOUTH);
     this.setBackground(Color.white);
 
     frame.add(this);

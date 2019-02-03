@@ -1,10 +1,12 @@
-package view;
-
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
 import model.InequalitiesList;
+import view.GraphGUI;
+import view.LayoutGUI;
+import view.ManualInequalitiesGUI;
+import view.RandomInequalitiesGUI;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -16,10 +18,10 @@ public class Container extends JFrame {
 
         //class creation
         final InequalitiesList inequalitiesList = new InequalitiesList();
-		GraphGenerator graph = new GraphGenerator();
-		ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
+		GraphGUI graph = new GraphGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
-        GUILayout graphgen = new GUILayout(this, graph, manualInequalitiesGUI, randomInequalitiesGUI);
+        ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI(randomInequalitiesGUI);
+        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI);
 
         //controller creation
 		GUILayoutController controller = new GUILayoutController(randomInequalitiesGUI,this, graph);

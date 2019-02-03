@@ -1,4 +1,4 @@
-// import org.graphstream.algorithm.GraphGenerator;
+// import org.graphstream.algorithm.GraphGUI;
 //
 // public class MyFullGenerator extends SourceBase
 //        implements Generator {

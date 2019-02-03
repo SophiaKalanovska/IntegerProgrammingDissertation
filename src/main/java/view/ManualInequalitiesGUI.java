@@ -8,10 +8,10 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.Observable;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 import java.util.Observer;
 
@@ -33,27 +33,46 @@ public class ManualInequalitiesGUI extends JPanel implements Observer {
      * Constructs a new Home panel
      *
      */
-    public ManualInequalitiesGUI() {
+    public ManualInequalitiesGUI( RandomInequalitiesGUI panelrandomNumberInequalities) {
 
         //create the list of the represented inequalities
         this.listModel = new DefaultListModel();
         this.projectsList = new JList(listModel);
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.getViewport().setView(projectsList);
         projectsList.setName("projectsList");
 
         //create the textField for inputting the inequalities
         this.enterInequality = new JTextField("Enter inequality...", 20);
         this.enterInequality.setName("inequalityField");
 
-
         FlowLayout LayoutenterInequality  = new FlowLayout(FlowLayout.LEFT);
         JPanel panelenterInequality = new JPanel(LayoutenterInequality);
         panelenterInequality.add(enterInequality);
         panelenterInequality.setBackground(Color.white);
+        //border color
+        Border thatBorder = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
+        Border thatBorder1 = new TitledBorder(thatBorder,"<html><b> Generate Random Inequalities:</html><b>" );
+
+        panelrandomNumberInequalities.setBorder(thatBorder1);
+
+
+        // put the manual inequalities and the graph in a panel
+        JPanel center = new JPanel(new GridLayout(2,1));
+        center.add(panelenterInequality);
+        center.add(panelrandomNumberInequalities);
+        center.setBackground(Color.WHITE);
+
+
+
+        Border thatBorder2 = new TitledBorder(thatBorder,"<html><b> List of Inequalities:</html><b>" );
+        projectsList.setBorder(thatBorder2);
+
 
 
         this.setBackground(Color.WHITE);
         this.setLayout(new GridLayout(2, 1));
-        this.add(panelenterInequality);
+        this.add(center);
         this.add(projectsList);
 
     }

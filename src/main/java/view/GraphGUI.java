@@ -15,7 +15,7 @@ import java.awt.Color ;
 import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
 
-public class GraphGenerator extends JPanel implements ViewerListener{
+public class GraphGUI extends JPanel implements ViewerListener{
 
 	private ViewPanel view;
 	private Viewer viewer;
@@ -28,7 +28,7 @@ public class GraphGenerator extends JPanel implements ViewerListener{
 
 	private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
 
-	public GraphGenerator(){
+	public GraphGUI(){
 
 		graph = new MultiGraph("Strongly connected components");
 		compCol = new HashMap();

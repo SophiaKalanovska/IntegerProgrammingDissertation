@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import view.*;
-import java.util.ArrayList;
+
 import javax.swing.JPanel;
 import javax.swing.JList;
 import model.*;
@@ -20,14 +20,14 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     private ManualInequalitiesGUI ManualInequalitiesGUI;
     private JPanel currentPanel;
     private Parser parser;
-    private GraphGenerator alg;
+    private GraphGUI alg;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public ManualInequalitiesController(InequalitiesList inequalitiesList,ManualInequalitiesGUI ManualInequalitiesGUI, GraphGenerator alg){
+    public ManualInequalitiesController(InequalitiesList inequalitiesList,ManualInequalitiesGUI ManualInequalitiesGUI, GraphGUI alg){
 
 
         this.ManualInequalitiesGUI = ManualInequalitiesGUI;

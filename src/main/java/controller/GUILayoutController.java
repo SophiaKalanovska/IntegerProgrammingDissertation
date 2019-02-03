@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import view.*;
-import java.util.ArrayList;
+
 import javax.swing.JPanel;
 import javax.swing.JList;
 import model.*;
 /**
- * This class will represent the Controller for the GUILayout Panel
+ * This class will represent the Controller for the LayoutGUI Panel
  *
  */
 public class GUILayoutController implements ActionListener, MouseListener {
@@ -24,15 +24,15 @@ public class GUILayoutController implements ActionListener, MouseListener {
     private JFrame container;
     private JPanel currentPanel;
     private Parser parser;
-    private GraphGenerator alg;
+    private GraphGUI alg;
 
     /**
-     * Constructs a Controller for the GUILayout panel
+     * Constructs a Controller for the LayoutGUI panel
      *
-     * @param randomInequalitiesGUI the GUILayout panel that this class will control
+     * @param randomInequalitiesGUI the LayoutGUI panel that this class will control
      * @param container the main frame
      */
-    public GUILayoutController(RandomInequalitiesGUI randomInequalitiesGUI, JFrame container, GraphGenerator alg){
+    public GUILayoutController(RandomInequalitiesGUI randomInequalitiesGUI, JFrame container, GraphGUI alg){
 
 
         this.randomInequalitiesGUI = randomInequalitiesGUI;
@@ -59,7 +59,7 @@ public class GUILayoutController implements ActionListener, MouseListener {
     // }
 
     /**
-     * Mouse listener for the GUILayout panel
+     * Mouse listener for the LayoutGUI panel
      *
      * @param e Mouse listener that will identify the actions that the user makes
      */
@@ -78,9 +78,9 @@ public class GUILayoutController implements ActionListener, MouseListener {
             if(enter.getName().equals("projectsList")) {
 
                 //System.out.println("hello openning a project");
-                // Projects projectData = GUILayout.getListSelectedValue();
+                // Projects projectData = LayoutGUI.getListSelectedValue();
                 // this.project = new Project(container, projectData);
-                // ProjectController pc = new ProjectController(projectData, project, GUILayout, container);
+                // ProjectController pc = new ProjectController(projectData, project, LayoutGUI, container);
                 // container.getContentPane().invalidate();
                 // container.getContentPane().removeAll();
                 // container.getContentPane().add(project);
@@ -115,7 +115,7 @@ public class GUILayoutController implements ActionListener, MouseListener {
     // }
 
     /**
-     * The action listener for the GUILayout panel
+     * The action listener for the LayoutGUI panel
      *
      * @param e the ActionEven object which will identify the performed action
      */
