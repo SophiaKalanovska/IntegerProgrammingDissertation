@@ -7,12 +7,10 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 
 /**
@@ -20,18 +18,11 @@ import javax.swing.JPanel;
 */
 public class LayoutGUI extends JPanel  {
 
-    private InequalitiesList info;
-    private InequalitiesList observer;
-    private ManualInequalitiesGUI manualInequalitiesGUI;
-
   /**
   * Constructs a new Home panel
   * @param  frame  the frame containing the panel
   */
-  public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities){
-
-
-    this.manualInequalitiesGUI = manualInequalitiesGUI;
+  public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI){
 
     //welcome label
     JLabel welcomeLabel = new JLabel("Graph Generator");
@@ -46,8 +37,6 @@ public class LayoutGUI extends JPanel  {
     //create border for manual inequalities
     Border thatBorder1 = new TitledBorder(thatBorder,"<html><b> Enter Inequalities:</html><b>" );
 
-    //put border around inequalities
-    manualInequalitiesGUI.setBorder(thatBorder1);
 
     //create border for graph
     Border thatBorder2 = new TitledBorder(thatBorder,"<html><b> Graph:</html><b>" );
@@ -56,13 +45,36 @@ public class LayoutGUI extends JPanel  {
     graphPanel.setBorder(thatBorder2);
     graphPanel.setBackground(Color.white);
 
-//    Border thatBorder3 = new TitledBorder(thatBorder,"<html><b> Generate Random Inequalities:</html><b>" );
 
+      //border color
+      Border topBorder = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
+      Border topBorder1 = new TitledBorder(topBorder,"<html><b> Generate Random Inequalities:</html><b>" );
+      panelrandomNumberInequalities.setBorder(topBorder1);
+
+
+      Border topBorder2 = new TitledBorder(topBorder,"<html><b> List of Inequalities:</html><b>" );
+      inequalitiesListGUI.setBorder(topBorder2);
+
+
+      JPanel controlPanel = new JPanel(new GridLayout(2,1));
+      controlPanel.add(manualInequalitiesGUI);
+      controlPanel.add(panelrandomNumberInequalities);
+
+
+      //put border around inequalities
+
+
+      JPanel leftPanel = new JPanel(new GridLayout(2,1));
+      leftPanel.add(controlPanel);
+      leftPanel.add(inequalitiesListGUI);
+      leftPanel.setBackground(Color.WHITE);
+
+      leftPanel.setBorder(thatBorder1);
 
 
     // put the manual inequalities and the graph in a panel
     JPanel center = new JPanel(new GridLayout(1,2));
-    center.add(manualInequalitiesGUI);
+    center.add(leftPanel);
     center.add(graphPanel);
     center.setBackground(Color.WHITE);
 

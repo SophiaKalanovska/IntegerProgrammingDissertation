@@ -3,19 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DegreesAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DegreesAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyFullGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyFullGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GUILayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GraphGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GraphGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/ManualInequalitiesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManualInequalitiesGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/RandomInequalitiesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RandomInequalitiesGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GUILayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GUILayout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Container.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GUILayoutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManualInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManualInequalitiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/LayoutGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LayoutGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/ManualInequalitiesGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ManualInequalitiesGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/RandomInequalitiesGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RandomInequalitiesGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +35,8 @@
       <file leaf-file-name="LayoutGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/LayoutGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="-129">
+              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,8 +47,8 @@
       <file leaf-file-name="ManualInequalitiesGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/ManualInequalitiesGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2576#2577#0" expanded="true" />
@@ -56,8 +61,8 @@
       <file leaf-file-name="RandomInequalitiesGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/RandomInequalitiesGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="89" lean-forward="true" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
+            <state relative-caret-position="405">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,45 +70,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUILayoutController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java">
+      <file leaf-file-name="RandomInequalitiesController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+            <state relative-caret-position="-399">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InequalitiesList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2495#2496#0" expanded="true" />
-                <element signature="e#2539#2540#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inequality.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Inequality.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#560#561#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#826#827#0" expanded="true" />
-                <element signature="e#904#905#0" expanded="true" />
-                <element signature="e#949#950#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,17 +85,17 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-620">
-              <caret line="21" column="46" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="255">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManualInequalitiesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
+      <file leaf-file-name="InequalitiesListController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="137" column="51" selection-start-line="137" selection-start-column="51" selection-end-line="137" selection-end-column="51" />
+            <state relative-caret-position="165">
+              <caret line="11" column="2" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,11 +115,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Container.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Container.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="375">
+              <caret line="25" column="105" lean-forward="true" selection-start-line="25" selection-start-column="105" selection-end-line="25" selection-end-column="105" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InequalitiesListGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1459#1460#0" expanded="true" />
+                <element signature="e#1528#1529#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManualInequalitiesController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,23 +189,28 @@
         <option value="$PROJECT_DIR$/src/main/java/view/GraphGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ManualIneyalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/ManualInequalities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/GUIprevious.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ProjectWallet.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/InequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Inequalities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Parser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Inequality.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/RandomInequalitiesGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/GUILayout.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/Container.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/ManualInequalitiesGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Container.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Parser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1366" />
     <option name="height" value="877" />
@@ -223,11 +227,6 @@
             <path>
               <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
               <item name="IntegerProgrammingDissertation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IntegerProgrammingDissertation" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
@@ -407,7 +406,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
@@ -422,7 +421,7 @@
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.3090278" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.30694443" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3278302" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -466,7 +465,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
@@ -567,23 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-620">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="137" column="51" selection-start-line="137" selection-start-column="51" selection-end-line="137" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Inequality.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -622,40 +604,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/RandomInequalitiesGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="89" lean-forward="true" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/LayoutGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/ManualInequalitiesGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2576#2577#0" expanded="true" />
@@ -664,10 +616,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/RandomInequalitiesGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DegreesAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#1266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/LayoutGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1528#1529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="375">
+          <caret line="25" column="105" lean-forward="true" selection-start-line="25" selection-start-column="105" selection-end-line="25" selection-end-column="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -3,10 +3,7 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
 import model.InequalitiesList;
-import view.GraphGUI;
-import view.LayoutGUI;
-import view.ManualInequalitiesGUI;
-import view.RandomInequalitiesGUI;
+import view.*;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -20,15 +17,17 @@ public class Container extends JFrame {
         final InequalitiesList inequalitiesList = new InequalitiesList();
 		GraphGUI graph = new GraphGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
-        ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI(randomInequalitiesGUI);
-        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI);
+		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
+        ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
+        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI);
+        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graph);
 
         //controller creation
-		GUILayoutController controller = new GUILayoutController(randomInequalitiesGUI,this, graph);
-        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(inequalitiesList, manualInequalitiesGUI, graph);
+		RandomInequalitiesController controller = new RandomInequalitiesController(randomInequalitiesGUI, graph);
+		InequalitiesListController inequalitiesListController = new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph);
 
 
-        inequalitiesList.addObserver(manualInequalitiesGUI);
+        inequalitiesList.addObserver(inequalitiesListGUI);
         inequalitiesList.tryUpdate();
         setPanel(graphgen);
 

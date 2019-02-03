@@ -11,13 +11,13 @@ import model.*;
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
  */
-public class ManualInequalitiesController implements ActionListener, MouseListener {
+public class InequalitiesListController implements ActionListener, MouseListener {
 
     //private ArrayList<Projects> projectData;
     private InequalitiesList inequalitiesList;
     private String enterInequality;
     private String jtfProjectTField;
-    private ManualInequalitiesGUI ManualInequalitiesGUI;
+    private InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
     private Parser parser;
     private GraphGUI alg;
@@ -25,32 +25,19 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
-     * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
+     * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public ManualInequalitiesController(InequalitiesList inequalitiesList,ManualInequalitiesGUI ManualInequalitiesGUI, GraphGUI alg){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphGUI alg){
 
 
-        this.ManualInequalitiesGUI = ManualInequalitiesGUI;
+        this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
         this.alg = alg;
 
-        ManualInequalitiesGUI.addControllers(this);
-        ManualInequalitiesGUI.addMouseListener(this);
+        InequalitiesListGUI.addMouseListener(this);
 
 
     }
-
-    private String geInequality(){
-        return this.enterInequality;
-    }
-    /**
-     * Returns a String conatining the input of the user
-     *
-     * @return string with the input
-     */
-    // private String geJTFProjectTField(){
-    //   return this.enterInequality;
-    // }
 
     /**
      * Mouse listener for the ManualIntegerInequalities panel
@@ -116,34 +103,29 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
 
-        // if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-
-
-
-
-
-        if (e.getSource() instanceof JButton) {
-            JButton enter = (JButton) e.getSource();
-
-        }
-        else if (e.getSource() instanceof JTextField){
-            JTextField enter = (JTextField) e.getSource();
-                enterInequality = enter.getText();
-                this.parser = new Parser(enterInequality);
-                try {
-                    Inequality parsedExpression = new Inequality(parser.parse());
-                    alg.addNodes(parsedExpression.getParsedExpression());
-                    alg.getPipe().pump();
-                    this.jtfProjectTField = ManualInequalitiesGUI.getEnterInequality();
-                    inequalitiesList.addInequality(parsedExpression);
-                }catch(Exception r){
-                    System.out.println(r.getMessage());
-                }
-                // parser.parse();
-                System.out.println("enter in text field");
-                //  inequalitiesList.createNewProject(enter.getText());
-
-            }
+//
+//        if (e.getSource() instanceof JButton) {
+//            JButton enter = (JButton) e.getSource();
+//
+//        }
+//        else if (e.getSource() instanceof JTextField){
+//            JTextField enter = (JTextField) e.getSource();
+//                enterInequality = enter.getText();
+//                this.parser = new Parser(enterInequality);
+//                try {
+//                    Inequality parsedExpression = new Inequality(parser.parse());
+//                    alg.addNodes(parsedExpression.getParsedExpression());
+//                    alg.getPipe().pump();
+//                    this.jtfProjectTField = InequalitiesListGUI.getEnterInequality();
+//                    inequalitiesList.addInequality(parsedExpression);
+//                }catch(Exception r){
+//                    System.out.println(r.getMessage());
+//                }
+//                // parser.parse();
+//                System.out.println("enter in text field");
+//                //  inequalitiesList.createNewProject(enter.getText());
+//
+//            }
 
         }
 

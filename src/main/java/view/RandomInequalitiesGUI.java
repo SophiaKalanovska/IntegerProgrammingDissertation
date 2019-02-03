@@ -1,6 +1,6 @@
 package view;
 
-import controller.GUILayoutController;
+import controller.RandomInequalitiesController;
 import javax.swing.*;
 import java.awt.*;
 
@@ -27,12 +27,12 @@ public class RandomInequalitiesGUI extends JPanel {
 
     }
 
-    public void addControllers(GUILayoutController controller){
+    public void addControllers(RandomInequalitiesController controller){
         System.out.println("controller added");
         randomNumberInequality.addActionListener(controller);
     }
 
-    public void addMouseListener(GUILayoutController controller){
+    public void addMouseListener(RandomInequalitiesController controller){
         System.out.println("mouselistener added");
         randomNumberInequality.addMouseListener(controller);
     }

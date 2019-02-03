@@ -18,8 +18,8 @@ public class Parser{
   }
 
 
-  public ArrayList<String> parse() throws Exception{
-    ArrayList<String> start = parse_inequality();
+  public Inequality parse() throws Exception{
+      Inequality start = new Inequality(parse_inequality());
 
     if (pos == srcOriginal.length()){
 //      System.out.println(start);
