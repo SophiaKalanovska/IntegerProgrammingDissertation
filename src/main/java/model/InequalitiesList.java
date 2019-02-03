@@ -10,7 +10,7 @@ import java.util.Observable;
 public class InequalitiesList extends Observable implements java.io.Serializable {
 
 
-    private ArrayList<String> projectContainer;
+    private ArrayList<Inequality> inequalitiesContainer;
 //private HashMap<String, Projects> projectMap;
 
 
@@ -20,7 +20,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      */
     public InequalitiesList()
     {
-        projectContainer = new ArrayList<String>();
+        inequalitiesContainer = new ArrayList<Inequality>();
         //projectMap = new HashMap<String, Projects>();
     }
 
@@ -29,7 +29,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param data the ArrayList of Projects that will constitute the newly created InequalitiesList object
      */
-    public InequalitiesList(ArrayList<String> data)
+    public InequalitiesList(ArrayList<Inequality> data)
     {
         storeProject(data);
         setChanged();
@@ -41,10 +41,10 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param x the project that is to be added to the wallet
      */
-    public void addProject(Inequality x)
+    public void addInequality(Inequality x)
     {
         //projectMap.put(x.toString(), x);
-        this.projectContainer.add(x.getexpreission());
+        this.inequalitiesContainer.add(x);
         setChanged();
         notifyObservers();
     }
@@ -55,40 +55,40 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param name the name of the projects that has to be deleted
      */
-//    public void deleteProject(String name)
-//    {
-//
-//        for (int i = 0 ; i < projectContainer.size() ; i++)
-//        {
-//            if (((projectContainer.get(i)).getName()).equals(name))
-//            {
-//                projectContainer.remove(i);
-//            }
-//        }
-//
-//        setChanged();
-//        notifyObservers();
-//    }
+    public void deleteInequality(String name)
+    {
+
+        for (int i = 0 ; i < inequalitiesContainer.size() ; i++)
+        {
+            if (((inequalitiesContainer.get(i)).getExpreission()).equals(name))
+            {
+                inequalitiesContainer.remove(i);
+            }
+        }
+
+        setChanged();
+        notifyObservers();
+    }
 
     /**
      * Changes the name of a project to the new one
      *
-     * @param old the current name of the project
-     * @param newProject the new name for the project
+     * @param oldInequality the current name of the project
+     * @param newInequality the new name for the project
      */
-//    public void change(String old, String newProject)
-//    {
-//        for (int i = 0; i <projectContainer.size() ; i++)
-//        {
-//            if (((projectContainer.get(i)).getName()).equals(old))
-//            {
-//                (projectContainer.get(i)).setName(newProject);
-//            }
-//        }
-//
-//        setChanged();
-//        notifyObservers();
-//    }
+    public void changeInequality(String oldInequality, String newInequality)
+    {
+        for (int i = 0; i <inequalitiesContainer.size() ; i++)
+        {
+            if (((inequalitiesContainer.get(i)).getExpreission().equals(oldInequality)))
+            {
+                (inequalitiesContainer.get(i)).changeExpression(newInequality);
+            }
+        }
+
+        setChanged();
+        notifyObservers();
+    }
 
 
     /**
@@ -96,18 +96,15 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @return an ArrayList of projects that are contained in this wallet
      */
-    public ArrayList<String> getProjectWallet()
+    public ArrayList<Inequality> getProjectWallet()
     {
-
-
-        return projectContainer;
-
+        return inequalitiesContainer;
     }
 
 
-    public void storeProject(ArrayList<String> data)
+    public void storeProject(ArrayList<Inequality> data)
     {
-        this.projectContainer = data;
+        this.inequalitiesContainer = data;
 
     }
 

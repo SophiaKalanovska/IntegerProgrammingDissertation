@@ -12,7 +12,7 @@ public class Inequality  extends Observable implements Serializable {
     private final String rightSide;
     private final String sign;
     private final String leftSide;
-    private String expreission;
+    private String expression;
     ArrayList<String> parsedExpression;
 
     public Inequality (ArrayList<String> parsedExpression) {
@@ -20,15 +20,24 @@ public class Inequality  extends Observable implements Serializable {
         this.rightSide = parsedExpression.get(0);
         this.sign = parsedExpression.get(1);
         this.leftSide = parsedExpression.get(2);
-        this.expreission = rightSide + sign + leftSide;
+        this.expression = rightSide + sign + leftSide;
     }
 
-    public String getexpreission() {
-        return this.expreission;
+    public String getExpreission() {
+        return this.expression;
     }
 
     public ArrayList<String> getParsedExpression() {
         return this.parsedExpression;
+    }
+
+    public void changeExpression(String expressionChanged){
+        expression = expressionChanged;
+    }
+
+
+    public String toString(){
+        return expression;
     }
 
 

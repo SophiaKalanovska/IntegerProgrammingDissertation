@@ -78,9 +78,9 @@ public class ManualInequalitiesGUI extends JPanel implements Observer {
 
 
 
-    private void UpdateJList(ArrayList<String> in){
+    private void UpdateJList(ArrayList<Inequality> in){
         listModel.clear();
-        for(String i : in){
+        for(Inequality i : in){
             listModel.addElement(i);
         }
         projectsList.setModel(listModel);

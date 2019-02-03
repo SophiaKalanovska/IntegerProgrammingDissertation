@@ -135,7 +135,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                     alg.addNodes(parsedExpression.getParsedExpression());
                     alg.getPipe().pump();
                     this.jtfProjectTField = ManualInequalitiesGUI.getEnterInequality();
-                    inequalitiesList.addProject(parsedExpression);
+                    inequalitiesList.addInequality(parsedExpression);
                 }catch(Exception r){
                     System.out.println(r.getMessage());
                 }
