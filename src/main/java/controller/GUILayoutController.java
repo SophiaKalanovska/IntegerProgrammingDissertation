@@ -20,7 +20,7 @@ public class GUILayoutController implements ActionListener, MouseListener {
     //private ArrayList<Projects> projectData;
     // private ProjectWallet projectWallet;
     private String enterInequality;
-    private GUILayout GUILayout;
+    private RandomInequalitiesGUI randomInequalitiesGUI;
     private JFrame container;
     private JPanel currentPanel;
     private Parser parser;
@@ -29,19 +29,19 @@ public class GUILayoutController implements ActionListener, MouseListener {
     /**
      * Constructs a Controller for the GUILayout panel
      *
-     * @param GUILayout the GUILayout panel that this class will control
+     * @param randomInequalitiesGUI the GUILayout panel that this class will control
      * @param container the main frame
      */
-    public GUILayoutController(GUILayout GUILayout, JFrame container, GraphGenerator alg){
+    public GUILayoutController(RandomInequalitiesGUI randomInequalitiesGUI, JFrame container, GraphGenerator alg){
 
 
-        this.GUILayout = GUILayout;
+        this.randomInequalitiesGUI = randomInequalitiesGUI;
         this.container = container;
         this.alg = alg;
 
 
-        GUILayout.addControllers(this);
-        GUILayout.addMouseListener(this);
+        randomInequalitiesGUI.addControllers(this);
+        randomInequalitiesGUI.addMouseListener(this);
 
 
     }

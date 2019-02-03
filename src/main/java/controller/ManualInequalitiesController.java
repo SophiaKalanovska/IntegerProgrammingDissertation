@@ -16,7 +16,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     //private ArrayList<Projects> projectData;
     // private ProjectWallet projectWallet;
     private String enterInequality;
-    private ManualInequalities ManualInequalities;
+    private ManualInequalitiesGUI ManualInequalitiesGUI;
     private JPanel currentPanel;
     private Parser parser;
     private GraphGenerator alg;
@@ -24,16 +24,16 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
-     * @param ManualInequalities the ManualIntegerInequalities  JFrame that this class will control
+     * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public ManualInequalitiesController(ManualInequalities ManualInequalities, GraphGenerator alg){
+    public ManualInequalitiesController(ManualInequalitiesGUI ManualInequalitiesGUI, GraphGenerator alg){
 
 
-        this.ManualInequalities = ManualInequalities;
+        this.ManualInequalitiesGUI = ManualInequalitiesGUI;
         this.alg = alg;
 
-        ManualInequalities.addControllers(this);
-        ManualInequalities.addMouseListener(this);
+        ManualInequalitiesGUI.addControllers(this);
+        ManualInequalitiesGUI.addMouseListener(this);
 
 
     }

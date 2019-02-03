@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 /**
  * Home is the class where the Home panel is built implements Observer
  */
-public class ManualInequalities extends JPanel {
+public class ManualInequalitiesGUI extends JPanel {
 
     private JTextField enterInequality;
     private DefaultListModel listModel;
@@ -27,7 +27,7 @@ public class ManualInequalities extends JPanel {
      * Constructs a new Home panel
      *
      */
-    public ManualInequalities() {
+    public ManualInequalitiesGUI() {
 
         //create the list of the represented inequalities
         this.listModel = new DefaultListModel();
@@ -55,13 +55,13 @@ public class ManualInequalities extends JPanel {
 
 
     public void addControllers(ManualInequalitiesController controller){
-        System.out.println(" ManualInequalities controller added");
+        System.out.println(" ManualInequalitiesGUI controller added");
         enterInequality.addActionListener(controller);
 
     }
 
     public void addMouseListener(ManualInequalitiesController  controller){
-        System.out.println(" ManualInequalities mouselistener added");
+        System.out.println(" ManualInequalitiesGUI mouselistener added");
         projectsList.addMouseListener(controller);
         enterInequality.addMouseListener(controller);
     }
@@ -77,6 +77,15 @@ public class ManualInequalities extends JPanel {
 //    }
 
 
+    // @Override
+    // public void update(Observable obs, Object obj) {
+    // 			observer = (ProjectWallet) obs;
+    // 			UpdateJList(observer.getProjectWallet());
+    // 			//this.clearProjectNameField();
+    //
+    // 			repaint();
+    // 			revalidate();
+    // }
 
 
 }

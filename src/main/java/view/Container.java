@@ -16,12 +16,15 @@ public class Container extends JFrame {
 		//ProjectWallet info = new ProjectWallet();
 		// Home home = new Home(this);
 
-		GraphGenerator alg = new GraphGenerator();
-		ManualInequalities manualInequalities= new ManualInequalities();
-        GUILayout graphgen = new GUILayout(this, alg, manualInequalities);
+        //class creation
+		GraphGenerator graph = new GraphGenerator();
+		ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
+		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
+        GUILayout graphgen = new GUILayout(this, graph, manualInequalitiesGUI, randomInequalitiesGUI);
 
-		GUILayoutController controller = new GUILayoutController(graphgen,this, alg);
-        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(manualInequalities, alg);
+        //controller creation
+		GUILayoutController controller = new GUILayoutController(randomInequalitiesGUI,this, graph);
+        ManualInequalitiesController manualInequalitiesController = new ManualInequalitiesController(manualInequalitiesGUI, graph);
         setPanel(graphgen);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
