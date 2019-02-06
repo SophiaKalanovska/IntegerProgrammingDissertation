@@ -6,6 +6,9 @@ import view.*;
 
 import javax.swing.JPanel;
 import javax.swing.JList;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import model.*;
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -20,19 +23,19 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
     private Parser parser;
-    private GraphGUI alg;
+    private GraphGUI graph;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphGUI alg){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphGUI graph){
 
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
-        this.alg = alg;
+        this.graph = graph;
 
         InequalitiesListGUI.addMouseListener(this);
 
@@ -46,28 +49,13 @@ public class InequalitiesListController implements ActionListener, MouseListener
      */
     @Override
     public void mouseClicked(MouseEvent e) {
+
         System.out.println("You clicked me manual and I don't know");
-        if (e.getSource() instanceof JTextField) {
-            JTextField enter = (JTextField) e.getSource();
-            System.out.println("You clicked me manual and I know");
-            enter.setText("");
-        }
+        if (e.getSource() instanceof JButton) {
+            System.out.println("you pressed delete");
 
-        if (e.getSource() instanceof JList) {
-            JList enter = (JList) e.getSource();
+            inequalitiesList.deleteInequality(InequalitiesListGUI.getListSelectedValue());
 
-            if(enter.getName().equals("projectsList")) {
-
-                //System.out.println("hello openning a project");
-                // Projects projectData = ManualIntegerInequalities.getListSelectedValue();
-                // this.project = new Project(container, projectData);
-                // ProjectController pc = new ProjectController(projectData, project, ManualIntegerInequalities, container);
-                // container.getContentPane().invalidate();
-                // container.getContentPane().removeAll();
-                // container.getContentPane().add(project);
-                // container.revalidate();
-                // container.repaint();
-            }
         }
     }
 
@@ -82,6 +70,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
 
     @Override
     public void mouseExited(MouseEvent e) {}
+
 
 
     //
@@ -128,7 +117,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
 //            }
 
         }
-
-    }
+}
 
 

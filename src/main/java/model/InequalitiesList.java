@@ -67,18 +67,18 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     /**
      * Deletes a project that has the same name as the one supplied
      *
-     * @param name the name of the projects that has to be deleted
+     * @param x the name of the projects that has to be deleted
      */
-    public void deleteInequality(String name)
+    public void deleteInequality(Inequality x)
     {
-
-        for (int i = 0 ; i < inequalitiesContainer.size() ; i++)
-        {
-            if (((inequalitiesContainer.get(i)).getExpreission()).equals(name))
-            {
-                inequalitiesContainer.remove(i);
-            }
-        }
+//        for (int i = 0 ; i < inequalitiesContainer.size() ; i++)
+//        {
+//            if (((inequalitiesContainer.get(i)).getExpreission()).equals(x.getExpreission()))
+//            {
+                graph.removeNodes(x.getParsedExpression());
+                inequalitiesContainer.remove(x);
+//            }
+//        }
 
         setChanged();
         notifyObservers();

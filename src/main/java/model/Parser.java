@@ -78,7 +78,13 @@ public class Parser{
        public String parse_expression()throws Exception{
            try {
          String expression = parse_term();
-         return  expression ;
+         if (expression != null){
+             return  expression ;
+         }else{
+             throw new Exception() ;
+         }
+
+
        }catch (Exception e){
          throw new Exception ( " Expecting pattern ELEM at position {0} " );
 

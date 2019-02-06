@@ -122,15 +122,46 @@ public class GraphGUI extends JPanel implements ViewerListener{
 		i++;
 		pipeIn.pump();
 
+		TarjanStronglyConnectedComponents tscc = calculateSCC();
+		color(tscc);
+
+
+
+	}
+
+	public void removeNodes(ArrayList<String> arrayEquation){
+		Node first = graph.getNode(arrayEquation.get(0));
+		Node second = graph.getNode(arrayEquation.get(2));
+		graph.removeEdge(first,second);
+		pipeIn.pump();
+		System.out.print("degree 1 :" + first.getDegree());
+		System.out.print("degree 2 :" +second.getDegree());
+		if (first.getDegree() == 0){
+			graph.removeNode(first);
+		}
+		if (second.getDegree() == 0){
+			graph.removeNode(second);
+		}
+		pipeIn.pump();
+		TarjanStronglyConnectedComponents tscc = calculateSCC();
+		color(tscc);
+
+
+	}
+
+	private TarjanStronglyConnectedComponents calculateSCC(){
 		TarjanStronglyConnectedComponents tscc = new TarjanStronglyConnectedComponents();
 		tscc.init(graph);
 		tscc.compute();
+		return tscc;
+	}
 
 
+	private void color(TarjanStronglyConnectedComponents tscc){
 		for (Node n : graph.getEachNode()){
 			if(compCol.containsKey(n.getAttribute(tscc.getSCCIndexAttribute()))){
 				Color randomColor = (Color)
-				compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
+						compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
 				n.addAttribute("ui.style", "fill-color:rgba("+randomColor.getRed()+","+randomColor.getGreen()+","+randomColor.getBlue()+",200);" );
 			}else{
 				System.out.println("Random color");
