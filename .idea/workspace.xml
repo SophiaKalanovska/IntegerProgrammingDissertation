@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Inequality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Inequality.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$ExceptionNotATerm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$ExceptionNotATerm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$ExceptionNotNull.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$ExceptionNotNull.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$ExceptionNotNull.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$NoWeightException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables$NoWeightException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ParserWithTwoDecisionVariables.class" afterDir="false" />
     </list>
@@ -32,8 +33,8 @@
       <file leaf-file-name="ParserWithTwoDecisionVariables.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1279">
-              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+            <state relative-caret-position="405">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,7 +45,7 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1348">
+            <state relative-caret-position="375">
               <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,8 +57,8 @@
       <file leaf-file-name="Inequality.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Inequality.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="881">
+              <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#492#500#0" expanded="true" />
@@ -81,6 +82,8 @@
                 <element signature="e#2371#2372#0" expanded="true" />
                 <element signature="e#2279#2280#0" expanded="true" />
                 <element signature="e#2311#2312#0" expanded="true" />
+                <element signature="e#2474#2475#0" expanded="true" />
+                <element signature="e#2506#2507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,18 +94,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1035">
               <caret line="85" selection-start-line="85" selection-end-line="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManualInequalitiesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -132,6 +123,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ManualInequalitiesController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -153,6 +156,7 @@
       <find>alg</find>
       <find>graphGenerator</find>
       <find>start</find>
+      <find>sign</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/model</dir>
@@ -188,12 +192,12 @@
         <option value="$PROJECT_DIR$/src/main/java/model/RandomInequalitiesGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Inequality.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/NoWeightException.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ParserExceptions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Inequality.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java" />
       </list>
     </option>
@@ -432,7 +436,7 @@
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="Debug" order="7" visible="true" weight="0.090057634" />
+      <window_info anchor="bottom" id="Debug" order="7" visible="true" weight="0.19092219" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -446,7 +450,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java</url>
+          <line>146</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="17" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -534,6 +558,8 @@
             <element signature="e#2371#2372#0" expanded="true" />
             <element signature="e#2279#2280#0" expanded="true" />
             <element signature="e#2311#2312#0" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2506#2507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -771,6 +797,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/NoWeightException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ParserExceptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaMnemonicHandler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
@@ -778,10 +828,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Inequality.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="881">
+          <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#492#500#0" expanded="true" />
@@ -805,58 +875,16 @@
             <element signature="e#2371#2372#0" expanded="true" />
             <element signature="e#2279#2280#0" expanded="true" />
             <element signature="e#2311#2312#0" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2506#2507#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ManualInequalitiesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1348">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/NoWeightException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ParserExceptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/ParserWithTwoDecisionVariables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1279">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state relative-caret-position="405">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

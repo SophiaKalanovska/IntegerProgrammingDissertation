@@ -98,4 +98,7 @@ public class Inequality  extends Observable implements Serializable {
     public void setSign(String sign) {
         this.sign = sign;
     }
+    public String getSign() {
+        return sign;
+    }
 }

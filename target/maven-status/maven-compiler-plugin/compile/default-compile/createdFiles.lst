@@ -9,8 +9,8 @@ model/InequalitiesList.class
 view/ManualInequalitiesGUI.class
 view/LayoutGUI.class
 model/Parser$ExceptionNotATerm.class
-model/ParserWithTwoDecisionVariables$ExceptionNotNull.class
 Main.class
+model/ParserWithTwoDecisionVariables$ExceptionNotZero.class
 view/GraphGUI.class
 view/InequalitiesListGUI.class
 model/Parser$ExceptionNotNull.class

@@ -12,6 +12,7 @@ public class ParserWithTwoDecisionVariables {
     private String toParse;
     private String term1;
     private String term2;
+    private String sign;
 
     public ParserWithTwoDecisionVariables(String src) {
         this.srcOriginal = src.replaceAll("\\s+", "");
@@ -24,11 +25,14 @@ public class ParserWithTwoDecisionVariables {
     public Inequality parse() throws Exception {
         inequality = new Inequality();
         parse_inequality();
-
+        sign = inequality.getSign();
+        if (term1 == null || term2 == null || sign == null) {
+            throw new Exception(" Something is null ");
+        }
         if (pos == srcOriginal.length()) {
             inequality.setExpreission(srcOriginal);
             return inequality;
-        } else {
+        }else{
             throw new Exception(" Source does not match the grammar . ");
         }
     }
@@ -36,21 +40,19 @@ public class ParserWithTwoDecisionVariables {
     public String tokenize(String regex) throws Exception {
 
         Pattern reg = Pattern.compile("^(" + regex + ")");
-        String s = "";
+        String s = null;
         if (!toParse.equals("")) {
             s = toParse;
-
         } else {
             s = src.trim();
         }
-        
+
         while (!s.equals("")) {
             boolean match = false;
             Matcher m = reg.matcher(s);
             if (m.find()) {
                 match = true;
                 String tok = m.group().trim();
-
                 if (!toParse.equals("")) {
                     toParse = m.replaceFirst("").trim();
                 } else {
@@ -96,6 +98,7 @@ public class ParserWithTwoDecisionVariables {
         String term = null;
         try {
             term = tokenize("[+|-]*[1-9]*[a-zA-Z][a-zA-Z0-9_]*");
+
         } catch (Exception e) {
             throw new ExceptionNotATerm(" Expecting pattern term ");
         }
@@ -147,8 +150,8 @@ public class ParserWithTwoDecisionVariables {
                 System.out.println("successfully parsed sign");
                 try {
                     parse_null();
-                } catch (ExceptionNotNull exceptionNotNull) {
-                    System.out.println("not null");
+                } catch (ExceptionNotZero exceptionNotNull) {
+                    System.out.println("not zero");
                 }
 
             } catch (ExceptionNotATerm e) {
@@ -170,7 +173,7 @@ public class ParserWithTwoDecisionVariables {
             System.out.println("First term is not valid");
             try {
                 parse_null();
-            } catch (ExceptionNotNull exceptionNotNull) {
+            } catch (ExceptionNotZero exceptionNotNull) {
                 System.out.println("the expression may have only one term, if not is not valid");
             }
             System.out.println("successfully parsed null");
@@ -197,12 +200,12 @@ public class ParserWithTwoDecisionVariables {
 
     }
 
-    private int parse_null() throws ExceptionNotNull {
+    private int parse_null() throws ExceptionNotZero {
         try {
             String term = tokenize("0");
             return Integer.parseInt(term);
         } catch (Exception e) {
-            throw new ExceptionNotNull("something else");
+            throw new ExceptionNotZero("something else");
         }
     }
 
@@ -213,8 +216,8 @@ public class ParserWithTwoDecisionVariables {
         }
     }
 
-    private class ExceptionNotNull extends Throwable {
-        public ExceptionNotNull(String something_else) {
+    private class ExceptionNotZero extends Throwable {
+        public ExceptionNotZero(String something_else) {
         }
     }
 
