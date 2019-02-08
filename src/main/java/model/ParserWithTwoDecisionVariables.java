@@ -23,7 +23,7 @@ public class ParserWithTwoDecisionVariables {
 
     public Inequality parse() throws Exception {
         inequality = new Inequality();
-        parse_OneSide();
+        parse_inequality();
 
         if (pos == srcOriginal.length()) {
             inequality.setExpreission(srcOriginal);
@@ -43,8 +43,7 @@ public class ParserWithTwoDecisionVariables {
         } else {
             s = src.trim();
         }
-
-
+        
         while (!s.equals("")) {
             boolean match = false;
             Matcher m = reg.matcher(s);
@@ -133,7 +132,7 @@ public class ParserWithTwoDecisionVariables {
     }
 
 
-    private void parse_OneSide() {
+    private void parse_inequality() {
 
         try {
             term1 = parse_term("first");
@@ -147,7 +146,7 @@ public class ParserWithTwoDecisionVariables {
                 }
                 System.out.println("successfully parsed sign");
                 try {
-                    parse_maybeNull();
+                    parse_null();
                 } catch (ExceptionNotNull exceptionNotNull) {
                     System.out.println("not null");
                 }
@@ -170,7 +169,7 @@ public class ParserWithTwoDecisionVariables {
         } catch (ExceptionNotATerm e) {
             System.out.println("First term is not valid");
             try {
-                parse_maybeNull();
+                parse_null();
             } catch (ExceptionNotNull exceptionNotNull) {
                 System.out.println("the expression may have only one term, if not is not valid");
             }
@@ -181,22 +180,32 @@ public class ParserWithTwoDecisionVariables {
                 System.out.println("invalid");
             }
             System.out.println("successfully parsed sign");
-//            parse_OneSide();
+            try {
+                term1 = parse_term("first");
+                System.out.println("successfully parsed first term");
+                try {
+                    term2 = parse_term("second");
+                } catch (ExceptionNotATerm e1) {
+                    System.out.println("invalid");
+                }
+            }catch(ExceptionNotATerm e2) {
+                System.out.println("invalid");
+            }
 
         }
 
 
     }
 
-    private int parse_maybeNull() throws ExceptionNotNull {
+    private int parse_null() throws ExceptionNotNull {
         try {
-
             String term = tokenize("0");
             return Integer.parseInt(term);
         } catch (Exception e) {
             throw new ExceptionNotNull("something else");
         }
     }
+
 
 
     private class NoWeightException extends Throwable {
@@ -213,4 +222,7 @@ public class ParserWithTwoDecisionVariables {
         public ExceptionNotATerm(String s) {
         }
     }
+
+
+
 }
