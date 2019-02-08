@@ -62,7 +62,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
             notifyObservers();
         }
     }
-
+//
 
     /**
      * Deletes a project that has the same name as the one supplied
@@ -90,19 +90,19 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      * @param oldInequality the current name of the project
      * @param newInequality the new name for the project
      */
-    public void changeInequality(String oldInequality, String newInequality)
-    {
-        for (int i = 0; i <inequalitiesContainer.size() ; i++)
-        {
-            if (((inequalitiesContainer.get(i)).getExpreission().equals(oldInequality)))
-            {
-                (inequalitiesContainer.get(i)).changeExpression(newInequality);
-            }
-        }
-
-        setChanged();
-        notifyObservers();
-    }
+//    public void changeInequality(String oldInequality, String newInequality)
+//    {
+//        for (int i = 0; i <inequalitiesContainer.size() ; i++)
+//        {
+//            if (((inequalitiesContainer.get(i)).getExpreission().equals(oldInequality)))
+//            {
+//                (inequalitiesContainer.get(i)).changeExpression(newInequality);
+//            }
+//        }
+//
+//        setChanged();
+//        notifyObservers();
+//    }
 
 
     /**
