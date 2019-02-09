@@ -56,7 +56,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         }
         if (insert == true) {
             this.inequalitiesContainer.add(x);
-            graph.addNodes(x.getParsedExpression());
+            graph.addNodes(x.getFirstUnknownVariable(),x.getSecondUnknownVariable(),x.getFirstWeight(),x.getSecondWeight(),x.getSign());
             graph.getPipe().pump();
             setChanged();
             notifyObservers();

@@ -53,9 +53,9 @@ public class Inequality  extends Observable implements Serializable {
 //    }
 
 //
-//    public String toString(){
-//        return expression;
-//    }
+    public String toString(){
+        return expression;
+    }
 
 
     public void tryUpdate() {

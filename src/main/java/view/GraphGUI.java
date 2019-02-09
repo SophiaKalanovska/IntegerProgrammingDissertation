@@ -78,7 +78,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 					list.add(Character.toString(nodes.charAt(i)));
 					list.add("<");
 					list.add(Character.toString(nodes.charAt(i + 1)));
-					addNodes(list);
+//					addNodes(list);
 
 					i = i + 1;
 			}
@@ -102,7 +102,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 					}else{
 						list.add(sb2.toString());
 					}
-					addNodes(list);
+//					addNodes(list);
 					i = i - 2;
 				}
 			}
@@ -110,22 +110,24 @@ public class GraphGUI extends JPanel implements ViewerListener{
 		}
 
 
-	public void addNodes(ArrayList<String> arrayEquation){
+	public void addNodes(String firstUnknownVariable, String secondUnknownVariable, int firstWeight , int secondWeigh, String sign){
 
-		graph.addEdge("" + i + "", arrayEquation.get(0), arrayEquation.get(2), true);
-		Node first = graph.getNode(arrayEquation.get(0));
-		Node second = graph.getNode(arrayEquation.get(2));
+		if (sign.equals("<") || sign.equals("<=") ){
+			graph.addEdge("" + i + "", firstUnknownVariable, secondUnknownVariable, true);
+		}else{
+			graph.addEdge("" + i + "", secondUnknownVariable, firstUnknownVariable, true);
+		}
+		Node first = graph.getNode(firstUnknownVariable);
+		Node second = graph.getNode(secondUnknownVariable);
 		first.setAttribute("ui.label",first.getId());
-		first.setAttribute("weight", 1);
+		first.setAttribute("weight", firstWeight);
 		second.setAttribute("ui.label",second.getId());
-		second.setAttribute("weight", 1);
+		second.setAttribute("weight", secondWeigh);
 		i++;
 		pipeIn.pump();
 
 		TarjanStronglyConnectedComponents tscc = calculateSCC();
 		color(tscc);
-
-
 
 	}
 

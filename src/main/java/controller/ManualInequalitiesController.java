@@ -40,7 +40,6 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
         }
     }
 
-
     /**
      * The action listener for the ManualIntegerInequalities panel
      *
@@ -62,7 +61,6 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                 System.out.println(r.getMessage());
             }
         }
-
     }
 
     @Override
@@ -77,7 +75,4 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     @Override
     public void mouseExited(MouseEvent e) {}
 
-
 }
-
-

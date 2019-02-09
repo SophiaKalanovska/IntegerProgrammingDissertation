@@ -25,7 +25,7 @@ public class LayoutGUI extends JPanel  {
   public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI){
 
     //welcome label
-    JLabel welcomeLabel = new JLabel("Graph Generator");
+    JLabel welcomeLabel = new JLabel("Inequalities solver");
     welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
     //welcome panel creation
     JPanel welcomePanel = new JPanel(new FlowLayout());
