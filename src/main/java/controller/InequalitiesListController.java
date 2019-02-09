@@ -52,9 +52,14 @@ public class InequalitiesListController implements ActionListener, MouseListener
 
         System.out.println("You clicked me manual and I don't know");
         if (e.getSource() instanceof JButton) {
-            System.out.println("you pressed delete");
-
-            inequalitiesList.deleteInequality(InequalitiesListGUI.getListSelectedValue());
+            System.out.println(((JButton) e.getSource()).getName());
+            if (((JButton) e.getSource()).getName().equals("delete")){
+                System.out.println(((JButton) e.getSource()).getName());
+                inequalitiesList.deleteInequality(InequalitiesListGUI.getListSelectedValue());
+            }else{
+                System.out.println(((JButton) e.getSource()).getName());
+                inequalitiesList.deleteAllInequalities();
+            }
 
         }
     }

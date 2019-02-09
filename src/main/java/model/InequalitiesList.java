@@ -7,22 +7,17 @@ import java.util.Observable;
 
 /**
  * This class represents a portofolio of Projects
- *
  */
 public class InequalitiesList extends Observable implements java.io.Serializable {
 
 
     private ArrayList<Inequality> inequalitiesContainer;
     private GraphGUI graph;
-//private HashMap<String, Projects> projectMap;
-
 
     /**
      * Creates a InequalitiesList object
-     *
      */
-    public InequalitiesList(GraphGUI graph)
-    {
+    public InequalitiesList(GraphGUI graph) {
         this.graph = graph;
         inequalitiesContainer = new ArrayList<Inequality>();
         //projectMap = new HashMap<String, Projects>();
@@ -33,8 +28,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param data the ArrayList of Projects that will constitute the newly created InequalitiesList object
      */
-    public InequalitiesList(ArrayList<Inequality> data)
-    {
+    public InequalitiesList(ArrayList<Inequality> data) {
         storeProject(data);
         setChanged();
         notifyObservers();
@@ -45,18 +39,16 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param x the project that is to be added to the wallet
      */
-    public void addInequality(Inequality x)
-    {
-        //projectMap.put(x.toString(), x);
+    public void addInequality(Inequality x) {
         boolean insert = true;
-        for (int i = 0; i <inequalitiesContainer.size() ; i++) {
+        for (int i = 0; i < inequalitiesContainer.size(); i++) {
             if (((inequalitiesContainer.get(i)).getExpreission().equals(x.getExpreission()))) {
                 insert = false;
             }
         }
         if (insert == true) {
             this.inequalitiesContainer.add(x);
-            graph.addNodes(x.getFirstUnknownVariable(),x.getSecondUnknownVariable(),x.getFirstWeight(),x.getSecondWeight(),x.getSign());
+            graph.addNodes(x.getFirstUnknownVariable(), x.getSecondUnknownVariable(), x.getFirstWeight(), x.getSecondWeight(), x.getSign());
             graph.getPipe().pump();
             setChanged();
             notifyObservers();
@@ -69,16 +61,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param x the name of the projects that has to be deleted
      */
-    public void deleteInequality(Inequality x)
-    {
-//        for (int i = 0 ; i < inequalitiesContainer.size() ; i++)
-//        {
-//            if (((inequalitiesContainer.get(i)).getExpreission()).equals(x.getExpreission()))
-//            {
-                graph.removeNodes(x.getParsedExpression());
-                inequalitiesContainer.remove(x);
-//            }
-//        }
+    public void deleteInequality(Inequality x) {
+        graph.removeNodes(x.getFirstUnknownVariable(), x.getSecondUnknownVariable(), x.getSign());
+        inequalitiesContainer.remove(x);
 
         setChanged();
         notifyObservers();
@@ -104,33 +89,36 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 //        notifyObservers();
 //    }
 
-
     /**
      * Returns the wallet as an ArrayList of Projects
      *
      * @return an ArrayList of projects that are contained in this wallet
      */
-    public ArrayList<Inequality> getProjectWallet()
-    {
+    public ArrayList<Inequality> getProjectWallet() {
         return inequalitiesContainer;
     }
 
 
-    public void storeProject(ArrayList<Inequality> data)
-    {
+    public void storeProject(ArrayList<Inequality> data) {
         this.inequalitiesContainer = data;
 
     }
 
     /**
      * Sends signal to the observers to update the view
-     *
      */
-    public void tryUpdate(){
+    public void tryUpdate() {
         setChanged();
         notifyObservers();
     }
 
 
-
+    public void deleteAllInequalities() {
+        for (int i = 0; i < inequalitiesContainer.size(); i++) {
+            graph.removeNodes(inequalitiesContainer.get(i).getFirstUnknownVariable(), inequalitiesContainer.get(i).getSecondUnknownVariable(), inequalitiesContainer.get(i).getSign());
+        }
+        inequalitiesContainer.removeAll(inequalitiesContainer);
+        setChanged();
+        notifyObservers();
+    }
 }

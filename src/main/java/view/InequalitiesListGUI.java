@@ -3,14 +3,16 @@ package view;
 import controller.InequalitiesListController;
 import model.Inequality;
 import model.InequalitiesList;
-import java.awt.Color;
-import java.awt.GridLayout;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import java.util.Observer;
 
+import static javax.swing.GroupLayout.Alignment.BASELINE;
+import static javax.swing.GroupLayout.Alignment.LEADING;
 
 
 /**
@@ -21,6 +23,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     private InequalitiesList info;
     private InequalitiesList observer;
     private JButton delete;
+    private JButton deleteAll;
 
     private DefaultListModel listModel;
     private JList projectsList;
@@ -31,23 +34,27 @@ public class InequalitiesListGUI extends JPanel implements Observer {
      */
     public InequalitiesListGUI() {
 
-        //create the list of the represented inequalities
         this.listModel = new DefaultListModel();
         this.projectsList = new JList(listModel);
         delete = new JButton("Delete Inequality");
+        delete.setName("delete");
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.getViewport().setView(projectsList);
         projectsList.setName("projectsList");
+        deleteAll = new JButton("Delete All Inequalities");
+        deleteAll.setName("deleteAll");
+////        deleteAll.setPreferredSize(new Dimension(40, 40));
 
+        this.setLayout(new BorderLayout());
+        this.add(projectsList, BorderLayout.CENTER);
+        this.add(deleteAll, BorderLayout.SOUTH);
+        this.add(delete, BorderLayout.EAST);
 
-        //border color
 
         this.setBackground(Color.WHITE);
-        this.setLayout(new GridLayout(1, 2));
-        this.add(projectsList);
-        this.add(delete);
-
     }
+
+
 
 
 
@@ -55,6 +62,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         System.out.println(" ManualInequalitiesGUI mouselistener added");
         delete.addMouseListener(controller);
         projectsList.addMouseListener(controller);
+        deleteAll.addMouseListener(controller);
     }
 
     public Inequality getListSelectedValue(){

@@ -25,6 +25,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	private ConnectedComponents cc;
 	private Map compCol;
 	private Random rand;
+//	private RandomInequalitiesGenerator randomInequalitiesGenerator;
 
 	private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
 
@@ -131,10 +132,14 @@ public class GraphGUI extends JPanel implements ViewerListener{
 
 	}
 
-	public void removeNodes(ArrayList<String> arrayEquation){
-		Node first = graph.getNode(arrayEquation.get(0));
-		Node second = graph.getNode(arrayEquation.get(2));
-		graph.removeEdge(first,second);
+	public void removeNodes(String firstUnknownVariable, String secondUnknownVariable, String sign){
+		Node first = graph.getNode(firstUnknownVariable);
+		Node second = graph.getNode(secondUnknownVariable);
+		if (sign.equals("<") || sign.equals("<=") ){
+			graph.removeEdge(first,second);
+		}else{
+			graph.removeEdge(second, first);
+		}
 		pipeIn.pump();
 		System.out.print("degree 1 :" + first.getDegree());
 		System.out.print("degree 2 :" +second.getDegree());
