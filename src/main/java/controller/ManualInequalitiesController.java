@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import model.Parser.ParserWithTwoDecisionVariables;
+import model.Parser.Parser;
 import view.*;
 import model.*;
 /**
@@ -14,7 +14,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
     private InequalitiesList inequalitiesList;
     private String enterInequality;
-    private ParserWithTwoDecisionVariables parser;
+    private Parser parser;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
@@ -55,7 +55,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
         else if (e.getSource() instanceof JTextField){
             JTextField enter = (JTextField) e.getSource();
             enterInequality = enter.getText();
-            this.parser = new ParserWithTwoDecisionVariables(enterInequality);
+            this.parser = new Parser(enterInequality);
             try {
                 Inequality parsedExpression = parser.parse();
                 inequalitiesList.addInequality(parsedExpression);

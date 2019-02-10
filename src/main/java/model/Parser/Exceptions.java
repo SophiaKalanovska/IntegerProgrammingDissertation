@@ -16,4 +16,9 @@ public class Exceptions {
         ExceptionNotATerm(String s) {
         }
     }
+
+    static class ExceptionNotNumber extends Throwable {
+        ExceptionNotNumber(String s) {
+        }
+    }
 }

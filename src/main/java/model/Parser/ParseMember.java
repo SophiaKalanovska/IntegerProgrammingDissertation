@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParseMember {
-    private final ParserWithTwoDecisionVariables parser;
+    private final Parser parser;
 
-    public ParseMember(ParserWithTwoDecisionVariables parser) {
+    public ParseMember(Parser parser) {
         this.parser = parser;
     }
 
@@ -123,7 +123,7 @@ public class ParseMember {
 
     void parse_sign() throws Exception {
         parser.sign = tokenize("<|>|<=|>=");
-        parser.inequality.setSign(parser.getSign());
+        parser.inequality.setSign(parser.sign);
     }
 
     void parse_null() throws Exceptions.ExceptionNotZero {
@@ -133,4 +133,13 @@ public class ParseMember {
             throw new Exceptions.ExceptionNotZero("something else");
         }
     }
+
+    public void parse_number() throws Exceptions.ExceptionNotNumber {
+        try {
+            tokenize("[0-9]+");
+        } catch (Exception e) {
+            throw new Exceptions.ExceptionNotNumber("not a number");
+        }
+    }
+
 }

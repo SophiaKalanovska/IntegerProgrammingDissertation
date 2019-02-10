@@ -1,4 +1,5 @@
 model/Parser/Exceptions$ExceptionNotZero.class
+model/Parser/Parser.class
 model/Parser/ParseMember.class
 model/Inequality.class
 controller/RandomInequalitiesController.class
@@ -13,8 +14,10 @@ view/InequalitiesListGUI.class
 model/Parser/Exceptions.class
 model/DecisionVariable.class
 view/RandomInequalitiesGUI.class
+model/Parser/ParserWithOneDecisionVariable.class
 Container.class
 controller/InequalitiesListController.class
 controller/ManualInequalitiesController.class
 model/RandomInequalitiesGenerator.class
 model/Parser/ParserWithTwoDecisionVariables.class
+model/Parser/Exceptions$ExceptionNotNumber.class
