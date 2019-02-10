@@ -2,6 +2,8 @@ package controller;
 import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import model.Parser.ParserWithTwoDecisionVariables;
 import view.*;
 import model.*;
 /**
