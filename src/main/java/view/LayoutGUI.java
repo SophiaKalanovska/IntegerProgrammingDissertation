@@ -1,7 +1,5 @@
 package view;
 
-import model.InequalitiesList;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Color;
@@ -91,12 +89,12 @@ public class LayoutGUI extends JPanel  {
   }
 
 
-  public void setPanel(JPanel p){
-    removeAll();
-    revalidate();
-    repaint();
-    add(p, BorderLayout.CENTER);
-  }
+//  public void setPanel(JPanel p){
+//    removeAll();
+//    revalidate();
+//    repaint();
+//    add(p, BorderLayout.CENTER);
+//  }
 
 
 

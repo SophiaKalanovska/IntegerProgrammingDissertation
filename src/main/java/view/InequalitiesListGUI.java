@@ -3,17 +3,11 @@ package view;
 import controller.InequalitiesListController;
 import model.Inequality;
 import model.InequalitiesList;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
 import java.util.Observer;
-
-import static javax.swing.GroupLayout.Alignment.BASELINE;
-import static javax.swing.GroupLayout.Alignment.LEADING;
-
 
 /**
  * Home is the class where the Home panel is built implements Observer
@@ -43,7 +37,6 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         projectsList.setName("projectsList");
         deleteAll = new JButton("Delete All Inequalities");
         deleteAll.setName("deleteAll");
-////        deleteAll.setPreferredSize(new Dimension(40, 40));
 
         this.setLayout(new BorderLayout());
         this.add(projectsList, BorderLayout.CENTER);
@@ -82,8 +75,6 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     public void update(Observable obs, Object obj) {
         observer = (InequalitiesList) obs;
         UpdateJList(observer.getProjectWallet());
-        //this.clearProjectNameField();
-
         repaint();
         revalidate();
     }

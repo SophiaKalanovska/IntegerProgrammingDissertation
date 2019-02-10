@@ -48,7 +48,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         }
         if (insert == true) {
             this.inequalitiesContainer.add(x);
-            graph.addNodes(x.getFirstUnknownVariable(), x.getSecondUnknownVariable(), x.getFirstWeight(), x.getSecondWeight(), x.getSign());
+            graph.addNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight(), x.getSign());
             graph.getPipe().pump();
             setChanged();
             notifyObservers();
@@ -62,7 +62,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      * @param x the name of the projects that has to be deleted
      */
     public void deleteInequality(Inequality x) {
-        graph.removeNodes(x.getFirstUnknownVariable(), x.getSecondUnknownVariable(), x.getSign());
+        graph.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getSign());
         inequalitiesContainer.remove(x);
 
         setChanged();
@@ -115,7 +115,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     public void deleteAllInequalities() {
         for (int i = 0; i < inequalitiesContainer.size(); i++) {
-            graph.removeNodes(inequalitiesContainer.get(i).getFirstUnknownVariable(), inequalitiesContainer.get(i).getSecondUnknownVariable(), inequalitiesContainer.get(i).getSign());
+            graph.removeNodes(inequalitiesContainer.get(i).getFirstDecisionVariableValue(), inequalitiesContainer.get(i).getSecondDecisionVariableValue(), inequalitiesContainer.get(i).getSign());
         }
         inequalitiesContainer.removeAll(inequalitiesContainer);
         setChanged();

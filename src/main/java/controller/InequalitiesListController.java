@@ -22,7 +22,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private String jtfProjectTField;
     private InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
-    private Parser parser;
     private GraphGUI graph;
 
     /**
