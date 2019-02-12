@@ -34,4 +34,10 @@ public class ParserWithOneDecisionVariable {
         }
 
     }
+
+    public void clear() {
+        parser.src = parser.srcOriginal;
+        parser.pos = 0 ;
+        parser.toParse = "";
+    }
 }

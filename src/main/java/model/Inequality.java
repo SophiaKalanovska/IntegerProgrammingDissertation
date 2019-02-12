@@ -12,6 +12,7 @@ public class Inequality  extends Observable implements Serializable {
     private DecisionVariable secondDecisionVariable;
     private String sign;
     private String expression;
+    private int bound;
 
     public Inequality() {
         firstDecisionVariable = new DecisionVariable();
@@ -23,7 +24,7 @@ public class Inequality  extends Observable implements Serializable {
         return this.expression;
     }
 
-    public String setExpreission( String expression) {
+    public String setExpression(String expression) {
         return this.expression = expression;
     }
 

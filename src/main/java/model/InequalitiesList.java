@@ -41,15 +41,20 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      */
     public void addInequality(Inequality x) {
         boolean insert = true;
+        String decision = x.getSecondDecisionVariableValue();
         for (int i = 0; i < inequalitiesContainer.size(); i++) {
             if (((inequalitiesContainer.get(i)).getExpreission().equals(x.getExpreission()))) {
                 insert = false;
             }
         }
-        if (insert == true) {
+        if( decision != null && insert == true){
             this.inequalitiesContainer.add(x);
             graph.addNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight(), x.getSign());
             graph.getPipe().pump();
+            setChanged();
+            notifyObservers();
+        }else{
+            this.inequalitiesContainer.add(x);
             setChanged();
             notifyObservers();
         }

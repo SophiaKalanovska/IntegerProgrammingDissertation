@@ -31,7 +31,7 @@ public class ParseMember {
                     parser.src = m.replaceFirst("").trim();
                     parser.pos = parser.pos + tok.length();
                 }
-                System.out.println(tok);
+
                 return tok;
             }
             if (!match) throw new Exception("Unexpected character in input: " + s);

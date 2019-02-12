@@ -10,6 +10,7 @@ public class Parser {
     protected String src;
     protected String srcOriginal;
     protected int pos;
+    protected boolean hasZero;
     protected Inequality inequality;
     protected String toParse;
     protected String term1;
@@ -30,13 +31,19 @@ public class Parser {
             if (term1 == null || term2 == null || sign == null) {
                 throw new Exception(" Something is null ");
             }
+            if (hasZero){
+                inequality.getSecondDecisionVariable().changeSignVariable();
+            }
             if (pos == srcOriginal.length()) {
-                inequality.setExpreission(srcOriginal);
+                inequality.setExpression(srcOriginal);
                 return inequality;
             }
         } catch (Exceptions.ExceptionNotATerm exceptionNotATerm) {
             try {
+                parserWithOneDecisionVariable.clear();
                 parserWithOneDecisionVariable.parse_inequality();
+                inequality.setExpression(srcOriginal);
+                return inequality;
             } catch (Exceptions.ExceptionNotATerm exceptionNotATerm1) {
                 throw new Exception(" Source does not match the grammar. ");
             }

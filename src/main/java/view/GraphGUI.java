@@ -1,6 +1,8 @@
 package view;
 
 import javax.swing.JPanel;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Random;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.ui.swingViewer.ViewPanel;
@@ -15,6 +17,8 @@ import java.awt.Color ;
 import org.graphstream.graph.*;
 import org.graphstream.graph.implementations.*;
 
+import static java.lang.Math.round;
+
 public class GraphGUI extends JPanel implements ViewerListener{
 
 	private ViewPanel view;
@@ -25,6 +29,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	private ConnectedComponents cc;
 	private Map compCol;
 	private Random rand;
+	private static DecimalFormat df2 = new DecimalFormat(".##");
 //	private RandomInequalitiesGenerator randomInequalitiesGenerator;
 
 	private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
@@ -34,6 +39,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 		graph = new MultiGraph("Strongly connected components");
 		compCol = new HashMap();
 		rand = new Random();
+		df2.setRoundingMode(RoundingMode.UP);
 
 		String css = "edge .notintree {size:1px;fill-color:gray;} " +
 		"edge .intree {size:3px;fill-color:black;}";
@@ -113,11 +119,16 @@ public class GraphGUI extends JPanel implements ViewerListener{
 
 	public void addNodes(String firstUnknownVariable, String secondUnknownVariable, int firstWeight , int secondWeigh, String sign){
 
+		Edge edge = null;
 		if (sign.equals("<") || sign.equals("<=") ){
-			graph.addEdge("" + i + "", firstUnknownVariable, secondUnknownVariable, true);
+			edge = graph.addEdge("" + i + "", firstUnknownVariable, secondUnknownVariable, true);
 		}else{
-			graph.addEdge("" + i + "", secondUnknownVariable, firstUnknownVariable, true);
+			edge = graph.addEdge("" + i + "", secondUnknownVariable, firstUnknownVariable, true);
 		}
+//		edge.setAttribute(String.valueOf(firstWeight/secondWeigh));
+		double weightOfEdge = (double)firstWeight/secondWeigh;
+		edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
+		edge.addAttribute("ui.style","text-alignment:above;");
 		Node first = graph.getNode(firstUnknownVariable);
 		Node second = graph.getNode(secondUnknownVariable);
 		first.setAttribute("ui.label",first.getId());

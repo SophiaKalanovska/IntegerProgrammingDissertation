@@ -4,6 +4,8 @@ public class DecisionVariable {
     private int weight;
     private String sign;
     private String variable;
+    private int lowerBound;
+    private int upperBound;
 
 
     public DecisionVariable(){
@@ -11,8 +13,6 @@ public class DecisionVariable {
         variable = null;
         sign = "+";
     }
-
-
 
     public void changeSignVariable(){
         if (sign.equals("+")){
@@ -45,6 +45,22 @@ public class DecisionVariable {
 
     public void setVariable(String variable) {
         this.variable = variable;
+    }
+
+    public int getLowerBound() {
+        return lowerBound;
+    }
+
+    public void setLowerBound(int lowerBound) {
+        this.lowerBound = lowerBound;
+    }
+
+    public int getUpperBound() {
+        return upperBound;
+    }
+
+    public void setUpperBound(int upperBound) {
+        this.upperBound = upperBound;
     }
 //    public String getVariable() {
 //        return variable;
