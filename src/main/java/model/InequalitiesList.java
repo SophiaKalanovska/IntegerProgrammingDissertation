@@ -1,5 +1,6 @@
 package model;
 
+import controller.GraphController;
 import view.GraphGUI;
 
 import java.util.ArrayList;
@@ -12,13 +13,13 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
 
     private ArrayList<Inequality> inequalitiesContainer;
-    private GraphGUI graph;
+    private GraphController graphController;
 
     /**
      * Creates a InequalitiesList object
      */
-    public InequalitiesList(GraphGUI graph) {
-        this.graph = graph;
+    public InequalitiesList(GraphController graphController) {
+        this.graphController = graphController;
         inequalitiesContainer = new ArrayList<Inequality>();
         //projectMap = new HashMap<String, Projects>();
     }
@@ -49,8 +50,8 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         }
         if( decision != null && insert == true){
             this.inequalitiesContainer.add(x);
-            graph.addNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight(), x.getSign());
-            graph.getPipe().pump();
+            graphController.addNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight(), x.getSign());
+            graphController.getPipeIn().pump();
             setChanged();
             notifyObservers();
         }else{
@@ -67,7 +68,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      * @param x the name of the projects that has to be deleted
      */
     public void deleteInequality(Inequality x) {
-        graph.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getSign());
+        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getSign());
         inequalitiesContainer.remove(x);
 
         setChanged();
@@ -120,7 +121,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     public void deleteAllInequalities() {
         for (int i = 0; i < inequalitiesContainer.size(); i++) {
-            graph.removeNodes(inequalitiesContainer.get(i).getFirstDecisionVariableValue(), inequalitiesContainer.get(i).getSecondDecisionVariableValue(), inequalitiesContainer.get(i).getSign());
+            graphController.removeNodes(inequalitiesContainer.get(i).getFirstDecisionVariableValue(), inequalitiesContainer.get(i).getSecondDecisionVariableValue(), inequalitiesContainer.get(i).getSign());
         }
         inequalitiesContainer.removeAll(inequalitiesContainer);
         setChanged();

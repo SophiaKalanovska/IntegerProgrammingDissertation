@@ -14,16 +14,16 @@ import view.*;
 public class RandomInequalitiesController implements ActionListener, MouseListener {
 
     private RandomInequalitiesGUI randomInequalitiesGUI;
-    private GraphGUI graph;
+    private GraphController graph;
 
     /**
      * Constructs a Controller for the LayoutGUI panel
      *
      * @param randomInequalitiesGUI the LayoutGUI panel that this class will control
      */
-    public RandomInequalitiesController(RandomInequalitiesGUI randomInequalitiesGUI,  GraphGUI graph){
+    public RandomInequalitiesController(RandomInequalitiesGUI randomInequalitiesGUI,  GraphController graphController){
         this.randomInequalitiesGUI = randomInequalitiesGUI;
-        this.graph = graph;
+        this.graph = graphController;
 
         randomInequalitiesGUI.addControllers(this);
         randomInequalitiesGUI.addMouseListener(this);

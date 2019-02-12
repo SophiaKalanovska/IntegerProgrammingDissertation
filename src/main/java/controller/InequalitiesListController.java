@@ -22,19 +22,19 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private String jtfProjectTField;
     private InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
-    private GraphGUI graph;
+    private GraphController graph;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphGUI graph){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController){
 
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
-        this.graph = graph;
+        this.graph = graphController;
 
         InequalitiesListGUI.addMouseListener(this);
 

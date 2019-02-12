@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/SolutionPanel/IntegerAssignmentGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/GraphController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LowerBoundClusterListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LowerBoundClusterListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LowerBoundClusterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SolutionPanel/LowerBoundClusterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SolutionGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/UpperBoundClusterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SolutionPanel/UpperBoundClusterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GraphGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GraphGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LowerBoundClusterListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LowerBoundClusterListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/LayoutGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LayoutGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/LowerBoundClusterGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/UpperBoundClusterGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/InequalitiesListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/InequalitiesListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/InequalitiesList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/InequalitiesList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GraphGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GraphGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,36 +30,21 @@
       <file leaf-file-name="LayoutGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/LayoutGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1346">
-              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+            <state relative-caret-position="435">
+              <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1549992756010" expanded="true" signature="2476:2478" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridLayout.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/GridLayout.java">
+      <file leaf-file-name="RandomInequalitiesController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="164" selection-start-line="164" selection-end-line="165" />
-              <folding>
-                <element signature="e#4996#4997#0" expanded="true" />
-                <element signature="e#5034#5035#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BoundsGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -70,7 +52,7 @@
       <file leaf-file-name="LowerBoundClusterGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/LowerBoundClusterGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
+            <state relative-caret-position="184">
               <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -79,11 +61,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpperBoundClusterGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BoundsGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InequalitiesListController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpperBoundClusterGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/UpperBoundClusterGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state relative-caret-position="225">
+              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,29 +97,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntegerAssignmentGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/IntegerAssignmentGUI.java">
+      <file leaf-file-name="InequalitiesList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+            <state relative-caret-position="-521">
+              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SCCClusterList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/SCCClusterList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3196#3197#0" expanded="true" />
-                <element signature="e#3240#3241#0" expanded="true" />
-                <element signature="e#2249#2250#0" expanded="true" />
-                <element signature="e#2289#2290#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,8 +112,8 @@
       <file leaf-file-name="Container.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="41" column="55" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="55" />
+            <state relative-caret-position="363">
+              <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,13 +121,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InequalitiesListGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java">
+      <file leaf-file-name="GraphController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/GraphController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="-231">
+              <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1045#1053#0" expanded="true" />
+                <element signature="e#6053#6054#0" expanded="true" />
+                <element signature="e#6094#6095#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphGUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/GraphGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3316#3317#0" expanded="true" />
+                <element signature="e#3335#3336#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,10 +174,13 @@
       <find>start</find>
       <find>sign</find>
       <find>inequ</find>
-      <find>get</find>
       <find>set</find>
       <find>getSign</find>
       <find>setExpr</find>
+      <find>graph</find>
+      <find>grap</find>
+      <find>getI</find>
+      <find>get</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/model</dir>
@@ -182,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/view/Algorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/GraphGeneratorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/MyFullGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/GraphGenerator.java" />
@@ -197,12 +206,10 @@
         <option value="$PROJECT_DIR$/src/main/java/view/Container.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/GUILayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/RandomInequalitiesGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/NoWeightException.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ParserExceptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/UnknownVariable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/ManualInequalitiesGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/InequalitiesListGUI.java" />
@@ -214,10 +221,8 @@
         <option value="$PROJECT_DIR$/src/main/java/model/DecisionVariable.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Parser/ParserWithTwoDecisionVariables.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Inequality.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Parser/ParseMember.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/GraphGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/UpperLowerBoundList.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/LowerUpperBoundClusterListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/LowerUpperBoundClusterGUI.java" />
@@ -226,13 +231,18 @@
         <option value="$PROJECT_DIR$/src/main/java/view/LowerBoundClusterGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/UpperBoundClusterGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/BoundsGUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/SolutionGUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Container.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/SolutionPanel/IntegerAssignmentGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/SolutionPanel/LowerBoundClusterGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/SolutionPanel/UpperBoundClusterGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Container.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/InequalitiesList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/LayoutGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/GraphController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/GraphGUI.java" />
       </list>
     </option>
   </component>
@@ -378,6 +388,9 @@
       <recent name="model.Parser" />
       <recent name="model" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="controller" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="view.SolutionPanel" />
       <recent name="controller" />
@@ -502,32 +515,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="46" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/ReentrantLock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="205" selection-start-line="205" selection-end-line="205" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/NoWeightException.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/ParserExceptions.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Parser.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ProjectWalletTest.java" />
@@ -587,16 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="353" column="23" selection-start-line="353" selection-start-column="23" selection-end-line="353" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,16 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/GraphGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1735">
-          <caret line="135" column="55" lean-forward="true" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/SCCCluster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -817,16 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -854,16 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/awt/GridLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -882,26 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/LayoutGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1346">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="41" column="55" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/IntegerAssignmentGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -912,9 +843,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/UpperBoundClusterGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/InequalitiesListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/RandomInequalitiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/InequalitiesList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-521">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/LowerBoundClusterGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
+        <state relative-caret-position="184">
           <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -922,12 +900,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/UpperBoundClusterGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/SolutionPanel/BoundsGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        <state relative-caret-position="165">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/LayoutGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1549992756010" expanded="true" signature="2476:2478" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GraphController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1045#1053#0" expanded="true" />
+            <element signature="e#6053#6054#0" expanded="true" />
+            <element signature="e#6094#6095#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/GraphGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3316#3317#0" expanded="true" />
+            <element signature="e#3335#3336#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,7 @@
 view/SolutionPanel/IntegerAssignmentGUI.class
 model/Parser/Exceptions$ExceptionNotZero.class
 model/SCCCluster.class
+controller/GraphController.class
 model/Parser/ParseMember.class
 view/LayoutGUI.class
 Main.class

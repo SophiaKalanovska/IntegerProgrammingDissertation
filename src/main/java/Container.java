@@ -17,8 +17,9 @@ public class Container extends JFrame {
 
 	public Container(){
 
+
 		GraphGUI graph = new GraphGUI();
-        final InequalitiesList inequalitiesList = new InequalitiesList(graph);
+        final InequalitiesList inequalitiesList = new InequalitiesList(graph.graphController);
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
 		LowerBoundClusterGUI lowerBoundClusterGUI = new LowerBoundClusterGUI();
@@ -30,8 +31,9 @@ public class Container extends JFrame {
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
 
         //controller creation
-		new RandomInequalitiesController(randomInequalitiesGUI, graph);
-		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph);
+		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
+		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController);
+
 
 
         inequalitiesList.addObserver(inequalitiesListGUI);
