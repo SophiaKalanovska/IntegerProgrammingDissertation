@@ -13,7 +13,6 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
     private SCCClusterList observer;
-
     private DefaultListModel lowerBoundClusterListModel;
     private JList lowerBoundClusterList;
 

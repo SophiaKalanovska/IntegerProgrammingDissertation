@@ -1,16 +1,12 @@
 package model;
 
 import controller.GraphController;
-import view.GraphGUI;
-
 import java.util.ArrayList;
 import java.util.Observable;
-
 /**
  * This class represents a portofolio of Projects
  */
 public class InequalitiesList extends Observable implements java.io.Serializable {
-
 
     private ArrayList<Inequality> inequalitiesContainer;
     private GraphController graphController;
@@ -70,7 +66,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     public void deleteInequality(Inequality x) {
         graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getSign());
         inequalitiesContainer.remove(x);
-
         setChanged();
         notifyObservers();
     }

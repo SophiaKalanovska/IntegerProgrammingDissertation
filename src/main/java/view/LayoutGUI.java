@@ -1,8 +1,10 @@
 package view;
 
+import view.OperationsOnInequalities.InequalitiesListGUI;
+import view.OperationsOnInequalities.ManualInequalitiesGUI;
+import view.OperationsOnInequalities.RandomInequalitiesGUI;
 import view.SolutionPanel.BoundsGUI;
 import view.SolutionPanel.IntegerAssignmentGUI;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Color;

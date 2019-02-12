@@ -1,4 +1,4 @@
-package view;
+package view.OperationsOnInequalities;
 
 import controller.InequalitiesListController;
 import model.Inequality;
@@ -18,7 +18,6 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     private InequalitiesList observer;
     private JButton delete;
     private JButton deleteAll;
-
     private DefaultListModel listModel;
     private JList projectsList;
 
@@ -47,10 +46,6 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         this.setBackground(Color.WHITE);
     }
 
-
-
-
-
     public void addMouseListener(InequalitiesListController controller){
         System.out.println(" ManualInequalitiesGUI mouselistener added");
         delete.addMouseListener(controller);
@@ -70,7 +65,6 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         projectsList.setModel(listModel);
     }
 
-
     @Override
     public void update(Observable obs, Object obj) {
         observer = (InequalitiesList) obs;
@@ -78,8 +72,4 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         repaint();
         revalidate();
     }
-
-
-
-
 }

@@ -1,7 +1,6 @@
 package model;
 
 import view.GraphGUI;
-
 import java.util.ArrayList;
 import java.util.Observable;
 

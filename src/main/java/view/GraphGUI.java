@@ -1,8 +1,6 @@
 package view;
 
 import javax.swing.JPanel;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import controller.GraphController;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.ui.swingViewer.ViewPanel;
@@ -10,10 +8,8 @@ import org.graphstream.ui.view.ViewerListener;
 import org.graphstream.ui.view.ViewerPipe;
 import org.graphstream.graph.Graph;
 import org.graphstream.algorithm.ConnectedComponents;
-
 import org.graphstream.graph.implementations.*;
 
-import static java.lang.Math.round;
 
 public class GraphGUI extends JPanel implements ViewerListener{
 
@@ -30,7 +26,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 		graphController = new GraphController(this, graph);
 
 		String css = "edge .notintree {size:1px;fill-color:gray;} " +
-		"edge .intree {size:3px;fill-color:black;}";
+				"edge .intree {size:3px;fill-color:black;}";
 		graph.setAttribute("ui.stylesheet", css);
 		String cssNode = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ;z-index: 0; text-color: black;}";
 		graph.setAttribute("ui.stylesheet", cssNode);
@@ -50,9 +46,12 @@ public class GraphGUI extends JPanel implements ViewerListener{
 
 	}
 
-
 	public ViewerPipe getPipe() {
 		return pipeIn;
+	}
+
+	public ViewPanel getView(){
+		return view;
 	}
 
 	public void viewClosed(String id) {
@@ -67,8 +66,6 @@ public class GraphGUI extends JPanel implements ViewerListener{
 		System.out.println("Button released on node "+id);
 	}
 
-	public ViewPanel getView(){
-		return view;
-	}
+
 
 }

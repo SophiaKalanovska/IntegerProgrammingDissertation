@@ -5,7 +5,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import view.*;
+
+import view.OperationsOnInequalities.RandomInequalitiesGUI;
 
 /**
  * This class will represent the Controller for the LayoutGUI Panel

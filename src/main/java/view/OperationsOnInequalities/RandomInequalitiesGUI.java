@@ -1,4 +1,4 @@
-package view;
+package view.OperationsOnInequalities;
 
 import controller.RandomInequalitiesController;
 import javax.swing.*;
@@ -6,10 +6,7 @@ import java.awt.*;
 
 
 public class RandomInequalitiesGUI extends JPanel {
-
     private JTextField randomNumberInequality;
-
-
 
     public RandomInequalitiesGUI(){
 

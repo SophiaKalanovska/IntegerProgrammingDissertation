@@ -1,11 +1,12 @@
 package controller;
+
 import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-
 import model.Parser.Parser;
-import view.*;
 import model.*;
+import view.OperationsOnInequalities.ManualInequalitiesGUI;
+
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *

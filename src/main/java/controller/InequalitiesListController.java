@@ -1,15 +1,12 @@
 package controller;
 import java.awt.event.*;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import view.*;
 
 import javax.swing.JPanel;
-import javax.swing.JList;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import model.*;
+import view.OperationsOnInequalities.InequalitiesListGUI;
+
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
@@ -20,7 +17,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private InequalitiesList inequalitiesList;
     private String enterInequality;
     private String jtfProjectTField;
-    private InequalitiesListGUI InequalitiesListGUI;
+    private view.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
     private GraphController graph;
 

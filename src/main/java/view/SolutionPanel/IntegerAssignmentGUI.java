@@ -14,7 +14,6 @@ public class IntegerAssignmentGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
     private SCCClusterList observer;
-
     private DefaultListModel intgerAssignementListModel;
     private JList intgerAssignementList;
 

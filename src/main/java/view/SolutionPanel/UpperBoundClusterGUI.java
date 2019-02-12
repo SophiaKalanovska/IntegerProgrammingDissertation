@@ -3,7 +3,6 @@ package view.SolutionPanel;
 import controller.LowerBoundClusterListController;
 import model.SCCCluster;
 import model.SCCClusterList;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

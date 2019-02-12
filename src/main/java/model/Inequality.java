@@ -1,10 +1,7 @@
-
 package model;
 
 import java.io.Serializable;
 import java.util.Observable;
-
-
 
 public class Inequality  extends Observable implements Serializable {
 
@@ -18,7 +15,6 @@ public class Inequality  extends Observable implements Serializable {
         firstDecisionVariable = new DecisionVariable();
         secondDecisionVariable = new DecisionVariable();
     }
-
 
     public String getExpreission() {
         return this.expression;

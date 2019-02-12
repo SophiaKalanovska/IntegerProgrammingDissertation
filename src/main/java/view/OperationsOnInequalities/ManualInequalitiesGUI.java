@@ -1,4 +1,4 @@
-package view;
+package view.OperationsOnInequalities;
 
 import controller.ManualInequalitiesController;
 import java.awt.FlowLayout;
@@ -21,13 +21,11 @@ public class ManualInequalitiesGUI extends JPanel {
         //create the textField for inputting the inequalities
         this.enterInequality = new JTextField("Enter inequality...", 20);
         this.enterInequality.setName("inequalityField");
-
         this.setBackground(Color.WHITE);
         this.setLayout( new FlowLayout(FlowLayout.LEFT));
         this.add(enterInequality);
 
     }
-
 
     public void addControllers(ManualInequalitiesController controller){
         System.out.println(" ManualInequalitiesGUI controller added");
@@ -39,9 +37,4 @@ public class ManualInequalitiesGUI extends JPanel {
         System.out.println(" ManualInequalitiesGUI mouselistener added");
         enterInequality.addMouseListener(controller);
     }
-
-//    public Inequalitiy getListSelectedValue(){
-//        return (Inequalities) projectsList.getSelectedValue();
-//    }
-
 }
