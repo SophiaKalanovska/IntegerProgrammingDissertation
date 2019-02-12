@@ -2,6 +2,7 @@ package controller;
 
 import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 import org.graphstream.graph.Edge;
+import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.ui.view.ViewerPipe;
 import view.GraphGUI;
@@ -14,14 +15,17 @@ import java.util.Random;
 
 public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
+    private final Graph graph;
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
     private Random rand;
     private Map compCol;
+
     private int id;
 
 
-    public GraphController(GraphGUI graphGUI) {
+    public GraphController(GraphGUI graphGUI, Graph graph) {
         this.graphGUI = graphGUI;
+        this.graph = graph;
         this.rand = new Random();
         compCol = new HashMap();
         id = 0;
@@ -42,7 +46,7 @@ public class GraphController implements Serializable {
 
 
         System.out.println(nodes);
-        for (int i = 0; i < n - 1 && graphGUI.getGraph().getNodeCount() < 18; ) {
+        for (int i = 0; i < n - 1 && graph.getNodeCount() < 18; ) {
 
             ArrayList<String> list = new ArrayList<String>();
             list.add(Character.toString(nodes.charAt(i)));
@@ -53,8 +57,8 @@ public class GraphController implements Serializable {
             i = i + 1;
         }
         // add if the number of inequalities are more than 30
-        System.out.println("nodes so far" + graphGUI.getGraph().getNodeCount());
-        if (graphGUI.getGraph().getNodeCount() > 17 || n > 30) {
+        System.out.println("nodes so far" + graph.getNodeCount());
+        if (graph.getNodeCount() > 17 || n > 30) {
             for (int i = n - 1; i > 26; ) {
                 System.out.println(i);
                 ArrayList<String> list = new ArrayList<String>();
@@ -83,20 +87,18 @@ public class GraphController implements Serializable {
 
         Edge edge = null;
         if (sign.equals("<") || sign.equals("<=")) {
-            edge = graphGUI.getGraph().addEdge("" + id + "", firstUnknownVariable, secondUnknownVariable, true);
+            edge = graph.addEdge("" + id + "", firstUnknownVariable, secondUnknownVariable, true);
         } else {
-            edge = graphGUI.getGraph().addEdge("" + id + "", secondUnknownVariable, firstUnknownVariable, true);
+            edge = graph.addEdge("" + id + "", secondUnknownVariable, firstUnknownVariable, true);
         }
 //		edge.setAttribute(String.valueOf(firstWeight/secondWeigh));
         double weightOfEdge = (double) firstWeight / secondWeigh;
         edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
         edge.addAttribute("ui.style", "text-alignment:above;");
-        Node first = graphGUI.getGraph().getNode(firstUnknownVariable);
-        Node second = graphGUI.getGraph().getNode(secondUnknownVariable);
+        Node first = graph.getNode(firstUnknownVariable);
+        Node second = graph.getNode(secondUnknownVariable);
         first.setAttribute("ui.label", first.getId());
-        first.setAttribute("weight", firstWeight);
         second.setAttribute("ui.label", second.getId());
-        second.setAttribute("weight", secondWeigh);
         id ++;
         getPipeIn().pump();
 
@@ -106,21 +108,21 @@ public class GraphController implements Serializable {
     }
 
     public void removeNodes(String firstUnknownVariable, String secondUnknownVariable, String sign) {
-        Node first = graphGUI.getGraph().getNode(firstUnknownVariable);
-        Node second = graphGUI.getGraph().getNode(secondUnknownVariable);
+        Node first = graph.getNode(firstUnknownVariable);
+        Node second = graph.getNode(secondUnknownVariable);
         if (sign.equals("<") || sign.equals("<=")) {
-            graphGUI.getGraph().removeEdge(first, second);
+            graph.removeEdge(first, second);
         } else {
-            graphGUI.getGraph().removeEdge(second, first);
+            graph.removeEdge(second, first);
         }
         getPipeIn().pump();
         System.out.print("degree 1 :" + first.getDegree());
         System.out.print("degree 2 :" + second.getDegree());
         if (first.getDegree() == 0) {
-            graphGUI.getGraph().removeNode(first);
+            graph.removeNode(first);
         }
         if (second.getDegree() == 0) {
-            graphGUI.getGraph().removeNode(second);
+            graph.removeNode(second);
         }
         getPipeIn().pump();
         TarjanStronglyConnectedComponents tscc = calculateSCC();
@@ -131,13 +133,13 @@ public class GraphController implements Serializable {
 
     TarjanStronglyConnectedComponents calculateSCC() {
         TarjanStronglyConnectedComponents tscc = new TarjanStronglyConnectedComponents();
-        tscc.init(graphGUI.getGraph());
+        tscc.init(graph);
         tscc.compute();
         return tscc;
     }
 
     void color(TarjanStronglyConnectedComponents tscc) {
-        for (Node n : graphGUI.getGraph().getEachNode()) {
+        for (Node n : graph.getEachNode()) {
             if (compCol.containsKey(n.getAttribute(tscc.getSCCIndexAttribute()))) {
                 Color randomColor = (Color)
                         compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));

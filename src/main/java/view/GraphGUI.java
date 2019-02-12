@@ -17,7 +17,7 @@ import static java.lang.Math.round;
 
 public class GraphGUI extends JPanel implements ViewerListener{
 
-	public final GraphController graphController = new GraphController(this);
+	public final GraphController graphController ;
 	private ViewPanel view;
 	private Viewer viewer;
 	private Graph graph;
@@ -27,6 +27,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	public GraphGUI(){
 
 		graph = new MultiGraph("Strongly connected components");
+		graphController = new GraphController(this, graph);
 
 		String css = "edge .notintree {size:1px;fill-color:gray;} " +
 		"edge .intree {size:3px;fill-color:black;}";
@@ -70,7 +71,4 @@ public class GraphGUI extends JPanel implements ViewerListener{
 		return view;
 	}
 
-	public Graph getGraph() {
-		return graph;
-	}
 }
