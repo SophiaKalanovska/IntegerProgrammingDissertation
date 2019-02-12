@@ -1,13 +1,8 @@
 package controller;
 
-import model.InequalitiesList;
-import model.SCCCluster;
 import model.SCCClusterList;
-import view.GraphGUI;
-import view.InequalitiesListGUI;
-import view.LowerBoundClusterGUI;
+import view.SolutionPanel.LowerBoundClusterGUI;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;

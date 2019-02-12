@@ -1,9 +1,10 @@
-package view;
+package view.SolutionPanel;
 
 import controller.LowerBoundClusterListController;
 import model.SCCCluster;
 import model.SCCClusterList;
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -20,6 +21,10 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
     public LowerBoundClusterGUI(){
         this.lowerBoundClusterListModel = new DefaultListModel();
         this.lowerBoundClusterList = new JList(lowerBoundClusterListModel);
+        this.setLayout(new GridLayout(1,1));
+        this.add(lowerBoundClusterList);
+        this.setBackground(Color.WHITE);
+        this.setPreferredSize(new Dimension(225, 150));
     }
 
 

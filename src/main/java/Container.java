@@ -4,6 +4,10 @@ import java.awt.Dimension;
 import controller.*;
 import model.InequalitiesList;
 import view.*;
+import view.SolutionPanel.BoundsGUI;
+import view.SolutionPanel.IntegerAssignmentGUI;
+import view.SolutionPanel.LowerBoundClusterGUI;
+import view.SolutionPanel.UpperBoundClusterGUI;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -17,8 +21,12 @@ public class Container extends JFrame {
         final InequalitiesList inequalitiesList = new InequalitiesList(graph);
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
+		LowerBoundClusterGUI lowerBoundClusterGUI = new LowerBoundClusterGUI();
+		UpperBoundClusterGUI upperBoundClusterGUI = new UpperBoundClusterGUI();
+		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI);
         ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
-        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI);
+        IntegerAssignmentGUI integerAssignmentGUI = new IntegerAssignmentGUI();
+        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI, integerAssignmentGUI);
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
 
         //controller creation
