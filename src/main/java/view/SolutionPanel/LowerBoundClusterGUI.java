@@ -3,13 +3,11 @@ package view.SolutionPanel;
 import controller.LowerBoundClusterListController;
 import javafx.util.Pair;
 import model.SCC.LowerBoundList;
-import model.SCC.LowerBoundListRender;
-import model.SCC.SCCCluster;
+import model.SCC.BoundsListRender;
 import model.SCC.SCCClusterList;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -54,7 +52,7 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
         revalidate();
     }
 
-    public void setRender(LowerBoundListRender lbr){
+    public void setRender(BoundsListRender lbr){
         lowerBoundClusterList.setCellRenderer(lbr);
     }
 

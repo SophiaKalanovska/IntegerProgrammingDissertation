@@ -1,13 +1,9 @@
 package controller;
 import java.awt.event.*;
-import java.util.Map;
 import javax.swing.*;
 
 import model.Inequalities.InequalitiesList;
-import model.SCC.LowerBoundList;
-import model.SCC.LowerBoundListRender;
 import view.OperationsOnInequalities.InequalitiesListGUI;
-import view.SolutionPanel.LowerBoundClusterGUI;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -15,7 +11,6 @@ import view.SolutionPanel.LowerBoundClusterGUI;
  */
 public class InequalitiesListController implements ActionListener, MouseListener {
 
-    //private ArrayList<Projects> projectData;
     private InequalitiesList inequalitiesList;
     private String enterInequality;
     private String jtfProjectTField;
@@ -23,18 +18,20 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private JPanel currentPanel;
     private GraphController graphContoller;
     private LowerBoundClusterListController lowerBoundClusterListController;
+    private UpperBoundClusterListController upperBoundClusterListController;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, LowerBoundClusterListController lowerBoundClusterListController){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController){
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
         this.graphContoller = graphController;
         this.lowerBoundClusterListController = lowerBoundClusterListController;
+        this.upperBoundClusterListController = upperBoundClusterListController;
 
         InequalitiesListGUI.addMouseListener(this);
 
@@ -60,8 +57,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
                 inequalitiesList.deleteAllInequalities();
             }else{
                 lowerBoundClusterListController.populate(graphContoller);
-//                inequalitiesList.deleteAllInequalities();
-
+                upperBoundClusterListController.populate(graphContoller);
             }
         }
     }
@@ -79,18 +75,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
     public void mouseExited(MouseEvent e) {}
 
 
-
-    //
-    // @Override
-    // public void keyPressed(KeyEvent e) {
-    //     if (e.getKeyCode()==KeyEvent.VK_ENTER){
-    //         System.out.println("Hello");
-    //
-    //         JOptionPane.showMessageDialog(null , "You've Submitted the name " + nameInput.getText());
-    //     }
-    //
-    // }
-
     /**
      * The action listener for the ManualIntegerInequalities panel
      *
@@ -98,31 +82,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
      */
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
-
-//
-//        if (e.getSource() instanceof JButton) {
-//            JButton enter = (JButton) e.getSource();
-//
-//        }
-//        else if (e.getSource() instanceof JTextField){
-//            JTextField enter = (JTextField) e.getSource();
-//                enterInequality = enter.getText();
-//                this.parser = new Parser(enterInequality);
-//                try {
-//                    Inequality parsedExpression = new Inequality(parser.parse());
-//                    alg.addNodes(parsedExpression.getParsedExpression());
-//                    alg.getPipe().pump();
-//                    this.jtfProjectTField = InequalitiesListGUI.getEnterInequality();
-//                    inequalitiesList.addInequality(parsedExpression);
-//                }catch(Exception r){
-//                    System.out.println(r.getMessage());
-//                }
-//                // parser.parse();
-//                System.out.println("enter in text field");
-//                //  inequalitiesList.createNewProject(enter.getText());
-//
-//            }
-
         }
 }
 

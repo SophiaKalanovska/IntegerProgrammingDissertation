@@ -1,8 +1,8 @@
 package controller;
 
-import model.SCC.LowerBoundList;
 import model.SCC.BoundsListRender;
-import view.SolutionPanel.LowerBoundClusterGUI;
+import model.SCC.UpperBoundList;
+import view.SolutionPanel.UpperBoundClusterGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,29 +15,29 @@ import java.util.Map;
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
  */
-public class LowerBoundClusterListController implements ActionListener, MouseListener {
+public class UpperBoundClusterListController implements ActionListener, MouseListener {
 
-    private LowerBoundClusterGUI LowerBoundClusterGUI;
-    private LowerBoundList lbl;
+    private UpperBoundClusterGUI UpperBoundClusterGUI;
+    private UpperBoundList lbl;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
-     * @param LowerBoundClusterGUI the ManualIntegerInequalities  JFrame that this class will control
+     * @param UpperBoundClusterGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public LowerBoundClusterListController( LowerBoundClusterGUI LowerBoundClusterGUI){
-        this.LowerBoundClusterGUI = LowerBoundClusterGUI;
-        LowerBoundClusterGUI.addMouseListener(this);
+    public UpperBoundClusterListController(UpperBoundClusterGUI UpperBoundClusterGUI){
+        this.UpperBoundClusterGUI = UpperBoundClusterGUI;
+        UpperBoundClusterGUI.addMouseListener(this);
     }
 
 
     public void populate(GraphController graphController){
-        lbl = new LowerBoundList(graphController.getSCCComponents());
-        lbl.addObserver(LowerBoundClusterGUI);
+        lbl = new UpperBoundList(graphController.getSCCComponents());
+        lbl.addObserver(UpperBoundClusterGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();
         render.setImageMap(map);
-        LowerBoundClusterGUI.setRender(render);
+        UpperBoundClusterGUI.setRender(render);
         lbl.tryUpdate();
 
     }
@@ -64,9 +64,6 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
     @Override
     public void mouseExited(MouseEvent e) {}
 
-
-
-
     /**
      * The action listener for the ManualIntegerInequalities panel
      *
@@ -74,6 +71,7 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+
         }
 }
 

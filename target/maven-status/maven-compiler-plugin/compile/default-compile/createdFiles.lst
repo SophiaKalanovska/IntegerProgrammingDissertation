@@ -5,12 +5,13 @@ model/Inequalities/InequalitiesList.class
 view/OperationsOnInequalities/ManualInequalitiesGUI.class
 controller/GraphController.class
 model/Parser/ParseMember.class
+model/SCC/BoundsListRender.class
+controller/UpperBoundClusterListController.class
 model/SCC/SCCClusterList.class
 view/LayoutGUI.class
 model/SCC/SCCCluster.class
 Main.class
 view/OperationsOnInequalities/RandomInequalitiesGUI.class
-model/SCC/LowerBoundListRender.class
 view/SolutionPanel/UpperBoundClusterGUI.class
 model/SCC/ColorGenerator.class
 view/OperationsOnInequalities/InequalitiesListGUI.class

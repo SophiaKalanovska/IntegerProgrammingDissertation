@@ -1,8 +1,8 @@
 package view.SolutionPanel;
 
 import controller.LowerBoundClusterListController;
+import javafx.util.Pair;
 import model.SCC.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -30,9 +30,9 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
         upperBoundClusterList.addMouseListener(controller);
     }
 
-    private void UpdateJList(ArrayList<Double> in){
+    private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
         upperBoundClusterListModel.clear();
-        for(Double i : in){
+        for(Pair<Integer,Double> i : in){
             upperBoundClusterListModel.addElement(i);
         }
         upperBoundClusterList.setModel(upperBoundClusterListModel);
@@ -47,8 +47,7 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
         revalidate();
     }
 
-    public void setRender(LowerBoundListRender lbr){
+    public void setRender(BoundsListRender lbr){
         upperBoundClusterList.setCellRenderer(lbr);
     }
-
 }

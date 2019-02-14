@@ -1,7 +1,4 @@
 package model.Inequalities;
-
-import model.Inequalities.DecisionVariable;
-
 import java.io.Serializable;
 import java.util.Observable;
 

@@ -1,7 +1,6 @@
 package model.SCC;
 
-import model.Inequalities.Inequality;
-
+import javafx.util.Pair;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -10,9 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 
-public class UpperBoundList extends Observable implements java.io.Serializable{
-
-    private ArrayList<Double> SCCLowerBoundContainer;
+public class UpperBoundList extends Observable implements java.io.Serializable {
+    private ArrayList<Pair<Integer, Double>> sccUpperBoundContainer;
     private ArrayList<SCCCluster> SCCCluster;
     protected Map<Double, ImageIcon> imageMap ;
 
@@ -21,60 +19,40 @@ public class UpperBoundList extends Observable implements java.io.Serializable{
     /**
      * Creates a InequalitiesList object
      */
-    public UpperBoundList(SCCClusterList SCCLowerBoundContainer) {
-        this.SCCCluster = SCCLowerBoundContainer.getProjectWallet();
+    public UpperBoundList(SCCClusterList SCCUpperBoundContainer) {
+        this.sccUpperBoundContainer = new ArrayList<>();
+        this.SCCCluster = SCCUpperBoundContainer.getProjectWallet();
     }
 
-
-//    public InequalitiesList(ArrayList<Inequality> data) {
-//        storeProject(data);
-//        setChanged();
-//        notifyObservers();
-//    }
-
-
-    public Map<Double, ImageIcon> populate(){
+    public Map<Integer, ImageIcon> populate(){
         return createImageMap(SCCCluster);
+
     }
 
-
-
-    private Map<Double, ImageIcon> createImageMap(ArrayList<SCCCluster> SCC) {
-        Map<Double, ImageIcon> map = new HashMap<>();
+    private Map<Integer, ImageIcon> createImageMap(ArrayList<SCCCluster> SCC) {
+        Map<Integer, ImageIcon> map = new HashMap<>();
         for(int i = 0; i < SCC.size() ; i ++){
-            BufferedImage bImg = new BufferedImage(60, 60, BufferedImage.TYPE_INT_RGB);
+            BufferedImage bImg = new BufferedImage(40, 20, BufferedImage.TYPE_INT_RGB);
             Graphics2D graphics = bImg.createGraphics();
 
             graphics.setPaint(SCC.get(i).getColor());
             graphics.fillRect(0, 0, bImg.getWidth(), bImg.getHeight());
 
             ImageIcon imageIcon = new ImageIcon(bImg);
-            map.put(SCC.get(i).getLowerbound(), imageIcon);
+
+            Pair pair = new Pair<>(SCC.get(i).getId(), SCC.get(i).getUpperbound());
+            sccUpperBoundContainer.add(i, pair);
+            map.put(SCC.get(i).getId(), imageIcon);
         }
         return map;
-    }
-
-
-
-    /**
-     * Deletes a project that has the same name as the one supplied
-     *
-     * @param x the name of the projects that has to be deleted
-     */
-    public void deleteInequality(Inequality x) {
 
     }
 
-
-    public ArrayList<Double> getProjectWallet() {
-        return SCCLowerBoundContainer;
+    public ArrayList<Pair<Integer,Double>> getProjectWallet() {
+        return sccUpperBoundContainer;
     }
 
 
-//    public void storeProject(ArrayList<Inequality> data) {
-//        this.inequalitiesContainer = data;
-//
-//    }
 
     /**
      * Sends signal to the observers to update the view
@@ -83,5 +61,4 @@ public class UpperBoundList extends Observable implements java.io.Serializable{
         setChanged();
         notifyObservers();
     }
-
 }

@@ -3,7 +3,6 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
 import model.Inequalities.InequalitiesList;
-import model.SCC.LowerBoundList;
 import model.SCC.SCCClusterList;
 import view.*;
 import view.OperationsOnInequalities.InequalitiesListGUI;
@@ -32,6 +31,7 @@ public class Container extends JFrame {
 		LowerBoundClusterListController lowerBoundClusterListController = new LowerBoundClusterListController(lowerBoundClusterGUI );
 
 		UpperBoundClusterGUI upperBoundClusterGUI = new UpperBoundClusterGUI();
+		UpperBoundClusterListController upperBoundClusterListController = new UpperBoundClusterListController(upperBoundClusterGUI);
 		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI);
         ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
         IntegerAssignmentGUI integerAssignmentGUI = new IntegerAssignmentGUI();
@@ -40,7 +40,7 @@ public class Container extends JFrame {
 
         //controller creation
 		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
-		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, lowerBoundClusterListController);
+		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, lowerBoundClusterListController, upperBoundClusterListController);
 
 
 

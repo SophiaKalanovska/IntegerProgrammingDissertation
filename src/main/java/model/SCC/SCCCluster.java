@@ -12,6 +12,7 @@ public class SCCCluster {
     private ArrayList nodes;
     private ColorGenerator colorGenerator;
     private double lowerbound = Double.NEGATIVE_INFINITY;
+    private double upperbound = Double.POSITIVE_INFINITY;
 
    public SCCCluster(int id){
        nodes = new ArrayList<Node>();
@@ -56,7 +57,9 @@ public class SCCCluster {
         return lowerbound;
     }
 
-    public void setLowerbound(int lowerbound) {
-        this.lowerbound = lowerbound;
+    public double getUpperbound() {
+        return upperbound;
     }
+
+
 }

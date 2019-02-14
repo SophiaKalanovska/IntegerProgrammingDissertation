@@ -1,7 +1,6 @@
 package model.SCC;
 
 import java.util.ArrayList;
-import java.util.Observable;
 
 /**
  * This class represents a portofolio of Projects
