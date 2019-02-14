@@ -134,9 +134,9 @@ public class ParseMember {
         }
     }
 
-    public void parse_number() throws Exceptions.ExceptionNotNumber {
+    public Integer parse_number() throws Exceptions.ExceptionNotNumber {
         try {
-            tokenize("[0-9]+");
+            return Integer.parseInt(tokenize("[0-9]+"));
         } catch (Exception e) {
             throw new Exceptions.ExceptionNotNumber("not a number");
         }
