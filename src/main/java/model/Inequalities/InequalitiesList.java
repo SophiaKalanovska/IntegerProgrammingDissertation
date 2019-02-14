@@ -1,4 +1,4 @@
-package model;
+package model.Inequalities;
 
 import controller.GraphController;
 import java.util.ArrayList;
@@ -20,16 +20,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         //projectMap = new HashMap<String, Projects>();
     }
 
-    /**
-     * Creates a InequalitiesList object that is to be populated with the data supplied
-     *
-     * @param data the ArrayList of Projects that will constitute the newly created InequalitiesList object
-     */
-    public InequalitiesList(ArrayList<Inequality> data) {
-        storeProject(data);
-        setChanged();
-        notifyObservers();
-    }
 
     /**
      * Adds a project to the wallet
@@ -52,7 +42,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
             notifyObservers();
         }else{
             this.inequalitiesContainer.add(x);
-            setChanged();
             notifyObservers();
         }
     }
@@ -66,8 +55,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     public void deleteInequality(Inequality x) {
         graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getSign());
         inequalitiesContainer.remove(x);
-        setChanged();
-        notifyObservers();
+        tryUpdate();
     }
 
     /**
@@ -119,7 +107,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
             graphController.removeNodes(inequalitiesContainer.get(i).getFirstDecisionVariableValue(), inequalitiesContainer.get(i).getSecondDecisionVariableValue(), inequalitiesContainer.get(i).getSign());
         }
         inequalitiesContainer.removeAll(inequalitiesContainer);
-        setChanged();
-        notifyObservers();
+        tryUpdate();
     }
 }

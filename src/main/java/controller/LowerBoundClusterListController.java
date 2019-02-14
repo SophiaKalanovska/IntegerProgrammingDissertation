@@ -1,12 +1,16 @@
 package controller;
 
-import model.SCCClusterList;
+import model.SCC.LowerBoundList;
+import model.SCC.LowerBoundListRender;
+import model.SCC.SCCClusterList;
 import view.SolutionPanel.LowerBoundClusterGUI;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Map;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -14,7 +18,6 @@ import java.awt.event.MouseListener;
  */
 public class LowerBoundClusterListController implements ActionListener, MouseListener {
 
-    private SCCClusterList SCCList;
     private LowerBoundClusterGUI LowerBoundClusterGUI;
 
 //    private String enterInequality;
@@ -28,12 +31,23 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
      *
      * @param LowerBoundClusterGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public LowerBoundClusterListController(SCCClusterList SCCList, LowerBoundClusterGUI LowerBoundClusterGUI){
+    public LowerBoundClusterListController( LowerBoundClusterGUI LowerBoundClusterGUI){
 
-        this.SCCList = SCCList;
+
         this.LowerBoundClusterGUI = LowerBoundClusterGUI;
 //        this.graph = graph;
         LowerBoundClusterGUI.addMouseListener(this);
+    }
+
+
+    public void populate(GraphController graphController){
+        LowerBoundList lbl = new LowerBoundList(graphController.getSCCComponents());
+        Map<Integer, ImageIcon> map = lbl.populate();
+        LowerBoundListRender render = new LowerBoundListRender();
+        render.setImageMap(map);
+        LowerBoundClusterGUI.setRender(render);
+        lbl.tryUpdate();
+
     }
 
     /**

@@ -2,9 +2,8 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
-import model.InequalitiesList;
-import model.SCCCluster;
-import model.SCCClusterList;
+import model.Inequalities.InequalitiesList;
+import model.SCC.SCCClusterList;
 import view.*;
 import view.OperationsOnInequalities.InequalitiesListGUI;
 import view.OperationsOnInequalities.ManualInequalitiesGUI;
@@ -26,9 +25,11 @@ public class Container extends JFrame {
 		GraphGUI graph = new GraphGUI();
 
         final InequalitiesList inequalitiesList = new InequalitiesList(graph.graphController);
+		LowerBoundClusterGUI lowerBoundClusterGUI = new LowerBoundClusterGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
-		LowerBoundClusterGUI lowerBoundClusterGUI = new LowerBoundClusterGUI();
+		LowerBoundClusterListController lowerBoundClusterListController = new LowerBoundClusterListController(lowerBoundClusterGUI );
+
 		UpperBoundClusterGUI upperBoundClusterGUI = new UpperBoundClusterGUI();
 		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI);
         ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
@@ -38,7 +39,7 @@ public class Container extends JFrame {
 
         //controller creation
 		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
-		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController);
+		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, lowerBoundClusterListController);
 
 
 

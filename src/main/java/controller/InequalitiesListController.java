@@ -1,11 +1,13 @@
 package controller;
 import java.awt.event.*;
-import javax.swing.JButton;
+import java.util.Map;
+import javax.swing.*;
 
-import javax.swing.JPanel;
-
-import model.*;
+import model.Inequalities.InequalitiesList;
+import model.SCC.LowerBoundList;
+import model.SCC.LowerBoundListRender;
 import view.OperationsOnInequalities.InequalitiesListGUI;
+import view.SolutionPanel.LowerBoundClusterGUI;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -19,19 +21,20 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private String jtfProjectTField;
     private view.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
-    private GraphController graph;
+    private GraphController graphContoller;
+    private LowerBoundClusterListController lowerBoundClusterListController;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController){
-
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, LowerBoundClusterListController lowerBoundClusterListController){
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
-        this.graph = graphController;
+        this.graphContoller = graphController;
+        this.lowerBoundClusterListController = lowerBoundClusterListController;
 
         InequalitiesListGUI.addMouseListener(this);
 
@@ -52,11 +55,14 @@ public class InequalitiesListController implements ActionListener, MouseListener
             if (((JButton) e.getSource()).getName().equals("delete")){
                 System.out.println(((JButton) e.getSource()).getName());
                 inequalitiesList.deleteInequality(InequalitiesListGUI.getListSelectedValue());
-            }else{
+            }else if (((JButton) e.getSource()).getName().equals("deleteAll")){
                 System.out.println(((JButton) e.getSource()).getName());
                 inequalitiesList.deleteAllInequalities();
-            }
+            }else{
+                lowerBoundClusterListController.populate(graphContoller);
+//                inequalitiesList.deleteAllInequalities();
 
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package model;
+package model.Inequalities;
 
 public class RandomInequalitiesGenerator {
     int numberOfNodesNeeded = 0;

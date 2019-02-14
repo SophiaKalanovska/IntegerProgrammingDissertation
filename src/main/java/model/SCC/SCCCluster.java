@@ -1,4 +1,4 @@
-package model;
+package model.SCC;
 
 import org.graphstream.graph.Node;
 
@@ -11,6 +11,7 @@ public class SCCCluster {
     private int id;
     private ArrayList nodes;
     private ColorGenerator colorGenerator;
+    private double lowerbound = Double.NEGATIVE_INFINITY;
 
    public SCCCluster(int id){
        nodes = new ArrayList<Node>();
@@ -49,5 +50,13 @@ public class SCCCluster {
             retVal = (otherCluster.getId() == this.id);
         }
         return retVal;
+    }
+
+    public double getLowerbound() {
+        return lowerbound;
+    }
+
+    public void setLowerbound(int lowerbound) {
+        this.lowerbound = lowerbound;
     }
 }

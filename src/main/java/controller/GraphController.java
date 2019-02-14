@@ -1,8 +1,7 @@
 package controller;
 
-import model.SCCAlgorithm;
-import model.SCCCluster;
-import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
+import model.SCC.SCCAlgorithm;
+import model.SCC.SCCClusterList;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
@@ -17,6 +16,7 @@ public class GraphController implements Serializable {
     private final Graph graph;
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
     private SCCAlgorithm algoritm;
+    private SCCClusterList SCCComponents;
 
     private int id;
 
@@ -99,7 +99,7 @@ public class GraphController implements Serializable {
         id ++;
         getPipeIn().pump();
         algoritm.calculateSCC();
-        algoritm.cluster();
+        SCCComponents = algoritm.cluster();
 
     }
 
@@ -122,7 +122,7 @@ public class GraphController implements Serializable {
         }
         getPipeIn().pump();
         algoritm.calculateSCC();
-        algoritm.cluster();
+        SCCComponents = algoritm.cluster();
 
 
     }
@@ -131,4 +131,7 @@ public class GraphController implements Serializable {
         return graphGUI.getPipe();
     }
 
+    public SCCClusterList getSCCComponents() {
+        return SCCComponents;
+    }
 }

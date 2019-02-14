@@ -1,6 +1,6 @@
 package model.Parser;
 
-import model.Inequality;
+import model.Inequalities.Inequality;
 
 public class Parser {
 

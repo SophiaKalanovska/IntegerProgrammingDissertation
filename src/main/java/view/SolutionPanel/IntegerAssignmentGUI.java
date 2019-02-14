@@ -1,8 +1,8 @@
 package view.SolutionPanel;
 
 import controller.LowerBoundClusterListController;
-import model.SCCCluster;
-import model.SCCClusterList;
+import model.SCC.SCCCluster;
+import model.SCC.SCCClusterList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-public class IntegerAssignmentGUI extends JPanel implements Observer {
+public class IntegerAssignmentGUI extends JPanel  {
 
     private SCCClusterList info;
     private SCCClusterList observer;
@@ -34,22 +34,22 @@ public class IntegerAssignmentGUI extends JPanel implements Observer {
 
     }
 
-    private void UpdateJList(ArrayList<SCCCluster> in){
-        intgerAssignementListModel.clear();
-        for(SCCCluster i : in){
-            intgerAssignementListModel.addElement(i);
-        }
-        intgerAssignementList.setModel(intgerAssignementListModel);
-    }
-
-
-    @Override
-    public void update(Observable obs, Object obj) {
-        observer = (SCCClusterList) obs;
-        UpdateJList(observer.getProjectWallet());
-        repaint();
-        revalidate();
-    }
+//    private void UpdateJList(ArrayList<SCCCluster> in){
+//        intgerAssignementListModel.clear();
+//        for(SCCCluster i : in){
+//            intgerAssignementListModel.addElement(i);
+//        }
+//        intgerAssignementList.setModel(intgerAssignementListModel);
+//    }
+//
+//
+//    @Override
+//    public void update(Observable obs, Object obj) {
+//        observer = (SCCClusterList) obs;
+//        UpdateJList(observer.getProjectWallet());
+//        repaint();
+//        revalidate();
+//    }
 
 
 }

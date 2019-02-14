@@ -1,8 +1,8 @@
 package view.OperationsOnInequalities;
 
 import controller.InequalitiesListController;
-import model.Inequality;
-import model.InequalitiesList;
+import model.Inequalities.Inequality;
+import model.Inequalities.InequalitiesList;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
@@ -63,6 +63,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     public void addMouseListener(InequalitiesListController controller){
         System.out.println(" ManualInequalitiesGUI mouselistener added");
         delete.addMouseListener(controller);
+        evaluateAll.addMouseListener(controller);
         projectsList.addMouseListener(controller);
         deleteAll.addMouseListener(controller);
     }

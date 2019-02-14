@@ -1,4 +1,6 @@
-package model;
+package model.Inequalities;
+
+import model.Inequalities.DecisionVariable;
 
 import java.io.Serializable;
 import java.util.Observable;
@@ -29,11 +31,6 @@ public class Inequality  extends Observable implements Serializable {
         return expression;
     }
 
-
-    public void tryUpdate() {
-        this.setChanged();
-        this.notifyObservers();
-    }
 
     public String getFirstDecisionVariableValue() {
         return firstDecisionVariable.toString();

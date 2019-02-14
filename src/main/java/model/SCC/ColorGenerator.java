@@ -1,4 +1,4 @@
-package model;
+package model.SCC;
 
 import java.awt.*;
 import java.util.Random;

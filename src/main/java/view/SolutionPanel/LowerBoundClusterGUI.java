@@ -1,18 +1,22 @@
 package view.SolutionPanel;
 
 import controller.LowerBoundClusterListController;
-import model.SCCCluster;
-import model.SCCClusterList;
+import javafx.util.Pair;
+import model.SCC.LowerBoundList;
+import model.SCC.LowerBoundListRender;
+import model.SCC.SCCCluster;
+import model.SCC.SCCClusterList;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
 public class LowerBoundClusterGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
-    private SCCClusterList observer;
+    private LowerBoundList observer;
     private DefaultListModel lowerBoundClusterListModel;
     private JList lowerBoundClusterList;
 
@@ -33,10 +37,10 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
 
     }
 
-    private void UpdateJList(ArrayList<SCCCluster> in){
+    private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
         lowerBoundClusterListModel.clear();
-        for(SCCCluster i : in){
-            lowerBoundClusterListModel.addElement(i);
+        for(Pair<Integer,Double> i : in){
+            lowerBoundClusterListModel.addElement(i.getValue());
         }
         lowerBoundClusterList.setModel(lowerBoundClusterListModel);
     }
@@ -44,10 +48,14 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (SCCClusterList) obs;
+        observer = (LowerBoundList) obs;
         UpdateJList(observer.getProjectWallet());
         repaint();
         revalidate();
+    }
+
+    public void setRender(LowerBoundListRender lbr){
+        lowerBoundClusterList.setCellRenderer(lbr);
     }
 
 

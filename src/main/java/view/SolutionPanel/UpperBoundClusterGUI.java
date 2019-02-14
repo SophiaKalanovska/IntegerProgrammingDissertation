@@ -1,8 +1,8 @@
 package view.SolutionPanel;
 
 import controller.LowerBoundClusterListController;
-import model.SCCCluster;
-import model.SCCClusterList;
+import model.SCC.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.Observer;
 public class UpperBoundClusterGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
-    private SCCClusterList observer;
+    private UpperBoundList observer;
     private DefaultListModel upperBoundClusterListModel;
     private JList upperBoundClusterList;
 
@@ -30,19 +30,25 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
         upperBoundClusterList.addMouseListener(controller);
     }
 
-    private void UpdateJList(ArrayList<SCCCluster> in){
+    private void UpdateJList(ArrayList<Double> in){
         upperBoundClusterListModel.clear();
-        for(SCCCluster i : in){
+        for(Double i : in){
             upperBoundClusterListModel.addElement(i);
         }
         upperBoundClusterList.setModel(upperBoundClusterListModel);
     }
 
+
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (SCCClusterList) obs;
+        observer = (UpperBoundList) obs;
         UpdateJList(observer.getProjectWallet());
         repaint();
         revalidate();
     }
+
+    public void setRender(LowerBoundListRender lbr){
+        upperBoundClusterList.setCellRenderer(lbr);
+    }
+
 }

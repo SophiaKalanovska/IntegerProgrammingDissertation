@@ -3,8 +3,10 @@ package controller;
 import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import model.Inequalities.InequalitiesList;
+import model.Inequalities.Inequality;
 import model.Parser.Parser;
-import model.*;
 import view.OperationsOnInequalities.ManualInequalitiesGUI;
 
 /**

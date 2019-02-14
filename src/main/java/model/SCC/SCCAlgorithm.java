@@ -1,4 +1,4 @@
-package model;
+package model.SCC;
 
 import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 import org.graphstream.graph.Graph;
@@ -24,7 +24,7 @@ public class SCCAlgorithm {
     }
 
 
-    public void cluster() {
+    public SCCClusterList cluster() {
         this.list = new SCCClusterList();
         for (Node n : graph.getEachNode()) {
             int SCCIndex = n.getAttribute(tscc.getSCCIndexAttribute());
@@ -45,5 +45,7 @@ public class SCCAlgorithm {
                 n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
             }
         }
+        return list;
     }
+
 }
