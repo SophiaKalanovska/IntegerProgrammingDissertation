@@ -19,10 +19,13 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
     public UpperBoundClusterGUI(){
         this.upperBoundClusterListModel = new DefaultListModel();
         this.upperBoundClusterList = new JList(upperBoundClusterListModel);
+        JScrollPane scroll = new JScrollPane(upperBoundClusterList);
+        scroll.setBorder( BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(153, 218, 250)));
         this.setLayout(new GridLayout(1,1));
-        this.add(upperBoundClusterList);
+        this.add(scroll);
         this.setBackground(Color.WHITE);
         this.setPreferredSize(new Dimension(225, 150));
+
     }
 
     public void addMouseListener(LowerBoundClusterListController controller){

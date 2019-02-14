@@ -16,6 +16,7 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/controller/InequalitiesListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Container.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/UpperBoundClusterGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/BoundsListRender.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/BoundsGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/LayoutGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Parser/ParserWithTwoDecisionVariables.java
@@ -23,10 +24,10 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/IntegerAssignmentGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Parser/ParserWithOneDecisionVariable.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/LowerBoundClusterGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/controller/UpperBoundClusterListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Inequalities/DecisionVariable.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/GraphGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/OperationsOnInequalities/ManualInequalitiesGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Parser/ParseMember.java
-/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/LowerBoundListRender.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/ColorGenerator.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Parser/Exceptions.java

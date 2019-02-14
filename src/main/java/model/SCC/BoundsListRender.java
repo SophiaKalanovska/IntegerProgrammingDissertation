@@ -18,7 +18,6 @@ public class BoundsListRender extends DefaultListCellRenderer {
         JLabel label = (JLabel) super.getListCellRendererComponent(list, ((Pair) value).getValue(), index, isSelected, cellHasFocus);
         label.setIcon(imageMap.get((Integer) ((Pair) value).getKey()));
         label.setHorizontalTextPosition(JLabel.RIGHT);
-
         return label;
     }
 
@@ -26,4 +25,6 @@ public class BoundsListRender extends DefaultListCellRenderer {
     public void setImageMap(Map<Integer,ImageIcon> map) {
         imageMap = map;
     }
+
+
 }
