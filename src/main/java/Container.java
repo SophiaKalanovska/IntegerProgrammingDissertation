@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
 import model.Inequalities.InequalitiesList;
+import model.SCC.LowerBoundList;
 import model.SCC.SCCClusterList;
 import view.*;
 import view.OperationsOnInequalities.InequalitiesListGUI;

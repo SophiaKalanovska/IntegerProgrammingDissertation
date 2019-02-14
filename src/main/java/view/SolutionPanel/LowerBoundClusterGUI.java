@@ -40,7 +40,7 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
     private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
         lowerBoundClusterListModel.clear();
         for(Pair<Integer,Double> i : in){
-            lowerBoundClusterListModel.addElement(i.getValue());
+            lowerBoundClusterListModel.addElement(i);
         }
         lowerBoundClusterList.setModel(lowerBoundClusterListModel);
     }

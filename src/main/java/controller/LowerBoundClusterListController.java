@@ -19,6 +19,7 @@ import java.util.Map;
 public class LowerBoundClusterListController implements ActionListener, MouseListener {
 
     private LowerBoundClusterGUI LowerBoundClusterGUI;
+    private LowerBoundList lbl;
 
 //    private String enterInequality;
 //    private String jtfProjectTField;
@@ -32,16 +33,14 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
      * @param LowerBoundClusterGUI the ManualIntegerInequalities  JFrame that this class will control
      */
     public LowerBoundClusterListController( LowerBoundClusterGUI LowerBoundClusterGUI){
-
-
         this.LowerBoundClusterGUI = LowerBoundClusterGUI;
-//        this.graph = graph;
         LowerBoundClusterGUI.addMouseListener(this);
     }
 
 
     public void populate(GraphController graphController){
-        LowerBoundList lbl = new LowerBoundList(graphController.getSCCComponents());
+        lbl = new LowerBoundList(graphController.getSCCComponents());
+        lbl.addObserver(LowerBoundClusterGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         LowerBoundListRender render = new LowerBoundListRender();
         render.setImageMap(map);
@@ -49,6 +48,7 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
         lbl.tryUpdate();
 
     }
+
 
     /**
      * Mouse listener for the ManualIntegerInequalities panel
