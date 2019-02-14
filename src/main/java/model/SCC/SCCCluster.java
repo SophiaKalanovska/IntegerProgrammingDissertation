@@ -40,6 +40,16 @@ public class SCCCluster {
        return id;
     }
 
+    public void evaluateUpperBound(){
+
+    }
+
+    public void evaluateLowerBound(){
+        for(int i = 0; i < nodes.size(); i ++){
+//            if (nodes.get(i))
+        }
+    }
+
 
     @Override
     public boolean equals(Object other) {
