@@ -1,4 +1,53 @@
 package model;
 
+import org.graphstream.graph.Node;
+
+import java.awt.*;
+import java.util.ArrayList;
+
+
 public class SCCCluster {
+    private Color color;
+    private int id;
+    private ArrayList nodes;
+    private ColorGenerator colorGenerator;
+
+   public SCCCluster(int id){
+       nodes = new ArrayList<Node>();
+       colorGenerator = new ColorGenerator();
+       this.id = id;
+   }
+
+    public String toString(){
+        return ""+id;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor() {
+       color = colorGenerator.createColor();
+    }
+
+    public void addNodesToCluster(Node node){
+       nodes.add(node);
+    }
+
+    public int getId(){
+       return id;
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        boolean retVal = false;
+        if (other == null) return false;
+        if (other == this) return true;
+        if (other instanceof SCCCluster){
+            SCCCluster otherCluster = (SCCCluster) other;
+            retVal = (otherCluster.getId() == this.id);
+        }
+        return retVal;
+    }
 }

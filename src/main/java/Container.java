@@ -3,6 +3,8 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 import controller.*;
 import model.InequalitiesList;
+import model.SCCCluster;
+import model.SCCClusterList;
 import view.*;
 import view.OperationsOnInequalities.InequalitiesListGUI;
 import view.OperationsOnInequalities.ManualInequalitiesGUI;
@@ -20,8 +22,9 @@ public class Container extends JFrame {
 
 	public Container(){
 
-
+		SCCClusterList clusterList = new SCCClusterList();
 		GraphGUI graph = new GraphGUI();
+
         final InequalitiesList inequalitiesList = new InequalitiesList(graph.graphController);
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();

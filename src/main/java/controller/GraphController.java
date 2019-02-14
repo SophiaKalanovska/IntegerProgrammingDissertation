@@ -1,24 +1,22 @@
 package controller;
 
+import model.SCCAlgorithm;
+import model.SCCCluster;
 import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.ui.view.ViewerPipe;
 import view.GraphGUI;
-import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+
 
 public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
     private final Graph graph;
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
-    private Random rand;
-    private Map compCol;
+    private SCCAlgorithm algoritm;
 
     private int id;
 
@@ -26,8 +24,7 @@ public class GraphController implements Serializable {
     public GraphController(GraphGUI graphGUI, Graph graph) {
         this.graphGUI = graphGUI;
         this.graph = graph;
-        this.rand = new Random();
-        compCol = new HashMap();
+        algoritm = new SCCAlgorithm(graph);
         id = 0;
 
     }
@@ -101,9 +98,8 @@ public class GraphController implements Serializable {
         second.setAttribute("ui.label", second.getId());
         id ++;
         getPipeIn().pump();
-
-        TarjanStronglyConnectedComponents tscc = calculateSCC();
-        color(tscc);
+        algoritm.calculateSCC();
+        algoritm.cluster();
 
     }
 
@@ -125,37 +121,11 @@ public class GraphController implements Serializable {
             graph.removeNode(second);
         }
         getPipeIn().pump();
-        TarjanStronglyConnectedComponents tscc = calculateSCC();
-        color(tscc);
+        algoritm.calculateSCC();
+        algoritm.cluster();
 
 
     }
-
-    TarjanStronglyConnectedComponents calculateSCC() {
-        TarjanStronglyConnectedComponents tscc = new TarjanStronglyConnectedComponents();
-        tscc.init(graph);
-        tscc.compute();
-        return tscc;
-    }
-
-    void color(TarjanStronglyConnectedComponents tscc) {
-        for (Node n : graph.getEachNode()) {
-            if (compCol.containsKey(n.getAttribute(tscc.getSCCIndexAttribute()))) {
-                Color randomColor = (Color)
-                        compCol.get(n.getAttribute(tscc.getSCCIndexAttribute()));
-                n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
-            } else {
-                System.out.println("Random color");
-                final float hue = rand.nextFloat();
-                final float saturation = (rand.nextInt(2000) + 1000) / 10000f;
-                final float luminance = 0.9f;
-                final Color randomColor = Color.getHSBColor(hue, saturation, luminance);
-                compCol.put(n.getAttribute(tscc.getSCCIndexAttribute()), randomColor);
-                n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
-            }
-        }
-    }
-
 
     public ViewerPipe getPipeIn() {
         return graphGUI.getPipe();

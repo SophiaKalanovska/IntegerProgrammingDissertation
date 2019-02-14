@@ -8,16 +8,13 @@ import java.util.Observable;
  * This class represents a portofolio of Projects
  */
 public class SCCClusterList extends Observable implements java.io.Serializable {
-
-
     private ArrayList<SCCCluster> SCCContainer;
-    private GraphGUI graph;
 
     /**
      * Creates a InequalitiesList object
      */
-    public SCCClusterList(GraphGUI graph) {
-        this.graph = graph;
+    public SCCClusterList() {
+
         SCCContainer = new ArrayList<SCCCluster>();
         //projectMap = new HashMap<String, Projects>();
     }
@@ -33,12 +30,8 @@ public class SCCClusterList extends Observable implements java.io.Serializable {
         notifyObservers();
     }
 
-    /**
-     * Adds a project to the wallet
-     *
-     * @param x the project that is to be added to the wallet
-     */
-    public void addCluster(Inequality x) {
+
+    public void addCluster(SCCCluster cluster) {
 //        boolean insert = true;
 //        String decision = x.getSecondDecisionVariableValue();
 //        for (int i = 0; i < inequalitiesContainer.size(); i++) {
@@ -53,9 +46,7 @@ public class SCCClusterList extends Observable implements java.io.Serializable {
 //            setChanged();
 //            notifyObservers();
 //        }else{
-//            this.inequalitiesContainer.add(x);
-//            setChanged();
-//            notifyObservers();
+            this.SCCContainer.add(cluster);
 //        }
     }
 

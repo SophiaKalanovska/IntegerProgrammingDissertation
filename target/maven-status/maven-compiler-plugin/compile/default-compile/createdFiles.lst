@@ -1,12 +1,16 @@
 view/SolutionPanel/IntegerAssignmentGUI.class
 model/Parser/Exceptions$ExceptionNotZero.class
 model/SCCCluster.class
+model/ColorGenerator.class
+view/OperationsOnInequalities/ManualInequalitiesGUI.class
 controller/GraphController.class
 model/Parser/ParseMember.class
+model/SCCAlgorithm.class
 view/LayoutGUI.class
 Main.class
-view/RandomInequalitiesGUI.class
+view/OperationsOnInequalities/RandomInequalitiesGUI.class
 view/SolutionPanel/UpperBoundClusterGUI.class
+view/OperationsOnInequalities/InequalitiesListGUI.class
 controller/ManualInequalitiesController.class
 model/RandomInequalitiesGenerator.class
 controller/LowerBoundClusterListController.class
@@ -19,9 +23,7 @@ model/Parser/Exceptions$NoWeightException.class
 model/Parser/Exceptions$ExceptionNotATerm.class
 model/InequalitiesList.class
 view/SolutionPanel/LowerBoundClusterGUI.class
-view/ManualInequalitiesGUI.class
 view/GraphGUI.class
-view/InequalitiesListGUI.class
 model/Parser/Exceptions.class
 model/DecisionVariable.class
 model/Parser/ParserWithOneDecisionVariable.class

@@ -18,6 +18,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     private InequalitiesList observer;
     private JButton delete;
     private JButton deleteAll;
+    private JButton evaluateAll;
     private DefaultListModel listModel;
     private JList projectsList;
 
@@ -31,16 +32,29 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         this.projectsList = new JList(listModel);
         delete = new JButton("Delete Inequality");
         delete.setName("delete");
+        evaluateAll = new JButton("Evaluate Inequality");
+        evaluateAll.setName("evaluate");
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.getViewport().setView(projectsList);
         projectsList.setName("projectsList");
         deleteAll = new JButton("Delete All Inequalities");
         deleteAll.setName("deleteAll");
 
+
+        JPanel operationsSingle = new JPanel(new GridLayout(1,2));
+        operationsSingle.add(projectsList);
+        operationsSingle.add(delete);
+        operationsSingle.setBackground(Color.WHITE);
+
+        JPanel operations = new JPanel(new GridLayout(1,2));
+        operations.add(deleteAll);
+        operations.add(evaluateAll);
+        operations.setBackground(Color.WHITE);
+
         this.setLayout(new BorderLayout());
-        this.add(projectsList, BorderLayout.CENTER);
-        this.add(deleteAll, BorderLayout.SOUTH);
-        this.add(delete, BorderLayout.EAST);
+        this.add(operationsSingle, BorderLayout.CENTER);
+        this.add(operations, BorderLayout.SOUTH);
+//        this.add(delete, BorderLayout.EAST);
 
 
         this.setBackground(Color.WHITE);
