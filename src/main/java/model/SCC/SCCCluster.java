@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class SCCCluster {
     private Color color;
     private int id;
-    private ArrayList nodes;
+    private ArrayList<Node> nodes;
     private ColorGenerator colorGenerator;
     private double lowerbound = Double.NEGATIVE_INFINITY;
     private double upperbound = Double.POSITIVE_INFINITY;
@@ -44,9 +44,10 @@ public class SCCCluster {
 
     }
 
-    public void evaluateLowerBound(){
-        for(int i = 0; i < nodes.size(); i ++){
-//            if (nodes.get(i))
+    public void evaluateLowerBound() {
+        for ( Node n : nodes){
+
+//            int SCCIndex = n.;
         }
     }
 

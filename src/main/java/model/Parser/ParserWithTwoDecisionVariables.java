@@ -15,6 +15,7 @@ public class ParserWithTwoDecisionVariables {
                 parser.parseMember.parse_sign();
                 try {
                     parser.parseMember.parse_null();
+                    parser.hasZeroLeft = true;
                 } catch (Exceptions.ExceptionNotZero exceptionNotNull) {
                     System.out.println("not zero");
                 }
@@ -31,6 +32,7 @@ public class ParserWithTwoDecisionVariables {
             parser.parseMember.parse_sign();
             parser.term1 = parser.parseMember.parse_term("first");
             parser.term2 = parser.parseMember.parse_term("second");
+            parser.hasZeroRight= true;
         }
     }
 

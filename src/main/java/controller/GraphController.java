@@ -7,8 +7,6 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.ui.view.ViewerPipe;
 import view.GraphGUI;
-
-import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -82,15 +80,14 @@ public class GraphController implements Serializable {
 
     }
 
-    public void addNodes(String firstUnknownVariable, String secondUnknownVariable, int firstWeight, int secondWeigh, String sign) {
+    public void addNode(String firstUnknownVariable){
+        Node first = graph.getNode(firstUnknownVariable);
+        first.setAttribute("ui.label", first.getId());
 
-        Edge edge = null;
-        if (sign.equals("<") || sign.equals("<=")) {
-            edge = graph.addEdge("" + id + "", firstUnknownVariable, secondUnknownVariable, true);
-        } else {
-            edge = graph.addEdge("" + id + "", secondUnknownVariable, firstUnknownVariable, true);
-        }
-//		edge.setAttribute(String.valueOf(firstWeight/secondWeigh));
+    }
+
+    public void addNodes(String firstUnknownVariable, String secondUnknownVariable, int firstWeight, int secondWeigh) {
+        Edge edge = graph.addEdge("" + id + "", firstUnknownVariable, secondUnknownVariable, true);
         double weightOfEdge = (double) firstWeight / secondWeigh;
         edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
         edge.addAttribute("ui.style", "text-alignment:above;");
@@ -98,6 +95,7 @@ public class GraphController implements Serializable {
         Node second = graph.getNode(secondUnknownVariable);
         first.setAttribute("ui.label", first.getId());
         second.setAttribute("ui.label", second.getId());
+//        second.setAttribute("weight", weightOfEdge);
         id ++;
         getPipeIn().pump();
         algoritm.calculateSCC();
@@ -105,14 +103,10 @@ public class GraphController implements Serializable {
 
     }
 
-    public void removeNodes(String firstUnknownVariable, String secondUnknownVariable, String sign) {
+    public void removeNodes(String firstUnknownVariable, String secondUnknownVariable) {
         Node first = graph.getNode(firstUnknownVariable);
         Node second = graph.getNode(secondUnknownVariable);
-        if (sign.equals("<") || sign.equals("<=")) {
-            graph.removeEdge(first, second);
-        } else {
-            graph.removeEdge(second, first);
-        }
+        graph.removeEdge(first, second);
         getPipeIn().pump();
         System.out.print("degree 1 :" + first.getDegree());
         System.out.print("degree 2 :" + second.getDegree());

@@ -10,7 +10,8 @@ public class Parser {
     protected String src;
     protected String srcOriginal;
     protected int pos;
-    protected boolean hasZero;
+    protected boolean hasZeroLeft;
+    protected boolean hasZeroRight;
     protected Inequality inequality;
     protected String toParse;
     protected String term1;
@@ -31,7 +32,14 @@ public class Parser {
             if (term1 == null || term2 == null || sign == null) {
                 throw new Exception(" Something is null ");
             }
-            if (hasZero){
+            if(hasZeroRight){
+                inequality.getSecondDecisionVariable().changeSignVariable();
+            }
+            if(hasZeroLeft){
+                inequality.getFirstDecisionVariable().changeSignVariable();
+            }
+            if (sign.equals(">") || sign.equals(">=")){
+                inequality.getFirstDecisionVariable().changeSignVariable();
                 inequality.getSecondDecisionVariable().changeSignVariable();
             }
             if (pos == srcOriginal.length()) {

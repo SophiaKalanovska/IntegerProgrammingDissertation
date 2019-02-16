@@ -123,7 +123,6 @@ public class ParseMember {
 
     void parse_sign() throws Exception {
         parser.sign = tokenize("<|>|<=|>=");
-        parser.inequality.setSign(parser.sign);
     }
 
     void parse_null() throws Exceptions.ExceptionNotZero {

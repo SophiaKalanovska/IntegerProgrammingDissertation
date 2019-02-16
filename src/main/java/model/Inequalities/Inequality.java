@@ -6,7 +6,6 @@ public class Inequality  extends Observable implements Serializable {
 
     private DecisionVariable firstDecisionVariable;
     private DecisionVariable secondDecisionVariable;
-    private String sign;
     private String expression;
     private int bound;
 
@@ -54,14 +53,5 @@ public class Inequality  extends Observable implements Serializable {
     public DecisionVariable getSecondDecisionVariable() {
         return secondDecisionVariable;
     }
-
-
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
-    public String getSign() {
-        return sign;
-    }
-
 
 }
