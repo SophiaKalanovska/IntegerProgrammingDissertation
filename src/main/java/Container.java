@@ -8,10 +8,7 @@ import view.*;
 import view.OperationsOnInequalities.InequalitiesListGUI;
 import view.OperationsOnInequalities.ManualInequalitiesGUI;
 import view.OperationsOnInequalities.RandomInequalitiesGUI;
-import view.SolutionPanel.BoundsGUI;
-import view.SolutionPanel.IntegerAssignmentGUI;
-import view.SolutionPanel.LowerBoundClusterGUI;
-import view.SolutionPanel.UpperBoundClusterGUI;
+import view.SolutionPanel.*;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -35,12 +32,14 @@ public class Container extends JFrame {
 		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI);
         ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
         IntegerAssignmentGUI integerAssignmentGUI = new IntegerAssignmentGUI();
-        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI, integerAssignmentGUI);
+		InternalConstarinsClusterGUI internalConstarinsClusterGUI = new InternalConstarinsClusterGUI();
+		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
+        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI, integerAssignmentGUI, internalConstarinsClusterGUI);
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
 
         //controller creation
 		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
-		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, lowerBoundClusterListController, upperBoundClusterListController);
+		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController);
 
 
 

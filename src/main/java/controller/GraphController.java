@@ -79,12 +79,17 @@ public class GraphController implements Serializable {
         }
 
     }
-
-    public void addNode(String firstUnknownVariable){
-        Node first = graph.getNode(firstUnknownVariable);
-        first.setAttribute("ui.label", first.getId());
-
-    }
+//
+//    public void addNode(String firstUnknownVariable){
+//        Node first = graph.getNode(firstUnknownVariable);
+//        graph.addNode(String.valueOf(first));
+//        first.setAttribute("ui.label", first.getId());
+//        id ++;
+//        getPipeIn().pump();
+//        algoritm.calculateSCC();
+//        SCCComponents = algoritm.cluster();
+//
+//    }
 
     public void addNodes(String firstUnknownVariable, String secondUnknownVariable, int firstWeight, int secondWeigh) {
         Edge edge = graph.addEdge("" + id + "", firstUnknownVariable, secondUnknownVariable, true);
@@ -95,7 +100,14 @@ public class GraphController implements Serializable {
         Node second = graph.getNode(secondUnknownVariable);
         first.setAttribute("ui.label", first.getId());
         second.setAttribute("ui.label", second.getId());
-//        second.setAttribute("weight", weightOfEdge);
+        if (!first.getAttributeKeySet().contains("internal_weight")){
+            first.setAttribute("internal_weight", 0.0);
+        }
+        if (second.getAttributeKeySet().contains("internal_weight") && (double)second.getAttribute("internal_weight") <  weightOfEdge){
+            second.setAttribute("internal_weight", weightOfEdge);
+        }else if (!second.getAttributeKeySet().contains("internal_weight")){
+            second.setAttribute("internal_weight", weightOfEdge);
+        }
         id ++;
         getPipeIn().pump();
         algoritm.calculateSCC();

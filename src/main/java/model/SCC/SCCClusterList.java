@@ -30,5 +30,11 @@ public class SCCClusterList {
         return SCCContainer;
     }
 
+    public void printInternalConstarins(){
+        for (int i = 0; i < SCCContainer.size(); i ++){
+            SCCContainer.get(i).getInternalConstartins();
+        }
+    }
+
 
 }

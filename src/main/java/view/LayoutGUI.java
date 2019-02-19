@@ -5,6 +5,8 @@ import view.OperationsOnInequalities.ManualInequalitiesGUI;
 import view.OperationsOnInequalities.RandomInequalitiesGUI;
 import view.SolutionPanel.BoundsGUI;
 import view.SolutionPanel.IntegerAssignmentGUI;
+import view.SolutionPanel.InternalConstarinsClusterGUI;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Color;
@@ -26,7 +28,7 @@ public class LayoutGUI extends JPanel  {
      */
 
 
-    public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI, IntegerAssignmentGUI integerAssignmentGUI){
+    public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI, IntegerAssignmentGUI integerAssignmentGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI){
 
         //welcome label
         JLabel welcomeLabel = new JLabel("Inequalities solver");
@@ -45,7 +47,8 @@ public class LayoutGUI extends JPanel  {
         //create border for graph
         JPanel graphPanel = new JPanel(new GridLayout(1,1));
         graphPanel.add(graph.getView());
-        graphPanel.setBorder(new TitledBorder(mainBorder,"<html><b> Graph:</html><b>" ));
+        Border graphBorder = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
+        graphPanel.setBorder(new TitledBorder(graphBorder,"<html><b> Graph:</html><b>" ));
         graphPanel.setBackground(Color.white);
 
 
@@ -61,17 +64,23 @@ public class LayoutGUI extends JPanel  {
         JPanel controlPanel = new JPanel(new GridLayout(2,1));
         controlPanel.add(manualInequalitiesGUI);controlPanel.add(panelrandomNumberInequalities);
 
-
-
         //border color
         Border topBorder1 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
         integerAssignmentGUI.setBorder(new TitledBorder(topBorder1,"<html><b> Optimal Integer Assignment:</html><b>" ));
 
+        Border topBorder3 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
+        internalConstarinsClusterGUI.setBorder(new TitledBorder(topBorder3,"<html><b> Internal Constrains in Clusters:</html><b>" ));
+
+
+        JPanel southEastPanel = new JPanel(new GridLayout(1,2));
+        southEastPanel.add(internalConstarinsClusterGUI);
+        southEastPanel.add(integerAssignmentGUI);
+        southEastPanel.setBackground(Color.WHITE);
 
 
         JPanel solutionPanel = new JPanel(new GridLayout(1,2));
         solutionPanel.add(boundGUI);
-        solutionPanel.add(integerAssignmentGUI);
+        solutionPanel.add(southEastPanel);
         solutionPanel.setBackground(Color.WHITE);
 
         //put border around inequalities

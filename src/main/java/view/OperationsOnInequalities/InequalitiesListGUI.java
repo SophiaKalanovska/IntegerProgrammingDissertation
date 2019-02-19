@@ -40,20 +40,22 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         deleteAll = new JButton("Delete All Inequalities");
         deleteAll.setName("deleteAll");
 
-
-        JPanel operationsSingle = new JPanel(new GridLayout(1,2));
-        operationsSingle.add(scroll);
-        operationsSingle.add(delete);
-        operationsSingle.setBackground(Color.WHITE);
-
-        JPanel operations = new JPanel(new GridLayout(1,2));
+        JPanel operations = new JPanel(new GridLayout(3,1));
+        operations.add(delete);
         operations.add(deleteAll);
         operations.add(evaluateAll);
         operations.setBackground(Color.WHITE);
 
+        JPanel listAndActions= new JPanel(new GridLayout(1,2));
+        listAndActions.add(scroll);
+        listAndActions.add(operations);
+        listAndActions.setBackground(Color.WHITE);
+
+
+
         this.setLayout(new BorderLayout());
-        this.add(operationsSingle, BorderLayout.CENTER);
-        this.add(operations, BorderLayout.SOUTH);
+        this.add(listAndActions, BorderLayout.CENTER);
+
 //        this.add(delete, BorderLayout.EAST);
 
 

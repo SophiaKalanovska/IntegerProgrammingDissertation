@@ -11,8 +11,10 @@ public class SCCCluster {
     private int id;
     private ArrayList<Node> nodes;
     private ColorGenerator colorGenerator;
-    private double lowerbound = Double.NEGATIVE_INFINITY;
+    private double lowerbound = 0;
     private double upperbound = Double.POSITIVE_INFINITY;
+    private double internalConstartins = 0;
+
 
    public SCCCluster(int id){
        nodes = new ArrayList<Node>();
@@ -40,15 +42,19 @@ public class SCCCluster {
        return id;
     }
 
-    public void evaluateUpperBound(){
+//    public void evaluateUpperBound(){
+//
+//    }
 
-    }
 
-    public void evaluateLowerBound() {
+    public void evaluateInternalConstarins() {
         for ( Node n : nodes){
-
-//            int SCCIndex = n.;
+            double internalWeightNode = n.getAttribute("internal_weight");
+            if( internalWeightNode > internalConstartins){
+                internalConstartins = internalWeightNode;
+            }
         }
+        System.out.println(internalConstartins);
     }
 
 
@@ -73,4 +79,12 @@ public class SCCCluster {
     }
 
 
+    public double getInternalConstartins() {
+        evaluateInternalConstarins();
+        return internalConstartins;
+    }
+
+    public void setInternalConstartins(double internalConstartins) {
+        this.internalConstartins = internalConstartins;
+    }
 }

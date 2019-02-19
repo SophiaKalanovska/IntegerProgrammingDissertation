@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import model.Inequalities.InequalitiesList;
 import view.OperationsOnInequalities.InequalitiesListGUI;
+import view.SolutionPanel.InternalConstarinsClusterGUI;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -19,19 +20,21 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private GraphController graphContoller;
     private LowerBoundClusterListController lowerBoundClusterListController;
     private UpperBoundClusterListController upperBoundClusterListController;
+    private InternalConstarinsClusterListController internalConstarinsClusterListController;
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController, InternalConstarinsClusterListController internalConstarinsClusterListController){
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
         this.graphContoller = graphController;
         this.lowerBoundClusterListController = lowerBoundClusterListController;
         this.upperBoundClusterListController = upperBoundClusterListController;
+        this.internalConstarinsClusterListController = internalConstarinsClusterListController;
 
         InequalitiesListGUI.addMouseListener(this);
 
@@ -58,6 +61,8 @@ public class InequalitiesListController implements ActionListener, MouseListener
             }else{
                 lowerBoundClusterListController.populate(graphContoller);
                 upperBoundClusterListController.populate(graphContoller);
+                internalConstarinsClusterListController.populate(graphContoller);
+
             }
         }
     }

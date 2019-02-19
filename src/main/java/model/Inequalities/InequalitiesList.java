@@ -42,7 +42,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
             notifyObservers();
         }else{
             this.inequalitiesContainer.add(x);
-            graphController.addNode(x.getFirstDecisionVariableValue());
+//            graphController.addNode(x.getFirstDecisionVariableValue());
+//            graphController.getPipeIn().pump();
+            setChanged();
             notifyObservers();
         }
     }
