@@ -54,7 +54,6 @@ public class SCCCluster {
                 internalConstartins = internalWeightNode;
             }
         }
-        System.out.println(internalConstartins);
     }
 
 

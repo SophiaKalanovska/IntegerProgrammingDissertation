@@ -45,7 +45,6 @@ public class SCCAlgorithm {
                 n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
             }
         }
-        list.printInternalConstarins();
         return list;
     }
 

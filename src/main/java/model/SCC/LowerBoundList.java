@@ -1,9 +1,6 @@
 package model.SCC;
 
-import controller.GraphController;
 import javafx.util.Pair;
-import model.Inequalities.Inequality;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -27,13 +24,10 @@ public class LowerBoundList extends Observable implements java.io.Serializable {
         this.SCCCluster = SCCLowerBoundContainer.getProjectWallet();
     }
 
-
     public Map<Integer, ImageIcon> populate(){
         return createImageMap(SCCCluster);
 
     }
-
-
 
     private Map<Integer, ImageIcon> createImageMap(ArrayList<SCCCluster> SCC) {
         Map<Integer, ImageIcon> map = new HashMap<>();
