@@ -20,6 +20,7 @@ public class SCCCluster {
        nodes = new ArrayList<Node>();
        colorGenerator = new ColorGenerator();
        this.id = id;
+
    }
 
     public String toString(){
@@ -42,10 +43,27 @@ public class SCCCluster {
        return id;
     }
 
-//    public void evaluateUpperBound(){
-//
-//    }
+    public void evaluateUpperBound(){
+        for ( Node n : nodes){
+            double upperBoundNode = n.getAttribute("upper_bound");
+            if ( upperBoundNode < upperbound){
+                upperbound = upperBoundNode;
+            }
+            n.getEnteringEdgeSet();
 
+        }
+    }
+
+    public void evaluateLowerBound(){
+        for ( Node n : nodes){
+            double lowerBoundNode = n.getAttribute("lower_bound");
+            if ( lowerBoundNode > lowerbound){
+                lowerbound = lowerBoundNode;
+            }
+            n.getEnteringEdgeSet();
+
+        }
+    }
 
     public void evaluateInternalConstarins() {
         for ( Node n : nodes){
@@ -70,11 +88,13 @@ public class SCCCluster {
     }
 
     public double getLowerbound() {
+        evaluateLowerBound();
         return lowerbound;
     }
 
     public double getUpperbound() {
-        return upperbound;
+       evaluateUpperBound();
+       return upperbound;
     }
 
 

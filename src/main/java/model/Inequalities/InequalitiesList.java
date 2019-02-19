@@ -36,14 +36,14 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         }
         if( decision != null && insert == true){
             this.inequalitiesContainer.add(x);
-            graphController.addNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight());
+            graphController.addNodes(x.getFirstDecisionVariable(), x.getSecondDecisionVariable(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight());
             graphController.getPipeIn().pump();
             setChanged();
             notifyObservers();
         }else{
             this.inequalitiesContainer.add(x);
-//            graphController.addNode(x.getFirstDecisionVariableValue());
-//            graphController.getPipeIn().pump();
+            graphController.addNode(x.getFirstDecisionVariable());
+            graphController.getPipeIn().pump();
             setChanged();
             notifyObservers();
         }

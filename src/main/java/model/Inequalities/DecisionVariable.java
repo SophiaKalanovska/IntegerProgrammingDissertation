@@ -4,14 +4,16 @@ public class DecisionVariable {
     private int weight;
     private String sign;
     private String variable;
-    private int lowerBound;
-    private int upperBound;
+    private double lowerBound;
+    private double upperBound;
 
 
     public DecisionVariable(){
         weight = 1 ;
         variable = null;
         sign = "+";
+        lowerBound = 0;
+        upperBound = Double.POSITIVE_INFINITY;
     }
 
     public void changeSignVariable(){
@@ -47,20 +49,25 @@ public class DecisionVariable {
         this.variable = variable;
     }
 
-    public int getLowerBound() {
+    public double getLowerBound() {
         return lowerBound;
     }
 
     public void setLowerBound(int lowerBound) {
-        this.lowerBound = lowerBound;
+        if (lowerBound > this.lowerBound){
+            this.lowerBound = lowerBound;
+        }
     }
 
-    public int getUpperBound() {
+    public double getUpperBound() {
         return upperBound;
     }
 
     public void setUpperBound(int upperBound) {
-        this.upperBound = upperBound;
+        if (upperBound < this.upperBound){
+            this.upperBound = upperBound;
+        }
+
     }
 //    public String getVariable() {
 //        return variable;

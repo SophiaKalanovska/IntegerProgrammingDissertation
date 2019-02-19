@@ -1,8 +1,10 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/SCCClusterList.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Inequalities/InequalitiesList.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/InternalConstarinsList.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Inequalities/RandomInequalitiesGenerator.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/SCCAlgorithm.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/SCC/LowerBoundList.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/controller/InternalConstarinsClusterListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/controller/ManualInequalitiesController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Parser/Parser.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/controller/LowerBoundClusterListController.java
@@ -24,6 +26,7 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/IntegerAssignmentGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Parser/ParserWithOneDecisionVariable.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/LowerBoundClusterGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/SolutionPanel/InternalConstarinsClusterGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/controller/UpperBoundClusterListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/model/Inequalities/DecisionVariable.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/view/GraphGUI.java

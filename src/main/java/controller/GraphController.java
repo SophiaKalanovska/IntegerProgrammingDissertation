@@ -1,5 +1,6 @@
 package controller;
 
+import model.Inequalities.DecisionVariable;
 import model.SCC.SCCAlgorithm;
 import model.SCC.SCCClusterList;
 import org.graphstream.graph.Edge;
@@ -79,8 +80,11 @@ public class GraphController implements Serializable {
         }
 
     }
-//
-//    public void addNode(String firstUnknownVariable){
+
+    public void addNode(DecisionVariable firstUnknownVariable){
+        Node first = graph.getNode(firstUnknownVariable.toString());
+        first.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
+        first.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
 //        Node first = graph.getNode(firstUnknownVariable);
 //        graph.addNode(String.valueOf(first));
 //        first.setAttribute("ui.label", first.getId());
@@ -88,18 +92,22 @@ public class GraphController implements Serializable {
 //        getPipeIn().pump();
 //        algoritm.calculateSCC();
 //        SCCComponents = algoritm.cluster();
-//
-//    }
 
-    public void addNodes(String firstUnknownVariable, String secondUnknownVariable, int firstWeight, int secondWeigh) {
-        Edge edge = graph.addEdge("" + id + "", firstUnknownVariable, secondUnknownVariable, true);
+    }
+
+    public void addNodes(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable, int firstWeight, int secondWeigh) {
+        Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
         double weightOfEdge = (double) firstWeight / secondWeigh;
         edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
         edge.addAttribute("ui.style", "text-alignment:above;");
-        Node first = graph.getNode(firstUnknownVariable);
-        Node second = graph.getNode(secondUnknownVariable);
+        Node first = graph.getNode(firstUnknownVariable.toString());
+        Node second = graph.getNode(secondUnknownVariable.toString());
         first.setAttribute("ui.label", first.getId());
         second.setAttribute("ui.label", second.getId());
+        first.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
+        first.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
+        second.setAttribute("upper_bound", secondUnknownVariable.getUpperBound());
+        second.setAttribute("lower_bound", secondUnknownVariable.getLowerBound());
         if (!first.getAttributeKeySet().contains("internal_weight")){
             first.setAttribute("internal_weight", 0.0);
         }
