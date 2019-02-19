@@ -1,5 +1,4 @@
 package model.SCC;
-
 import java.util.ArrayList;
 
 /**
@@ -28,6 +27,14 @@ public class SCCClusterList {
      */
     public ArrayList<SCCCluster> getProjectWallet() {
         return SCCContainer;
+    }
+
+    public void evaluate() {
+        for (SCCCluster cluster : SCCContainer){
+            cluster.evaluateLowerBound();
+            cluster.evaluateUpperBound();
+            cluster.evaluateInternalConstarins();
+        }
     }
 
 }

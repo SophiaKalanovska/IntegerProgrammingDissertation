@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.util.Observer;
 
 /**
@@ -39,6 +40,13 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         projectsList.setName("projectsList");
         deleteAll = new JButton("Delete All Inequalities");
         deleteAll.setName("deleteAll");
+//
+//
+//        delete.setBorder(new LineBorder( new Color(153, 218, 250)));
+//        deleteAll.setBorder(new LineBorder( new Color(153, 218, 250)));
+//        evaluateAll.setBorder(new LineBorder( new Color(153, 218, 250)));
+
+
 
         JPanel operations = new JPanel(new GridLayout(3,1));
         operations.add(delete);

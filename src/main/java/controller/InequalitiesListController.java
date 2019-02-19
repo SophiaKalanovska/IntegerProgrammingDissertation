@@ -59,6 +59,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
                 System.out.println(((JButton) e.getSource()).getName());
                 inequalitiesList.deleteAllInequalities();
             }else{
+//                graphContoller.getSCCComponents().evaluate();
                 lowerBoundClusterListController.populate(graphContoller);
                 upperBoundClusterListController.populate(graphContoller);
                 internalConstarinsClusterListController.populate(graphContoller);

@@ -66,7 +66,6 @@ public class GraphController implements Serializable {
                 sb.append(nodes.charAt(i - 1));
                 sb2.append(nodes.charAt(i - 2));
                 sb2.append(nodes.charAt(i - 3));
-//
                 list.add(sb.toString());
                 list.add("<");
                 if (i < 29) {
@@ -74,7 +73,6 @@ public class GraphController implements Serializable {
                 } else {
                     list.add(sb2.toString());
                 }
-//					addNodes(list);
                 i = i - 2;
             }
         }
@@ -82,18 +80,42 @@ public class GraphController implements Serializable {
     }
 
     public void addNode(DecisionVariable firstUnknownVariable){
+
+        if (graph.getNode(firstUnknownVariable.toString()) == null ){
+            graph.addNode(firstUnknownVariable.toString());
+            Node first = graph.getNode(firstUnknownVariable.toString());
+            first.setAttribute("ui.label", first.getId());
+            first.setAttribute("internal_weight", 0.0);
+            id ++;
+            getPipeIn().pump();
+            algoritm.calculateSCC();
+            SCCComponents = algoritm.cluster();
+        }
         Node first = graph.getNode(firstUnknownVariable.toString());
         first.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
         first.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
-//        Node first = graph.getNode(firstUnknownVariable);
-//        graph.addNode(String.valueOf(first));
+    }
+//
+//    public void addNodes(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable, int firstWeight, int secondWeigh) {
+//        Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
+//        double weightOfEdge = (double) firstWeight / secondWeigh;
+//        edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
+//        edge.addAttribute("ui.style", "text-alignment:above;");
+//        edge.addAttribute("weight", weightOfEdge);
+//        Node first = graph.getNode(firstUnknownVariable.toString());
+//        Node second = graph.getNode(secondUnknownVariable.toString());
 //        first.setAttribute("ui.label", first.getId());
+//        second.setAttribute("ui.label", second.getId());
+//        first.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
+//        first.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
+//        second.setAttribute("upper_bound", secondUnknownVariable.getUpperBound());
+//        second.setAttribute("lower_bound", secondUnknownVariable.getLowerBound());
 //        id ++;
 //        getPipeIn().pump();
 //        algoritm.calculateSCC();
 //        SCCComponents = algoritm.cluster();
-
-    }
+//
+//    }
 
     public void addNodes(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable, int firstWeight, int secondWeigh) {
         Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);

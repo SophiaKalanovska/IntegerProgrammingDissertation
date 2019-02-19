@@ -14,13 +14,16 @@ public class SCCCluster {
     private double lowerbound = 0;
     private double upperbound = Double.POSITIVE_INFINITY;
     private double internalConstartins = 0;
+    private boolean notAttacked;
+    private ArrayList<Integer> dependant;
 
 
    public SCCCluster(int id){
-       nodes = new ArrayList<Node>();
+       nodes = new ArrayList<>();
+       dependant = new ArrayList<>();
        colorGenerator = new ColorGenerator();
        this.id = id;
-
+       notAttacked = true;
    }
 
     public String toString(){
@@ -42,6 +45,23 @@ public class SCCCluster {
     public int getId(){
        return id;
     }
+
+    public boolean getAttacked(){
+        for ( Node n : nodes) {
+//            if (!first.getAttributeKeySet().contains("internal_weight")){
+//                first.setAttribute("internal_weight", 0.0);
+//            }
+//            if (second.getAttributeKeySet().contains("internal_weight") && (double)second.getAttribute("internal_weight") <  weightOfEdge){
+//                second.setAttribute("internal_weight", weightOfEdge);
+//            }else if (!second.getAttributeKeySet().contains("internal_weight")){
+//                second.setAttribute("internal_weight", weightOfEdge);
+//            }
+//            n.setAttribute("upper_bound", );
+        }
+        return true;
+    }
+
+
 
     public void evaluateUpperBound(){
         for ( Node n : nodes){
