@@ -17,28 +17,22 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private String jtfProjectTField;
     private view.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
-    private GraphController graphContoller;
-    private LowerBoundClusterListController lowerBoundClusterListController;
-    private UpperBoundClusterListController upperBoundClusterListController;
-    private InternalConstarinsClusterListController internalConstarinsClusterListController;
+    private GraphController graphController;
+    private ConstarinsController constarinsController;
+
 
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController, InternalConstarinsClusterListController internalConstarinsClusterListController){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, ConstarinsController constarinsController){
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
-        this.graphContoller = graphController;
-        this.lowerBoundClusterListController = lowerBoundClusterListController;
-        this.upperBoundClusterListController = upperBoundClusterListController;
-        this.internalConstarinsClusterListController = internalConstarinsClusterListController;
-
+        this.graphController = graphController;
+        this.constarinsController = constarinsController;
         InequalitiesListGUI.addMouseListener(this);
-
-
     }
 
     /**
@@ -59,11 +53,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
                 System.out.println(((JButton) e.getSource()).getName());
                 inequalitiesList.deleteAllInequalities();
             }else{
-//                graphContoller.getSCCComponents().evaluate();
-                lowerBoundClusterListController.populate(graphContoller);
-                upperBoundClusterListController.populate(graphContoller);
-                internalConstarinsClusterListController.populate(graphContoller);
-
+                constarinsController.populate(graphController);
             }
         }
     }

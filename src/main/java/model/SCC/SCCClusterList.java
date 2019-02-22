@@ -1,4 +1,6 @@
 package model.SCC;
+import org.graphstream.graph.Node;
+
 import java.util.ArrayList;
 
 /**
@@ -31,9 +33,12 @@ public class SCCClusterList {
 
     public void evaluate() {
         for (SCCCluster cluster : SCCContainer){
-            cluster.evaluateLowerBound();
-            cluster.evaluateUpperBound();
-            cluster.evaluateInternalConstarins();
+            cluster.evaluate();
+//            for (Node node: cluster.getNodes()){
+//                node.getEnteringEdgeSet();
+//                node.setAttribute("upper_bound", );
+//                node.setAttribute("lower_bound", );
+//            }
         }
     }
 

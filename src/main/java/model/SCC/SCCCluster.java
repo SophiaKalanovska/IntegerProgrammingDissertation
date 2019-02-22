@@ -1,5 +1,6 @@
 package model.SCC;
 
+import org.graphstream.graph.Edge;
 import org.graphstream.graph.Node;
 
 import java.awt.*;
@@ -15,11 +16,13 @@ public class SCCCluster {
     private double upperbound = Double.POSITIVE_INFINITY;
     private double internalConstartins = 0;
     private boolean notAttacked;
+    private ArrayList<Node> incommming;
     private ArrayList<Integer> dependant;
 
 
    public SCCCluster(int id){
        nodes = new ArrayList<>();
+       incommming = new ArrayList<>();
        dependant = new ArrayList<>();
        colorGenerator = new ColorGenerator();
        this.id = id;
@@ -94,6 +97,21 @@ public class SCCCluster {
         }
     }
 
+    public void evaluate() {
+        for ( Node n : nodes){
+            ArrayList<Node> entering = getEnteringNodes(n);
+            incommming.addAll(entering);
+        }
+    }
+
+    private ArrayList<Node> getEnteringNodes(Node n) {
+       ArrayList<Node> enteringNodes = new ArrayList<>();
+       for (Edge edge :n.getEnteringEdgeSet()){
+           enteringNodes.add(edge.getSourceNode());
+       }
+       return enteringNodes;
+    }
+
 
     @Override
     public boolean equals(Object other) {
@@ -121,6 +139,10 @@ public class SCCCluster {
     public double getInternalConstartins() {
         evaluateInternalConstarins();
         return internalConstartins;
+    }
+
+    public ArrayList<Node> getNodes(){
+       return nodes;
     }
 
     public void setInternalConstartins(double internalConstartins) {

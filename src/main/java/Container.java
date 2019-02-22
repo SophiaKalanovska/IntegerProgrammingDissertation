@@ -39,7 +39,8 @@ public class Container extends JFrame {
 
         //controller creation
 		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
-		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController);
+		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController);
+		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, constarinsController);
 
 
 

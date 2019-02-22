@@ -28,6 +28,7 @@ controller/RandomInequalitiesController.class
 model/SCC/InternalConstarinsList.class
 model/Parser/Exceptions$NoWeightException.class
 model/Parser/Exceptions$ExceptionNotATerm.class
+controller/ConstarinsController.class
 view/SolutionPanel/LowerBoundClusterGUI.class
 model/Inequalities/RandomInequalitiesGenerator.class
 view/GraphGUI.class
