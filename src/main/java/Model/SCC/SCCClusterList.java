@@ -34,11 +34,6 @@ public class SCCClusterList {
     public void evaluate() {
         for (SCCCluster cluster : SCCContainer){
             cluster.evaluate();
-//            for (Node node: cluster.getNodes()){
-//                node.getEnteringEdgeSet();
-//                node.setAttribute("upper_bound", );
-//                node.setAttribute("lower_bound", );
-//            }
         }
     }
 

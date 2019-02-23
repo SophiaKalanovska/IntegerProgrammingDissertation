@@ -1,6 +1,9 @@
 package model.Inequalities;
 
 import controller.GraphController;
+import model.SCC.SCCAlgorithm;
+import model.SCC.SCCClusterList;
+
 import java.util.ArrayList;
 import java.util.Observable;
 /**
@@ -10,6 +13,8 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     private ArrayList<Inequality> inequalitiesContainer;
     private GraphController graphController;
+    private SCCAlgorithm algoritm;
+    private SCCClusterList SCCComponents;
 
     /**
      * Creates a InequalitiesList object
@@ -17,6 +22,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     public InequalitiesList(GraphController graphController) {
         this.graphController = graphController;
         inequalitiesContainer = new ArrayList<Inequality>();
+        algoritm = new SCCAlgorithm(graphController.getGraph());
         //projectMap = new HashMap<String, Projects>();
     }
 
@@ -26,27 +32,28 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param x the project that is to be added to the wallet
      */
-    public void addInequality(Inequality x) {
-        boolean insert = true;
+    public SCCClusterList addInequality(Inequality x) {
         String decision = x.getSecondDecisionVariableValue();
-        for (int i = 0; i < inequalitiesContainer.size(); i++) {
-            if (((inequalitiesContainer.get(i)).getExpreission().equals(x.getExpreission()))) {
-                insert = false;
-            }
-        }
-        if( decision != null && insert == true){
+        if( decision != null){
             this.inequalitiesContainer.add(x);
-            graphController.addNodes(x.getFirstDecisionVariable(), x.getSecondDecisionVariable(), x.getFirstDecisionVariable().getWeight(), x.getSecondDecisionVariable().getWeight());
+            graphController.addNode(x.getFirstDecisionVariable());
+            graphController.addNode(x.getSecondDecisionVariable());
+            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
             graphController.getPipeIn().pump();
+            algoritm.calculateSCC();
+            SCCComponents = algoritm.cluster();
             setChanged();
             notifyObservers();
         }else{
             this.inequalitiesContainer.add(x);
             graphController.addNode(x.getFirstDecisionVariable());
             graphController.getPipeIn().pump();
+            algoritm.calculateSCC();
+            SCCComponents = algoritm.cluster();
             setChanged();
             notifyObservers();
         }
+        return SCCComponents;
     }
 //
 
@@ -81,6 +88,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 //        notifyObservers();
 //    }
 
+    public SCCClusterList getSCCComponents() {
+        return SCCComponents;
+    }
     /**
      * Returns the wallet as an ArrayList of Projects
      *

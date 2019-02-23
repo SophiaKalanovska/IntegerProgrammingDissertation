@@ -31,7 +31,7 @@ public class LayoutGUI extends JPanel  {
     public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI, IntegerAssignmentGUI integerAssignmentGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI){
 
         //welcome label
-        JLabel welcomeLabel = new JLabel("Inequalities solver");
+        JLabel welcomeLabel = new JLabel("Integer Programming solver");
         welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
         //welcome panel creation
         JPanel welcomePanel = new JPanel(new FlowLayout());

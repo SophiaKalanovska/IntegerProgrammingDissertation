@@ -1,5 +1,6 @@
 package controller;
 
+import model.Inequalities.InequalitiesList;
 import view.OperationsOnInequalities.InequalitiesListGUI;
 
 
@@ -16,18 +17,18 @@ public class ConstarinsController {
         this.internalConstarinsClusterListController = internalConstarinsClusterListController;
     }
 
-    public void populate(GraphController graphController){
-        calculateBounds(graphController);
+    public void populate(GraphController graphController, InequalitiesList inequalitiesList){
+        calculateBounds(inequalitiesList);
 
-        lowerBoundClusterListController.populate(graphController);
-        upperBoundClusterListController.populate(graphController);
-        internalConstarinsClusterListController.populate(graphController);
+        lowerBoundClusterListController.populate(inequalitiesList);
+        upperBoundClusterListController.populate(inequalitiesList);
+        internalConstarinsClusterListController.populate(inequalitiesList);
     }
 
 
-    public void calculateBounds(GraphController graphController){
+    public void calculateBounds( InequalitiesList inequalitiesList){
 
-        graphController.getSCCComponents().evaluate();
+        inequalitiesList.getSCCComponents().evaluate();
     }
 
 

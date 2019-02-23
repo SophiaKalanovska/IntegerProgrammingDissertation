@@ -1,6 +1,5 @@
 package model.SCC;
 
-import org.graphstream.graph.Edge;
 import org.graphstream.graph.Node;
 
 import java.awt.*;
@@ -49,68 +48,32 @@ public class SCCCluster {
        return id;
     }
 
-    public boolean getAttacked(){
-        for ( Node n : nodes) {
-//            if (!first.getAttributeKeySet().contains("internal_weight")){
-//                first.setAttribute("internal_weight", 0.0);
-//            }
-//            if (second.getAttributeKeySet().contains("internal_weight") && (double)second.getAttribute("internal_weight") <  weightOfEdge){
-//                second.setAttribute("internal_weight", weightOfEdge);
-//            }else if (!second.getAttributeKeySet().contains("internal_weight")){
-//                second.setAttribute("internal_weight", weightOfEdge);
-//            }
-//            n.setAttribute("upper_bound", );
-        }
-        return true;
-    }
 
-
-
-    public void evaluateUpperBound(){
+    public void evaluate() {
         for ( Node n : nodes){
             double upperBoundNode = n.getAttribute("upper_bound");
-            if ( upperBoundNode < upperbound){
-                upperbound = upperBoundNode;
-            }
-            n.getEnteringEdgeSet();
-
-        }
-    }
-
-    public void evaluateLowerBound(){
-        for ( Node n : nodes){
             double lowerBoundNode = n.getAttribute("lower_bound");
-            if ( lowerBoundNode > lowerbound){
-                lowerbound = lowerBoundNode;
-            }
-            n.getEnteringEdgeSet();
-
-        }
-    }
-
-    public void evaluateInternalConstarins() {
-        for ( Node n : nodes){
             double internalWeightNode = n.getAttribute("internal_weight");
             if( internalWeightNode > internalConstartins){
                 internalConstartins = internalWeightNode;
             }
+            if ( upperBoundNode < upperbound){
+                upperbound = upperBoundNode;
+            }
+            if ( lowerBoundNode > lowerbound){
+                lowerbound = lowerBoundNode;
+            }
+
         }
     }
-
-    public void evaluate() {
-        for ( Node n : nodes){
-            ArrayList<Node> entering = getEnteringNodes(n);
-            incommming.addAll(entering);
-        }
-    }
-
-    private ArrayList<Node> getEnteringNodes(Node n) {
-       ArrayList<Node> enteringNodes = new ArrayList<>();
-       for (Edge edge :n.getEnteringEdgeSet()){
-           enteringNodes.add(edge.getSourceNode());
-       }
-       return enteringNodes;
-    }
+//
+//    private ArrayList<Node> getEnteringNodes(Node n) {
+//       ArrayList<Node> enteringNodes = new ArrayList<>();
+//       for (Edge edge :n.getEnteringEdgeSet()){
+//           enteringNodes.add(edge.getSourceNode());
+//       }
+//       return enteringNodes;
+//    }
 
 
     @Override
@@ -126,18 +89,15 @@ public class SCCCluster {
     }
 
     public double getLowerbound() {
-        evaluateLowerBound();
         return lowerbound;
     }
 
     public double getUpperbound() {
-       evaluateUpperBound();
        return upperbound;
     }
 
 
     public double getInternalConstartins() {
-        evaluateInternalConstarins();
         return internalConstartins;
     }
 

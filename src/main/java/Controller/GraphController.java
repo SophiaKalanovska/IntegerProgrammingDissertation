@@ -16,8 +16,7 @@ public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
     private final Graph graph;
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
-    private SCCAlgorithm algoritm;
-    private SCCClusterList SCCComponents;
+
 
     private int id;
 
@@ -25,7 +24,6 @@ public class GraphController implements Serializable {
     public GraphController(GraphGUI graphGUI, Graph graph) {
         this.graphGUI = graphGUI;
         this.graph = graph;
-        algoritm = new SCCAlgorithm(graph);
         id = 0;
 
     }
@@ -82,63 +80,24 @@ public class GraphController implements Serializable {
     public void addNode(DecisionVariable firstUnknownVariable){
         if (graph.getNode(firstUnknownVariable.toString()) == null ){
             graph.addNode(firstUnknownVariable.toString());
-            Node first = graph.getNode(firstUnknownVariable.toString());
-            first.setAttribute("ui.label", first.getId());
-            first.setAttribute("internal_weight", 0.0);
-            id ++;
-            getPipeIn().pump();
-            algoritm.calculateSCC();
-            SCCComponents = algoritm.cluster();
+            Node node = graph.getNode(firstUnknownVariable.toString());
+            node.setAttribute("ui.label", node.getId());
+            node.setAttribute("internal_weight", 0.0);
+            node.addAttribute("decision_variable", firstUnknownVariable);
+            node.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
+            node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
         }
-        Node first = graph.getNode(firstUnknownVariable.toString());
-        first.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
-        first.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
+
     }
 
-    public void addNodes(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable, int firstWeight, int secondWeigh) {
+    public void addEdge(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable){
         Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
-        double weightOfEdge = (double) firstWeight / secondWeigh;
+        double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
         edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
         edge.addAttribute("ui.style", "text-alignment:above;");
         edge.addAttribute("weight", weightOfEdge);
-        Node first = graph.getNode(firstUnknownVariable.toString());
-        Node second = graph.getNode(secondUnknownVariable.toString());
-        first.setAttribute("ui.label", first.getId());
-        second.setAttribute("ui.label", second.getId());
         id ++;
-        getPipeIn().pump();
-        algoritm.calculateSCC();
-        SCCComponents = algoritm.cluster();
-
     }
-
-//    public void addNodes(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable, int firstWeight, int secondWeigh) {
-//        Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
-//        double weightOfEdge = (double) firstWeight / secondWeigh;
-//        edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
-//        edge.addAttribute("ui.style", "text-alignment:above;");
-//        Node first = graph.getNode(firstUnknownVariable.toString());
-//        Node second = graph.getNode(secondUnknownVariable.toString());
-//        first.setAttribute("ui.label", first.getId());
-//        second.setAttribute("ui.label", second.getId());
-//        first.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
-//        first.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
-//        second.setAttribute("upper_bound", secondUnknownVariable.getUpperBound());
-//        second.setAttribute("lower_bound", secondUnknownVariable.getLowerBound());
-//        if (!first.getAttributeKeySet().contains("internal_weight")){
-//            first.setAttribute("internal_weight", 0.0);
-//        }
-//        if (second.getAttributeKeySet().contains("internal_weight") && (double)second.getAttribute("internal_weight") <  weightOfEdge){
-//            second.setAttribute("internal_weight", weightOfEdge);
-//        }else if (!second.getAttributeKeySet().contains("internal_weight")){
-//            second.setAttribute("internal_weight", weightOfEdge);
-//        }
-//        id ++;
-//        getPipeIn().pump();
-//        algoritm.calculateSCC();
-//        SCCComponents = algoritm.cluster();
-//
-//    }
 
     public void removeNodes(String firstUnknownVariable, String secondUnknownVariable) {
         Node first = graph.getNode(firstUnknownVariable);
@@ -153,18 +112,13 @@ public class GraphController implements Serializable {
         if (second.getDegree() == 0) {
             graph.removeNode(second);
         }
-        getPipeIn().pump();
-        algoritm.calculateSCC();
-        SCCComponents = algoritm.cluster();
-
-
     }
 
     public ViewerPipe getPipeIn() {
         return graphGUI.getPipe();
     }
 
-    public SCCClusterList getSCCComponents() {
-        return SCCComponents;
+    public Graph getGraph(){
+        return graph;
     }
 }

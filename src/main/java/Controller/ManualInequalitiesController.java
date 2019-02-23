@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 import model.Inequalities.InequalitiesList;
 import model.Inequalities.Inequality;
 import model.Parser.Parser;
+import model.SCC.SCCClusterList;
 import view.OperationsOnInequalities.ManualInequalitiesGUI;
 
 /**

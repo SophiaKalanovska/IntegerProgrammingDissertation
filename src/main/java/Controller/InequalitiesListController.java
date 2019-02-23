@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import model.Inequalities.InequalitiesList;
+import model.SCC.SCCClusterList;
 import view.OperationsOnInequalities.InequalitiesListGUI;
 import view.SolutionPanel.InternalConstarinsClusterGUI;
 
@@ -19,6 +20,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private JPanel currentPanel;
     private GraphController graphController;
     private ConstarinsController constarinsController;
+    private SCCClusterList clusters;
 
 
     /**
@@ -53,7 +55,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
                 System.out.println(((JButton) e.getSource()).getName());
                 inequalitiesList.deleteAllInequalities();
             }else{
-                constarinsController.populate(graphController);
+                constarinsController.populate(graphController, inequalitiesList);
             }
         }
     }
@@ -79,6 +81,8 @@ public class InequalitiesListController implements ActionListener, MouseListener
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
         }
+
+
 }
 
 

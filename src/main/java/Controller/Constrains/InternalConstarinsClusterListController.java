@@ -1,5 +1,6 @@
 package controller;
 
+import model.Inequalities.InequalitiesList;
 import model.SCC.BoundsListRender;
 import model.SCC.InternalConstarinsList;
 import model.SCC.UpperBoundList;
@@ -28,8 +29,8 @@ public class InternalConstarinsClusterListController implements ActionListener, 
     }
 
 
-    public void populate(GraphController graphController){
-        lbl = new InternalConstarinsList(graphController.getSCCComponents());
+    public void populate(InequalitiesList inequalitiesList){
+        lbl = new InternalConstarinsList(inequalitiesList.getSCCComponents());
         lbl.addObserver(InternalConstarinsClusterGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();
