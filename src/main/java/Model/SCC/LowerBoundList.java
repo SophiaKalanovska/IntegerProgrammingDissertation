@@ -1,4 +1,4 @@
-package model.SCC;
+package Model.SCC;
 
 import javafx.util.Pair;
 import javax.swing.*;
@@ -53,7 +53,7 @@ public class LowerBoundList extends Observable implements java.io.Serializable {
     }
 
     /**
-     * Sends signal to the observers to update the view
+     * Sends signal to the observers to update the View
      */
     public void tryUpdate() {
         setChanged();

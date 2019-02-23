@@ -1,9 +1,9 @@
-package controller;
+package Controller.Constrains;
 
-import model.Inequalities.InequalitiesList;
-import model.SCC.LowerBoundList;
-import model.SCC.BoundsListRender;
-import view.SolutionPanel.LowerBoundClusterGUI;
+import Model.Inequalities.InequalitiesList;
+import Model.SCC.LowerBoundList;
+import Model.SCC.BoundsListRender;
+import View.SolutionPanel.LowerBoundClusterGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

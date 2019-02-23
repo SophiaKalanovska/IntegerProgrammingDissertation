@@ -1,13 +1,11 @@
-package controller;
+package Controller;
 
-import model.Inequalities.DecisionVariable;
-import model.SCC.SCCAlgorithm;
-import model.SCC.SCCClusterList;
+import Model.Inequalities.DecisionVariable;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.ui.view.ViewerPipe;
-import view.GraphGUI;
+import View.GraphGUI;
 import java.io.Serializable;
 import java.util.ArrayList;
 

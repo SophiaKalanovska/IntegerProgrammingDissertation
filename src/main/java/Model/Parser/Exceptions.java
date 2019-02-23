@@ -1,4 +1,4 @@
-package model.Parser;
+package Model.Parser;
 
 public class Exceptions {
 

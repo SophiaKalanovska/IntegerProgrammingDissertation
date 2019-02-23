@@ -1,7 +1,7 @@
-package view;
+package View;
 
 import javax.swing.JPanel;
-import controller.GraphController;
+import Controller.GraphController;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.ui.swingViewer.ViewPanel;
 import org.graphstream.ui.view.ViewerListener;

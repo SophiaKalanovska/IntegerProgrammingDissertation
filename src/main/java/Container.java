@@ -1,14 +1,18 @@
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.Dimension;
-import controller.*;
-import model.Inequalities.InequalitiesList;
-import model.SCC.SCCClusterList;
-import view.*;
-import view.OperationsOnInequalities.InequalitiesListGUI;
-import view.OperationsOnInequalities.ManualInequalitiesGUI;
-import view.OperationsOnInequalities.RandomInequalitiesGUI;
-import view.SolutionPanel.*;
+import Controller.*;
+import Controller.Constrains.ConstarinsController;
+import Controller.Constrains.InternalConstarinsClusterListController;
+import Controller.Constrains.LowerBoundClusterListController;
+import Controller.Constrains.UpperBoundClusterListController;
+import Model.Inequalities.InequalitiesList;
+import Model.SCC.SCCClusterList;
+import View.*;
+import View.OperationsOnInequalities.InequalitiesListGUI;
+import View.OperationsOnInequalities.ManualInequalitiesGUI;
+import View.OperationsOnInequalities.RandomInequalitiesGUI;
+import View.SolutionPanel.*;
 
 /**
 * Container is the class where the frame of the app is built.
@@ -37,7 +41,7 @@ public class Container extends JFrame {
         LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI, integerAssignmentGUI, internalConstarinsClusterGUI);
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
 
-        //controller creation
+        //Controller creation
 		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
 		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController);
 		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, constarinsController);

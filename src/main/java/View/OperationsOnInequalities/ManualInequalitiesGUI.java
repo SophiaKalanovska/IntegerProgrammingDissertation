@@ -1,6 +1,6 @@
-package view.OperationsOnInequalities;
+package View.OperationsOnInequalities;
 
-import controller.ManualInequalitiesController;
+import Controller.ManualInequalitiesController;
 import java.awt.FlowLayout;
 import java.awt.Color;
 import javax.swing.*;
@@ -28,7 +28,7 @@ public class ManualInequalitiesGUI extends JPanel {
     }
 
     public void addControllers(ManualInequalitiesController controller){
-        System.out.println(" ManualInequalitiesGUI controller added");
+        System.out.println(" ManualInequalitiesGUI Controller added");
         enterInequality.addActionListener(controller);
 
     }

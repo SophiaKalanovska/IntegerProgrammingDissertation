@@ -1,11 +1,11 @@
-package controller;
+package Controller;
 import java.awt.event.*;
 import javax.swing.*;
 
-import model.Inequalities.InequalitiesList;
-import model.SCC.SCCClusterList;
-import view.OperationsOnInequalities.InequalitiesListGUI;
-import view.SolutionPanel.InternalConstarinsClusterGUI;
+import Controller.Constrains.ConstarinsController;
+import Model.Inequalities.InequalitiesList;
+import Model.SCC.SCCClusterList;
+import View.OperationsOnInequalities.InequalitiesListGUI;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -16,7 +16,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private InequalitiesList inequalitiesList;
     private String enterInequality;
     private String jtfProjectTField;
-    private view.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
+    private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
     private JPanel currentPanel;
     private GraphController graphController;
     private ConstarinsController constarinsController;

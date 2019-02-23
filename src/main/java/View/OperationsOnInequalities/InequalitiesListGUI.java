@@ -1,13 +1,12 @@
-package view.OperationsOnInequalities;
+package View.OperationsOnInequalities;
 
-import controller.InequalitiesListController;
-import model.Inequalities.Inequality;
-import model.Inequalities.InequalitiesList;
+import Controller.InequalitiesListController;
+import Model.Inequalities.Inequality;
+import Model.Inequalities.InequalitiesList;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.util.Observer;
 
 /**

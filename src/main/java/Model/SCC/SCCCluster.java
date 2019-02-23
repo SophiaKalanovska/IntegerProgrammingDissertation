@@ -1,4 +1,4 @@
-package model.SCC;
+package Model.SCC;
 
 import org.graphstream.graph.Node;
 

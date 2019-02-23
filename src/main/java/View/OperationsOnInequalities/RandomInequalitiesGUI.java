@@ -1,6 +1,6 @@
-package view.OperationsOnInequalities;
+package View.OperationsOnInequalities;
 
-import controller.RandomInequalitiesController;
+import Controller.RandomInequalitiesController;
 import javax.swing.*;
 import java.awt.*;
 
@@ -25,7 +25,7 @@ public class RandomInequalitiesGUI extends JPanel {
     }
 
     public void addControllers(RandomInequalitiesController controller){
-        System.out.println("controller added");
+        System.out.println("Controller added");
         randomNumberInequality.addActionListener(controller);
     }
 

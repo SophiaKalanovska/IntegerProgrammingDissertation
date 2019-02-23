@@ -1,4 +1,4 @@
-package model.Inequalities;
+package Model.Inequalities;
 
 public class DecisionVariable {
     private int weight;

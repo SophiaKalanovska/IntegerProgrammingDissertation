@@ -1,11 +1,11 @@
-package view;
+package View;
 
-import view.OperationsOnInequalities.InequalitiesListGUI;
-import view.OperationsOnInequalities.ManualInequalitiesGUI;
-import view.OperationsOnInequalities.RandomInequalitiesGUI;
-import view.SolutionPanel.BoundsGUI;
-import view.SolutionPanel.IntegerAssignmentGUI;
-import view.SolutionPanel.InternalConstarinsClusterGUI;
+import View.OperationsOnInequalities.InequalitiesListGUI;
+import View.OperationsOnInequalities.ManualInequalitiesGUI;
+import View.OperationsOnInequalities.RandomInequalitiesGUI;
+import View.SolutionPanel.BoundsGUI;
+import View.SolutionPanel.IntegerAssignmentGUI;
+import View.SolutionPanel.InternalConstarinsClusterGUI;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

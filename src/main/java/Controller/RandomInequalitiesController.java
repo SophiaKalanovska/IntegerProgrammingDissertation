@@ -1,4 +1,4 @@
-package controller;
+package Controller;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import view.OperationsOnInequalities.RandomInequalitiesGUI;
+import View.OperationsOnInequalities.RandomInequalitiesGUI;
 
 /**
  * This class will represent the Controller for the LayoutGUI Panel

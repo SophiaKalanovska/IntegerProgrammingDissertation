@@ -1,5 +1,4 @@
-package model.SCC;
-import org.graphstream.graph.Node;
+package Model.SCC;
 
 import java.util.ArrayList;
 

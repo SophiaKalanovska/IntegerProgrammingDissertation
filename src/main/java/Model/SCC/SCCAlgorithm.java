@@ -1,6 +1,6 @@
-package model.SCC;
+package Model.SCC;
 
-import model.Inequalities.DecisionVariable;
+import Model.Inequalities.DecisionVariable;
 import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;

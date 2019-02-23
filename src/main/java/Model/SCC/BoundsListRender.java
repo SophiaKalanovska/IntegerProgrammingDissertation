@@ -1,4 +1,4 @@
-package model.SCC;
+package Model.SCC;
 
 import javafx.util.Pair;
 

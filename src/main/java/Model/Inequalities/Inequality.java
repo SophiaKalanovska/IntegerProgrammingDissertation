@@ -1,4 +1,4 @@
-package model.Inequalities;
+package Model.Inequalities;
 import java.io.Serializable;
 import java.util.Observable;
 

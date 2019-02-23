@@ -1,8 +1,8 @@
-package model.Inequalities;
+package Model.Inequalities;
 
-import controller.GraphController;
-import model.SCC.SCCAlgorithm;
-import model.SCC.SCCClusterList;
+import Controller.GraphController;
+import Model.SCC.SCCAlgorithm;
+import Model.SCC.SCCClusterList;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -68,12 +68,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         tryUpdate();
     }
 
-    /**
-     * Changes the name of a project to the new one
-     *
-     * @param oldInequality the current name of the project
-     * @param newInequality the new name for the project
-     */
 //    public void changeInequality(String oldInequality, String newInequality)
 //    {
 //        for (int i = 0; i <inequalitiesContainer.size() ; i++)
@@ -107,7 +101,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     }
 
     /**
-     * Sends signal to the observers to update the view
+     * Sends signal to the observers to update the View
      */
     public void tryUpdate() {
         setChanged();

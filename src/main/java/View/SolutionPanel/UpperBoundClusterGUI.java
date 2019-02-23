@@ -1,8 +1,8 @@
-package view.SolutionPanel;
+package View.SolutionPanel;
 
-import controller.LowerBoundClusterListController;
+import Controller.Constrains.LowerBoundClusterListController;
 import javafx.util.Pair;
-import model.SCC.*;
+import Model.SCC.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

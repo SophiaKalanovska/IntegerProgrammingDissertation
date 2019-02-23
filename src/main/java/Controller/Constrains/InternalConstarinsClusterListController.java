@@ -1,10 +1,9 @@
-package controller;
+package Controller.Constrains;
 
-import model.Inequalities.InequalitiesList;
-import model.SCC.BoundsListRender;
-import model.SCC.InternalConstarinsList;
-import model.SCC.UpperBoundList;
-import view.SolutionPanel.InternalConstarinsClusterGUI;
+import Model.Inequalities.InequalitiesList;
+import Model.SCC.BoundsListRender;
+import Model.SCC.InternalConstarinsList;
+import View.SolutionPanel.InternalConstarinsClusterGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

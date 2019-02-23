@@ -1,10 +1,10 @@
-package view.SolutionPanel;
+package View.SolutionPanel;
 
-import controller.LowerBoundClusterListController;
+import Controller.Constrains.LowerBoundClusterListController;
 import javafx.util.Pair;
-import model.SCC.BoundsListRender;
-import model.SCC.SCCClusterList;
-import model.SCC.InternalConstarinsList;
+import Model.SCC.BoundsListRender;
+import Model.SCC.SCCClusterList;
+import Model.SCC.InternalConstarinsList;
 
 import javax.swing.*;
 import java.awt.*;

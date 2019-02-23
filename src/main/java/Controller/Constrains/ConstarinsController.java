@@ -1,7 +1,7 @@
-package controller;
+package Controller.Constrains;
 
-import model.Inequalities.InequalitiesList;
-import view.OperationsOnInequalities.InequalitiesListGUI;
+import Controller.GraphController;
+import Model.Inequalities.InequalitiesList;
 
 
 public class ConstarinsController {

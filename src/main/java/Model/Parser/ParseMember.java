@@ -1,4 +1,4 @@
-package model.Parser;
+package Model.Parser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

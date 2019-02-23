@@ -1,4 +1,4 @@
-package view.SolutionPanel;
+package View.SolutionPanel;
 
 import javax.swing.*;
 import javax.swing.border.Border;
