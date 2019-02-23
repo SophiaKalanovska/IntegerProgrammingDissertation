@@ -1,6 +1,9 @@
-package Model.SCC;
+package Model.SCC.ConstrainsLists;
 
+import Model.SCC.SCCCluster;
+import Model.SCC.SCCClusterList;
 import javafx.util.Pair;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -9,9 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 
-public class LowerBoundList extends Observable implements java.io.Serializable {
-    private ArrayList<Pair<Integer, Double>> sccLowerBoundContainer;
-    private ArrayList<SCCCluster> SCCCluster;
+public class InternalConstarinsList extends Observable implements java.io.Serializable {
+    private ArrayList<Pair<Integer, Double>> sccInternalConstarinsContainer;
+    private ArrayList<Model.SCC.SCCCluster> SCCCluster;
     protected Map<Double, ImageIcon> imageMap ;
 
 
@@ -19,9 +22,9 @@ public class LowerBoundList extends Observable implements java.io.Serializable {
     /**
      * Creates a InequalitiesList object
      */
-    public LowerBoundList(SCCClusterList SCCLowerBoundContainer) {
-        this.sccLowerBoundContainer = new ArrayList<>();
-        this.SCCCluster = SCCLowerBoundContainer.getProjectWallet();
+    public InternalConstarinsList(SCCClusterList SCCInternalConstarinsContainer) {
+        this.sccInternalConstarinsContainer = new ArrayList<>();
+        this.SCCCluster = SCCInternalConstarinsContainer.getProjectWallet();
     }
 
     public Map<Integer, ImageIcon> populate(){
@@ -40,8 +43,8 @@ public class LowerBoundList extends Observable implements java.io.Serializable {
 
             ImageIcon imageIcon = new ImageIcon(bImg);
 
-            Pair pair = new Pair<>(SCC.get(i).getId(), SCC.get(i).getLowerbound());
-            sccLowerBoundContainer.add(i, pair);
+            Pair pair = new Pair<>(SCC.get(i).getId(), SCC.get(i).getInternalConstartins());
+            sccInternalConstarinsContainer.add(i, pair);
             map.put(SCC.get(i).getId(), imageIcon);
         }
         return map;
@@ -49,8 +52,10 @@ public class LowerBoundList extends Observable implements java.io.Serializable {
     }
 
     public ArrayList<Pair<Integer,Double>> getProjectWallet() {
-        return sccLowerBoundContainer;
+        return sccInternalConstarinsContainer;
     }
+
+
 
     /**
      * Sends signal to the observers to update the View

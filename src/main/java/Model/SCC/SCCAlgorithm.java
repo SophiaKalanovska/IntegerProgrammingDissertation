@@ -45,6 +45,7 @@ public class SCCAlgorithm {
                 Color randomColor = cluster.getColor();
                 n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
             }
+            setAttackedNodes(n);
         }
         return list;
     }
@@ -67,7 +68,7 @@ public class SCCAlgorithm {
         }
     }
 
-    private void clear(){
+    public void clear(){
         for (Node node : graph.getEachNode()) {
             node.setAttribute("internal_weight", 0.0);
             node.setAttribute("upper_bound", ((DecisionVariable)node.getAttribute("decision_variable")).getUpperBound());

@@ -2,7 +2,7 @@ package Controller.Constrains;
 
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
-import Model.SCC.UpperBoundList;
+import Model.SCC.ConstrainsLists.UpperBoundList;
 import View.SolutionPanel.UpperBoundClusterGUI;
 
 import javax.swing.*;

@@ -14,10 +14,7 @@ public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
     private final Graph graph;
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
-
-
     private int id;
-
 
     public GraphController(GraphGUI graphGUI, Graph graph) {
         this.graphGUI = graphGUI;
@@ -47,7 +44,6 @@ public class GraphController implements Serializable {
             list.add("<");
             list.add(Character.toString(nodes.charAt(i + 1)));
 //					addNodes(list);
-
             i = i + 1;
         }
         // add if the number of inequalities are more than 30

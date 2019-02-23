@@ -14,13 +14,9 @@ import View.OperationsOnInequalities.InequalitiesListGUI;
 public class InequalitiesListController implements ActionListener, MouseListener {
 
     private InequalitiesList inequalitiesList;
-    private String enterInequality;
-    private String jtfProjectTField;
     private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
-    private JPanel currentPanel;
     private GraphController graphController;
     private ConstarinsController constarinsController;
-    private SCCClusterList clusters;
 
 
     /**
@@ -79,10 +75,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
      * @param e the ActionEven object which will identify the performed action
      */
     @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) {
-        }
-
-
+    public void actionPerformed(java.awt.event.ActionEvent e) { }
 }
 
 

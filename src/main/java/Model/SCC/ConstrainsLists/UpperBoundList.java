@@ -1,5 +1,7 @@
-package Model.SCC;
+package Model.SCC.ConstrainsLists;
 
+import Model.SCC.SCCCluster;
+import Model.SCC.SCCClusterList;
 import javafx.util.Pair;
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +13,7 @@ import java.util.Observable;
 
 public class UpperBoundList extends Observable implements java.io.Serializable {
     private ArrayList<Pair<Integer, Double>> sccUpperBoundContainer;
-    private ArrayList<SCCCluster> SCCCluster;
+    private ArrayList<Model.SCC.SCCCluster> SCCCluster;
     protected Map<Double, ImageIcon> imageMap ;
 
 

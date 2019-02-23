@@ -2,7 +2,7 @@ package View.SolutionPanel;
 
 import Controller.Constrains.LowerBoundClusterListController;
 import javafx.util.Pair;
-import Model.SCC.LowerBoundList;
+import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
 import Model.SCC.SCCClusterList;
 import javax.swing.*;

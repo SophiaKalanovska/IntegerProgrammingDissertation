@@ -18,16 +18,13 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     private InequalitiesList inequalitiesList;
     private String enterInequality;
     private Parser parser;
-
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
      */
     public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI){
-
         this.inequalitiesList = inequalitiesList;
-
         ManualInequalitiesGUI.addControllers(this);
         ManualInequalitiesGUI.addMouseListener(this);
     }

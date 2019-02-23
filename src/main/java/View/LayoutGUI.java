@@ -69,7 +69,7 @@ public class LayoutGUI extends JPanel  {
         integerAssignmentGUI.setBorder(new TitledBorder(topBorder1,"<html><b> Optimal Integer Assignment:</html><b>" ));
 
         Border topBorder3 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        internalConstarinsClusterGUI.setBorder(new TitledBorder(topBorder3,"<html><b> Internal Constrains in Clusters:</html><b>" ));
+        internalConstarinsClusterGUI.setBorder(new TitledBorder(topBorder3,"<html><b> Internal ConstrainsLists in Clusters:</html><b>" ));
 
 
         JPanel southEastPanel = new JPanel(new GridLayout(1,2));

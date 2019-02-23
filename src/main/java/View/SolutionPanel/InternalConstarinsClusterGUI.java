@@ -4,7 +4,7 @@ import Controller.Constrains.LowerBoundClusterListController;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
 import Model.SCC.SCCClusterList;
-import Model.SCC.InternalConstarinsList;
+import Model.SCC.ConstrainsLists.InternalConstarinsList;
 
 import javax.swing.*;
 import java.awt.*;

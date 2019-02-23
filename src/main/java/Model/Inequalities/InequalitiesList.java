@@ -23,7 +23,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         this.graphController = graphController;
         inequalitiesContainer = new ArrayList<Inequality>();
         algoritm = new SCCAlgorithm(graphController.getGraph());
-        //projectMap = new HashMap<String, Projects>();
     }
 
 
@@ -39,20 +38,16 @@ public class InequalitiesList extends Observable implements java.io.Serializable
             graphController.addNode(x.getFirstDecisionVariable());
             graphController.addNode(x.getSecondDecisionVariable());
             graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
-            graphController.getPipeIn().pump();
-            algoritm.calculateSCC();
-            SCCComponents = algoritm.cluster();
-            setChanged();
-            notifyObservers();
         }else{
             this.inequalitiesContainer.add(x);
             graphController.addNode(x.getFirstDecisionVariable());
-            graphController.getPipeIn().pump();
-            algoritm.calculateSCC();
-            SCCComponents = algoritm.cluster();
-            setChanged();
-            notifyObservers();
         }
+        graphController.getPipeIn().pump();
+        algoritm.clear();
+        algoritm.calculateSCC();
+        SCCComponents = algoritm.cluster();
+        setChanged();
+        notifyObservers();
         return SCCComponents;
     }
 //
@@ -65,22 +60,13 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     public void deleteInequality(Inequality x) {
         graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
         inequalitiesContainer.remove(x);
-        tryUpdate();
+        graphController.getPipeIn().pump();
+        algoritm.clear();
+        algoritm.calculateSCC();
+        SCCComponents = algoritm.cluster();
+        setChanged();
+        notifyObservers();
     }
-
-//    public void changeInequality(String oldInequality, String newInequality)
-//    {
-//        for (int i = 0; i <inequalitiesContainer.size() ; i++)
-//        {
-//            if (((inequalitiesContainer.get(i)).getExpreission().equals(oldInequality)))
-//            {
-//                (inequalitiesContainer.get(i)).changeExpression(newInequality);
-//            }
-//        }
-//
-//        setChanged();
-//        notifyObservers();
-//    }
 
     public SCCClusterList getSCCComponents() {
         return SCCComponents;

@@ -1,7 +1,7 @@
 package Controller.Constrains;
 
 import Model.Inequalities.InequalitiesList;
-import Model.SCC.LowerBoundList;
+import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
 import View.SolutionPanel.LowerBoundClusterGUI;
 
