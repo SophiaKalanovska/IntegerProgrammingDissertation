@@ -71,6 +71,7 @@ public class GraphController implements Serializable {
 
     }
 
+
     public void addNode(DecisionVariable firstUnknownVariable){
         if (graph.getNode(firstUnknownVariable.toString()) == null ){
             graph.addNode(firstUnknownVariable.toString());
@@ -78,6 +79,10 @@ public class GraphController implements Serializable {
             node.setAttribute("ui.label", node.getId());
             node.setAttribute("internal_weight", 0.0);
             node.addAttribute("decision_variable", firstUnknownVariable);
+            node.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
+            node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
+        }else{
+            Node node = graph.getNode(firstUnknownVariable.toString());
             node.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
             node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
         }

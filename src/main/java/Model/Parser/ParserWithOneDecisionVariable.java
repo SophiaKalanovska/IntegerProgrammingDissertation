@@ -13,7 +13,6 @@ public class ParserWithOneDecisionVariable {
         int boundry = 0;
         try {
             parser.term1 = parser.parseMember.parse_term("first");
-            System.out.println("successfully parsed term" );
             parser.parseMember.parse_sign();
             try {
                 boundry = parser.parseMember.parse_number();
@@ -25,7 +24,6 @@ public class ParserWithOneDecisionVariable {
             }else{
                 parser.inequality.getFirstDecisionVariable().setLowerBound(boundry);
             }
-            System.out.println("success in the form of Nx< k");
         } catch (Exceptions.ExceptionNotATerm exceptionNotATerm) {
             try {
                 parser.parseMember.parse_number();
@@ -39,7 +37,6 @@ public class ParserWithOneDecisionVariable {
             }else{
                 parser.inequality.getFirstDecisionVariable().setUpperBound(boundry);
             }
-            System.out.println("success in the form of k < Nx");
         } catch (Exception e) {
             System.out.println("some other exception");
         }

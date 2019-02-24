@@ -40,9 +40,7 @@ public class ParseMember {
     }
 
     private void parse_weight(String expression, String order) throws Exceptions.NoWeightException {
-
         try {
-
             parser.toParse = expression;
             signOfExpression(order);
             String term = tokenize("[1-9]+[0-9]*");
@@ -76,7 +74,6 @@ public class ParseMember {
                 }
             }
         } catch (Exception e) {
-            System.out.println("no sign");
         }
 
 
@@ -113,7 +110,6 @@ public class ParseMember {
                 parse_weight(term, order);
                 parse_UnknownVariable(order);
             } catch (Exceptions.NoWeightException e) {
-                System.out.println("no weight");
                 parse_UnknownVariable(order);
             }
 

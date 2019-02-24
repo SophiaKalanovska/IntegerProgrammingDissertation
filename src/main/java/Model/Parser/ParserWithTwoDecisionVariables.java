@@ -40,7 +40,4 @@ public class ParserWithTwoDecisionVariables {
         parser.parseMember.parse_sign();
         parser.term2 = parser.parseMember.parse_term("second");
     }
-
-
-
 }
