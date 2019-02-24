@@ -60,13 +60,29 @@ public class RandomInequalitiesGenerator {
                 decisionVariables.add(decisionVariable);
             }
         }
-            render(decisionVariables);
+            renderNodes(decisionVariables);
             return decisionVariables;
+    }
+
+    public ArrayList<Inequality> generateInequalities(ArrayList<DecisionVariable> decisionVariables, int numberOfInequalities) {
+        ArrayList<Inequality> inequalities = new ArrayList<>();
+        for (int i = 0; i < numberOfInequalities ; i++ ) {
+            int variableIndexFirst = (int) (Math.random() * decisionVariables.size());
+            int variableIndexSecond = (int) (Math.random() * decisionVariables.size());
+            Inequality newIneqiality = new Inequality();
+            DecisionVariable first = decisionVariables.get(variableIndexFirst);
+            DecisionVariable second = decisionVariables.get(variableIndexSecond);
+            newIneqiality.setFirstDecisionVariable(first);
+            newIneqiality.setSecondDecisionVariable(second);
+            newIneqiality.setExpression("" + first.getWeight() + first.toString() + "<=" + second.getWeight() + second.toString());
+            inequalities.add(newIneqiality);
+        }
+        return inequalities;
     }
 
 
 
-    public void render(ArrayList<DecisionVariable> decisionVariables){
+    public void renderNodes(ArrayList<DecisionVariable> decisionVariables){
         for (DecisionVariable decisionVariable : decisionVariables){
             graphController.addNode(decisionVariable);
             graphController.getPipeIn().pump();
@@ -75,13 +91,6 @@ public class RandomInequalitiesGenerator {
             algorithm.cluster();
         }
 //        return SCCComponents;
-    }
-
-
-
-    public ArrayList<Inequality> generateInequalities(ArrayList<DecisionVariable> decisionVariables) {
-        ArrayList<Inequality> inequalities = new ArrayList<>();
-        return inequalities;
     }
 
 

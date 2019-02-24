@@ -23,6 +23,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     private RandomInequalitiesGUI randomInequalitiesGUI;
     private GraphController graph;
     private InequalitiesList inequalitiesList;
+    private ArrayList<DecisionVariable> nodes;
 
     /**
      * Constructs a Controller for the LayoutGUI panel
@@ -35,6 +36,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         this.graph = graphController;
         randomInequalitiesGUI.addControllers(this);
         randomInequalitiesGUI.addMouseListener(this);
+        nodes = new  ArrayList<>();
     }
 
     /**
@@ -66,17 +68,17 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
 
         if (e.getSource() instanceof JTextField) {
             JTextField enter = (JTextField) e.getSource();
-            ArrayList<DecisionVariable> nodes = new ArrayList<>();
             RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator(graph);
             if (((JTextField) e.getSource()).getName().equals("randomNumberNodes")) {
                 int numberOfRandomNodes = Integer.parseInt(enter.getText());
+                nodes = new ArrayList<>();
                 nodes = generator.generateNodes(numberOfRandomNodes);
             } else {
-//                int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
-//                ArrayList<Inequality>  inequalities = generator.generateInequalities(nodes);
-//                for (Inequality inequality : inequalities) {
-//                    inequalitiesList.addInequality(inequality);
-//                }
+                int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
+                ArrayList<Inequality>  inequalities = generator.generateInequalities(nodes, numberOfRandomInequalities);
+                for (Inequality inequality: inequalities){
+                    inequalitiesList.addInequality(inequality);
+                }
             }
         }
     }

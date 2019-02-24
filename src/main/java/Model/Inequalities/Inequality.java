@@ -32,8 +32,8 @@ public class Inequality  extends Observable implements Serializable {
         return firstDecisionVariable.toString();
     }
 
-    public void setFirstDecisionVariableValue(String firstDecisionVariable) {
-        this.firstDecisionVariable.setVariable(firstDecisionVariable);
+    public void setFirstDecisionVariable(DecisionVariable firstDecisionVariable) {
+        this.firstDecisionVariable = firstDecisionVariable;
     }
 
 
@@ -41,8 +41,8 @@ public class Inequality  extends Observable implements Serializable {
         return secondDecisionVariable.toString();
     }
 
-    public void setSecondDecisionVariableValue(String secondDecisionVariable) {
-        this.secondDecisionVariable.setVariable(secondDecisionVariable);
+    public void setSecondDecisionVariable(DecisionVariable secondDecisionVariable) {
+        this.secondDecisionVariable = secondDecisionVariable;
     }
 
     public DecisionVariable getFirstDecisionVariable() {

@@ -18,6 +18,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     private InequalitiesList observer;
     private JButton delete;
     private JButton deleteAll;
+    private JButton deleteGraph;
     private JButton evaluateAll;
     private DefaultListModel listModel;
     private JList projectsList;
@@ -34,11 +35,13 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         scroll.setBorder( BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(153, 218, 250)));
         delete = new JButton("Delete Inequality");
         delete.setName("delete");
-        evaluateAll = new JButton("Evaluate Inequality");
+        evaluateAll = new JButton("Evaluate Graph");
         evaluateAll.setName("evaluate");
         projectsList.setName("projectsList");
         deleteAll = new JButton("Delete All Inequalities");
         deleteAll.setName("deleteAll");
+        deleteGraph = new JButton("Delete Graph");
+        deleteGraph.setName("deleteGraph");
 //
 //
 //        delete.setBorder(new LineBorder( new Color(153, 218, 250)));
@@ -47,10 +50,11 @@ public class InequalitiesListGUI extends JPanel implements Observer {
 
 
 
-        JPanel operations = new JPanel(new GridLayout(3,1));
+        JPanel operations = new JPanel(new GridLayout(4,1));
         operations.add(delete);
         operations.add(deleteAll);
         operations.add(evaluateAll);
+        operations.add(deleteGraph);
         operations.setBackground(Color.WHITE);
 
         JPanel listAndActions= new JPanel(new GridLayout(1,2));
@@ -75,6 +79,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         evaluateAll.addMouseListener(controller);
         projectsList.addMouseListener(controller);
         deleteAll.addMouseListener(controller);
+        deleteGraph.addMouseListener(controller);
     }
 
     public Inequality getListSelectedValue(){

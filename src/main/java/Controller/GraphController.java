@@ -74,4 +74,8 @@ public class GraphController implements Serializable {
     public Graph getGraph(){
         return graph;
     }
+
+    public void deleteGraph() {
+        graph.clear();
+    }
 }

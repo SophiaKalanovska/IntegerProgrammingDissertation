@@ -101,4 +101,10 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         inequalitiesContainer.removeAll(inequalitiesContainer);
         tryUpdate();
     }
+
+    public void deleteGraph() {
+        graphController.deleteGraph();
+        inequalitiesContainer.removeAll(inequalitiesContainer);
+        tryUpdate();
+    }
 }
