@@ -7,6 +7,8 @@ import Controller.Constrains.InternalConstarinsClusterListController;
 import Controller.Constrains.LowerBoundClusterListController;
 import Controller.Constrains.UpperBoundClusterListController;
 import Model.Inequalities.InequalitiesList;
+import Model.Inequalities.RandomInequalitiesGenerator;
+import Model.SCC.SCCAlgorithm;
 import Model.SCC.SCCClusterList;
 import View.*;
 import View.OperationsOnInequalities.InequalitiesListGUI;
@@ -25,7 +27,8 @@ public class Container extends JFrame {
 		SCCClusterList clusterList = new SCCClusterList();
 		GraphGUI graph = new GraphGUI();
 
-        final InequalitiesList inequalitiesList = new InequalitiesList(graph.graphController);
+		SCCAlgorithm algorithm = new SCCAlgorithm(graph.graphController.getGraph());
+        final InequalitiesList inequalitiesList = new InequalitiesList(graph.graphController,algorithm);
 		LowerBoundClusterGUI lowerBoundClusterGUI = new LowerBoundClusterGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
@@ -33,16 +36,16 @@ public class Container extends JFrame {
 
 		UpperBoundClusterGUI upperBoundClusterGUI = new UpperBoundClusterGUI();
 		UpperBoundClusterListController upperBoundClusterListController = new UpperBoundClusterListController(upperBoundClusterGUI);
-		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI);
         ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
         IntegerAssignmentGUI integerAssignmentGUI = new IntegerAssignmentGUI();
 		InternalConstarinsClusterGUI internalConstarinsClusterGUI = new InternalConstarinsClusterGUI();
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
-        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI, integerAssignmentGUI, internalConstarinsClusterGUI);
+		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI, integerAssignmentGUI, internalConstarinsClusterGUI);
+        LayoutGUI graphgen = new LayoutGUI(this, graph, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
 
-        //Controller creation
-		new RandomInequalitiesController(randomInequalitiesGUI, graph.graphController);
+//        //Controller creation
+		new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graph.graphController);
 		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController);
 		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graph.graphController, constarinsController);
 
@@ -53,7 +56,7 @@ public class Container extends JFrame {
         setPanel(graphgen);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setPreferredSize(new Dimension(900, 600));
+		this.setPreferredSize(new Dimension(1137, 710));
 		this.setVisible(true);
 		this.pack();
 		this.setLocationRelativeTo(null);

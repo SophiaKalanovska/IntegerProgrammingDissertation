@@ -17,7 +17,7 @@ public class ConstarinsController {
         this.internalConstarinsClusterListController = internalConstarinsClusterListController;
     }
 
-    public void populate(GraphController graphController, InequalitiesList inequalitiesList){
+    public void populate(InequalitiesList inequalitiesList){
         calculateBounds(inequalitiesList);
 
         lowerBoundClusterListController.populate(inequalitiesList);

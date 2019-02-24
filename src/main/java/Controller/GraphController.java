@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Inequalities.DecisionVariable;
+import Model.Inequalities.RandomInequalitiesGenerator;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
@@ -23,55 +24,6 @@ public class GraphController implements Serializable {
 
     }
 
-    public static String randomAlphaNumeric(int count, String alpha) {
-        StringBuilder builder = new StringBuilder();
-        while (count-- != 0) {
-            int character = (int) (Math.random() * alpha.length());
-            builder.append(alpha.charAt(character));
-        }
-        return builder.toString();
-    }
-
-    public void addRandomNodes(int n) {
-        String nodes = randomAlphaNumeric(n + 1, ALPHA);
-
-
-        System.out.println(nodes);
-        for (int i = 0; i < n - 1 && graph.getNodeCount() < 18; ) {
-
-            ArrayList<String> list = new ArrayList<String>();
-            list.add(Character.toString(nodes.charAt(i)));
-            list.add("<");
-            list.add(Character.toString(nodes.charAt(i + 1)));
-//					addNodes(list);
-            i = i + 1;
-        }
-        // add if the number of inequalities are more than 30
-        System.out.println("nodes so far" + graph.getNodeCount());
-        if (graph.getNodeCount() > 17 || n > 30) {
-            for (int i = n - 1; i > 26; ) {
-                System.out.println(i);
-                ArrayList<String> list = new ArrayList<String>();
-                StringBuilder sb = new StringBuilder();
-                StringBuilder sb2 = new StringBuilder();
-                sb.append(nodes.charAt(i));
-                sb.append(nodes.charAt(i - 1));
-                sb2.append(nodes.charAt(i - 2));
-                sb2.append(nodes.charAt(i - 3));
-                list.add(sb.toString());
-                list.add("<");
-                if (i < 29) {
-                    list.add(Character.toString(nodes.charAt(i - 10)));
-                } else {
-                    list.add(sb2.toString());
-                }
-                i = i - 2;
-            }
-        }
-
-    }
-
-
     public void addNode(DecisionVariable firstUnknownVariable){
         if (graph.getNode(firstUnknownVariable.toString()) == null ){
             graph.addNode(firstUnknownVariable.toString());
@@ -88,10 +40,7 @@ public class GraphController implements Serializable {
             original.setLowerBound(firstUnknownVariable.getLowerBound());
             node.setAttribute("upper_bound", original.getUpperBound());
             node.setAttribute("lower_bound", original.getLowerBound());
-
-
         }
-
     }
 
     public void addEdge(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable){

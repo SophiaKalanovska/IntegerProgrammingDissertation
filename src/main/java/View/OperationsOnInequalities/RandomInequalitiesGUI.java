@@ -6,17 +6,27 @@ import java.awt.*;
 
 
 public class RandomInequalitiesGUI extends JPanel {
-    private JTextField randomNumberInequality;
+    private JTextField randomNumberNodes;
+    private JTextField randomNumberInequalities;
 
     public RandomInequalitiesGUI(){
 
         this.setLayout(new GridLayout(2,1));
 
-        this.randomNumberInequality = new JTextField("Number of Nodes...", 20);
-        this.randomNumberInequality.setName("randomNumberInequality");
+        this.randomNumberNodes = new JTextField("Number of Nodes...", 20);
+        this.randomNumberNodes.setName("randomNumberNodes");
+
+        this.randomNumberInequalities = new JTextField("Number of Inequalities...", 20);
+        this.randomNumberInequalities.setName("randomNumberInequalities");
+
+
+        JPanel operations = new JPanel(new GridLayout(2,1));
+        operations.add(randomNumberNodes);
+        operations.add(randomNumberInequalities);
+        operations.setBackground(Color.WHITE);
 
         JPanel panelrandomNumberInequality = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelrandomNumberInequality.add(randomNumberInequality);
+        panelrandomNumberInequality.add(operations);
         panelrandomNumberInequality.setBackground(Color.white);
 
         add(panelrandomNumberInequality);
@@ -26,12 +36,14 @@ public class RandomInequalitiesGUI extends JPanel {
 
     public void addControllers(RandomInequalitiesController controller){
         System.out.println("Controller added");
-        randomNumberInequality.addActionListener(controller);
+        randomNumberNodes.addActionListener(controller);
+        randomNumberInequalities.addActionListener(controller);
     }
 
     public void addMouseListener(RandomInequalitiesController controller){
         System.out.println("mouselistener added");
-        randomNumberInequality.addMouseListener(controller);
+        randomNumberNodes.addMouseListener(controller);
+        randomNumberInequalities.addMouseListener(controller);
     }
 
 

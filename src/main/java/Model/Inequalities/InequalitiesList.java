@@ -13,16 +13,16 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     private ArrayList<Inequality> inequalitiesContainer;
     private GraphController graphController;
-    private SCCAlgorithm algoritm;
+    private SCCAlgorithm algorithm;
     private SCCClusterList SCCComponents;
 
     /**
      * Creates a InequalitiesList object
      */
-    public InequalitiesList(GraphController graphController) {
+    public InequalitiesList(GraphController graphController, SCCAlgorithm algorithm) {
         this.graphController = graphController;
-        inequalitiesContainer = new ArrayList<Inequality>();
-        algoritm = new SCCAlgorithm(graphController.getGraph());
+        inequalitiesContainer = new ArrayList<>();
+        this.algorithm = algorithm;
     }
 
 
@@ -43,9 +43,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
             graphController.addNode(x.getFirstDecisionVariable());
         }
         graphController.getPipeIn().pump();
-        algoritm.clear();
-        algoritm.calculateSCC();
-        SCCComponents = algoritm.cluster();
+        algorithm.clear();
+        algorithm.calculateSCC();
+        SCCComponents = algorithm.cluster();
         setChanged();
         notifyObservers();
         return SCCComponents;
@@ -61,9 +61,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
         inequalitiesContainer.remove(x);
         graphController.getPipeIn().pump();
-        algoritm.clear();
-        algoritm.calculateSCC();
-        SCCComponents = algoritm.cluster();
+        algorithm.clear();
+        algorithm.calculateSCC();
+        SCCComponents = algorithm.cluster();
         setChanged();
         notifyObservers();
     }
@@ -93,7 +93,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         setChanged();
         notifyObservers();
     }
-
 
     public void deleteAllInequalities() {
         for (int i = 0; i < inequalitiesContainer.size(); i++) {
