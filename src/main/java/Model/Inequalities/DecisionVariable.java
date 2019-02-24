@@ -1,7 +1,7 @@
 package Model.Inequalities;
 
 public class DecisionVariable {
-    private int weight;
+    private double weight;
     private String sign;
     private String variable;
     private double lowerBound;
@@ -24,7 +24,7 @@ public class DecisionVariable {
         }
     }
 
-    public int getWeight() {
+    public double getWeight() {
         if (sign.equals("+")){
             return weight;
         }else{
@@ -33,7 +33,7 @@ public class DecisionVariable {
 
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

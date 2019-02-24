@@ -43,12 +43,12 @@ public class ParseMember {
         try {
             parser.toParse = expression;
             signOfExpression(order);
-            String term = tokenize("[1-9]+[0-9]*");
+            String term = tokenize("[1-9]+[0-9]*|[0-9]+[\\.\\,][0-9]+");
             if (order.equals("first")) {
-                parser.inequality.getFirstDecisionVariable().setWeight(Integer.parseInt(term));
+                parser.inequality.getFirstDecisionVariable().setWeight(Double.parseDouble(term));
                 ;
             } else {
-                parser.inequality.getSecondDecisionVariable().setWeight(Integer.parseInt(term));
+                parser.inequality.getSecondDecisionVariable().setWeight(Double.parseDouble(term));
                 ;
             }
         } catch (Exception e) {
@@ -99,7 +99,8 @@ public class ParseMember {
         String term;
 
         try {
-            term = tokenize("[+|-]*[1-9]*[a-zA-Z][a-zA-Z0-9_]*|[1-9]+[0-9]*[a-zA-Z][a-zA-Z0-9_]*");
+
+            term = tokenize("[+|-]*[1-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[1-9]+[0-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[0-9]+[\\.\\,][0-9]+[a-zA-Z][a-zA-Z0-9_]*");
 
         } catch (Exception e) {
             throw new Exceptions.ExceptionNotATerm(" Expecting pattern term " + order);
@@ -129,9 +130,9 @@ public class ParseMember {
         }
     }
 
-    public Integer parse_number() throws Exceptions.ExceptionNotNumber {
+    public Double parse_number() throws Exceptions.ExceptionNotNumber {
         try {
-            return Integer.parseInt(tokenize("[0-9]+"));
+            return Double.parseDouble(tokenize("[0-9]+[\\.\\,][0-9]+|[0-9]+"));
         } catch (Exception e) {
             throw new Exceptions.ExceptionNotNumber("not a number");
         }

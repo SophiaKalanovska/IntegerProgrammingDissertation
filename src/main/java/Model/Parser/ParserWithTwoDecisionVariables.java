@@ -10,18 +10,6 @@ public class ParserWithTwoDecisionVariables {
     public void parse_inequality() throws Exceptions.ExceptionNotATerm, Exception {
         try {
             parser.term1 = parser.parseMember.parse_term("first");
-            try {
-                parser.term2 = parser.parseMember.parse_term("second");
-                parser.parseMember.parse_sign();
-                try {
-                    parser.parseMember.parse_null();
-                    parser.hasZeroLeft = true;
-                } catch (Exceptions.ExceptionNotZero exceptionNotNull) {
-                    System.out.println("not zero");
-                }
-            } catch (Exceptions.ExceptionNotATerm e) {
-                one_term_signexpected();
-            }
         } catch (Exceptions.ExceptionNotATerm e) {
             System.out.println("First term is not valid");
             try {
@@ -34,10 +22,28 @@ public class ParserWithTwoDecisionVariables {
             parser.term2 = parser.parseMember.parse_term("second");
             parser.hasZeroRight= true;
         }
+            try {
+                parser.term2 = parser.parseMember.parse_term("second");
+                parser.parseMember.parse_sign();
+                try {
+                    parser.parseMember.parse_null();
+                    parser.hasZeroLeft = true;
+                } catch (Exceptions.ExceptionNotZero exceptionNotNull) {
+                    System.out.println("not zero");
+                }
+            } catch (Exceptions.ExceptionNotATerm e) {
+                one_term_signexpected();
+            }
+
     }
 
     private void one_term_signexpected() throws Exception, Exceptions.ExceptionNotATerm {
         parser.parseMember.parse_sign();
-        parser.term2 = parser.parseMember.parse_term("second");
+        try {
+            parser.term2 = parser.parseMember.parse_term("second");
+        } catch (Exceptions.ExceptionNotATerm exceptionNotATerm) {
+            throw new Exceptions.ExceptionNotATerm("might be onlyOneVar");
+        }
+
     }
 }

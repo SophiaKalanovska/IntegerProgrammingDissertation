@@ -10,7 +10,7 @@ public class ParserWithOneDecisionVariable {
 
     public void parse_inequality() throws Exception, Exceptions.ExceptionNotATerm {
         parser.toParse = "";
-        int boundry = 0;
+        double boundry = 0;
         try {
             parser.term1 = parser.parseMember.parse_term("first");
             parser.parseMember.parse_sign();

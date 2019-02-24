@@ -42,19 +42,13 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         deleteAll.setName("deleteAll");
         deleteGraph = new JButton("Delete Graph");
         deleteGraph.setName("deleteGraph");
-//
-//
-//        delete.setBorder(new LineBorder( new Color(153, 218, 250)));
-//        deleteAll.setBorder(new LineBorder( new Color(153, 218, 250)));
-//        evaluateAll.setBorder(new LineBorder( new Color(153, 218, 250)));
-
 
 
         JPanel operations = new JPanel(new GridLayout(4,1));
         operations.add(delete);
         operations.add(deleteAll);
-        operations.add(evaluateAll);
         operations.add(deleteGraph);
+        operations.add(evaluateAll);
         operations.setBackground(Color.WHITE);
 
         JPanel listAndActions= new JPanel(new GridLayout(1,2));
