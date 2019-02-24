@@ -83,8 +83,13 @@ public class GraphController implements Serializable {
             node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
         }else{
             Node node = graph.getNode(firstUnknownVariable.toString());
-            node.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
-            node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
+            DecisionVariable original = node.getAttribute("decision_variable");
+            original.setUpperBound(firstUnknownVariable.getUpperBound());
+            original.setLowerBound(firstUnknownVariable.getLowerBound());
+            node.setAttribute("upper_bound", original.getUpperBound());
+            node.setAttribute("lower_bound", original.getLowerBound());
+
+
         }
 
     }

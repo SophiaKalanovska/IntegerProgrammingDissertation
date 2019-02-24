@@ -53,7 +53,7 @@ public class DecisionVariable {
         return lowerBound;
     }
 
-    public void setLowerBound(int lowerBound) {
+    public void setLowerBound(double lowerBound) {
         if (lowerBound > this.lowerBound){
             this.lowerBound = lowerBound;
         }
@@ -63,7 +63,7 @@ public class DecisionVariable {
         return upperBound;
     }
 
-    public void setUpperBound(int upperBound) {
+    public void setUpperBound(double upperBound) {
         if (upperBound < this.upperBound){
             this.upperBound = upperBound;
         }
