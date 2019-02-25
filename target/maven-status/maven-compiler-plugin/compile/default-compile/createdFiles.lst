@@ -2,7 +2,6 @@ model/Parser/Exceptions$ExceptionNotZero.class
 model/Inequalities/InequalitiesList.class
 controller/GraphController.class
 model/Parser/ParseMember.class
-View/GraphGUI.class
 model/SCC/BoundsListRender.class
 model/SCC/SCCClusterList.class
 controller/Constrains/LowerBoundClusterListController.class
@@ -22,11 +21,14 @@ View/OperationsOnInequalities/ManualInequalitiesGUI.class
 View/OperationsOnInequalities/InequalitiesListGUI.class
 model/Parser/Parser.class
 model/Inequalities/DecisionVariable.class
+View/Graph/Settings.class
 controller/Constrains/UpperBoundClusterListController.class
 controller/RandomInequalitiesController.class
 model/Parser/Exceptions$NoWeightException.class
 model/Parser/Exceptions$ExceptionNotATerm.class
+View/Graph/GraphGUI.class
 View/SolutionPanel/InternalConstarinsClusterGUI.class
+controller/CheckboxActionController.class
 model/Inequalities/RandomInequalitiesGenerator.class
 model/Parser/Exceptions.class
 View/OperationsOnInequalities/RandomInequalitiesGUI.class

@@ -1,4 +1,4 @@
-package View;
+package View.Graph;
 
 import javax.swing.JPanel;
 import Controller.GraphController;
@@ -18,6 +18,8 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	private ViewPanel viewPanel;
 	private Viewer viewer;
 	private Graph graph;
+	private String cssLight;
+    private String cssDark;
 	private ViewerPipe pipeIn;
 	private ConnectedComponents cc;
 
@@ -26,19 +28,16 @@ public class GraphGUI extends JPanel implements ViewerListener{
         graph = new MultiGraph("Strongly connected components");
         graphController = new GraphController(this, graph);
 
-        String css = "edge .notintree {size:1px;fill-color:gray;} " +
-                "edge .intree {size:3px;fill-color:black;}";
-        graph.setAttribute("ui.stylesheet", css);
 
-        String cssNode = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 10; shadow-offset:0;  z-index :2;}" +
+         cssLight = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
+                "graph { fill-color: white; }" +
+                "edge {fill-color: black;  z-index :1; text-color: black; }";
+
+         cssDark = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: black; }" +
-                "edge {fill-color: white;  z-index :1; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 0.2; shadow-offset:0; }";
+                "edge {fill-color: white; text-color: white; z-index :1; }";
 
-
-
-        String cssGraph = "graph { fill-color: black;}";
-        graph.setAttribute("ui.stylesheet", cssGraph);
-        graph.setAttribute("ui.stylesheet", cssNode);
+        graph.setAttribute("ui.stylesheet", cssLight);
 
         viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_ANOTHER_THREAD);
         pipeIn = viewer.newViewerPipe();
@@ -52,30 +51,15 @@ public class GraphGUI extends JPanel implements ViewerListener{
 
         cc.init(graph);
 
-		///////////////////////////////
-
-//        viewPanel = viewer.addDefaultView(false);
-//
-////        Viewer defaultView = graph.display();
-////        View view = defaultView.getDefaultView();
-////        ((ViewPanel) view).addMouseWheelListener();
-//////        view.resizeFrame(800, 600);
-//////        view.setViewCenter(440000, 2503000, 0);
-//////        view.setViewPercent(0.25);
-//
-//
-//
-//
-//        ///////////////////////////////
-//
-//		graph.setStrict(false);
-//		graph.setAutoCreate( true );
-//		viewer.enableAutoLayout();
-//		cc = new ConnectedComponents();
-//		cc.init(graph);
-//		// pipeIn.pump();
-
 	}
+
+	public void changeView(boolean dark){
+	    if (dark){
+            graph.setAttribute("ui.stylesheet", cssDark);
+        }else{
+            graph.setAttribute("ui.stylesheet", cssLight);
+        }
+    }
 
 	public ViewerPipe getPipe() {
 		return pipeIn;

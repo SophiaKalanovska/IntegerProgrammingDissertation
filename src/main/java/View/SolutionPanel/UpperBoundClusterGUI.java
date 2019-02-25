@@ -54,4 +54,14 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
     public void setRender(BoundsListRender lbr){
         upperBoundClusterList.setCellRenderer(lbr);
     }
+
+    public void changeView(boolean dark){
+        if (dark){
+            upperBoundClusterList.setBackground(Color.BLACK);
+            upperBoundClusterList.setForeground(Color.WHITE);
+        }else{
+            upperBoundClusterList.setBackground(Color.WHITE);
+            upperBoundClusterList.setForeground(Color.BLACK);
+        }
+    }
 }

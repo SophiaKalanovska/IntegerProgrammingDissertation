@@ -55,6 +55,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
         else if (e.getSource() instanceof JTextField){
             JTextField enter = (JTextField) e.getSource();
             enterInequality = enter.getText();
+            enter.setText("Enter inequality...");
             this.parser = new Parser(enterInequality);
             try {
                 Inequality parsedExpression = parser.parse();

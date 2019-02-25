@@ -1,14 +1,12 @@
 package Controller;
 
 import Model.Inequalities.DecisionVariable;
-import Model.Inequalities.RandomInequalitiesGenerator;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.ui.view.ViewerPipe;
-import View.GraphGUI;
+import View.Graph.GraphGUI;
 import java.io.Serializable;
-import java.util.ArrayList;
 
 
 public class GraphController implements Serializable {

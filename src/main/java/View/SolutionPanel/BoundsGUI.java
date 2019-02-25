@@ -7,22 +7,39 @@ import java.awt.*;
 
 public class BoundsGUI extends JPanel{
 
+    private LowerBoundClusterGUI lowerBoundClusterGUI;
+    private UpperBoundClusterGUI upperBoundClusterGUI;
+    private IntegerAssignmentGUI integerAssignmentGUI;
+    private InternalConstarinsClusterGUI internalConstarinsClusterGUI;
+    private TitledBorder integerAssignment;
+    private TitledBorder lowerBound ;
+    private TitledBorder upperBound ;
+    private TitledBorder internalConstarins;
+
     public BoundsGUI(LowerBoundClusterGUI lowerBoundClusterGUI, UpperBoundClusterGUI upperBoundClusterGUI, IntegerAssignmentGUI integerAssignmentGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI){
+        this.lowerBoundClusterGUI = lowerBoundClusterGUI;
+        this.upperBoundClusterGUI = upperBoundClusterGUI;
+        this.integerAssignmentGUI = integerAssignmentGUI;
+        this.internalConstarinsClusterGUI = internalConstarinsClusterGUI;
 
         Border topBorder = BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153, 218, 250));
-        internalConstarinsClusterGUI.setBorder(new TitledBorder(topBorder,"<html><b> Internal ConstrainsLists in Clusters:</html><b>" ));
+        internalConstarins = new TitledBorder(topBorder,"<html><b> Internal ConstrainsLists in Clusters:</html><b>" );
+        internalConstarinsClusterGUI.setBorder(internalConstarins);
 
 
         Border topBorder1 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        lowerBoundClusterGUI.setBorder( new TitledBorder(topBorder1,"<html><b> Lower Bounds in Clusters:</html><b>" ));
+        lowerBound =  new TitledBorder(topBorder1,"<html><b> Lower Bounds in Clusters:</html><b>" );
+        lowerBoundClusterGUI.setBorder(lowerBound);
 
 
         Border topBorder2 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        upperBoundClusterGUI.setBorder(new TitledBorder(topBorder2,"<html><b> Upper Bounds in Clusters:</html><b>" ));
+        upperBound = new TitledBorder(topBorder2,"<html><b> Upper Bounds in Clusters:</html><b>" );
+        upperBoundClusterGUI.setBorder(upperBound);
 
         //border color
         Border topBorder3 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        integerAssignmentGUI.setBorder(new TitledBorder(topBorder3,"<html><b> Optimal Integer Assignment:</html><b>" ));
+        integerAssignment = new TitledBorder(topBorder3,"<html><b> Optimal Integer Assignment:</html><b>" );
+        integerAssignmentGUI.setBorder(integerAssignment);
 
 
         this.setLayout(new GridLayout(1,4));
@@ -31,6 +48,24 @@ public class BoundsGUI extends JPanel{
         this.add(upperBoundClusterGUI);
         this.add(integerAssignmentGUI);
         this.setOpaque(false);
+    }
+
+    public void changeView(boolean dark){
+        if (dark){
+            integerAssignment.setTitleColor(Color.WHITE);
+            lowerBound.setTitleColor(Color.WHITE);
+            upperBound .setTitleColor(Color.WHITE);
+            internalConstarins.setTitleColor(Color.WHITE);
+        }else{
+            integerAssignment.setTitleColor(Color.BLACK);
+            lowerBound.setTitleColor(Color.BLACK);
+            upperBound .setTitleColor(Color.BLACK);
+            internalConstarins.setTitleColor(Color.BLACK);
+        }
+        lowerBoundClusterGUI.changeView(dark);
+        upperBoundClusterGUI.changeView(dark);
+        integerAssignmentGUI.changeView(dark);
+        internalConstarinsClusterGUI.changeView(dark);
     }
 
 }

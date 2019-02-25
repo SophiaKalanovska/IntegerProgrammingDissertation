@@ -2,51 +2,81 @@ package View.OperationsOnInequalities;
 
 import Controller.RandomInequalitiesController;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 
 public class RandomInequalitiesGUI extends JPanel {
-    private JLabel randomNumberNodesLabel;
-    private JTextField randomNumberNodes;
+    private JLabel randomNumberDecisionVariableLabel;
+    private JTextField randomNumberDecisionVariables;
     private JLabel randomNumberInequalitiesLabel;
     private JTextField randomNumberInequalities;
 
     public RandomInequalitiesGUI(){
 
 
-        this.randomNumberNodesLabel = new JLabel("Enter the number of random decision variables to be generated:");
-        this.randomNumberNodes = new JTextField("Number of Decision Variables...", 20);
-        this.randomNumberNodes.setName("randomNumberNodes");
+        this.randomNumberDecisionVariableLabel = new JLabel("Enter the number of random decision variables to be generated:");
+        Border border = BorderFactory.createLineBorder( new Color(153, 218, 250),1,  true);
+        this.randomNumberDecisionVariables = new JTextField("Number of Decision Variables...", 20);
+        this.randomNumberDecisionVariables.setBorder(border);
+        this.randomNumberDecisionVariables.setName("randomNumberNodes");
         this.randomNumberInequalitiesLabel = new JLabel("Enter the number of random inequalities to be generated:");
         this.randomNumberInequalities = new JTextField("Number of Inequalities...", 20);
+        this.randomNumberInequalities.setBorder(border);
         this.randomNumberInequalities.setName("randomNumberInequalities");
 
 
-        this.setLayout(new FlowLayout(FlowLayout.LEFT));
-        this.add(randomNumberNodesLabel);
-        this.add(randomNumberNodes);
+
+        JPanel randomNumberDecisionVariablesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        randomNumberDecisionVariablesPanel.add(randomNumberDecisionVariables);
+        randomNumberDecisionVariablesPanel.setOpaque(false);
+
+        JPanel randomNumberInequalitiesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        randomNumberInequalitiesPanel.add(randomNumberInequalities);
+        randomNumberInequalitiesPanel.setOpaque(false);
+
+        this.setLayout(new GridLayout(4,1));
+        this.add(randomNumberDecisionVariableLabel);
+        this.add(randomNumberDecisionVariablesPanel);
         this.add(randomNumberInequalitiesLabel);
-        this.add(randomNumberInequalities);
+        this.add(randomNumberInequalitiesPanel);
         this.setOpaque(false);
 
     }
 
     public void addControllers(RandomInequalitiesController controller){
         System.out.println("Controller added");
-        randomNumberNodes.addActionListener(controller);
+        randomNumberDecisionVariables.addActionListener(controller);
         randomNumberInequalities.addActionListener(controller);
     }
 
     public void addMouseListener(RandomInequalitiesController controller){
         System.out.println("mouselistener added");
-        randomNumberNodes.addMouseListener(controller);
+        randomNumberDecisionVariables.addMouseListener(controller);
         randomNumberInequalities.addMouseListener(controller);
     }
 
 
 
 
+    public void changeView(boolean dark) {
+        if (dark){
+            randomNumberDecisionVariableLabel.setForeground(Color.WHITE);
+            randomNumberInequalitiesLabel.setForeground(Color.WHITE);
+            randomNumberDecisionVariables.setForeground(Color.WHITE);
+            randomNumberDecisionVariables.setBackground(Color.BLACK);
+            randomNumberInequalities.setForeground(Color.WHITE);
+            randomNumberInequalities.setBackground(Color.BLACK);
 
+        }else{
+            randomNumberDecisionVariableLabel.setForeground(Color.BLACK);
+            randomNumberInequalitiesLabel.setForeground(Color.BLACK);
+            randomNumberDecisionVariables.setForeground(Color.BLACK);
+            randomNumberDecisionVariables.setBackground(Color.WHITE);
+            randomNumberInequalities.setForeground(Color.BLACK);
+            randomNumberInequalities.setBackground(Color.WHITE);
+        }
+    }
 
 
 

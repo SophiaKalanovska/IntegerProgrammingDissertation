@@ -59,24 +59,19 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
         revalidate();
     }
 
-
-//    getWordListScroller().getVerticalScrollBar().getModel().setValue(getWordListScroller().getVerticalScrollBar().getModel().getMaximum());
-
     public void setRender(BoundsListRender lbr){
-
         lowerBoundClusterList.setCellRenderer(lbr);
-
-//        JList wordList = getWordListScroller ();
-
-
-
-//        int lastIndex = lowerBoundClusterList.getModel().getSize() - 1;
-//        if (lastIndex >= 0) {
-//            lowerBoundClusterList.ensureIndexIsVisible(lastIndex);
-//        }
-
     }
 
 
+    public void changeView(boolean dark){
+        if (dark){
+            lowerBoundClusterList.setBackground(Color.BLACK);
+            lowerBoundClusterList.setForeground(Color.WHITE);
+        }else{
+            lowerBoundClusterList.setBackground(Color.WHITE);
+            lowerBoundClusterList.setForeground(Color.BLACK);
+        }
+    }
 }
 

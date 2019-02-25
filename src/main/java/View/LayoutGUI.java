@@ -1,17 +1,14 @@
 package View;
 
+import View.Graph.GraphGUI;
+import View.Graph.Settings;
 import View.OperationsOnInequalities.InequalitiesListGUI;
 import View.OperationsOnInequalities.ManualInequalitiesGUI;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
 import View.SolutionPanel.BoundsGUI;
-import View.SolutionPanel.IntegerAssignmentGUI;
 import View.SolutionPanel.InternalConstarinsClusterGUI;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
@@ -22,16 +19,28 @@ import javax.swing.border.TitledBorder;
  */
 public class LayoutGUI extends JPanel  {
 
+    private GraphGUI graphGUI;
+    private JLabel welcomeLabel;
+    private TitledBorder enterInequalitiesBorder;
+    private TitledBorder graphBorder;
+    private TitledBorder randomBorder;
+    private TitledBorder listBorder;
+    private Settings settings;
+    private BoundsGUI boundsGUI;
+    private InequalitiesListGUI inequalitiesListGUI;
+    private ManualInequalitiesGUI manualInequalitiesGUI;
+    private RandomInequalitiesGUI randomInequalitiesGUI;
+
     /**
      * Constructs a new Home panel
      * @param  frame  the frame containing the panel
      */
 
 
-    public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
+    public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
 
         //welcome label
-        JLabel welcomeLabel = new JLabel("Integer Programming Solver");
+        welcomeLabel = new JLabel("Integer Programming Solver");
         welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
         //welcome panel creation
         JPanel welcomePanel = new JPanel(new FlowLayout());
@@ -41,33 +50,42 @@ public class LayoutGUI extends JPanel  {
         //border color
         Border mainBorder = BorderFactory.createMatteBorder(1, 1, 0, 1, new Color(153, 218, 250));
         //create border for manual inequalities
-        Border thatBorder1 = new TitledBorder(mainBorder,"<html><b> Enter Inequalities" );
+        enterInequalitiesBorder = new TitledBorder(mainBorder,"<html><b> Enter Inequalities" );
 
 
         //create border for graph
-        JPanel graphPanel = new JPanel(new GridLayout(1,1));
-        graphPanel.add(graph.getView());
-        Border graphBorder = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
-        graphPanel.setBorder(new TitledBorder(graphBorder,"<html><b> Graph:</html><b>" ));
+        settings = new Settings(this);
+        JPanel graphPanel = new JPanel(new BorderLayout());
+        this.graphGUI = graph;
+        graphPanel.add(graph.getView(),BorderLayout.CENTER);
+        graphPanel.add(settings, BorderLayout.NORTH);
+        Border graphBorderWalls = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
+        graphBorder = new TitledBorder(graphBorderWalls,"<html><b> Graph:</html><b>" );
+        graphPanel.setBorder(graphBorder);
         graphPanel.setOpaque(false);
 
         //border color
         Border topBorder = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
-        panelrandomNumberInequalities.setBorder(new TitledBorder(topBorder,"<html><b> Generate Random Inequalities:</html><b>" ));
+        randomBorder = new TitledBorder(topBorder,"<html><b> Generate Random Inequalities:</html><b>" );
+        randomNumberInequalities.setBorder(randomBorder);
 
-        inequalitiesListGUI.setBorder(new TitledBorder(topBorder,"<html><b> List of Inequalities:</html><b>" ));
+        listBorder = new TitledBorder(topBorder,"<html><b> List of Inequalities:</html><b>" );
+        inequalitiesListGUI.setBorder(listBorder);
 
 
         //put border around inequalities
-
+        this.boundsGUI = boundGUI;
+        this.inequalitiesListGUI = inequalitiesListGUI;
+        this.manualInequalitiesGUI = manualInequalitiesGUI;
+        this.randomInequalitiesGUI = randomNumberInequalities;
 
         JPanel leftPanel = new JPanel(new GridLayout(3,1));
         leftPanel.add(manualInequalitiesGUI);
-        leftPanel.add(panelrandomNumberInequalities);
+        leftPanel.add(randomNumberInequalities);
         leftPanel.add(inequalitiesListGUI);
         leftPanel.setOpaque(false);
 
-        leftPanel.setBorder(thatBorder1);
+        leftPanel.setBorder(enterInequalitiesBorder);
 
 
         // put the manual inequalities and the graph in a panel
@@ -88,14 +106,35 @@ public class LayoutGUI extends JPanel  {
 
     }
 
-
-//  public void setPanel(JPanel p){
-//    removeAll();
-//    revalidate();
-//    repaint();
-//    add(p, BorderLayout.CENTER);
-//  }
-
+    public void changeView(boolean dark){
+        if (dark){
+            this.setBackground(Color.black);
+            graphGUI.changeView(true);
+            boundsGUI.changeView(true);
+            inequalitiesListGUI.changeView(true);
+            manualInequalitiesGUI.changeView(true);
+            randomInequalitiesGUI.changeView(true);
+            settings.getDarkMode().setForeground(Color.WHITE);
+            welcomeLabel.setForeground(Color.WHITE);
+            enterInequalitiesBorder.setTitleColor(Color.WHITE);
+            graphBorder.setTitleColor(Color.WHITE);
+            randomBorder.setTitleColor(Color.WHITE);
+            listBorder.setTitleColor(Color.WHITE);
+        }else{
+            this.setBackground(Color.white);
+            graphGUI.changeView(false);
+            boundsGUI.changeView(false);
+            inequalitiesListGUI.changeView(false);
+            manualInequalitiesGUI.changeView(false);
+            randomInequalitiesGUI.changeView(false);
+            settings.getDarkMode().setForeground(Color.BLACK);
+            welcomeLabel.setForeground(Color.BLACK);
+            enterInequalitiesBorder.setTitleColor(Color.BLACK);
+            graphBorder.setTitleColor(Color.BLACK);
+            randomBorder.setTitleColor(Color.BLACK);
+            listBorder.setTitleColor(Color.BLACK);
+        }
+    }
 
 
 }

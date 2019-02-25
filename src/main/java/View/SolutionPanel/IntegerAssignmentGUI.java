@@ -30,6 +30,17 @@ public class IntegerAssignmentGUI extends JPanel  {
 
     }
 
+    public void changeView(boolean dark){
+        if (dark){
+            intgerAssignementList.setBackground(Color.BLACK);
+            intgerAssignementList.setForeground(Color.WHITE);
+        }else{
+            intgerAssignementList.setBackground(Color.WHITE);
+            intgerAssignementList.setForeground(Color.BLACK);
+        }
+    }
+
+
 //    private void UpdateJList(ArrayList<SCCCluster> in){
 //        intgerAssignementListModel.clear();
 //        for(SCCCluster i : in){

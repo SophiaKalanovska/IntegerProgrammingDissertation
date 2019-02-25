@@ -4,6 +4,7 @@ import Controller.ManualInequalitiesController;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 /**
  * Home is the class where the Home panel is built implements Observer
@@ -21,21 +22,19 @@ public class ManualInequalitiesGUI extends JPanel {
 
         //create the textField for inputting the inequalities
         this.enterInequalityLabel = new JLabel("Enter Inequality of the form:");
+        Border border = BorderFactory.createLineBorder( new Color(153, 218, 250),1,  true);
         this.enterInequality = new JTextField("Enter inequality...", 20);
+        this.enterInequality.setBorder(border);
         this.enterInequality.setName("inequalityField");
 
-
-        JPanel enterlabel = new JPanel(new GridLayout(1,1));
-        enterlabel.add(enterInequalityLabel);
-        enterlabel.setOpaque(false);
 
         JPanel enterText = new JPanel(new FlowLayout(FlowLayout.LEFT));
         enterText.add(enterInequality);
         enterText.setOpaque(false);
 
 
-        this.setLayout(new FlowLayout(FlowLayout.LEFT));
-        this.add(enterlabel);
+        this.setLayout(new GridLayout(2,1));
+        this.add(enterInequalityLabel);
         this.add(enterText);
         this.setOpaque(false);
 
@@ -50,5 +49,18 @@ public class ManualInequalitiesGUI extends JPanel {
     public void addMouseListener(ManualInequalitiesController controller){
         System.out.println(" ManualInequalitiesGUI mouselistener added");
         enterInequality.addMouseListener(controller);
+    }
+
+    public void changeView(boolean dark) {
+        if (dark){
+            enterInequalityLabel.setForeground(Color.WHITE);
+            enterInequality.setForeground(Color.WHITE);
+            enterInequality.setBackground(Color.BLACK);
+
+        }else{
+            enterInequalityLabel.setForeground(Color.BLACK);
+            enterInequality.setForeground(Color.BLACK);
+            enterInequality.setBackground(Color.WHITE);
+        }
     }
 }
