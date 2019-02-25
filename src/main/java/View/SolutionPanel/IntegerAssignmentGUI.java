@@ -19,7 +19,7 @@ public class IntegerAssignmentGUI extends JPanel  {
         this.intgerAssignementList = new JList(intgerAssignementListModel);
         this.setLayout(new GridLayout(1,1));
         this.add(intgerAssignementList);
-        this.setBackground(Color.WHITE);
+        this.setOpaque(false);
         this.setPreferredSize(new Dimension(450, 150));
     }
 

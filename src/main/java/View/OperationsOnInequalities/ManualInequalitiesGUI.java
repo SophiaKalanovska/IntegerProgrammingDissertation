@@ -1,8 +1,8 @@
 package View.OperationsOnInequalities;
 
 import Controller.ManualInequalitiesController;
-import java.awt.FlowLayout;
-import java.awt.Color;
+
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -11,6 +11,7 @@ import javax.swing.*;
 public class ManualInequalitiesGUI extends JPanel {
 
     private JTextField enterInequality;
+    private JLabel enterInequalityLabel;
 
     /**
      * Constructs a new Home panel
@@ -19,11 +20,24 @@ public class ManualInequalitiesGUI extends JPanel {
     public ManualInequalitiesGUI() {
 
         //create the textField for inputting the inequalities
+        this.enterInequalityLabel = new JLabel("Enter Inequality of the form:");
         this.enterInequality = new JTextField("Enter inequality...", 20);
         this.enterInequality.setName("inequalityField");
-        this.setBackground(Color.WHITE);
-        this.setLayout( new FlowLayout(FlowLayout.LEFT));
-        this.add(enterInequality);
+
+
+        JPanel enterlabel = new JPanel(new GridLayout(1,1));
+        enterlabel.add(enterInequalityLabel);
+        enterlabel.setOpaque(false);
+
+        JPanel enterText = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        enterText.add(enterInequality);
+        enterText.setOpaque(false);
+
+
+        this.setLayout(new FlowLayout(FlowLayout.LEFT));
+        this.add(enterlabel);
+        this.add(enterText);
+        this.setOpaque(false);
 
     }
 

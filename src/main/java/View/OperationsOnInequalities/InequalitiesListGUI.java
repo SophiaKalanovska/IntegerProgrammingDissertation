@@ -49,22 +49,18 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         operations.add(deleteAll);
         operations.add(deleteGraph);
         operations.add(evaluateAll);
-        operations.setBackground(Color.WHITE);
+        operations.setOpaque(false);
 
         JPanel listAndActions= new JPanel(new GridLayout(1,2));
         listAndActions.add(scroll);
         listAndActions.add(operations);
-        listAndActions.setBackground(Color.WHITE);
+        listAndActions.setOpaque(false);
 
 
 
         this.setLayout(new BorderLayout());
         this.add(listAndActions, BorderLayout.CENTER);
-
-//        this.add(delete, BorderLayout.EAST);
-
-
-        this.setBackground(Color.WHITE);
+        this.setOpaque(false);
     }
 
     public void addMouseListener(InequalitiesListController controller){

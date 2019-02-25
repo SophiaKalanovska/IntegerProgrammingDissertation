@@ -44,12 +44,25 @@ public class GraphController implements Serializable {
     }
 
     public void addEdge(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable){
-        Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
-        double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
-        edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
-        edge.addAttribute("ui.style", "text-alignment:above;");
-        edge.addAttribute("weight", weightOfEdge);
-        id ++;
+        Node node = graph.getNode(firstUnknownVariable.toString());
+        Edge between = node.getEdgeBetween(graph.getNode(secondUnknownVariable.toString()));
+        if (between == null){
+            Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
+            double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
+            edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
+            edge.addAttribute("ui.style", "text-alignment:above;");
+            edge.addAttribute("weight", weightOfEdge);
+            id ++;
+        }else{
+            double weightOfEdge = firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
+            if (weightOfEdge > (double)between.getAttribute("weight")){
+                between.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
+                between.addAttribute("ui.style", "text-alignment:along;");
+                between.setAttribute("weight", weightOfEdge);
+            }
+        }
+
+
     }
 
     public void removeNodes(String firstUnknownVariable, String secondUnknownVariable) {

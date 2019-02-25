@@ -31,12 +31,12 @@ public class LayoutGUI extends JPanel  {
     public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI panelrandomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
 
         //welcome label
-        JLabel welcomeLabel = new JLabel("Integer Programming solver");
+        JLabel welcomeLabel = new JLabel("Integer Programming Solver");
         welcomeLabel.setFont(new Font("Serif", Font.PLAIN, 34));
         //welcome panel creation
         JPanel welcomePanel = new JPanel(new FlowLayout());
         welcomePanel.add(welcomeLabel);
-        welcomePanel.setBackground(Color.white);
+        welcomePanel.setOpaque(false);
 
         //border color
         Border mainBorder = BorderFactory.createMatteBorder(1, 1, 0, 1, new Color(153, 218, 250));
@@ -49,7 +49,7 @@ public class LayoutGUI extends JPanel  {
         graphPanel.add(graph.getView());
         Border graphBorder = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
         graphPanel.setBorder(new TitledBorder(graphBorder,"<html><b> Graph:</html><b>" ));
-        graphPanel.setBackground(Color.white);
+        graphPanel.setOpaque(false);
 
         //border color
         Border topBorder = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
@@ -65,7 +65,7 @@ public class LayoutGUI extends JPanel  {
         leftPanel.add(manualInequalitiesGUI);
         leftPanel.add(panelrandomNumberInequalities);
         leftPanel.add(inequalitiesListGUI);
-        leftPanel.setBackground(Color.WHITE);
+        leftPanel.setOpaque(false);
 
         leftPanel.setBorder(thatBorder1);
 
@@ -74,7 +74,7 @@ public class LayoutGUI extends JPanel  {
         JPanel center = new JPanel(new GridLayout(1,2));
         center.add(leftPanel);
         center.add(graphPanel);
-        center.setBackground(Color.WHITE);
+        center.setOpaque(false);
 
 
 

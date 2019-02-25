@@ -71,10 +71,16 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
             RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator(graph);
             if (((JTextField) e.getSource()).getName().equals("randomNumberNodes")) {
                 int numberOfRandomNodes = Integer.parseInt(enter.getText());
+                enter.setText("Number of Decision Variables...");
                 nodes = new ArrayList<>();
                 nodes = generator.generateNodes(numberOfRandomNodes);
+                ArrayList<Inequality>  inequalities = generator.generateInequalitiesForNodes(nodes);
+                for (Inequality inequality: inequalities){
+                    inequalitiesList.addInequality(inequality);
+                }
             } else {
                 int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
+                enter.setText("Number of Inequalities...");
                 ArrayList<Inequality>  inequalities = generator.generateInequalities(nodes, numberOfRandomInequalities);
                 for (Inequality inequality: inequalities){
                     inequalitiesList.addInequality(inequality);

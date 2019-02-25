@@ -6,31 +6,28 @@ import java.awt.*;
 
 
 public class RandomInequalitiesGUI extends JPanel {
+    private JLabel randomNumberNodesLabel;
     private JTextField randomNumberNodes;
+    private JLabel randomNumberInequalitiesLabel;
     private JTextField randomNumberInequalities;
 
     public RandomInequalitiesGUI(){
 
-        this.setLayout(new GridLayout(2,1));
 
-        this.randomNumberNodes = new JTextField("Number of Nodes...", 20);
+        this.randomNumberNodesLabel = new JLabel("Enter the number of random decision variables to be generated:");
+        this.randomNumberNodes = new JTextField("Number of Decision Variables...", 20);
         this.randomNumberNodes.setName("randomNumberNodes");
-
+        this.randomNumberInequalitiesLabel = new JLabel("Enter the number of random inequalities to be generated:");
         this.randomNumberInequalities = new JTextField("Number of Inequalities...", 20);
         this.randomNumberInequalities.setName("randomNumberInequalities");
 
 
-        JPanel operations = new JPanel(new GridLayout(2,1));
-        operations.add(randomNumberNodes);
-        operations.add(randomNumberInequalities);
-        operations.setBackground(Color.WHITE);
-
-        JPanel panelrandomNumberInequality = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelrandomNumberInequality.add(operations);
-        panelrandomNumberInequality.setBackground(Color.white);
-
-        add(panelrandomNumberInequality);
-        setBackground(Color.white);
+        this.setLayout(new FlowLayout(FlowLayout.LEFT));
+        this.add(randomNumberNodesLabel);
+        this.add(randomNumberNodes);
+        this.add(randomNumberInequalitiesLabel);
+        this.add(randomNumberInequalities);
+        this.setOpaque(false);
 
     }
 
@@ -45,6 +42,7 @@ public class RandomInequalitiesGUI extends JPanel {
         randomNumberNodes.addMouseListener(controller);
         randomNumberInequalities.addMouseListener(controller);
     }
+
 
 
 

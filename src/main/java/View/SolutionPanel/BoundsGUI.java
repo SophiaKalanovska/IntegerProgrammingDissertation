@@ -30,7 +30,7 @@ public class BoundsGUI extends JPanel{
         this.add(lowerBoundClusterGUI);
         this.add(upperBoundClusterGUI);
         this.add(integerAssignmentGUI);
-        this.setBackground(Color.WHITE);
+        this.setOpaque(false);
     }
 
 }

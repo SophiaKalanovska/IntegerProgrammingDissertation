@@ -26,7 +26,7 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
         scroll.setBorder( BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(153, 218, 250)));
         this.setLayout(new GridLayout(1,1));
         this.add(scroll);
-        this.setBackground(Color.WHITE);
+        this.setOpaque(false);
         this.setPreferredSize(new Dimension(225, 150));
 
     }
