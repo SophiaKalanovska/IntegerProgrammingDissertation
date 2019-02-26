@@ -49,7 +49,7 @@ public class GraphController implements Serializable {
 //            double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
             double weightOfEdge = (double) firstUnknownVariable.getWeight();
             edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
-            edge.addAttribute("ui.style", "text-alignment:above;");
+            edge.addAttribute("ui.style", "text-alignment:below;");
             edge.addAttribute("weight", weightOfEdge);
             id ++;
         }else{
@@ -57,7 +57,7 @@ public class GraphController implements Serializable {
             double weightOfEdge = firstUnknownVariable.getWeight();
             if (weightOfEdge > (double)between.getAttribute("weight")){
                 between.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
-                between.addAttribute("ui.style", "text-alignment:along;");
+                between.addAttribute("ui.style", "text-alignment:below;");
                 between.setAttribute("weight", weightOfEdge);
             }
         }
