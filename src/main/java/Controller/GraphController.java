@@ -15,9 +15,9 @@ public class GraphController implements Serializable {
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
     private int id;
 
-    public GraphController(GraphGUI graphGUI, Graph graph) {
+    public GraphController(GraphGUI graphGUI) {
         this.graphGUI = graphGUI;
-        this.graph = graph;
+        this.graph = graphGUI.getGraph();
         id = 0;
 
     }

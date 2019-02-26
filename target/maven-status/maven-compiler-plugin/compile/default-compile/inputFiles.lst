@@ -3,6 +3,7 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/InternalConstarinsClusterListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ColorGenerator.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/SCCAlgorithm.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/Graph/GraphGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/InternalConstarinsList.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Inequalities/RandomInequalitiesGenerator.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/LowerBoundList.java
@@ -11,9 +12,9 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/OperationsOnInequalities/RandomInequalitiesGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/LowerBoundClusterListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/OperationsOnInequalities/ManualInequalitiesGUI.java
-/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/GraphGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Inequalities/DecisionVariable.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/SCCCluster.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/Graph/Settings.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/LayoutGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/UpperBoundClusterGUI.java
@@ -29,6 +30,7 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Container.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/OperationsOnInequalities/InequalitiesListGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/CheckboxActionController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/ConstarinsController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/RandomInequalitiesController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/UpperBoundList.java

@@ -26,14 +26,13 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	public GraphGUI(){
 
         graph = new MultiGraph("Strongly connected components");
-        graphController = new GraphController(this, graph);
-
+        graphController = new GraphController(this);
 
          cssLight = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: white; }" +
                 "edge {fill-color: black;  z-index :1; text-color: black; }";
 
-         cssDark = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
+         cssDark = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 10; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: black; }" +
                 "edge {fill-color: white; text-color: white; z-index :1; }";
 
@@ -68,6 +67,10 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	public ViewPanel getView(){
 		return viewPanel;
 	}
+
+	public Graph getGraph(){
+	    return graph;
+    }
 
 	public void viewClosed(String id) {
 		System.out.println("here");
