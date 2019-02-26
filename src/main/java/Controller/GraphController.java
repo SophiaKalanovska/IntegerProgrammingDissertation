@@ -43,16 +43,18 @@ public class GraphController implements Serializable {
 
     public void addEdge(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable){
         Node node = graph.getNode(firstUnknownVariable.toString());
-        Edge between = node.getEdgeBetween(graph.getNode(secondUnknownVariable.toString()));
+        Edge between = node.getEdgeToward(graph.getNode(secondUnknownVariable.toString()));
         if (between == null){
             Edge edge = graph.addEdge("" + id + "", firstUnknownVariable.toString(), secondUnknownVariable.toString(), true);
-            double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
+//            double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
+            double weightOfEdge = (double) firstUnknownVariable.getWeight();
             edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
             edge.addAttribute("ui.style", "text-alignment:above;");
             edge.addAttribute("weight", weightOfEdge);
             id ++;
         }else{
-            double weightOfEdge = firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
+//          // double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
+            double weightOfEdge = firstUnknownVariable.getWeight();
             if (weightOfEdge > (double)between.getAttribute("weight")){
                 between.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
                 between.addAttribute("ui.style", "text-alignment:along;");

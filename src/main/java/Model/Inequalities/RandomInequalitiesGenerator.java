@@ -56,32 +56,23 @@ public class RandomInequalitiesGenerator {
                 decisionVariables.add(decisionVariable);
             }
         }
-            return decisionVariables;
+        return decisionVariables;
     }
 
-    public ArrayList<Inequality> generateInequalities(ArrayList<DecisionVariable> decisionVariables, int numberOfInequalities) {
+    public Inequality generateInequalities(ArrayList<DecisionVariable> decisionVariables) {
         int max = 10;
         int min = 1;
-        ArrayList<Inequality> inequalities = new ArrayList<>();
-        for (int i = 0; i < numberOfInequalities ; i++ ) {
-            int variableIndexFirst = (int) (Math.random() * decisionVariables.size());
-            int variableIndexSecond = (int) (Math.random() * decisionVariables.size());
-            Inequality newIneqiality = new Inequality();
-            DecisionVariable first = decisionVariables.get(variableIndexFirst);
-            first.setWeight(random.nextInt(max - min + 1) + min);
-            DecisionVariable second = decisionVariables.get(variableIndexSecond);
-            second.setWeight(1);
-
-//            new DecisionVariable();
-//            second.setVariable(decisionVariables.get(variableIndexSecond).toString());
-//
-//            second.setWeight(1);
-            newIneqiality.setFirstDecisionVariable(first);
-            newIneqiality.setSecondDecisionVariable(second);
-            newIneqiality.setExpression("" + first.getWeight() + first.toString() + "<=" + second.toString());
-            inequalities.add(newIneqiality);
-        }
-        return inequalities;
+        int variableIndexFirst = (int) (Math.random() * decisionVariables.size());
+        int variableIndexSecond = (int) (Math.random() * decisionVariables.size());
+        Inequality newIneqiality = new Inequality();
+        DecisionVariable first = decisionVariables.get(variableIndexFirst);
+        first.setWeight(random.nextInt(max - min + 1) + min);
+        DecisionVariable second = decisionVariables.get(variableIndexSecond);
+        second.setWeight(1);
+        newIneqiality.setFirstDecisionVariable(first);
+        newIneqiality.setSecondDecisionVariable(second);
+        newIneqiality.setExpression("" + first.getWeight() + first.toString() + "<=" + second.toString());
+        return newIneqiality;
     }
 
     public ArrayList<Inequality> generateInequalitiesForNodes(ArrayList<DecisionVariable> decisionVariables) {
