@@ -9,63 +9,100 @@ public class BoundsGUI extends JPanel{
 
     private LowerBoundClusterGUI lowerBoundClusterGUI;
     private UpperBoundClusterGUI upperBoundClusterGUI;
-    private IntegerAssignmentGUI integerAssignmentGUI;
+    private IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI;
     private InternalConstarinsClusterGUI internalConstarinsClusterGUI;
-    private TitledBorder integerAssignment;
+    private IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI;
+    private TitledBorder solution;
+    private TitledBorder internalBound;
+    private TitledBorder max;
+    private TitledBorder min;
+
     private TitledBorder lowerBound ;
     private TitledBorder upperBound ;
-    private TitledBorder internalConstarins;
+    private TitledBorder constrain;
 
-    public BoundsGUI(LowerBoundClusterGUI lowerBoundClusterGUI, UpperBoundClusterGUI upperBoundClusterGUI, IntegerAssignmentGUI integerAssignmentGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI){
+    public BoundsGUI(LowerBoundClusterGUI lowerBoundClusterGUI, UpperBoundClusterGUI upperBoundClusterGUI, IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI, IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI){
         this.lowerBoundClusterGUI = lowerBoundClusterGUI;
         this.upperBoundClusterGUI = upperBoundClusterGUI;
-        this.integerAssignmentGUI = integerAssignmentGUI;
+        this.integerAssignmentMinimizeGUI = integerAssignmentMinimizeGUI;
         this.internalConstarinsClusterGUI = internalConstarinsClusterGUI;
+        this.integerAssignmentMaximizeGUI = integerAssignmentMaximizeGUI;
 
-        Border topBorder = BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153, 218, 250));
-        internalConstarins = new TitledBorder(topBorder,"<html><b> Internal ConstrainsLists in Clusters:</html><b>" );
-        internalConstarinsClusterGUI.setBorder(internalConstarins);
+        Border topBorder = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
 
+        internalBound = new TitledBorder(topBorder, "<html><b> Internal Bounds:</html><b>");
+        internalConstarinsClusterGUI.setBorder(internalBound);
+        internalBound.setTitleJustification(TitledBorder.CENTER);
 
-        Border topBorder1 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        lowerBound =  new TitledBorder(topBorder1,"<html><b> Lower Bounds in Clusters:</html><b>" );
+        lowerBound = new TitledBorder(topBorder, "<html><b> Lower Bounds:</html><b>");
         lowerBoundClusterGUI.setBorder(lowerBound);
+        lowerBound.setTitleJustification(TitledBorder.CENTER);
 
+        Border topBorder3 = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
+
+        upperBound = new TitledBorder(topBorder3, "<html><b> Upper Bounds:</html><b>");
+        upperBoundClusterGUI.setBorder(upperBound);
+        upperBound.setTitleJustification(TitledBorder.CENTER);
+
+        min = new TitledBorder(topBorder, "<html><b> When Minimizing:</html><b>");
+        integerAssignmentMinimizeGUI.setBorder(min);
+        min.setTitleJustification(TitledBorder.CENTER);
+
+        max = new TitledBorder(topBorder3, "<html><b> When Maximizing:</html><b>");
+        integerAssignmentMaximizeGUI.setBorder(max);
+        max.setTitleJustification(TitledBorder.CENTER);
+
+
+        JPanel leftPanel = new JPanel(new GridLayout(1,3));
+        leftPanel.add(internalConstarinsClusterGUI);
+        leftPanel.add(lowerBoundClusterGUI);
+        leftPanel.add(upperBoundClusterGUI);
+        leftPanel.setOpaque(false);
+
+        JPanel rightPanel = new JPanel(new GridLayout(1,2));
+        rightPanel.add(integerAssignmentMinimizeGUI);
+        rightPanel.add(integerAssignmentMaximizeGUI);
+        rightPanel.setOpaque(false);
+
+        Border constrainBorder = BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153, 218, 250));
+        constrain = new TitledBorder(constrainBorder,"<html><b> Bounds in Clusters:</html><b>" );
+        constrain.setTitleJustification(TitledBorder.CENTER);
+        leftPanel.setBorder(constrain);
 
         Border topBorder2 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        upperBound = new TitledBorder(topBorder2,"<html><b> Upper Bounds in Clusters:</html><b>" );
-        upperBoundClusterGUI.setBorder(upperBound);
+        solution = new TitledBorder(topBorder2,"<html><b> Optimal Integer Assignment:</html><b>" );
+        solution.setTitleJustification(TitledBorder.CENTER);
+        rightPanel.setBorder(solution);
 
-        //border color
-        Border topBorder3 = BorderFactory.createMatteBorder(1, 0, 1, 1, new Color(153, 218, 250));
-        integerAssignment = new TitledBorder(topBorder3,"<html><b> Optimal Integer Assignment:</html><b>" );
-        integerAssignmentGUI.setBorder(integerAssignment);
-
-
-        this.setLayout(new GridLayout(1,4));
-        this.add(internalConstarinsClusterGUI);
-        this.add(lowerBoundClusterGUI);
-        this.add(upperBoundClusterGUI);
-        this.add(integerAssignmentGUI);
+        this.setLayout(new GridLayout(1,2));
+        this.add(leftPanel);
+        this.add(rightPanel);
         this.setOpaque(false);
     }
 
     public void changeView(boolean dark){
         if (dark){
-            integerAssignment.setTitleColor(Color.WHITE);
+            solution.setTitleColor(Color.WHITE);
             lowerBound.setTitleColor(Color.WHITE);
             upperBound .setTitleColor(Color.WHITE);
-            internalConstarins.setTitleColor(Color.WHITE);
+            internalBound.setTitleColor(Color.WHITE);
+            max.setTitleColor(Color.WHITE);
+            min.setTitleColor(Color.WHITE);
+            constrain.setTitleColor(Color.WHITE);
         }else{
-            integerAssignment.setTitleColor(Color.BLACK);
+            solution.setTitleColor(Color.BLACK);
             lowerBound.setTitleColor(Color.BLACK);
             upperBound .setTitleColor(Color.BLACK);
-            internalConstarins.setTitleColor(Color.BLACK);
+            internalBound.setTitleColor(Color.BLACK);
+            max.setTitleColor(Color.BLACK);
+            min.setTitleColor(Color.BLACK);
+            constrain.setTitleColor(Color.BLACK);
         }
         lowerBoundClusterGUI.changeView(dark);
         upperBoundClusterGUI.changeView(dark);
-        integerAssignmentGUI.changeView(dark);
+        integerAssignmentMinimizeGUI.changeView(dark);
         internalConstarinsClusterGUI.changeView(dark);
+        integerAssignmentMaximizeGUI.changeView(dark);
     }
 
 }

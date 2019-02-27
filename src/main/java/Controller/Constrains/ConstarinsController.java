@@ -1,6 +1,5 @@
 package Controller.Constrains;
 
-import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 
 
@@ -9,23 +8,23 @@ public class ConstarinsController {
     private LowerBoundClusterListController lowerBoundClusterListController;
     private UpperBoundClusterListController upperBoundClusterListController;
     private InternalConstarinsClusterListController internalConstarinsClusterListController;
-    private IntegerAssignenmentListController integerAssignenmentListController;
+    private IntegerAssignenmentMinListController integerAssignenmentMinListController;
+    private IntegerAssignenmentMaxListController integerAssignenmentMaxListController;
 
-    public ConstarinsController(LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController, InternalConstarinsClusterListController internalConstarinsClusterListController, IntegerAssignenmentListController integerAssignenmentListController){
+    public ConstarinsController(LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController, InternalConstarinsClusterListController internalConstarinsClusterListController, IntegerAssignenmentMinListController integerAssignenmentMinListController, IntegerAssignenmentMaxListController integerAssignenmentMaxListController){
 
         this.lowerBoundClusterListController = lowerBoundClusterListController;
         this.upperBoundClusterListController = upperBoundClusterListController;
         this.internalConstarinsClusterListController = internalConstarinsClusterListController;
-        this.integerAssignenmentListController = integerAssignenmentListController;
+        this.integerAssignenmentMinListController = integerAssignenmentMinListController;
+        this.integerAssignenmentMaxListController = integerAssignenmentMaxListController;
     }
 
     public void populate(InequalitiesList inequalitiesList){
         calculateBounds(inequalitiesList);
-
         lowerBoundClusterListController.populate(inequalitiesList);
         upperBoundClusterListController.populate(inequalitiesList);
         internalConstarinsClusterListController.populate(inequalitiesList);
-
         calculateLambdas(inequalitiesList);
     }
 
@@ -37,7 +36,10 @@ public class ConstarinsController {
     public void calculateLambdas( InequalitiesList inequalitiesList){
         inequalitiesList.getSCCComponents().evaluateLambdas();
         if (inequalitiesList.getSCCComponents().isSolvable()){
-            integerAssignenmentListController.populate(inequalitiesList);
+            integerAssignenmentMinListController.populate(inequalitiesList);
+            integerAssignenmentMaxListController.populate(inequalitiesList);
+        }else{
+
         }
 
     }

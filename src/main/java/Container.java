@@ -5,9 +5,7 @@ import Controller.*;
 import Controller.Constrains.*;
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.SCCAlgorithm;
-import Model.SCC.SCCClusterList;
 import View.*;
-import View.Graph.GraphGUI;
 import View.OperationsOnInequalities.InequalitiesListGUI;
 import View.OperationsOnInequalities.ManualInequalitiesGUI;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
@@ -28,9 +26,10 @@ public class Container extends JFrame {
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
 		LowerBoundClusterGUI lowerBoundClusterGUI = new LowerBoundClusterGUI();
 		UpperBoundClusterGUI upperBoundClusterGUI = new UpperBoundClusterGUI();
-		IntegerAssignmentGUI integerAssignmentGUI = new IntegerAssignmentGUI();
+		IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI = new IntegerAssignmentMinimizeGUI();
 		InternalConstarinsClusterGUI internalConstarinsClusterGUI = new InternalConstarinsClusterGUI();
-		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI, integerAssignmentGUI, internalConstarinsClusterGUI);
+		IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI = new IntegerAssignmentMaximizeGUI();
+		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI, integerAssignmentMinimizeGUI, internalConstarinsClusterGUI, integerAssignmentMaximizeGUI);
 		LayoutGUI layoutGUI = new LayoutGUI(this, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
 
 
@@ -39,9 +38,10 @@ public class Container extends JFrame {
 		GraphController graphController = new GraphController(layoutGUI) ;
 		LowerBoundClusterListController lowerBoundClusterListController = new LowerBoundClusterListController(lowerBoundClusterGUI);
 		UpperBoundClusterListController upperBoundClusterListController = new UpperBoundClusterListController(upperBoundClusterGUI);
-		IntegerAssignenmentListController integerAssignenmentListController = new IntegerAssignenmentListController(integerAssignmentGUI);
+		IntegerAssignenmentMinListController integerAssignenmentMinListController = new IntegerAssignenmentMinListController(integerAssignmentMinimizeGUI);
+		IntegerAssignenmentMaxListController integerAssignenmentMaxListController = new IntegerAssignenmentMaxListController(integerAssignmentMaximizeGUI);
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
-		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentListController);
+		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
 		SCCAlgorithm algorithm = new SCCAlgorithm(graphController.getGraph());
 		InequalitiesList inequalitiesList = new InequalitiesList(graphController, algorithm);
 		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController);

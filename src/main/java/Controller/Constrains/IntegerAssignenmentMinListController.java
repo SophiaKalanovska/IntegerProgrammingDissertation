@@ -2,10 +2,8 @@ package Controller.Constrains;
 
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.IntegerAssignmentList;
-import Model.SCC.ConstrainsLists.InternalConstarinsList;
-import View.SolutionPanel.IntegerAssignmentGUI;
-import View.SolutionPanel.InternalConstarinsClusterGUI;
+import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import View.SolutionPanel.IntegerAssignmentMinimizeGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,25 +16,25 @@ import java.util.Map;
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
  */
-public class IntegerAssignenmentListController implements ActionListener, MouseListener {
+public class IntegerAssignenmentMinListController implements ActionListener, MouseListener {
 
-    private IntegerAssignmentGUI IntegerAssignmentGUI;
-    private IntegerAssignmentList lbl;
+    private IntegerAssignmentMinimizeGUI IntegerAssignmentMinimizeGUI;
+    private IntegerAssignmentListMinimize lbl;
 
 
-    public IntegerAssignenmentListController(IntegerAssignmentGUI IntegerAssignmentGUI){
-        this.IntegerAssignmentGUI = IntegerAssignmentGUI;
-        IntegerAssignmentGUI.addMouseListener(this);
+    public IntegerAssignenmentMinListController(IntegerAssignmentMinimizeGUI IntegerAssignmentMinimizeGUI){
+        this.IntegerAssignmentMinimizeGUI = IntegerAssignmentMinimizeGUI;
+        IntegerAssignmentMinimizeGUI.addMouseListener(this);
     }
 
 
     public void populate(InequalitiesList inequalitiesList){
-        lbl = new IntegerAssignmentList(inequalitiesList.getSCCComponents());
-        lbl.addObserver(IntegerAssignmentGUI);
+        lbl = new IntegerAssignmentListMinimize(inequalitiesList.getSCCComponents());
+        lbl.addObserver(IntegerAssignmentMinimizeGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();
         render.setImageMap(map);
-        IntegerAssignmentGUI.setRender(render);
+        IntegerAssignmentMinimizeGUI.setRender(render);
         lbl.tryUpdate();
     }
 

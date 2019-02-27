@@ -1,11 +1,12 @@
 package View.SolutionPanel;
 
 import Controller.Constrains.LowerBoundClusterListController;
-import Model.SCC.ConstrainsLists.IntegerAssignmentList;
+import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import Model.SCC.SCCCluster;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
 import Model.SCC.SCCClusterList;
-import Model.SCC.ConstrainsLists.InternalConstarinsList;
+import org.graphstream.graph.Node;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,14 +14,14 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-public class IntegerAssignmentGUI extends JPanel implements Observer {
+public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
-    private IntegerAssignmentList observer;
+    private IntegerAssignmentListMinimize observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
 
-    public IntegerAssignmentGUI(){
+    public IntegerAssignmentMinimizeGUI(){
         this.internelConstainsClusterListModel = new DefaultListModel();
         this.integerAssignmentList = new JList(internelConstainsClusterListModel);
         JScrollPane scroll = new JScrollPane(integerAssignmentList);
@@ -37,10 +38,15 @@ public class IntegerAssignmentGUI extends JPanel implements Observer {
         integerAssignmentList.addMouseListener(controller);
     }
 
-    private void UpdateJList(ArrayList<Pair<Integer,Integer>> in){
+    private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in){
         internelConstainsClusterListModel.clear();
-        for(Pair<Integer,Integer> i : in){
-            internelConstainsClusterListModel.addElement(i);
+        for(Pair<Integer,SCCCluster> i : in){
+            String assignmentOfIntegerValues = "";
+            for (Node node: i.getValue().getNodes()){
+                assignmentOfIntegerValues += " " + node.getAttribute("ui.label") + " = ";
+                assignmentOfIntegerValues += i.getValue().getLambdaMinus() + ";";
+            }
+            internelConstainsClusterListModel.addElement(new Pair(i.getKey(),assignmentOfIntegerValues));
         }
         integerAssignmentList.setModel(internelConstainsClusterListModel);
     }
@@ -58,7 +64,7 @@ public class IntegerAssignmentGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (IntegerAssignmentList) obs;
+        observer = (IntegerAssignmentListMinimize) obs;
         UpdateJList(observer.getProjectWallet());
         repaint();
         revalidate();

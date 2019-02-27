@@ -59,19 +59,23 @@ public class SCCClusterList {
         }
     }
 
-    private int lambdaPlus(SCCCluster cluster) {
+    private double lambdaPlus(SCCCluster cluster) {
         double clusterUpperBound= cluster.getUpperbound();
-        int clusterUpperCeil = (int) Math.floor(clusterUpperBound);
+        double clusterUpperCeil =  Math.floor(clusterUpperBound);
         if(cluster.getAttackingClusters().isEmpty()){
             return clusterUpperCeil;
         }else{
-            ArrayList<Integer> lambdas = new ArrayList<>();
-            lambdas.add(clusterUpperCeil);
-            for (Map.Entry<Integer, Double> entry : cluster.getAttackingClusters()){
-                int lambdaOfAttacker = lambdaPlus(SCCContainerMapId.get(entry.getKey()));
-                lambdas.add((int) Math.floor( lambdaOfAttacker/entry.getValue()));
+            if (cluster.getInternalConstartins() > 1 && cluster.getUpperbound() != Double.POSITIVE_INFINITY){
+                return 0;
+            }else{
+                ArrayList<Double> lambdas = new ArrayList<>();
+                lambdas.add(clusterUpperCeil);
+                for (Map.Entry<Integer, Double> entry : cluster.getAttackingClusters()){
+                    double lambdaOfAttacker = lambdaPlus(SCCContainerMapId.get(entry.getKey()));
+                    lambdas.add(Math.floor( lambdaOfAttacker/entry.getValue()));
+                }
+                return Collections.min(lambdas);
             }
-            return Collections.min(lambdas);
         }
     }
 
