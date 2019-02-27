@@ -2,7 +2,6 @@ package View.SolutionPanel;
 
 import Controller.Constrains.LowerBoundClusterListController;
 import Model.SCC.ConstrainsLists.IntegerAssignmentList;
-import Model.SCC.SolutionListRender;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
 import Model.SCC.SCCClusterList;
@@ -65,7 +64,7 @@ public class IntegerAssignmentGUI extends JPanel implements Observer {
         revalidate();
     }
 
-    public void setRender(SolutionListRender lbr){
+    public void setRender(BoundsListRender lbr){
         integerAssignmentList.setCellRenderer(lbr);
     }
 }

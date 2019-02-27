@@ -15,6 +15,7 @@ controller/Constrains/InternalConstarinsClusterListController.class
 model/SCC/ColorGenerator.class
 controller/ManualInequalitiesController.class
 controller/Constrains/ConstarinsController.class
+model/SCC/SolutionListRender.class
 View/SolutionPanel/UpperBoundClusterGUI.class
 model/Inequalities/Inequality.class
 View/OperationsOnInequalities/ManualInequalitiesGUI.class

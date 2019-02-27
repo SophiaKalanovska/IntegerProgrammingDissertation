@@ -2,20 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/Constrains/IntegerAssignenmentListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SolutionListRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/IntegerProgrammingDissertation-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Constrains/ConstarinsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Container.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CheckboxActionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Constrains/IntegerAssignenmentListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalitiesGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions$ExceptionNotATerm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions$ExceptionNotNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions$ExceptionNotZero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions$NoWeightException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParseMember.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithOneDecisionVariable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithTwoDecisionVariables.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/InternalConstarinsClusterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/InternalConstarinsClusterGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntegerAssignmentGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IntegerAssignmentGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-313">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="344">
+              <caret line="66" column="42" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -102,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntegerAssignmentList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IntegerAssignmentList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="232">
               <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
             </state>
           </provider>
@@ -962,13 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-313">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -999,8 +994,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="232">
           <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="42" />
         </state>
       </provider>
     </entry>
