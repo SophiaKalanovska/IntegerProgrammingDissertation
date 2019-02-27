@@ -29,6 +29,14 @@ import java.awt.event.KeyEvent;
             this.setOpaque(false);
         }
 
+        public boolean isSelected(){
+            if ( darkMode.isSelected()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
 
         public JCheckBox getDarkMode(){
             return darkMode;

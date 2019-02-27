@@ -1,12 +1,15 @@
 package Controller;
 
 import Model.Inequalities.DecisionVariable;
+import View.LayoutGUI;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.ui.view.ViewerPipe;
 import View.Graph.GraphGUI;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Map;
 
 
 public class GraphController implements Serializable {
@@ -15,8 +18,8 @@ public class GraphController implements Serializable {
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
     private int id;
 
-    public GraphController(GraphGUI graphGUI) {
-        this.graphGUI = graphGUI;
+    public GraphController(LayoutGUI layoutGUI) {
+        this.graphGUI = layoutGUI.getGraphGUI();
         this.graph = graphGUI.getGraph();
         id = 0;
 
@@ -31,6 +34,10 @@ public class GraphController implements Serializable {
             node.addAttribute("decision_variable", firstUnknownVariable);
             node.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
             node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
+            node.addAttribute("attackedBy", new ArrayList<Map<Node, Double>>());
+
+            node.addAttribute("attacking", new ArrayList<Map.Entry<Node, Integer>>());
+            node.addAttribute("SCC", 0);
         }else{
             Node node = graph.getNode(firstUnknownVariable.toString());
             DecisionVariable original = node.getAttribute("decision_variable");
@@ -39,6 +46,7 @@ public class GraphController implements Serializable {
             node.setAttribute("upper_bound", original.getUpperBound());
             node.setAttribute("lower_bound", original.getLowerBound());
         }
+
     }
 
     public void addEdge(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable){
@@ -49,7 +57,6 @@ public class GraphController implements Serializable {
 //            double weightOfEdge = (double) firstUnknownVariable.getWeight() / secondUnknownVariable.getWeight();
             double weightOfEdge = (double) firstUnknownVariable.getWeight();
             edge.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
-            edge.addAttribute("ui.style", "text-alignment:below;");
             edge.addAttribute("weight", weightOfEdge);
             id ++;
         }else{
@@ -57,7 +64,6 @@ public class GraphController implements Serializable {
             double weightOfEdge = firstUnknownVariable.getWeight();
             if (weightOfEdge > (double)between.getAttribute("weight")){
                 between.setAttribute("ui.label", String.format("%.2f", weightOfEdge));
-                between.addAttribute("ui.style", "text-alignment:below;");
                 between.setAttribute("weight", weightOfEdge);
             }
         }
@@ -90,5 +96,6 @@ public class GraphController implements Serializable {
 
     public void deleteGraph() {
         graph.clear();
+        graphGUI.setUI();
     }
 }

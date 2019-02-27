@@ -63,9 +63,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
 
         if (e.getSource() instanceof JButton) {
             JButton enter = (JButton) e.getSource();
-
         }
-
         if (e.getSource() instanceof JTextField) {
             JTextField enter = (JTextField) e.getSource();
             RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator(graph);

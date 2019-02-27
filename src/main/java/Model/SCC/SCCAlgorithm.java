@@ -7,7 +7,10 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 
 import java.awt.*;
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 
 public class SCCAlgorithm {
     private Graph graph;
@@ -30,6 +33,7 @@ public class SCCAlgorithm {
         this.list = new SCCClusterList();
         for (Node n : graph.getEachNode()) {
             int SCCIndex = n.getAttribute(tscc.getSCCIndexAttribute());
+            n.setAttribute("SCC", SCCIndex);
             SCCCluster other = new SCCCluster(SCCIndex);
             if (list.getProjectWallet().contains(other)){
                 int index = list.getProjectWallet().indexOf(other);
@@ -60,9 +64,14 @@ public class SCCAlgorithm {
                     w.setAttribute("internal_weight", vw.getAttribute("weight"));
                 }
             }else{
-                if ((double)w.getAttribute("upper_bound") > (double) vw.getAttribute("weight") ){
-                    w.setAttribute("upper_bound", vw.getAttribute("weight"));
-                }
+                ArrayList<Map.Entry<Node, Double>> attacked = w.getAttribute("attackedBy");
+                ArrayList<Map.Entry<Node, Double>> attacking = n.getAttribute("attacking");
+                Map.Entry<Node,Double> attackedBy = new AbstractMap.SimpleEntry<>(n, (double)vw.getAttribute("weight"));
+                Map.Entry<Node,Double> attack = new AbstractMap.SimpleEntry<>(w,  (double) vw.getAttribute("weight"));
+                attacked.add(attackedBy);
+                attacking.add(attack);
+                w.setAttribute("attackedBy", attacked);
+                n.setAttribute("attacking", attacking);
             }
 
         }
@@ -73,6 +82,9 @@ public class SCCAlgorithm {
             node.setAttribute("internal_weight", 0.0);
             node.setAttribute("upper_bound", ((DecisionVariable)node.getAttribute("decision_variable")).getUpperBound());
             node.setAttribute("lower_bound", ((DecisionVariable)node.getAttribute("decision_variable")).getLowerBound());
+            node.setAttribute("attackedBy", new ArrayList<Map.Entry<Node, Double>>());
+            node.setAttribute("attacking", new ArrayList<Map.Entry<Node, Double>>());
+            node.setAttribute("SCC", 0);
         }
     }
 

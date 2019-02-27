@@ -19,7 +19,7 @@ import javax.swing.border.TitledBorder;
  */
 public class LayoutGUI extends JPanel  {
 
-    private GraphGUI graphGUI;
+    private GraphGUI graph;
     private JLabel welcomeLabel;
     private TitledBorder enterInequalitiesBorder;
     private TitledBorder graphBorder;
@@ -37,7 +37,7 @@ public class LayoutGUI extends JPanel  {
      */
 
 
-    public LayoutGUI(JFrame frame, GraphGUI graph, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
+    public LayoutGUI(JFrame frame, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
 
         //welcome label
         welcomeLabel = new JLabel("Integer Programming Solver");
@@ -54,9 +54,9 @@ public class LayoutGUI extends JPanel  {
 
 
         //create border for graph
-        settings = new Settings(this);
+        this.settings = new Settings(this);
+        graph = new GraphGUI(settings);
         JPanel graphPanel = new JPanel(new BorderLayout());
-        this.graphGUI = graph;
         graphPanel.add(graph.getView(),BorderLayout.CENTER);
         graphPanel.add(settings, BorderLayout.NORTH);
         Border graphBorderWalls = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
@@ -109,7 +109,7 @@ public class LayoutGUI extends JPanel  {
     public void changeView(boolean dark){
         if (dark){
             this.setBackground(Color.black);
-            graphGUI.changeView(true);
+            graph.changeView(true);
             boundsGUI.changeView(true);
             inequalitiesListGUI.changeView(true);
             manualInequalitiesGUI.changeView(true);
@@ -122,7 +122,7 @@ public class LayoutGUI extends JPanel  {
             listBorder.setTitleColor(Color.WHITE);
         }else{
             this.setBackground(Color.white);
-            graphGUI.changeView(false);
+            graph.changeView(false);
             boundsGUI.changeView(false);
             inequalitiesListGUI.changeView(false);
             manualInequalitiesGUI.changeView(false);
@@ -134,6 +134,11 @@ public class LayoutGUI extends JPanel  {
             randomBorder.setTitleColor(Color.BLACK);
             listBorder.setTitleColor(Color.BLACK);
         }
+    }
+
+
+    public GraphGUI getGraphGUI(){
+        return graph;
     }
 
 

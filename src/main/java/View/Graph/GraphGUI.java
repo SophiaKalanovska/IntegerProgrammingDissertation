@@ -14,19 +14,18 @@ import org.graphstream.graph.implementations.*;
 
 public class GraphGUI extends JPanel implements ViewerListener{
 
-	public final GraphController graphController ;
 	private ViewPanel viewPanel;
 	private Viewer viewer;
 	private Graph graph;
 	private String cssLight;
     private String cssDark;
+    private Settings settings;
 	private ViewerPipe pipeIn;
 	private ConnectedComponents cc;
 
-	public GraphGUI(){
-
+	public GraphGUI(Settings settings){
+        this.settings = settings;
         graph = new MultiGraph("Strongly connected components");
-        graphController = new GraphController(this);
 
          cssLight = "node {size: 30px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: white; }" +
@@ -54,6 +53,14 @@ public class GraphGUI extends JPanel implements ViewerListener{
 
 	public void changeView(boolean dark){
 	    if (dark){
+            graph.setAttribute("ui.stylesheet", cssDark);
+        }else{
+            graph.setAttribute("ui.stylesheet", cssLight);
+        }
+    }
+
+    public void setUI(){
+	    if (settings.isSelected()){
             graph.setAttribute("ui.stylesheet", cssDark);
         }else{
             graph.setAttribute("ui.stylesheet", cssLight);

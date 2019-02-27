@@ -23,6 +23,8 @@ public class ConstarinsController {
         lowerBoundClusterListController.populate(inequalitiesList);
         upperBoundClusterListController.populate(inequalitiesList);
         internalConstarinsClusterListController.populate(inequalitiesList);
+
+        calculateLambdas(inequalitiesList);
     }
 
 
@@ -31,6 +33,9 @@ public class ConstarinsController {
         inequalitiesList.getSCCComponents().evaluate();
     }
 
+    public void calculateLambdas( InequalitiesList inequalitiesList){
+        inequalitiesList.getSCCComponents().evaluateLambdas();
+    }
 
 
 

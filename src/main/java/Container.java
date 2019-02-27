@@ -25,7 +25,7 @@ public class Container extends JFrame {
 	public Container(){
 
 		// Create all the View  classes
-		GraphGUI graphGUI = new GraphGUI();
+
 		ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
@@ -34,11 +34,12 @@ public class Container extends JFrame {
 		IntegerAssignmentGUI integerAssignmentGUI = new IntegerAssignmentGUI();
 		InternalConstarinsClusterGUI internalConstarinsClusterGUI = new InternalConstarinsClusterGUI();
 		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI, integerAssignmentGUI, internalConstarinsClusterGUI);
-		LayoutGUI layoutGUI = new LayoutGUI(this, graphGUI, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
+		LayoutGUI layoutGUI = new LayoutGUI(this, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
+
 
 
 		// Create all the Controller classes
-		GraphController graphController = new GraphController(graphGUI) ;
+		GraphController graphController = new GraphController(layoutGUI) ;
 		LowerBoundClusterListController lowerBoundClusterListController = new LowerBoundClusterListController(lowerBoundClusterGUI);
 		UpperBoundClusterListController upperBoundClusterListController = new UpperBoundClusterListController(upperBoundClusterGUI);
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
