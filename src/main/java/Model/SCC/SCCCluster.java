@@ -17,7 +17,7 @@ public class SCCCluster {
     private double upperbound = Double.POSITIVE_INFINITY;
     private double internalConstartins = 0;
     private int lambdaMinus = 0;
-    private int lambdaPlus = 0;
+    private int lambdaPlus = (int)Double.POSITIVE_INFINITY;
     private ArrayList<Map.Entry<Node, Double>> attackedBy;
     private ArrayList<Map.Entry<Node, Double>> attacking;
     private ArrayList<Map.Entry<Integer, Double>> attackedByClusters;
@@ -75,8 +75,8 @@ public class SCCCluster {
         }
         attackedByClusters = setAttackedByClusters();
         attackingClusters = setAttackingClusters();
-        System.out.println("Cluster "+ id +"attacked by" + attackedBy);
-        System.out.println("Cluster " + id + "attacking" +attacking);
+        System.out.println("Cluster "+ id +"attacked by" + attackedByClusters);
+        System.out.println("Cluster " + id + "attacking" +attackingClusters);
     }
 
     @Override
@@ -118,8 +118,6 @@ public class SCCCluster {
                 attackingCluster.add( new AbstractMap.SimpleEntry<>(sccAttacked,node.getValue()));
             }else{
                 int indexOfAttacking = attackingCluster.indexOf(sccAttacked);
-
-                //not sure if it is < or > ????
                 if (node.getValue() > attackingCluster.get(indexOfAttacking).getValue()){
                     attackingCluster.set(indexOfAttacking, new AbstractMap.SimpleEntry<>(sccAttacked,node.getValue()));
                 }
@@ -155,10 +153,31 @@ public class SCCCluster {
     }
 
     public void setLambdaMinus(int lambdaMinus) {
-       this.lambdaMinus = lambdaMinus;
+       if (lambdaMinus > this.lambdaMinus){
+           this.lambdaMinus = lambdaMinus;
+       }
     }
 
     public void setLambdaPlus(int lambdaPlus) {
-        this.lambdaPlus = lambdaPlus;
+        if (lambdaPlus < this.lambdaPlus) {
+            this.lambdaPlus = lambdaPlus;
+        }
     }
+
+    public boolean isSolvable() {
+       if (lambdaMinus <= lambdaPlus){
+           return true;
+       }else{
+           return false;
+       }
+    }
+
+    public int getLambdaMinus(){
+       return lambdaMinus;
+    }
+
+    public int getLambdaPlus(){
+        return lambdaPlus;
+    }
+
 }

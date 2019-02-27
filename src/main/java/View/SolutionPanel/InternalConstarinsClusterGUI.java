@@ -44,17 +44,6 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
         internelConstainsClusterList.setModel(internelConstainsClusterListModel);
     }
 
-
-    public void changeView(boolean dark){
-        if (dark){
-            internelConstainsClusterList.setBackground(Color.BLACK);
-            internelConstainsClusterList.setForeground(Color.WHITE);
-        }else{
-            internelConstainsClusterList.setBackground(Color.WHITE);
-            internelConstainsClusterList.setForeground(Color.BLACK);
-        }
-    }
-
     @Override
     public void update(Observable obs, Object obj) {
         observer = (InternalConstarinsList) obs;
@@ -66,4 +55,16 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
     public void setRender(BoundsListRender lbr){
         internelConstainsClusterList.setCellRenderer(lbr);
     }
+
+
+    public void changeView(boolean dark){
+        if (dark){
+            internelConstainsClusterList.setBackground(Color.BLACK);
+            internelConstainsClusterList.setForeground(Color.WHITE);
+        }else{
+            internelConstainsClusterList.setBackground(Color.WHITE);
+            internelConstainsClusterList.setForeground(Color.BLACK);
+        }
+    }
+
 }

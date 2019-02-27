@@ -23,6 +23,7 @@ model/Parser/Parser.class
 model/Inequalities/DecisionVariable.class
 View/Graph/Settings.class
 controller/Constrains/UpperBoundClusterListController.class
+model/SCC/ConstrainsLists/IntegerAssignmentList.class
 controller/RandomInequalitiesController.class
 model/Parser/Exceptions$NoWeightException.class
 model/Parser/Exceptions$ExceptionNotATerm.class
@@ -32,6 +33,7 @@ controller/CheckboxActionController.class
 model/Inequalities/RandomInequalitiesGenerator.class
 model/Parser/Exceptions.class
 View/OperationsOnInequalities/RandomInequalitiesGUI.class
+controller/Constrains/IntegerAssignenmentListController.class
 model/Parser/ParserWithOneDecisionVariable.class
 Container.class
 controller/InequalitiesListController.class

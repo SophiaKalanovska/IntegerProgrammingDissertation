@@ -67,7 +67,7 @@ public class SCCClusterList {
         }else{
             ArrayList<Integer> lambdas = new ArrayList<>();
             lambdas.add(clusterUpperCeil);
-            for (Map.Entry<Integer, Double> entry : cluster.getAttackedByClusters()){
+            for (Map.Entry<Integer, Double> entry : cluster.getAttackingClusters()){
                 int lambdaOfAttacker = lambdaPlus(SCCContainerMapId.get(entry.getKey()));
                 lambdas.add((int) Math.floor( lambdaOfAttacker/entry.getValue()));
             }
@@ -78,14 +78,17 @@ public class SCCClusterList {
     public void evaluateLambdas(){
         for (SCCCluster cluster : SCCContainer){
             cluster.setLambdaMinus(lambdaMinus(cluster));
-            System.out.println("cluster id " + cluster.getId()+ "lambda minus" + lambdaMinus(cluster));
             cluster.setLambdaPlus(lambdaPlus(cluster));
-            System.out.println("cluster id " + cluster.getId()+ "lambda plus" + lambdaPlus(cluster));
-
         }
     }
 
 
-
-
+    public boolean isSolvable() {
+        for (SCCCluster cluster : SCCContainer){
+            if (!cluster.isSolvable()){
+                return false;
+            }
+        }
+        return true;
+    }
 }
