@@ -15,7 +15,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
 
     private InequalitiesList inequalitiesList;
     private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
-    private GraphController graphController;
     private ConstarinsController constarinsController;
 
 
@@ -28,7 +27,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
-        this.graphController = graphController;
+
         this.constarinsController = constarinsController;
         InequalitiesListGUI.addMouseListener(this);
     }

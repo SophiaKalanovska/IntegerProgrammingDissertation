@@ -3,6 +3,7 @@ package Controller.Constrains;
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
 import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import Model.SCC.SCCClusterList;
 import View.SolutionPanel.IntegerAssignmentMaximizeGUI;
 import View.SolutionPanel.IntegerAssignmentMinimizeGUI;
 
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -19,8 +21,8 @@ import java.util.Map;
  */
 public class IntegerAssignenmentMaxListController implements ActionListener, MouseListener {
 
-    private IntegerAssignmentMaximizeGUI IntegerAssignmentMaximizeGUI;
-    private IntegerAssignmentListMinimize lbl;
+    private IntegerAssignmentMaximizeGUI IntegerAssignmentMaximizeGUI ;
+    private IntegerAssignmentListMinimize lbl = new IntegerAssignmentListMinimize(new SCCClusterList());
 
 
     public IntegerAssignenmentMaxListController(IntegerAssignmentMaximizeGUI IntegerAssignmentMaximizeGUI){
@@ -36,6 +38,16 @@ public class IntegerAssignenmentMaxListController implements ActionListener, Mou
         BoundsListRender render = new BoundsListRender();
         render.setImageMap(map);
         IntegerAssignmentMaximizeGUI.setRender(render);
+        lbl.tryUpdate();
+    }
+
+    public void populate(){
+
+        lbl.addObserver(IntegerAssignmentMaximizeGUI);
+//        Map<Integer, ImageIcon> map = lbl.populate();
+//        BoundsListRender render = new BoundsListRender();
+//        render.setImageMap(map);
+//        IntegerAssignmentMaximizeGUI.setRender(render);
         lbl.tryUpdate();
     }
 

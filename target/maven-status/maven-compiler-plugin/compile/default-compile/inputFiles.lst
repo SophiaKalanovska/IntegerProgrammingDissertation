@@ -7,6 +7,7 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/InternalConstarinsList.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Inequalities/RandomInequalitiesGenerator.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/LowerBoundList.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/SolutionListRender.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/UpperBoundClusterListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Inequalities/Inequality.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/OperationsOnInequalities/RandomInequalitiesGUI.java
@@ -16,11 +17,13 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/SCCCluster.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/Graph/Settings.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/LayoutGUI.java
-/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/IntegerAssignmentMaximizeGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/UpperBoundClusterGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentListMinimize.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/LowerBoundClusterGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Parser/ParseMember.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/IntegerAssignmentMinimizeGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Main.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/SCCClusterList.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Inequalities/InequalitiesList.java
@@ -29,11 +32,14 @@
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/ManualInequalitiesController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Container.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentListMaximize.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/View/OperationsOnInequalities/InequalitiesListGUI.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/CheckboxActionController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/ConstarinsController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/RandomInequalitiesController.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/IntegerAssignenmentMinListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/SCC/ConstrainsLists/UpperBoundList.java
+/Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/Constrains/IntegerAssignenmentMaxListController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Model/Parser/Exceptions.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/GraphController.java
 /Users/sophiakalanovska/Documents/dissertation/IntegerProgrammingDissertation/src/main/java/Controller/InequalitiesListController.java

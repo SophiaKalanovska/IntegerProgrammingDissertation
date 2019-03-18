@@ -38,8 +38,11 @@ public class ConstarinsController {
         if (inequalitiesList.getSCCComponents().isSolvable()){
             integerAssignenmentMinListController.populate(inequalitiesList);
             integerAssignenmentMaxListController.populate(inequalitiesList);
+            System.out.print(Double.POSITIVE_INFINITY/ -5);
         }else{
-
+//            integerAssignenmentMinListController.populate();
+            integerAssignenmentMaxListController.populate();
+            System.out.print("No solution");
         }
 
     }

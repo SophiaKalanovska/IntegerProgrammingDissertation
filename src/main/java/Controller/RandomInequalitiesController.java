@@ -10,9 +10,8 @@ import javax.swing.JTextField;
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
-import Model.Inequalities.RandomInequalitiesGenerator;
+import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
-import org.graphstream.graph.Node;
 
 /**
  * This class will represent the Controller for the LayoutGUI Panel
