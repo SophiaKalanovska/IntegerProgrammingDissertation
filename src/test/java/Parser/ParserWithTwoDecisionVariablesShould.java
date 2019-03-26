@@ -1,4 +1,7 @@
+package Parser;
+
 import Model.Inequalities.Inequality;
+import Model.Parser.Exceptions;
 import Model.Parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -49,7 +52,7 @@ public class ParserWithTwoDecisionVariablesShould {
         Parser testParser = new Parser();
         testParser.setString("-3x<=y");
         Inequality inequality = testParser.parse();
-        Assert.assertEquals(inequality.getFirstDecisionVariable().getSign(),"-");
+        Assert.assertEquals(inequality.getFirstDecisionVariable().getWeight(),-3.0);
     }
 
     @Test
@@ -99,6 +102,69 @@ public class ParserWithTwoDecisionVariablesShould {
         Inequality inequality = testParser.parse();
         Assert.assertEquals(inequality.getSecondDecisionVariableValue(),"y");
     }
+
+    @Test
+    public void parse_3xGreaterThanY_AndReturn_YAsFirstDecisionVariable() throws Exception {
+        Parser testParser = new Parser();
+        testParser.setString("3x>y");
+        Inequality inequality = testParser.parse();
+        Assert.assertEquals(inequality.getFirstDecisionVariableValue(),"y");
+    }
+
+    @Test
+    public void parse_3xGreaterThanY_AndReturn_XAsSecondDecisionVariable() throws Exception {
+        Parser testParser = new Parser();
+        testParser.setString("3x>y");
+        Inequality inequality = testParser.parse();
+        Assert.assertEquals(inequality.getSecondDecisionVariableValue(),"x");
+    }
+
+    @Test
+    public void parse_3xGreaterThanOrEqualsY_AndReturn_YAsFirstDecisionVariable() throws Exception {
+        Parser testParser = new Parser();
+        testParser.setString("3x>=y");
+        Inequality inequality = testParser.parse();
+        Assert.assertEquals(inequality.getFirstDecisionVariableValue(),"y");
+    }
+
+    @Test
+    public void parse_3xGreaterThanOrEqualsY_AndReturn_XAsSecondDecisionVariable() throws Exception {
+        Parser testParser = new Parser();
+        testParser.setString("3x>=y");
+        Inequality inequality = testParser.parse();
+        Assert.assertEquals(inequality.getSecondDecisionVariableValue(),"x");
+    }
+
+    @Test(expectedExceptions = java.lang.Exception.class)
+    public void parse_3xLessThanNull_ShouldThrowError() throws Exception {
+        Parser testParser = new Parser();
+        testParser.setString("3x<=");
+        testParser.parse();
+    }
+
+    @Test
+    public void parse_InvalidExpressionFirstTerm(){
+        Parser testParser = new Parser();
+        testParser.setString("3<=y");
+        try {
+            testParser.parse();
+        } catch (Exception e) {
+            Assert.assertEquals( e, " Source does not match the grammar. ");
+        }
+
+    }
+    @Test
+    public void parse_InvalidExpressionSecondTerm(){
+        Parser testParser = new Parser();
+        testParser.setString("3x<=4");
+        try {
+            testParser.parse();
+        } catch (Exception e) {
+            Assert.assertEquals( e, " Source does not match the grammar. ");
+        }
+
+    }
+
 
 
 }

@@ -1,5 +1,6 @@
 package Model.Parser;
 
+import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.Inequality;
 
 public class Parser {
@@ -35,7 +36,7 @@ public class Parser {
         try {
             parserWithTwoDecisionVariables.parse_inequality();
             if (term1 == null || term2 == null || sign == null) {
-                throw new Exception(" Something is null ");
+                throw new Exception("Something is null");
             }
             if(hasZeroRight){
                 inequality.getSecondDecisionVariable().changeSignVariable();
@@ -44,8 +45,9 @@ public class Parser {
                 inequality.getFirstDecisionVariable().changeSignVariable();
             }
             if (sign.equals(">") || sign.equals(">=")){
-                inequality.getFirstDecisionVariable().changeSignVariable();
-                inequality.getSecondDecisionVariable().changeSignVariable();
+                DecisionVariable first = inequality.getFirstDecisionVariable();
+                inequality.setFirstDecisionVariable(inequality.getSecondDecisionVariable());
+                inequality.setSecondDecisionVariable(first);
             }
             if (pos == srcOriginal.length()) {
                 inequality.setExpression(srcOriginal);

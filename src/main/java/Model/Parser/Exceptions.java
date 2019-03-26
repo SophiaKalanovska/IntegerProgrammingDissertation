@@ -12,7 +12,7 @@ public class Exceptions {
         }
     }
 
-    static class ExceptionNotATerm extends Throwable {
+    public static class ExceptionNotATerm extends Throwable {
         ExceptionNotATerm(String s) {
         }
     }
