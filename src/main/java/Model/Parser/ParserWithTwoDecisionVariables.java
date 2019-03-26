@@ -10,18 +10,6 @@ public class ParserWithTwoDecisionVariables {
     public void parse_inequality() throws Exceptions.ExceptionNotATerm, Exception {
         try {
             parser.term1 = parser.parseMember.parse_term("first");
-        } catch (Exceptions.ExceptionNotATerm e) {
-            System.out.println("First term is not valid");
-            try {
-                parser.parseMember.parse_null();
-            } catch (Exceptions.ExceptionNotZero exceptionNotNull) {
-                throw new Exceptions.ExceptionNotATerm("might be onlyOneVar");
-            }
-            parser.parseMember.parse_sign();
-            parser.term1 = parser.parseMember.parse_term("first");
-            parser.term2 = parser.parseMember.parse_term("second");
-            parser.hasZeroRight= true;
-        }
             try {
                 parser.term2 = parser.parseMember.parse_term("second");
                 parser.parseMember.parse_sign();
@@ -34,7 +22,18 @@ public class ParserWithTwoDecisionVariables {
             } catch (Exceptions.ExceptionNotATerm e) {
                 one_term_signexpected();
             }
-
+        } catch (Exceptions.ExceptionNotATerm e) {
+            System.out.println("First term is not valid");
+            try {
+                parser.parseMember.parse_null();
+            } catch (Exceptions.ExceptionNotZero exceptionNotNull) {
+                throw new Exceptions.ExceptionNotATerm("might be onlyOneVar");
+            }
+            parser.parseMember.parse_sign();
+            parser.term1 = parser.parseMember.parse_term("first");
+            parser.term2 = parser.parseMember.parse_term("second");
+            parser.hasZeroRight= true;
+        }
     }
 
     private void one_term_signexpected() throws Exception, Exceptions.ExceptionNotATerm {
