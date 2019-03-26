@@ -41,6 +41,10 @@ public class DecisionVariable {
         this.sign = sign;
     }
 
+    public String getSign() {
+        return sign;
+    }
+
     public String toString(){
         return variable;
     }

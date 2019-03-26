@@ -17,7 +17,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
     private InequalitiesList inequalitiesList;
     private String enterInequality;
-    private Parser parser;
+    private final Parser parser = new Parser();
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
@@ -56,7 +56,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
             JTextField enter = (JTextField) e.getSource();
             enterInequality = enter.getText();
             enter.setText("Enter inequality...");
-            this.parser = new Parser(enterInequality);
+            parser.setString(enterInequality);
             try {
                 Inequality parsedExpression = parser.parse();
                 inequalitiesList.addInequality(parsedExpression);

@@ -119,7 +119,7 @@ public class ParseMember {
     }
 
     void parse_sign() throws Exception {
-        parser.sign = tokenize("<|>|<=|>=");
+        parser.sign = tokenize("<=|>=|<|>");
     }
 
     void parse_null() throws Exceptions.ExceptionNotZero {

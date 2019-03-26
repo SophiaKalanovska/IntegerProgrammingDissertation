@@ -5,8 +5,8 @@ import Model.Inequalities.Inequality;
 public class Parser {
 
     protected final ParseMember parseMember = new ParseMember(this);
-    protected final ParserWithOneDecisionVariable parserWithOneDecisionVariable = new ParserWithOneDecisionVariable(this);
-    protected final ParserWithTwoDecisionVariables parserWithTwoDecisionVariables = new ParserWithTwoDecisionVariables(this);
+    private final ParserWithOneDecisionVariable parserWithOneDecisionVariable = new ParserWithOneDecisionVariable(this);
+    private final ParserWithTwoDecisionVariables parserWithTwoDecisionVariables = new ParserWithTwoDecisionVariables(this);
     protected String src;
     protected String srcOriginal;
     protected int pos;
@@ -18,7 +18,12 @@ public class Parser {
     protected String term2;
     protected String sign;
 
-    public Parser(String src) {
+
+    public void setString(String src){
+        term1 = null;
+        term2 = null;
+        hasZeroLeft = false;
+        hasZeroRight = false;
         this.pos = 0;
         inequality = new Inequality();
         this.toParse = "";
