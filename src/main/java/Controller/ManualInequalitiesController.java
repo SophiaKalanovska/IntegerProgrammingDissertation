@@ -17,16 +17,18 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
     private InequalitiesList inequalitiesList;
     private String enterInequality;
+    private GraphController graph;
     private final Parser parser = new Parser();
     /**
      * Constructs a Controller for the ManualIntegerInequalities panel
      *
      * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI){
+    public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI,  GraphController graphController){
         this.inequalitiesList = inequalitiesList;
         ManualInequalitiesGUI.addControllers(this);
         ManualInequalitiesGUI.addMouseListener(this);
+        graph = graphController;
     }
 
     /**
@@ -34,8 +36,9 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
      *
      * @param e Mouse listener that will identify the actions that the user makes
      */
+
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mousePressed(MouseEvent e) {
         if (e.getSource() instanceof JTextField) {
             JTextField enter = (JTextField) e.getSource();
             enter.setText("");
@@ -69,8 +72,8 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                 Thread thread2 = new Thread() {
                     @Override
                     public void run() {
-                        inequalitiesList.drawInequality(parsedExpression);
-                        inequalitiesList.calculateInequalities();
+                        graph.drawInequality(parsedExpression);
+                        graph.calculateInequalities();
                     }
 
                 };
@@ -82,7 +85,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {}
 
     @Override
     public void mouseReleased(MouseEvent e) {}

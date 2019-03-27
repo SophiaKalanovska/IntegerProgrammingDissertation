@@ -1,5 +1,6 @@
 package Controller.Constrains;
 
+import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
@@ -32,8 +33,8 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
     }
 
 
-    public void populate(InequalitiesList inequalitiesList){
-        lbl = new LowerBoundList(inequalitiesList.getSCCComponents());
+    public void populate(GraphController graph){
+        lbl = new LowerBoundList(graph.getSCCComponents());
         lbl.addObserver(LowerBoundClusterGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();

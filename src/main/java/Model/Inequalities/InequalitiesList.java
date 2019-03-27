@@ -1,68 +1,35 @@
 package Model.Inequalities;
-
-import Controller.GraphController;
-import Model.SCC.SCCAlgorithm;
-import Model.SCC.SCCClusterList;
-import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
-
 import java.util.ArrayList;
 import java.util.Observable;
 /**
- * This class represents a portofolio of Projects
+ * This class represents a portofolio of Inequalities
  */
 public class InequalitiesList extends Observable implements java.io.Serializable {
-
     private ArrayList<Inequality> inequalitiesContainer;
-    private GraphController graphController;
-    private SCCAlgorithm algorithm;
     private Inequality lastAdded;
     private Inequality lastDeleted;
-    private SCCClusterList SCCComponents;
+    private boolean deleteAll;
 
     /**
      * Creates a InequalitiesList object
      */
-    public InequalitiesList(GraphController graphController, SCCAlgorithm algorithm) {
-        this.graphController = graphController;
+    public InequalitiesList() {
         inequalitiesContainer = new ArrayList<>();
-        this.algorithm = algorithm;
         this.lastAdded = null;
         this.lastDeleted = null;
     }
-
 
     /**
      * Adds a project to the wallet
      *
      * @param x the project that is to be added to the wallet
      */
-    public void addInequality( Inequality x) {
-
+    public void addInequality(Inequality x) {
         this.inequalitiesContainer.add(x);
         lastAdded = x;
-
         setChanged();
         notifyObservers();
         lastAdded = null;
-    }
-
-    public void drawInequality(Inequality x) {
-        String decision = x.getSecondDecisionVariableValue();
-        if (decision != null) {
-            graphController.addNode(x.getFirstDecisionVariable());
-            graphController.addNode(x.getSecondDecisionVariable());
-            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
-        } else {
-
-            graphController.addNode(x.getFirstDecisionVariable());
-        }
-    }
-
-    public void calculateInequalities()
-    {
-        algorithm.clear();
-        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
-        SCCComponents = algorithm.cluster(trj);
     }
 
     /**
@@ -78,13 +45,12 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         lastDeleted = null;
     }
 
-    public void undrawInequality(Inequality x){
-        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
+    public void deleteAllInequalities() {
+        deleteAll = true;
+        inequalitiesContainer.removeAll(inequalitiesContainer);
+        tryUpdate();
     }
 
-    public SCCClusterList getSCCComponents() {
-        return SCCComponents;
-    }
     /**
      * Returns the wallet as an ArrayList of Projects
      *
@@ -94,15 +60,11 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         return lastAdded;
     }
 
-    public Inequality getLastDeleted() {
-        return lastDeleted;
-    }
+    public Inequality getLastDeleted() { return lastDeleted; }
 
+    public ArrayList<Inequality> getInequalitiesContainer(){return  inequalitiesContainer;}
 
-    public void storeProject(ArrayList<Inequality> data) {
-        this.inequalitiesContainer = data;
-
-    }
+    public boolean shouldDeleteAllInequalities(){return deleteAll; }
 
     /**
      * Sends signal to the observers to update the View
@@ -112,17 +74,4 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         notifyObservers();
     }
 
-    public void deleteAllInequalities() {
-        for (int i = 0; i < inequalitiesContainer.size(); i++) {
-            graphController.removeNodes(inequalitiesContainer.get(i).getFirstDecisionVariableValue(), inequalitiesContainer.get(i).getSecondDecisionVariableValue());
-        }
-        inequalitiesContainer.removeAll(inequalitiesContainer);
-        tryUpdate();
-    }
-
-    public void deleteGraph() {
-        graphController.deleteGraph();
-        inequalitiesContainer.removeAll(inequalitiesContainer);
-        tryUpdate();
-    }
 }

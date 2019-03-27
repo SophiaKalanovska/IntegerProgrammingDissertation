@@ -1,10 +1,7 @@
 package Controller.Constrains;
-
-import Model.Inequalities.InequalitiesList;
-
+import Controller.GraphController;
 
 public class ConstarinsController {
-
     private LowerBoundClusterListController lowerBoundClusterListController;
     private UpperBoundClusterListController upperBoundClusterListController;
     private InternalConstarinsClusterListController internalConstarinsClusterListController;
@@ -12,7 +9,6 @@ public class ConstarinsController {
     private IntegerAssignenmentMaxListController integerAssignenmentMaxListController;
 
     public ConstarinsController(LowerBoundClusterListController lowerBoundClusterListController, UpperBoundClusterListController upperBoundClusterListController, InternalConstarinsClusterListController internalConstarinsClusterListController, IntegerAssignenmentMinListController integerAssignenmentMinListController, IntegerAssignenmentMaxListController integerAssignenmentMaxListController){
-
         this.lowerBoundClusterListController = lowerBoundClusterListController;
         this.upperBoundClusterListController = upperBoundClusterListController;
         this.internalConstarinsClusterListController = internalConstarinsClusterListController;
@@ -20,28 +16,26 @@ public class ConstarinsController {
         this.integerAssignenmentMaxListController = integerAssignenmentMaxListController;
     }
 
-    public void populate(InequalitiesList inequalitiesList){
-//
-        calculateBounds(inequalitiesList);
-        lowerBoundClusterListController.populate(inequalitiesList);
-        upperBoundClusterListController.populate(inequalitiesList);
-        internalConstarinsClusterListController.populate(inequalitiesList);
-        calculateLambdas(inequalitiesList);
+    public void populate(GraphController graph){
+        calculateBounds(graph);
+        lowerBoundClusterListController.populate(graph);
+        upperBoundClusterListController.populate(graph);
+        internalConstarinsClusterListController.populate(graph);
+        calculateLambdas(graph);
     }
 
 
-    public void calculateBounds( InequalitiesList inequalitiesList){
-        inequalitiesList.getSCCComponents().evaluate();
+    public void calculateBounds( GraphController graph){
+        graph.getSCCComponents().evaluate();
     }
 
-    public void calculateLambdas( InequalitiesList inequalitiesList){
-        inequalitiesList.getSCCComponents().evaluateLambdas();
-        if (inequalitiesList.getSCCComponents().isSolvable()){
-            integerAssignenmentMinListController.populate(inequalitiesList);
-            integerAssignenmentMaxListController.populate(inequalitiesList);
+    public void calculateLambdas( GraphController graph){
+        graph.getSCCComponents().evaluateLambdas();
+        if (graph.getSCCComponents().isSolvable()){
+            integerAssignenmentMinListController.populate(graph);
+            integerAssignenmentMaxListController.populate(graph);
             System.out.print(Double.POSITIVE_INFINITY/ -5);
         }else{
-//            integerAssignenmentMinListController.populate();
             integerAssignenmentMaxListController.populate();
             System.out.print("No solution");
         }

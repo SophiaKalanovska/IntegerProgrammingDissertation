@@ -1,7 +1,11 @@
 package Controller;
 
 import Model.Inequalities.DecisionVariable;
+import Model.Inequalities.Inequality;
+import Model.SCC.SCCAlgorithm;
+import Model.SCC.SCCClusterList;
 import View.LayoutGUI;
+import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
@@ -16,11 +20,14 @@ public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
     private final Graph graph;
     private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
+    SCCAlgorithm algorithm ;
+    private SCCClusterList SCCComponents;
     private int id;
 
     public GraphController(LayoutGUI layoutGUI) {
         this.graphGUI = layoutGUI.getGraphGUI();
         this.graph = graphGUI.getGraph();
+        this.algorithm = new SCCAlgorithm(graph);
         id = 0;
 
     }
@@ -35,7 +42,6 @@ public class GraphController implements Serializable {
             node.setAttribute("upper_bound", firstUnknownVariable.getUpperBound());
             node.setAttribute("lower_bound", firstUnknownVariable.getLowerBound());
             node.addAttribute("attackedBy", new ArrayList<Map<Node, Double>>());
-
             node.addAttribute("attacking", new ArrayList<Map.Entry<Node, Integer>>());
             node.addAttribute("SCC", 0);
         }else{
@@ -47,6 +53,30 @@ public class GraphController implements Serializable {
             node.setAttribute("lower_bound", original.getLowerBound());
         }
 
+    }
+
+
+    public void drawInequality(Inequality x) {
+        String decision = x.getSecondDecisionVariableValue();
+        if (decision != null) {
+            addNode(x.getFirstDecisionVariable());
+            addNode(x.getSecondDecisionVariable());
+            addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
+        } else {
+            addNode(x.getFirstDecisionVariable());
+        }
+    }
+
+    public void calculateInequalities()
+    {
+        algorithm.clear();
+        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
+        SCCComponents = algorithm.cluster(trj);
+    }
+
+
+    public void undrawInequality(Inequality x){
+        removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
     }
 
     public void addEdge(DecisionVariable firstUnknownVariable, DecisionVariable secondUnknownVariable){
@@ -74,15 +104,22 @@ public class GraphController implements Serializable {
     public void removeNodes(String firstUnknownVariable, String secondUnknownVariable) {
         Node first = graph.getNode(firstUnknownVariable);
         Node second = graph.getNode(secondUnknownVariable);
-        graph.removeEdge(first, second);
-        getPipeIn().pump();
-        System.out.print("degree 1 :" + first.getDegree());
-        System.out.print("degree 2 :" + second.getDegree());
-        if (first.getDegree() == 0) {
+        if (first.getDegree() == 0)
             graph.removeNode(first);
+
+        if (second != null){
+            graph.removeEdge(first, second);
+            if (second.getDegree() == 0) {
+                graph.removeNode(second);
+            }
         }
-        if (second.getDegree() == 0) {
-            graph.removeNode(second);
+        getPipeIn().pump();
+
+    }
+
+    public void removeAllNodes(ArrayList<Inequality> list){
+        for (int i = 0; i < list.size(); i++) {
+            undrawInequality(list.get(i));
         }
     }
 
@@ -92,6 +129,11 @@ public class GraphController implements Serializable {
 
     public Graph getGraph(){
         return graph;
+    }
+
+
+    public SCCClusterList getSCCComponents() {
+        return SCCComponents;
     }
 
     public void deleteGraph() {

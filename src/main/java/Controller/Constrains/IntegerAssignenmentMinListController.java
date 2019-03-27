@@ -1,5 +1,6 @@
 package Controller.Constrains;
 
+import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
 import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
@@ -28,8 +29,8 @@ public class IntegerAssignenmentMinListController implements ActionListener, Mou
     }
 
 
-    public void populate(InequalitiesList inequalitiesList){
-        lbl = new IntegerAssignmentListMinimize(inequalitiesList.getSCCComponents());
+    public void populate(GraphController graph){
+        lbl = new IntegerAssignmentListMinimize(graph.getSCCComponents());
         lbl.addObserver(IntegerAssignmentMinimizeGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();

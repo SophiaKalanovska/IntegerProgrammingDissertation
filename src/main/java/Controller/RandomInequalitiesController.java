@@ -37,7 +37,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         this.inequalitiesList = inequalitiesList;
         this.randomInequalitiesGUI = randomInequalitiesGUI;
         this.graph = graphController;
-        this.generator = new RandomInequalitiesGenerator(graph);
+        this.generator = new RandomInequalitiesGenerator();
         nodes = new ArrayList<>();
         randomInequalitiesGUI.addControllers(this);
         randomInequalitiesGUI.addMouseListener(this);
@@ -48,13 +48,6 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
      *
      * @param e Mouse listener that will identify the actions that the user makes
      */
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        if (e.getSource() instanceof JTextField) {
-            JTextField enter = (JTextField) e.getSource();
-            enter.setText("");
-        }
-    }
 
     /**
      * The action listener for the LayoutGUI panel
@@ -93,8 +86,8 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                     @Override
                     public void run() {
                         for ( Inequality in : inequalities)
-                            inequalitiesList.drawInequality(in);
-                    inequalitiesList.calculateInequalities();
+                            graph.drawInequality(in);
+                        graph.calculateInequalities();
                     }
 
                 };
@@ -121,8 +114,8 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                     @Override
                     public void run() {
                         for ( Inequality in : inequalities)
-                            inequalitiesList.drawInequality(in);
-                        inequalitiesList.calculateInequalities();
+                            graph.drawInequality(in);
+                            graph.calculateInequalities();
                     }
 
                 };
@@ -131,9 +124,16 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         }
     }
 
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if (e.getSource() instanceof JTextField) {
+            JTextField enter = (JTextField) e.getSource();
+            enter.setText("");
+        }
+    }
 
     @Override
-    public void mousePressed(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {}
 
     @Override
     public void mouseReleased(MouseEvent e) {}
@@ -143,6 +143,4 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
 
     @Override
     public void mouseExited(MouseEvent e) {}
-
-
 }

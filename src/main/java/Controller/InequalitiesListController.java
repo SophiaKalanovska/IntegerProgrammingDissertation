@@ -1,5 +1,6 @@
 package Controller;
 import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 
 import Controller.Constrains.ConstarinsController;
@@ -17,6 +18,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private InequalitiesList inequalitiesList;
     private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
     private ConstarinsController constarinsController;
+    private GraphController graph;
 
 
     /**
@@ -28,8 +30,8 @@ public class InequalitiesListController implements ActionListener, MouseListener
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
-
         this.constarinsController = constarinsController;
+        graph = graphController;
         InequalitiesListGUI.addMouseListener(this);
     }
 
@@ -48,15 +50,13 @@ public class InequalitiesListController implements ActionListener, MouseListener
                 System.out.println(((JButton) e.getSource()).getName());
                 Inequality toBeDeleted = InequalitiesListGUI.getListSelectedValue();
                 inequalitiesList.deleteInequality(toBeDeleted);
-                inequalitiesList.undrawInequality(toBeDeleted);
-                inequalitiesList.calculateInequalities();
-            }else if (((JButton) e.getSource()).getName().equals("deleteAll")){
-                System.out.println(((JButton) e.getSource()).getName());
-                inequalitiesList.deleteAllInequalities();
+                graph.undrawInequality(toBeDeleted);
+                graph.calculateInequalities();
             }else if (((JButton) e.getSource()).getName().equals("deleteGraph")) {
-                inequalitiesList.deleteGraph();
+                inequalitiesList.deleteAllInequalities();
+                graph.deleteGraph();
             }else{
-                constarinsController.populate(inequalitiesList);
+                constarinsController.populate(graph);
             }
         }
     }

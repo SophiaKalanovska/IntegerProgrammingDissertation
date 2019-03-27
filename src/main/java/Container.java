@@ -32,7 +32,11 @@ public class Container extends JFrame {
 		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI, integerAssignmentMinimizeGUI, internalConstarinsClusterGUI, integerAssignmentMaximizeGUI);
 		LayoutGUI layoutGUI = new LayoutGUI(this, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
 
-
+		//Create Model Classes
+        InequalitiesList inequalitiesList = new InequalitiesList();
+        inequalitiesList.addObserver(inequalitiesListGUI);
+        inequalitiesList.tryUpdate();
+        setPanel(layoutGUI);
 
 		// Create all the Controller classes
 		GraphController graphController = new GraphController(layoutGUI) ;
@@ -42,16 +46,9 @@ public class Container extends JFrame {
 		IntegerAssignenmentMaxListController integerAssignenmentMaxListController = new IntegerAssignenmentMaxListController(integerAssignmentMaximizeGUI);
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
 		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
-		SCCAlgorithm algorithm = new SCCAlgorithm(graphController.getGraph());
-		InequalitiesList inequalitiesList = new InequalitiesList(graphController, algorithm);
 		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController);
-		new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI);
+		new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
 		new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
-
-
-		inequalitiesList.addObserver(inequalitiesListGUI);
-		inequalitiesList.tryUpdate();
-		setPanel(layoutGUI);
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(1137, 710));
