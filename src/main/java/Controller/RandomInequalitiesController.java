@@ -23,7 +23,9 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     private GraphController graph;
     private InequalitiesList inequalitiesList;
     private ArrayList<DecisionVariable> nodes;
+    private JTextField enter;
 
+    private RandomInequalitiesGenerator generator;
     /**
      * Constructs a Controller for the LayoutGUI panel
      *
@@ -33,6 +35,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         this.inequalitiesList = inequalitiesList;
         this.randomInequalitiesGUI = randomInequalitiesGUI;
         this.graph = graphController;
+        this.generator = new RandomInequalitiesGenerator(graph);
         randomInequalitiesGUI.addControllers(this);
         randomInequalitiesGUI.addMouseListener(this);
         nodes = new  ArrayList<>();
@@ -57,25 +60,34 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
      * @param e the ActionEven object which will identify the performed action
      */
     @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) {
+    public synchronized void actionPerformed(java.awt.event.ActionEvent e) {
 
 
         if (e.getSource() instanceof JButton) {
             JButton enter = (JButton) e.getSource();
         }
         if (e.getSource() instanceof JTextField) {
-            JTextField enter = (JTextField) e.getSource();
-            RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator(graph);
+
+
             if (((JTextField) e.getSource()).getName().equals("randomNumberNodes")) {
-                int numberOfRandomNodes = Integer.parseInt(enter.getText());
-                enter.setText("Number of Decision Variables...");
-                nodes = new ArrayList<>();
-                nodes = generator.generateNodes(numberOfRandomNodes);
-                ArrayList<Inequality>  inequalities = generator.generateInequalitiesForNodes(nodes);
-                for (Inequality inequality: inequalities){
-                    inequalitiesList.addInequality(inequality);
-                }
+                enter = (JTextField) e.getSource();
+//                enter.setText("Number of Decision Variables...");
+                Thread thread = new Thread() {
+                   @Override
+                    public void run() {
+                        int numberOfRandomNodes = Integer.parseInt(enter.getText());
+
+                        nodes = generator.generateNodes(numberOfRandomNodes);
+                        ArrayList<Inequality>  inequalities = generator.generateInequalitiesForNodes(nodes);
+                        for (Inequality inequality: inequalities){
+                            inequalitiesList.addInequality(inequality);
+                        }
+                    }
+                };
+                thread.start();
+
             } else {
+                JTextField enter = (JTextField) e.getSource();
                 int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
                 enter.setText("Number of Inequalities...");
                 for (int i= 0; i < numberOfRandomInequalities; i++){
@@ -84,6 +96,10 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                 }
             }
         }
+    }
+
+    private void generateNodes(RandomInequalitiesGenerator generator, int numberOfRandomNodes) {
+
     }
 
     @Override

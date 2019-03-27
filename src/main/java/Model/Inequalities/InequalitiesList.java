@@ -48,6 +48,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         SCCComponents = algorithm.cluster();
         setChanged();
         notifyObservers();
+
         return SCCComponents;
     }
 //

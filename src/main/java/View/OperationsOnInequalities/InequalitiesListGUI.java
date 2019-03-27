@@ -101,13 +101,26 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         return (Inequality) projectsList.getSelectedValue();
     }
 
-    private void UpdateJList(ArrayList<Inequality> in){
-        listModel.clear();
-        for(Inequality i : in){
-            listModel.addElement(i);
+    private void UpdateJList(final ArrayList<Inequality> in) {
+        if (!SwingUtilities.isEventDispatchThread()) {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+//                    listModel.clear();
+//
+//                    if (in.size() > 1) {
+//                        for (Inequality i : new ArrayList<Inequality>(in)) {
+//                            listModel.addElement(i);
+//
+//                        }
+            //            projectsList.setModel(listModel);
+                    listModel.addElement("element");
+                        projectsList.repaint();
+                        projectsList.ensureIndexIsVisible(listModel.size() - 1);
+                   // }
+                }
+            });
         }
-        projectsList.setModel(listModel);
-
     }
 
     @Override
