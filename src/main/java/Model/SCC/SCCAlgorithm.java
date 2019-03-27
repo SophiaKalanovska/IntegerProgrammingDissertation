@@ -24,15 +24,16 @@ public class SCCAlgorithm {
 
     public TarjanStronglyConnectedComponents calculateSCC() {
         tscc = new TarjanStronglyConnectedComponents();
+
         tscc.init(graph);
         tscc.compute();
         return tscc;
     }
 
-    public SCCClusterList cluster() {
+    public SCCClusterList cluster(TarjanStronglyConnectedComponents trj) {
         this.list = new SCCClusterList();
         for (Node n : graph.getEachNode()) {
-            int SCCIndex = n.getAttribute(tscc.getSCCIndexAttribute());
+            int SCCIndex = n.getAttribute(trj.getSCCIndexAttribute());
             n.setAttribute("SCC", SCCIndex);
             SCCCluster other = new SCCCluster(SCCIndex);
             if (list.getProjectWallet().contains(other)){
@@ -42,24 +43,24 @@ public class SCCAlgorithm {
                 Color randomColor = cluster.getColor();
                 n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
             }else{
-                SCCCluster cluster = new SCCCluster((Integer) n.getAttribute(tscc.getSCCIndexAttribute()));
+                SCCCluster cluster = new SCCCluster((Integer) n.getAttribute(trj.getSCCIndexAttribute()));
                 list.addCluster(cluster);
                 cluster.addNodesToCluster(n);
                 cluster.setColor();
                 Color randomColor = cluster.getColor();
                 n.addAttribute("ui.style", "fill-color:rgba(" + randomColor.getRed() + "," + randomColor.getGreen() + "," + randomColor.getBlue() + ",200);");
             }
-            setAttackedNodes(n);
+            setAttackedNodes(n, trj);
         }
         return list;
     }
 
-    private void setAttackedNodes(Node n) {
+    private void setAttackedNodes(Node n,TarjanStronglyConnectedComponents trj) {
         Iterator i$ = n.getEachLeavingEdge().iterator();
         while(i$.hasNext()){
             Edge vw = (Edge)i$.next();
             Node w = vw.getOpposite(n);
-            if (w.getAttribute(tscc.getSCCIndexAttribute()) == n.getAttribute(tscc.getSCCIndexAttribute())){
+            if (w.getAttribute(trj.getSCCIndexAttribute()) == n.getAttribute(trj.getSCCIndexAttribute())){
                 if ((double)w.getAttribute("internal_weight") < (double) vw.getAttribute("weight") ) {
                     w.setAttribute("internal_weight", vw.getAttribute("weight"));
                 }

@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -71,24 +72,28 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
 
             if (((JTextField) e.getSource()).getName().equals("randomNumberNodes")) {
                 enter = (JTextField) e.getSource();
+                final ArrayList<Inequality> inequalities = new ArrayList<>();
+                for(int i = 0; i < Integer.parseInt(enter.getText()); i ++) {
+                    inequalities.add(generator.generateInequalityForNode(generator.generateNode()));
+                }
 //                enter.setText("Number of Decision Variables...");
                 Thread thread = new Thread() {
                    @Override
                     public void run() {
-                        int numberOfRandomNodes = Integer.parseInt(enter.getText());
-                        for(int i = 0; i < numberOfRandomNodes; i ++){
-                            inequalitiesList.addInequality(generator.generateInequalityForNode(generator.generateNode()));
+                       for ( Inequality in : inequalities)
+                            inequalitiesList.addInequality(in);
                         }
+                    };
 
-//                        nodes = generator.generateNodes(numberOfRandomNodes);
-//                        ArrayList<Inequality>  inequalities = generator.generateInequalitiesForNodes(nodes);
-//                        for (Inequality inequality: inequalities){
-//                            inequalitiesList.addInequality(inequality);
-//                        }
+                thread.start();
+                Thread thread2= new Thread() {
+                    @Override
+                    public void run() {
+                        for ( Inequality in : inequalities)
+                            inequalitiesList.drawInequality(in);
                     }
                 };
-                thread.start();
-
+                thread2.start();
             } else {
                 JTextField enter = (JTextField) e.getSource();
                 int numberOfRandomInequalities=  Integer.parseInt(enter.getText());

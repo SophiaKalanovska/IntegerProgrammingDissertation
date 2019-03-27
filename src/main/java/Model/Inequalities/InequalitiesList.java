@@ -3,7 +3,9 @@ package Model.Inequalities;
 import Controller.GraphController;
 import Model.SCC.SCCAlgorithm;
 import Model.SCC.SCCClusterList;
+import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Observable;
 /**
@@ -32,32 +34,31 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param x the project that is to be added to the wallet
      */
-    public SCCClusterList addInequality(Inequality x) {
-        String decision = x.getSecondDecisionVariableValue();
-        if( decision != null){
-            this.inequalitiesContainer.add(x);
-//            graphController.addNode(x.getFirstDecisionVariable());
-//            graphController.addNode(x.getSecondDecisionVariable());
-//            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
-        }else{
-            this.inequalitiesContainer.add(x);
-            graphController.addNode(x.getFirstDecisionVariable());
-        }
+    public void addInequality( Inequality x) {
+
+        this.inequalitiesContainer.add(x);
         lastAdded = x;
-//        graphController.getPipeIn().pump();
-//        Thread thread = new Thread() {
-//            @Override
-//            public void run() {
-//                algorithm.clear();
-//                algorithm.calculateSCC();
-//                SCCComponents = algorithm.cluster();
-//            }
-//        };
-//        thread.start();
+
         setChanged();
         notifyObservers();
 
-        return SCCComponents;
+    }
+
+    public void drawInequality(Inequality x) {
+        String decision = x.getSecondDecisionVariableValue();
+        if (decision != null) {
+//            graphController.addNode(x.getFirstDecisionVariable());
+//            graphController.addNode(x.getSecondDecisionVariable());
+//            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
+        } else {
+
+            graphController.addNode(x.getFirstDecisionVariable());
+        }
+//        algorithm.clear();
+
+        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
+        algorithm.cluster(trj);
+
     }
 //
 
@@ -66,16 +67,16 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @param x the name of the projects that has to be deleted
      */
-    public void deleteInequality(Inequality x) {
-        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
-        inequalitiesContainer.remove(x);
-        graphController.getPipeIn().pump();
-        algorithm.clear();
-        algorithm.calculateSCC();
-        SCCComponents = algorithm.cluster();
-        setChanged();
-        notifyObservers();
-    }
+//    public void deleteInequality(Inequality x) {
+//        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
+//        inequalitiesContainer.remove(x);
+//        graphController.getPipeIn().pump();
+//        algorithm.clear();
+//        algorithm.calculateSCC();
+//        SCCComponents = algorithm.cluster();
+//        setChanged();
+//        notifyObservers();
+//    }
 
     public SCCClusterList getSCCComponents() {
         return SCCComponents;
