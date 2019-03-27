@@ -1,7 +1,7 @@
 package View.SolutionPanel;
 
 import Controller.Constrains.LowerBoundClusterListController;
-import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.SCCCluster;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
@@ -17,7 +17,7 @@ import java.util.Observer;
 public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
-    private IntegerAssignmentListMinimize observer;
+    private IntegerAssignmentList observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
 
@@ -64,7 +64,7 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (IntegerAssignmentListMinimize) obs;
+        observer = (IntegerAssignmentList) obs;
         UpdateJList(observer.getProjectWallet());
         repaint();
         revalidate();

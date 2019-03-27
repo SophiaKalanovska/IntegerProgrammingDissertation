@@ -14,14 +14,9 @@ public class Inequality  extends Observable implements Serializable {
         secondDecisionVariable = new DecisionVariable();
     }
 
-    public String getExpreission() {
-        return this.expression;
-    }
-
     public String setExpression(String expression) {
         return this.expression = expression;
     }
-
 
     public String toString(){
         return expression;

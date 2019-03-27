@@ -2,7 +2,7 @@ package View.SolutionPanel;
 
 import Controller.Constrains.LowerBoundClusterListController;
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.SCCCluster;
 import Model.SCC.SCCClusterList;
 import javafx.util.Pair;
@@ -17,7 +17,7 @@ import java.util.Observer;
 public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
 
     private SCCClusterList info;
-    private IntegerAssignmentListMinimize observer;
+    private IntegerAssignmentList observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
 
@@ -50,6 +50,7 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
                     assignmentOfIntegerValues += (int) i.getValue().getLambdaPlus() + ";";
                 }
 
+
             }
             internelConstainsClusterListModel.addElement(new Pair(i.getKey(),assignmentOfIntegerValues));
         }
@@ -69,7 +70,7 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (IntegerAssignmentListMinimize) obs;
+        observer = (IntegerAssignmentList) obs;
         UpdateJList(observer.getProjectWallet());
         repaint();
         revalidate();

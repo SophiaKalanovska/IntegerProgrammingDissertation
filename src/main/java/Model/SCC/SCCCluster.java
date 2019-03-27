@@ -1,7 +1,6 @@
 package Model.SCC;
 
 import org.graphstream.graph.Node;
-
 import java.awt.*;
 import java.util.AbstractMap;
 import java.util.ArrayList;

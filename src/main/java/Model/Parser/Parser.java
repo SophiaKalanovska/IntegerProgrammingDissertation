@@ -4,7 +4,6 @@ import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.Inequality;
 
 public class Parser {
-
     protected final ParseMember parseMember = new ParseMember(this);
     private final ParserWithOneDecisionVariable parserWithOneDecisionVariable = new ParserWithOneDecisionVariable(this);
     private final ParserWithTwoDecisionVariables parserWithTwoDecisionVariables = new ParserWithTwoDecisionVariables(this);
@@ -18,7 +17,6 @@ public class Parser {
     protected String term1;
     protected String term2;
     protected String sign;
-
 
     public void setString(String src){
         term1 = null;

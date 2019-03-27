@@ -14,7 +14,6 @@ public class RandomInequalitiesGUI extends JPanel {
 
     public RandomInequalitiesGUI(){
 
-
         this.randomNumberDecisionVariableLabel = new JLabel("Enter the number of random decision variables to be generated:");
         Border border = BorderFactory.createLineBorder( new Color(153, 218, 250),1,  true);
         this.randomNumberDecisionVariables = new JTextField("Number of Decision Variables...", 20);
@@ -24,8 +23,6 @@ public class RandomInequalitiesGUI extends JPanel {
         this.randomNumberInequalities = new JTextField("Number of Inequalities...", 20);
         this.randomNumberInequalities.setBorder(border);
         this.randomNumberInequalities.setName("randomNumberInequalities");
-
-
 
         JPanel randomNumberDecisionVariablesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         randomNumberDecisionVariablesPanel.add(randomNumberDecisionVariables);

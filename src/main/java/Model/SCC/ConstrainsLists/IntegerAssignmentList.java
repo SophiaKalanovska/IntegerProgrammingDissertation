@@ -3,6 +3,7 @@ package Model.SCC.ConstrainsLists;
 import Model.SCC.SCCCluster;
 import Model.SCC.SCCClusterList;
 import javafx.util.Pair;
+import org.apache.commons.math.stat.clustering.Cluster;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 
-public class IntegerAssignmentListMaximize extends Observable implements java.io.Serializable {
-    private ArrayList<Pair<Integer, SCCCluster>> sccIntegerAssignmentMaximizeContainer;
+public class IntegerAssignmentList extends Observable implements java.io.Serializable {
+    private ArrayList<Pair<Integer, SCCCluster>> sccIntegerAssignmentContainer;
     private ArrayList<Model.SCC.SCCCluster> SCCCluster;
     protected Map<Double, ImageIcon> imageMap ;
 
@@ -22,8 +23,8 @@ public class IntegerAssignmentListMaximize extends Observable implements java.io
     /**
      * Creates a InequalitiesList object
      */
-    public IntegerAssignmentListMaximize(SCCClusterList SCCInternalConstarinsContainer) {
-        this.sccIntegerAssignmentMaximizeContainer = new ArrayList<>();
+    public IntegerAssignmentList(SCCClusterList SCCInternalConstarinsContainer) {
+        this.sccIntegerAssignmentContainer = new ArrayList<>();
         this.SCCCluster = SCCInternalConstarinsContainer.getProjectWallet();
     }
 
@@ -44,7 +45,7 @@ public class IntegerAssignmentListMaximize extends Observable implements java.io
             ImageIcon imageIcon = new ImageIcon(bImg);
 
             Pair pair = new Pair<>(SCC.get(i).getId(), SCC.get(i));
-            sccIntegerAssignmentMaximizeContainer.add(i, pair);
+            sccIntegerAssignmentContainer.add(i, pair);
             map.put(SCC.get(i).getId(), imageIcon);
         }
         return map;
@@ -52,7 +53,7 @@ public class IntegerAssignmentListMaximize extends Observable implements java.io
     }
 
     public ArrayList<Pair<Integer,SCCCluster>> getProjectWallet() {
-        return sccIntegerAssignmentMaximizeContainer;
+        return sccIntegerAssignmentContainer;
     }
 
 

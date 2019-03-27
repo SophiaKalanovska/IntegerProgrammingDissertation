@@ -1,9 +1,8 @@
 package Controller.Constrains;
 
 import Controller.GraphController;
-import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import View.SolutionPanel.IntegerAssignmentMinimizeGUI;
 
 import javax.swing.*;
@@ -20,7 +19,7 @@ import java.util.Map;
 public class IntegerAssignenmentMinListController implements ActionListener, MouseListener {
 
     private IntegerAssignmentMinimizeGUI IntegerAssignmentMinimizeGUI;
-    private IntegerAssignmentListMinimize lbl;
+    private IntegerAssignmentList lbl;
 
 
     public IntegerAssignenmentMinListController(IntegerAssignmentMinimizeGUI IntegerAssignmentMinimizeGUI){
@@ -30,7 +29,7 @@ public class IntegerAssignenmentMinListController implements ActionListener, Mou
 
 
     public void populate(GraphController graph){
-        lbl = new IntegerAssignmentListMinimize(graph.getSCCComponents());
+        lbl = new IntegerAssignmentList(graph.getSCCComponents());
         lbl.addObserver(IntegerAssignmentMinimizeGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();

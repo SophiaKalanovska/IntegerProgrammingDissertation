@@ -62,8 +62,6 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     public Inequality getLastDeleted() { return lastDeleted; }
 
-    public ArrayList<Inequality> getInequalitiesContainer(){return  inequalitiesContainer;}
-
     public boolean shouldDeleteAllInequalities(){return deleteAll; }
 
     /**

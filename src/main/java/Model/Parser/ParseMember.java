@@ -75,8 +75,6 @@ public class ParseMember {
             }
         } catch (Exception e) {
         }
-
-
     }
 
     private void parse_UnknownVariable(String order) throws Exception {
@@ -91,21 +89,16 @@ public class ParseMember {
             }
         } catch (Exception e) {
             throw new Exception("");
-
         }
     }
 
     String parse_term(String order) throws Exceptions.ExceptionNotATerm, Exception {
         String term;
-
         try {
-
             term = tokenize("[+|-]*[1-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[1-9]+[0-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[0-9]+[\\.\\,][0-9]+[a-zA-Z][a-zA-Z0-9_]*");
-
         } catch (Exception e) {
             throw new Exceptions.ExceptionNotATerm(" Expecting pattern term " + order);
         }
-
         if (term != null) {
             try {
                 parse_weight(term, order);
@@ -113,7 +106,6 @@ public class ParseMember {
             } catch (Exceptions.NoWeightException e) {
                 parse_UnknownVariable(order);
             }
-
         }
         return term;
     }

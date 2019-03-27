@@ -10,8 +10,6 @@ public class SolutionListRender extends DefaultListCellRenderer {
 
     private Map<Integer, ImageIcon> imageMap;
 
-
-
     @Override
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 
@@ -20,7 +18,6 @@ public class SolutionListRender extends DefaultListCellRenderer {
         label.setHorizontalTextPosition(JLabel.RIGHT);
         return label;
     }
-
 
     public void setImageMap(Map<Integer,ImageIcon> map) {
         imageMap = map;

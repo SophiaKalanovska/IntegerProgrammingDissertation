@@ -1,9 +1,7 @@
 package View.Graph;
 
 import javax.swing.JPanel;
-import Controller.GraphController;
 import org.graphstream.ui.view.Viewer;
-import org.graphstream.ui.view.View;
 import org.graphstream.ui.swingViewer.ViewPanel;
 import org.graphstream.ui.view.ViewerListener;
 import org.graphstream.ui.view.ViewerPipe;
@@ -13,7 +11,6 @@ import org.graphstream.graph.implementations.*;
 
 
 public class GraphGUI extends JPanel implements ViewerListener{
-
 	private ViewPanel viewPanel;
 	private Viewer viewer;
 	private Graph graph;
@@ -68,7 +65,6 @@ public class GraphGUI extends JPanel implements ViewerListener{
             graph.setAttribute("ui.stylesheet", cssLight);
         }
     }
-
 	public ViewerPipe getPipe() {
 		return pipeIn;
 	}

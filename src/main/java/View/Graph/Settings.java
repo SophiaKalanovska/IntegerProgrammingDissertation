@@ -2,8 +2,6 @@ package View.Graph;
 
 import Controller.CheckboxActionController;
 import View.LayoutGUI;
-import org.graphstream.graph.Graph;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -12,7 +10,6 @@ import java.awt.event.KeyEvent;
      * Home is the class where the Home panel is built implements Observer
      */
     public class Settings extends JPanel {
-
         private JCheckBox darkMode;
 
         /**
@@ -36,8 +33,6 @@ import java.awt.event.KeyEvent;
                 return false;
             }
         }
-
-
         public JCheckBox getDarkMode(){
             return darkMode;
         }

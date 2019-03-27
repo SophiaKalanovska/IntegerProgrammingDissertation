@@ -72,15 +72,12 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         listAndActions.add(operations);
         listAndActions.setOpaque(false);
 
-
-
         this.setLayout(new BorderLayout());
         this.add(listAndActions, BorderLayout.CENTER);
         this.setOpaque(false);
     }
 
     public void addMouseListener(InequalitiesListController controller){
-        System.out.println(" ManualInequalitiesGUI mouselistener added");
         delete.addMouseListener(controller);
         evaluateAll.addMouseListener(controller);
         projectsList.addMouseListener(controller);

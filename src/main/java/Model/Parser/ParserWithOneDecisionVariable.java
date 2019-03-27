@@ -40,7 +40,6 @@ public class ParserWithOneDecisionVariable {
         } catch (Exception e) {
             System.out.println("some other exception");
         }
-
     }
 
     public void clear() {

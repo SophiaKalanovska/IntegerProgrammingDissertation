@@ -1,19 +1,16 @@
 package Controller.Constrains;
 
 import Controller.GraphController;
-import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.IntegerAssignmentListMinimize;
+import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.SCCClusterList;
 import View.SolutionPanel.IntegerAssignmentMaximizeGUI;
-import View.SolutionPanel.IntegerAssignmentMinimizeGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -23,7 +20,7 @@ import java.util.Map;
 public class IntegerAssignenmentMaxListController implements ActionListener, MouseListener {
 
     private IntegerAssignmentMaximizeGUI IntegerAssignmentMaximizeGUI ;
-    private IntegerAssignmentListMinimize lbl = new IntegerAssignmentListMinimize(new SCCClusterList());
+    private IntegerAssignmentList lbl = new IntegerAssignmentList(new SCCClusterList());
 
 
     public IntegerAssignenmentMaxListController(IntegerAssignmentMaximizeGUI IntegerAssignmentMaximizeGUI){
@@ -33,7 +30,7 @@ public class IntegerAssignenmentMaxListController implements ActionListener, Mou
 
 
     public void populate(GraphController graph){
-        lbl = new IntegerAssignmentListMinimize(graph.getSCCComponents());
+        lbl = new IntegerAssignmentList(graph.getSCCComponents());
         lbl.addObserver(IntegerAssignmentMaximizeGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();

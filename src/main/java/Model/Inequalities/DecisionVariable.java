@@ -73,7 +73,4 @@ public class DecisionVariable {
         }
 
     }
-//    public String getVariable() {
-//        return variable;
-//    }
 }

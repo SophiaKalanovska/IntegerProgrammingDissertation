@@ -20,7 +20,6 @@ public class SCCClusterList {
 
     }
 
-
     public void addCluster(SCCCluster cluster) {
             this.SCCContainerMapId.put(cluster.getId(), cluster);
             this.SCCContainer.add(cluster);
@@ -41,7 +40,6 @@ public class SCCClusterList {
             cluster.evaluate();
         }
     }
-
 
     public int  lambdaMinus(SCCCluster cluster){
         double clusterLowerBound= cluster.getLowerbound();
@@ -85,7 +83,6 @@ public class SCCClusterList {
             cluster.setLambdaPlus(lambdaPlus(cluster));
         }
     }
-
 
     public boolean isSolvable() {
         for (SCCCluster cluster : SCCContainer){
