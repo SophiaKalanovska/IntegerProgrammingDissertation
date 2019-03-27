@@ -51,16 +51,31 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     public void actionPerformed(java.awt.event.ActionEvent e) {
         if (e.getSource() instanceof JButton) {
 //            JButton enter = (JButton) e.getSource();
-        }
-        else if (e.getSource() instanceof JTextField){
+        } else if (e.getSource() instanceof JTextField) {
             JTextField enter = (JTextField) e.getSource();
             enterInequality = enter.getText();
             enter.setText("Enter inequality...");
             parser.setString(enterInequality);
             try {
-                Inequality parsedExpression = parser.parse();
-                inequalitiesList.addInequality(parsedExpression);
-            }catch(Exception r){
+                final Inequality parsedExpression = parser.parse();
+                Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                        inequalitiesList.addInequality(parsedExpression);
+                    }
+                };
+
+                thread.start();
+                Thread thread2 = new Thread() {
+                    @Override
+                    public void run() {
+                        inequalitiesList.drawInequality(parsedExpression);
+                        inequalitiesList.calculateInequalities();
+                    }
+
+                };
+                thread2.start();
+            } catch (Exception r) {
                 System.out.println(r.getMessage());
             }
         }

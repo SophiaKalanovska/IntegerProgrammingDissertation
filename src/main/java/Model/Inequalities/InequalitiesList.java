@@ -46,19 +46,13 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     public void drawInequality(Inequality x) {
         String decision = x.getSecondDecisionVariableValue();
         if (decision != null) {
-//            graphController.addNode(x.getFirstDecisionVariable());
-//            graphController.addNode(x.getSecondDecisionVariable());
-//            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
+            graphController.addNode(x.getFirstDecisionVariable());
+            graphController.addNode(x.getSecondDecisionVariable());
+            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
         } else {
 
             graphController.addNode(x.getFirstDecisionVariable());
         }
-//        algorithm.clear();
-
-//        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
-//        return trj;
-  //      algorithm.cluster(trj);
-
     }
 
     public void calculateInequalities()

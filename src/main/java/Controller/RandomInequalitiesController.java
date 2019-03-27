@@ -13,6 +13,7 @@ import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
+import org.graphstream.graph.Node;
 
 /**
  * This class will represent the Controller for the LayoutGUI Panel
@@ -37,9 +38,9 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         this.randomInequalitiesGUI = randomInequalitiesGUI;
         this.graph = graphController;
         this.generator = new RandomInequalitiesGenerator(graph);
+        nodes = new ArrayList<>();
         randomInequalitiesGUI.addControllers(this);
         randomInequalitiesGUI.addMouseListener(this);
-        nodes = new  ArrayList<>();
     }
 
     /**
@@ -74,9 +75,11 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                 enter = (JTextField) e.getSource();
                 final ArrayList<Inequality> inequalities = new ArrayList<>();
                 for(int i = 0; i < Integer.parseInt(enter.getText()); i ++) {
-                    inequalities.add(generator.generateInequalityForNode(generator.generateNode()));
+                    DecisionVariable variable = generator.generateNode();
+                    nodes.add(variable);
+                    inequalities.add(generator.generateInequalityForNode(variable));
                 }
-//                enter.setText("Number of Decision Variables...");
+                enter.setText("Number of Decision Variables...");
                 Thread thread = new Thread() {
                    @Override
                     public void run() {
@@ -99,18 +102,38 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
             } else {
                 JTextField enter = (JTextField) e.getSource();
                 int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
-                enter.setText("Number of Inequalities...");
+                final ArrayList<Inequality> inequalities = new ArrayList<>();
                 for (int i= 0; i < numberOfRandomInequalities; i++){
-                    Inequality inequality= generator.generateInequalities(nodes);
-                    inequalitiesList.addInequality(inequality);
+                    inequalities.add(generator.generateInequalities(nodes));
                 }
+                enter.setText("Number of Inequalities...");
+
+                Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                        for ( Inequality in : inequalities)
+                            inequalitiesList.addInequality(in);
+                    }
+                };
+                thread.start();
+
+                Thread thread2= new Thread() {
+                    @Override
+                    public void run() {
+                        for ( Inequality in : inequalities)
+                            inequalitiesList.drawInequality(in);
+                        inequalitiesList.calculateInequalities();
+                    }
+
+                };
+                thread2.start();
             }
         }
     }
 
-    private void generateNodes(RandomInequalitiesGenerator generator, int numberOfRandomNodes) {
-
-    }
+//    private void generateNodes(RandomInequalitiesGenerator generator, int numberOfRandomNodes) {
+//
+//    }
 
     @Override
     public void mousePressed(MouseEvent e) {}
