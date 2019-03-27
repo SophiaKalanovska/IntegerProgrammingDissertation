@@ -107,13 +107,10 @@ public class InequalitiesListGUI extends JPanel implements Observer {
                 @Override
                 public void run() {
 
-                            listModel.addElement(in);
-
-
-                        projectsList.setModel(listModel);
-                        projectsList.repaint();
-                        projectsList.ensureIndexIsVisible(listModel.size() - 1);
-
+                    listModel.addElement(in);
+                    projectsList.setModel(listModel);
+                    projectsList.repaint();
+                    projectsList.ensureIndexIsVisible(listModel.size() - 1);
                 }
             });
         }
@@ -122,7 +119,15 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     @Override
     public void update(Observable obs, Object obj) {
         observer = (InequalitiesList) obs;
-        UpdateJList(observer.getProjectWallet());
+        Inequality lastAdded = observer.getLastAdded();
+        Inequality lastDeleted = observer.getLastDeleted();
+        if(lastAdded!=null) {
+            UpdateJList(observer.getLastAdded());
+        }
+        if (lastDeleted != null){
+            listModel.removeElement(lastDeleted);
+        }
+
         repaint();
         revalidate();
 

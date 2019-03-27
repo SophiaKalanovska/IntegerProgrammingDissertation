@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import Controller.Constrains.ConstarinsController;
 import Model.Inequalities.InequalitiesList;
+import Model.Inequalities.Inequality;
 import Model.SCC.SCCClusterList;
 import View.OperationsOnInequalities.InequalitiesListGUI;
 
@@ -45,7 +46,10 @@ public class InequalitiesListController implements ActionListener, MouseListener
             System.out.println(((JButton) e.getSource()).getName());
             if (((JButton) e.getSource()).getName().equals("delete")){
                 System.out.println(((JButton) e.getSource()).getName());
-//                inequalitiesList.deleteInequality(InequalitiesListGUI.getListSelectedValue());
+                Inequality toBeDeleted = InequalitiesListGUI.getListSelectedValue();
+                inequalitiesList.deleteInequality(toBeDeleted);
+                inequalitiesList.undrawInequality(toBeDeleted);
+                inequalitiesList.calculateInequalities();
             }else if (((JButton) e.getSource()).getName().equals("deleteAll")){
                 System.out.println(((JButton) e.getSource()).getName());
                 inequalitiesList.deleteAllInequalities();

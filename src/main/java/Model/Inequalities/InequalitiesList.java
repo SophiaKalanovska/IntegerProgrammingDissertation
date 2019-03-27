@@ -16,6 +16,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     private GraphController graphController;
     private SCCAlgorithm algorithm;
     private Inequality lastAdded;
+    private Inequality lastDeleted;
     private SCCClusterList SCCComponents;
 
     /**
@@ -25,6 +26,8 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         this.graphController = graphController;
         inequalitiesContainer = new ArrayList<>();
         this.algorithm = algorithm;
+        this.lastAdded = null;
+        this.lastDeleted = null;
     }
 
 
@@ -40,7 +43,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
         setChanged();
         notifyObservers();
-
+        lastAdded = null;
     }
 
     public void drawInequality(Inequality x) {
@@ -61,23 +64,23 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
         SCCComponents = algorithm.cluster(trj);
     }
-////
-//
-//    /**
-//     * Deletes a project that has the same name as the one supplied
-//     *
-//     * @param x the name of the projects that has to be deleted
-//     */
-//    public void deleteInequality(Inequality x) {
-//        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
-//        inequalitiesContainer.remove(x);
-//        graphController.getPipeIn().pump();
-//        algorithm.clear();
-//        algorithm.calculateSCC();
-//        SCCComponents = algorithm.cluster();
-//        setChanged();
-//        notifyObservers();
-//    }
+
+    /**
+     * Deletes a project that has the same name as the one supplied
+     *
+     * @param x the name of the projects that has to be deleted
+     */
+    public void deleteInequality(Inequality x) {
+        lastDeleted = x;
+        inequalitiesContainer.remove(x);
+        setChanged();
+        notifyObservers();
+        lastDeleted = null;
+    }
+
+    public void undrawInequality(Inequality x){
+        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
+    }
 
     public SCCClusterList getSCCComponents() {
         return SCCComponents;
@@ -87,8 +90,12 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @return an ArrayList of projects that are contained in this wallet
      */
-    public Inequality getProjectWallet() {
+    public Inequality getLastAdded() {
         return lastAdded;
+    }
+
+    public Inequality getLastDeleted() {
+        return lastDeleted;
     }
 
 

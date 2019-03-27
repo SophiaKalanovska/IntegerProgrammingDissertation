@@ -131,9 +131,6 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         }
     }
 
-//    private void generateNodes(RandomInequalitiesGenerator generator, int numberOfRandomNodes) {
-//
-//    }
 
     @Override
     public void mousePressed(MouseEvent e) {}
