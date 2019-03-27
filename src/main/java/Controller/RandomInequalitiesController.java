@@ -91,7 +91,9 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                     public void run() {
                         for ( Inequality in : inequalities)
                             inequalitiesList.drawInequality(in);
+                    inequalitiesList.calculateInequalities();
                     }
+
                 };
                 thread2.start();
             } else {

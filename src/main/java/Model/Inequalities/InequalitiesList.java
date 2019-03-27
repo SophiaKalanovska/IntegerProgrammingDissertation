@@ -5,7 +5,6 @@ import Model.SCC.SCCAlgorithm;
 import Model.SCC.SCCClusterList;
 import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Observable;
 /**
@@ -56,17 +55,25 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         }
 //        algorithm.clear();
 
-        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
-        algorithm.cluster(trj);
+//        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
+//        return trj;
+  //      algorithm.cluster(trj);
 
     }
-//
 
-    /**
-     * Deletes a project that has the same name as the one supplied
-     *
-     * @param x the name of the projects that has to be deleted
-     */
+    public void calculateInequalities()
+    {
+        algorithm.clear();
+        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
+        SCCComponents = algorithm.cluster(trj);
+    }
+////
+//
+//    /**
+//     * Deletes a project that has the same name as the one supplied
+//     *
+//     * @param x the name of the projects that has to be deleted
+//     */
 //    public void deleteInequality(Inequality x) {
 //        graphController.removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
 //        inequalitiesContainer.remove(x);

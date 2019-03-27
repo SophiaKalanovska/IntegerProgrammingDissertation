@@ -27,7 +27,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
         this.settings = settings;
         graph = new MultiGraph("Strongly connected components");
 
-         cssLight = "node {size: 20px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
+         cssLight = "node {size: 20px;fill-color: white; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: white; }" +
                 "edge {fill-color: black;  z-index :1; text-color: black; }";
 

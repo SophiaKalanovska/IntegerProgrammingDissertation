@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InequalitiesListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InequalitiesListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/InequalitiesListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/InequalitiesListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ManualInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ManualInequalitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,13 +38,20 @@
       <file leaf-file-name="InequalitiesList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="250">
+              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstarinsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
-                <element signature="e#2501#2502#0" expanded="true" />
-                <element signature="e#2537#2538#0" expanded="true" />
-                <element signature="e#2731#2732#0" expanded="true" />
-                <element signature="e#2763#2764#0" expanded="true" />
+                <element signature="e#1813#1814#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,8 +60,8 @@
       <file leaf-file-name="InequalitiesListController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/InequalitiesListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-195">
-              <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+            <state relative-caret-position="540">
+              <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,7 +72,7 @@
       <file leaf-file-name="InequalitiesListGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/OperationsOnInequalities/InequalitiesListGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
+            <state relative-caret-position="1410">
               <caret line="104" column="2" selection-start-line="104" selection-start-column="2" selection-end-line="107" selection-end-column="35" />
             </state>
           </provider>
@@ -83,20 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TarjanStronglyConnectedComponents.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-algo/1.3/gs-algo-1.3.jar!/org/graphstream/algorithm/TarjanStronglyConnectedComponents.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="26" column="26" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GraphGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+            <state relative-caret-position="510">
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -104,7 +99,7 @@
       <file leaf-file-name="Inequality.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="510">
               <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#591#592#0" expanded="true" />
@@ -121,13 +116,8 @@
       <file leaf-file-name="RandomInequalitiesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="79" column="46" lean-forward="true" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
-              <folding>
-                <element signature="e#3122#3123#0" expanded="true" />
-                <element signature="e#3230#3478#0" expanded="true" />
-                <element signature="e#3477#3478#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="151">
+              <caret line="93" column="58" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -135,10 +125,9 @@
       <file leaf-file-name="UpperLowerCase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/UpperLowerCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
+            <state relative-caret-position="570">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
-                <element signature="e#223#231#0" expanded="true" />
                 <element signature="e#4749#4750#0" expanded="true" />
                 <element signature="e#4776#4777#0" expanded="true" />
               </folding>
@@ -149,8 +138,8 @@
       <file leaf-file-name="RandomInequalitiesGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+            <state relative-caret-position="615">
+              <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -243,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Controller/Constrains/IntegerAssignenmentMaxListController.java" />
         <option value="$PROJECT_DIR$/src/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserShould.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ManualInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java" />
@@ -258,6 +246,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/InequalitiesListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" />
       </list>
@@ -275,7 +264,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -329,6 +317,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -458,7 +448,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -741,44 +730,34 @@
     <frame x="240" y="23" width="1148" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32820514" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32876712" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.30512822" />
-      <window_info anchor="bottom" id="Version Control" order="3" weight="0.3299712" />
-      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.04579025" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.0948718" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.43846154" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.33717948" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2414105" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.41153845" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24593128" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.26683292" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="right" id="Palette" order="9" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.26683292" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="12" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.04579025" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="10" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.43960148" />
-      <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32876712" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.41153845" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -910,10 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="315" column="44" lean-forward="true" selection-start-line="315" selection-start-column="44" selection-end-line="315" selection-end-column="44" />
-          <folding>
-            <element signature="e#10002#10003#0" expanded="true" />
-            <element signature="e#10069#10070#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,12 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="200" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="e#2191#2192#0" expanded="true" />
-            <element signature="e#2234#2235#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1051,10 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="674">
           <caret line="4755" column="58" selection-start-line="4755" selection-start-column="58" selection-end-line="4755" selection-end-column="58" />
-          <folding>
-            <element signature="e#167794#167795#0" expanded="true" />
-            <element signature="e#167830#167831#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,13 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/GraphController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1114,23 +1072,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-algo/1.3/gs-algo-1.3.jar!/org/graphstream/algorithm/TarjanStronglyConnectedComponents.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
+        <state relative-caret-position="255">
           <caret line="26" column="26" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="510">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#591#592#0" expanded="true" />
@@ -1145,7 +1096,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/OperationsOnInequalities/InequalitiesListGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="1410">
           <caret line="104" column="2" selection-start-line="104" selection-start-column="2" selection-end-line="107" selection-end-column="35" />
         </state>
       </provider>
@@ -1159,8 +1110,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/InequalitiesListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+        <state relative-caret-position="540">
+          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1169,10 +1120,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/UpperLowerCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
+        <state relative-caret-position="570">
           <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
-            <element signature="e#223#231#0" expanded="true" />
             <element signature="e#4749#4750#0" expanded="true" />
             <element signature="e#4776#4777#0" expanded="true" />
           </folding>
@@ -1181,36 +1131,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        <state relative-caret-position="615">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="79" column="46" lean-forward="true" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+        <state relative-caret-position="151">
+          <caret line="93" column="58" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding>
-            <element signature="e#3122#3123#0" expanded="true" />
-            <element signature="e#3230#3478#0" expanded="true" />
-            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#1813#1814#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding>
-            <element signature="e#2501#2502#0" expanded="true" />
-            <element signature="e#2537#2538#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2763#2764#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="250">
+          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
         </state>
       </provider>
     </entry>
