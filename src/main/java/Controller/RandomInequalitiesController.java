@@ -76,12 +76,15 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                    @Override
                     public void run() {
                         int numberOfRandomNodes = Integer.parseInt(enter.getText());
-
-                        nodes = generator.generateNodes(numberOfRandomNodes);
-                        ArrayList<Inequality>  inequalities = generator.generateInequalitiesForNodes(nodes);
-                        for (Inequality inequality: inequalities){
-                            inequalitiesList.addInequality(inequality);
+                        for(int i = 0; i < numberOfRandomNodes; i ++){
+                            inequalitiesList.addInequality(generator.generateInequalityForNode(generator.generateNode()));
                         }
+
+//                        nodes = generator.generateNodes(numberOfRandomNodes);
+//                        ArrayList<Inequality>  inequalities = generator.generateInequalitiesForNodes(nodes);
+//                        for (Inequality inequality: inequalities){
+//                            inequalitiesList.addInequality(inequality);
+//                        }
                     }
                 };
                 thread.start();

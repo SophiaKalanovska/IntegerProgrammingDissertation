@@ -42,30 +42,13 @@ public class RandomInequalitiesGenerator {
 //        return builder.toString();
 //    }
 
-    public ArrayList<DecisionVariable> generateNodes(int numberOfNodes) {
+    public DecisionVariable generateNode() {
+        DecisionVariable decisionVariable = new DecisionVariable();
+        decisionVariable.setVariable(upperLower.getIndex((int)Math.random()*upperLower.getSize()));
+        return  decisionVariable;
 
-        ArrayList<DecisionVariable> decisionVariables = new ArrayList<>();
-        if (numberOfNodes <= upperLower.getSize()) {
-            for (int i = 0; i < numberOfNodes; i++) {
-                DecisionVariable decisionVariable = new DecisionVariable();
-                decisionVariable.setVariable(upperLower.getIndex((int)Math.random()*upperLower.getSize()));
-                decisionVariables.add(decisionVariable);
-            }
         }
-//        } else {
-//            numberOfNodes -= notUsed.length();
-//            String nodes = randomAlphaNumeric(notUsed.length(), notUsed);
-//            for (int i = 0; i < nodes.length() - 1; ) {
-//                DecisionVariable decisionVariable = new DecisionVariable();
-//                decisionVariable.setVariable(Character.toString(nodes.charAt(i)));
-//                decisionVariables.add(decisionVariable);
-//            }
-//            DecisionVariable decisionVariable = new DecisionVariable();
-//            decisionVariable.setVariable(ALPHA);
-//            decisionVariables.add(decisionVariable);
-//        }
-        return decisionVariables;
-    }
+
 
     public Inequality generateInequalities(ArrayList<DecisionVariable> decisionVariables) {
         int max = 2;
@@ -83,15 +66,13 @@ public class RandomInequalitiesGenerator {
         return newIneqiality;
     }
 
-    public ArrayList<Inequality> generateInequalitiesForNodes(ArrayList<DecisionVariable> decisionVariables) {
-        ArrayList<Inequality> inequalities = new ArrayList<>();
-        for (int i = 0; i < decisionVariables.size() ; i++ ) {
+    public Inequality generateInequalityForNode(DecisionVariable decisionVariable) {
+
             Inequality newIneqiality = new Inequality();
-            newIneqiality.setFirstDecisionVariable(decisionVariables.get(i));
-            newIneqiality.setExpression(""  + decisionVariables.get(i).toString() + ">=" + 0 );
-            inequalities.add(newIneqiality);
-        }
-        return inequalities;
+            newIneqiality.setFirstDecisionVariable(decisionVariable);
+            newIneqiality.setExpression(""  + decisionVariable.toString() + ">=" + 0 );
+            return newIneqiality;
+
     }
 
 }

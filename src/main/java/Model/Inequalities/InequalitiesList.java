@@ -14,6 +14,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     private ArrayList<Inequality> inequalitiesContainer;
     private GraphController graphController;
     private SCCAlgorithm algorithm;
+    private Inequality lastAdded;
     private SCCClusterList SCCComponents;
 
     /**
@@ -35,17 +36,24 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         String decision = x.getSecondDecisionVariableValue();
         if( decision != null){
             this.inequalitiesContainer.add(x);
-            graphController.addNode(x.getFirstDecisionVariable());
-            graphController.addNode(x.getSecondDecisionVariable());
-            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
+//            graphController.addNode(x.getFirstDecisionVariable());
+//            graphController.addNode(x.getSecondDecisionVariable());
+//            graphController.addEdge(x.getFirstDecisionVariable(), x.getSecondDecisionVariable());
         }else{
             this.inequalitiesContainer.add(x);
             graphController.addNode(x.getFirstDecisionVariable());
         }
-        graphController.getPipeIn().pump();
-        algorithm.clear();
-        algorithm.calculateSCC();
-        SCCComponents = algorithm.cluster();
+        lastAdded = x;
+//        graphController.getPipeIn().pump();
+//        Thread thread = new Thread() {
+//            @Override
+//            public void run() {
+//                algorithm.clear();
+//                algorithm.calculateSCC();
+//                SCCComponents = algorithm.cluster();
+//            }
+//        };
+//        thread.start();
         setChanged();
         notifyObservers();
 
@@ -77,8 +85,8 @@ public class InequalitiesList extends Observable implements java.io.Serializable
      *
      * @return an ArrayList of projects that are contained in this wallet
      */
-    public ArrayList<Inequality> getProjectWallet() {
-        return inequalitiesContainer;
+    public Inequality getProjectWallet() {
+        return lastAdded;
     }
 
 

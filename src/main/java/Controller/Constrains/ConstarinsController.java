@@ -21,6 +21,7 @@ public class ConstarinsController {
     }
 
     public void populate(InequalitiesList inequalitiesList){
+//
         calculateBounds(inequalitiesList);
         lowerBoundClusterListController.populate(inequalitiesList);
         upperBoundClusterListController.populate(inequalitiesList);
