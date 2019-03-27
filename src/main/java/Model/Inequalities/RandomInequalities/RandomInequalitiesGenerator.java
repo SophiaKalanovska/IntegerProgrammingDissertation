@@ -16,7 +16,7 @@ public class RandomInequalitiesGenerator {
 //    private static String notUsed = "abcdefghijklmnopqrstuvwxyz";
 ////    private static String notUsed = "cklm";
     private GraphController graphController;
-    private UpperLowerCase upperLower;
+    private RandomVariables upperLower;
     private Random random;
     private SCCAlgorithm algorithm;
 
@@ -25,7 +25,7 @@ public class RandomInequalitiesGenerator {
     public RandomInequalitiesGenerator(GraphController graphController) {
         this.graphController = graphController;
         this.algorithm = new SCCAlgorithm(graphController.getGraph());
-        this.upperLower = new UpperLowerCase();
+        this.upperLower = new RandomVariables();
         random = new Random();
 
     }
