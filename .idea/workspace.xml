@@ -5,48 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="some test changes">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Graph/TestSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Inequalities/InequalitiesListShould.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Inequalities/RandomInequalityGeneratorShould.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RandomInequalitiesControllerShould.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SCC/SCCAlgorithmShould.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SCC/SCCClusterListShould.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SCC/SCCClusterShould.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DarkModeShould.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Parser/ParserWithOneDecisionVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Parser/ParserWithOneDecisionVariableShould.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GraphController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GraphController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RandomInequalitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/DecisionVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/DecisionVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/ConstrainsLists/IntegerAssignmentList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/ConstrainsLists/IntegerAssignmentList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SolutionListRender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SolutionListRender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Graph/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Graph/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/InequalitiesListGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/InequalitiesListGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/InequalitiesListGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/InequalitiesListGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/RandomInequalitiesGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/RandomInequalitiesGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentMaximizeGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentMaximizeGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithOneDecisionVariable.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +21,9 @@
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$Parser_in_IntegerProgrammingDissertation.ic" NAME="Parser in IntegerProgrammingDissertation Coverage Results" MODIFIED="1553627683777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Parser.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1553794848746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1553796436310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$ParserWithTwoDecisionVariablesShould.ic" NAME="ParserWithTwoDecisionVariablesShould Coverage Results" MODIFIED="1553627398994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$DarkModeShould_activateDarkMode.ic" NAME="DarkModeShould.activateDarkMode Coverage Results" MODIFIED="1553796379107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$Main.ic" NAME="Main Coverage Results" MODIFIED="1553614219507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$ParserWithTwoDecisionVariablesShould_parse_3xGreaterThanY_AndReturn_XAsSecondDecisionVariable.ic" NAME="ParserWithTwoDecisionVariablesShould.parse_3xGreaterThanY_AndReturn_XAsSecondDecisionVariable Coverage Results" MODIFIED="1553624414025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$ParserWithOneDecisionVariableShould_parse_3xGreaterThanOrEqualPoint3_AndReturn_NotANumber.ic" NAME="ParserWithOneDecisionVariableShould.parse_3xGreaterThanOrEqualPoint3_AndReturn_NotANumber Coverage Results" MODIFIED="1553630010074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -71,15 +32,16 @@
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$ParserWithOneDecisionVariableShould_parse_3xGreaterThanOrEqualPoint3_AndReturn_.ic" NAME="ParserWithOneDecisionVariableShould.parse_3xGreaterThanOrEqualPoint3_AndReturn_ Coverage Results" MODIFIED="1553786755115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Parser.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$DarkModeShould.ic" NAME="DarkModeShould Coverage Results" MODIFIED="1553796419616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/IntegerProgrammingDissertation$ParserWithTwoDecisionVariablesShould_parse_InvalidExpressionFirstTerm.ic" NAME="ParserWithTwoDecisionVariablesShould.parse_InvalidExpressionFirstTerm Coverage Results" MODIFIED="1553626521760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RandomInequalitiesControllerShould.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RandomInequalitiesControllerShould.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/RandomInequalitiesControllerShould.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,7 +64,7 @@
       <file leaf-file-name="Assert.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.2/testng-6.14.2.jar!/org/testng/Assert.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="615">
               <caret line="61" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
@@ -111,33 +73,53 @@
       <file leaf-file-name="LayoutGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/LayoutGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="142" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="629">
+              <caret line="141" column="31" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="31" />
               <folding>
+                <element signature="e#5445#5446#0" expanded="true" />
+                <element signature="e#5476#5477#0" expanded="true" />
+                <element signature="e#5444#5445#0" expanded="true" />
                 <element signature="e#5472#5473#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java">
+      <file leaf-file-name="DarkModeShould.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DarkModeShould.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="120">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckboxActionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CheckboxActionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/Settings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2621#2622#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractGraph.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/AbstractGraph.class">
+      <file leaf-file-name="Container.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="196" selection-start-line="196" selection-end-line="196" />
+            <state relative-caret-position="366">
+              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -145,7 +127,7 @@
       <file leaf-file-name="RandomInequalitiesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
+            <state relative-caret-position="1575">
               <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="32" />
               <folding>
                 <element signature="e#4770#4771#0" expanded="true" />
@@ -155,32 +137,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiGraph.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/MultiGraph.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdjacencyListNode.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/AdjacencyListNode.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdjacencyListGraph.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/AdjacencyListGraph.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="1785">
               <caret line="142" selection-start-line="142" selection-end-line="142" />
               <folding>
-                <element signature="e#4783#4784#0" expanded="true" />
-                <element signature="e#4832#4833#0" expanded="true" />
                 <element signature="e#5168#5169#0" expanded="true" />
               </folding>
             </state>
@@ -238,7 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentListMaximize.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/SolutionPanel/BoundsGUI.java" />
@@ -284,11 +245,12 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" />
         <option value="$PROJECT_DIR$/src/test/java/Graph/TestSetter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Container.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/test/java/RandomInequalitiesControllerShould.java" />
+        <option value="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DarkModeShould.java" />
       </list>
     </option>
   </component>
@@ -304,6 +266,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -358,7 +321,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -521,12 +483,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RandomInequalitiesControllerShould">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="IntegerProgrammingDissertation" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
+  <component name="RunManager" selected="TestNG.&lt;default&gt;">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -546,13 +503,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="RandomInequalitiesControllerShould" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DarkModeShould" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="IntegerProgrammingDissertation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RandomInequalitiesControllerShould" />
+      <option name="MAIN_CLASS_NAME" value="DarkModeShould" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -569,14 +526,14 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="RandomInequalitiesControllerShould.generateInequalityList_ThatIsEmpty" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DarkModeShould.activateDarkMode" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="IntegerProgrammingDissertation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RandomInequalitiesControllerShould" />
-      <option name="METHOD_NAME" value="generateInequalityList_ThatIsEmpty" />
+      <option name="MAIN_CLASS_NAME" value="DarkModeShould" />
+      <option name="METHOD_NAME" value="activateDarkMode" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -592,16 +549,39 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="RandomInequalitiesControllerShould.performActionOfAdding50NodesToGraph" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DarkModeShould.disactivateDarkMode" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="IntegerProgrammingDissertation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DarkModeShould" />
+      <option name="METHOD_NAME" value="disactivateDarkMode" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="RandomInequalitiesControllerShould" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="IntegerProgrammingDissertation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RandomInequalitiesControllerShould" />
-      <option name="METHOD_NAME" value="performActionOfAdding50NodesToGraph" />
+      <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -685,19 +665,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.&lt;default&gt;" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="TestNG.RandomInequalitiesControllerShould.generateInequalityList_ThatIsEmpty" />
-      <item itemvalue="TestNG.RandomInequalitiesControllerShould.performActionOfAdding50NodesToGraph" />
       <item itemvalue="TestNG.RandomInequalitiesControllerShould.performActionOfVisualizing50Nodes" />
       <item itemvalue="TestNG.RandomInequalitiesControllerShould" />
+      <item itemvalue="TestNG.DarkModeShould.activateDarkMode" />
+      <item itemvalue="TestNG.DarkModeShould.disactivateDarkMode" />
+      <item itemvalue="TestNG.DarkModeShould" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.DarkModeShould" />
+        <item itemvalue="TestNG.DarkModeShould.disactivateDarkMode" />
+        <item itemvalue="TestNG.DarkModeShould.activateDarkMode" />
         <item itemvalue="TestNG.RandomInequalitiesControllerShould" />
         <item itemvalue="TestNG.RandomInequalitiesControllerShould.performActionOfVisualizing50Nodes" />
-        <item itemvalue="TestNG.RandomInequalitiesControllerShould.performActionOfAdding50NodesToGraph" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="TestNG.RandomInequalitiesControllerShould.generateInequalityList_ThatIsEmpty" />
       </list>
     </recent_temporary>
   </component>
@@ -723,12 +703,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RandomInequalitiesControllerShould_performActionOfAdding50NodesToGraph - 2019.03.28 at 17h 20m 16s.xml">
-      <configuration name="RandomInequalitiesControllerShould.performActionOfAdding50NodesToGraph" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="RandomInequalitiesControllerShould_performActionOfAdding50NodesToGraph - 2019.03.28 at 17h 23m 39s.xml">
-      <configuration name="RandomInequalitiesControllerShould.performActionOfAdding50NodesToGraph" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="RandomInequalitiesControllerShould_performActionOfAdding50NodesToGraph - 2019.03.28 at 17h 32m 51s.xml">
       <configuration name="RandomInequalitiesControllerShould.performActionOfAdding50NodesToGraph" configurationId="TestNG" />
     </history-entry>
@@ -753,9 +727,16 @@
     <history-entry file="RandomInequalitiesControllerShould - 2019.03.28 at 17h 44m 47s.xml">
       <configuration name="RandomInequalitiesControllerShould" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="_default_ - 2019.03.28 at 17h 57m 57s.xml">
+      <configuration name="&lt;default&gt;" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_default_ - 2019.03.28 at 17h 58m 30s.xml">
+      <configuration name="&lt;default&gt;" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="23" width="1345" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -767,12 +748,12 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.35" />
-      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.14351496" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.116653875" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.38589743" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.34382194" />
-      <window_info active="true" anchor="bottom" id="Find" order="5" visible="true" weight="0.0474359" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.34919417" />
+      <window_info anchor="bottom" id="Find" order="5" visible="true" weight="0.36410257" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -855,30 +836,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentListMaximize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentListMaximize.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/InternalConstarinsList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -984,10 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding>
-            <element signature="e#971#972#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1016,9 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,16 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Inequalities/InequalitiesListShould.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1111,14 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="85" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2184#2185#0" expanded="true" />
-            <element signature="e#2256#2416#0" expanded="true" />
-            <element signature="e#2415#2416#0" expanded="true" />
-            <element signature="e#2457#2614#0" expanded="true" />
-            <element signature="e#2613#2614#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,20 +1062,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaTextFieldUI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#951#952#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,9 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#895#896#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,7 +1117,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/AbstractGraph.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="1815">
           <caret line="196" selection-start-line="196" selection-end-line="196" />
         </state>
       </provider>
@@ -1211,24 +1131,14 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/AdjacencyListNode.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="630">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/LayoutGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
-          <folding>
-            <element signature="e#5472#5473#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="1080">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1239,11 +1149,9 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/graphstream/gs-core/1.3/gs-core-1.3.jar!/org/graphstream/graph/implementations/AdjacencyListGraph.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="1785">
           <caret line="142" selection-start-line="142" selection-end-line="142" />
           <folding>
-            <element signature="e#4783#4784#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
             <element signature="e#5168#5169#0" expanded="true" />
           </folding>
         </state>
@@ -1251,7 +1159,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.2/testng-6.14.2.jar!/org/testng/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="615">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
@@ -1268,7 +1176,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/RandomInequalitiesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
+        <state relative-caret-position="1575">
           <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="32" />
           <folding>
             <element signature="e#4770#4771#0" expanded="true" />
@@ -1279,11 +1187,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/RandomInequalitiesControllerShould.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="270">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CheckboxActionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/Graph/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/LayoutGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="141" column="31" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="31" />
+          <folding>
+            <element signature="e#5445#5446#0" expanded="true" />
+            <element signature="e#5476#5477#0" expanded="true" />
+            <element signature="e#5444#5445#0" expanded="true" />
+            <element signature="e#5472#5473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DarkModeShould.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
