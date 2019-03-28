@@ -7,7 +7,6 @@ public class DecisionVariable {
     private double lowerBound;
     private double upperBound;
 
-
     public DecisionVariable(){
         weight = 1 ;
         variable = null;
@@ -39,10 +38,6 @@ public class DecisionVariable {
 
     public void setSign(String sign) {
         this.sign = sign;
-    }
-
-    public String getSign() {
-        return sign;
     }
 
     public String toString(){

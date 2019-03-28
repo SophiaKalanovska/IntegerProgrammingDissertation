@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -13,7 +12,6 @@ import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
-import org.graphstream.graph.Node;
 
 /**
  * This class will represent the Controller for the LayoutGUI Panel
@@ -21,7 +19,6 @@ import org.graphstream.graph.Node;
  */
 public class RandomInequalitiesController implements ActionListener, MouseListener {
 
-    private RandomInequalitiesGUI randomInequalitiesGUI;
     private GraphController graph;
     private InequalitiesList inequalitiesList;
     private ArrayList<DecisionVariable> nodes;
@@ -35,7 +32,6 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
      */
     public RandomInequalitiesController(InequalitiesList inequalitiesList, RandomInequalitiesGUI randomInequalitiesGUI, GraphController graphController){
         this.inequalitiesList = inequalitiesList;
-        this.randomInequalitiesGUI = randomInequalitiesGUI;
         this.graph = graphController;
         this.generator = new RandomInequalitiesGenerator();
         nodes = new ArrayList<>();
@@ -68,26 +64,23 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                 enter = (JTextField) e.getSource();
                 final ArrayList<Inequality> inequalities = new ArrayList<>();
                 for(int i = 0; i < Integer.parseInt(enter.getText()); i ++) {
-                    DecisionVariable variable = generator.generateNode();
+                    DecisionVariable variable = generator.generateDecisionVariable();
                     nodes.add(variable);
                     inequalities.add(generator.generateInequalityForNode(variable));
                 }
                 enter.setText("Number of Decision Variables...");
                 Thread thread = new Thread() {
-                   @Override
+                    @Override
                     public void run() {
-                       for ( Inequality in : inequalities)
-                            inequalitiesList.addInequality(in);
-                        }
-                    };
+                        addInequalities(inequalities);
+                    }
+                };
 
                 thread.start();
                 Thread thread2= new Thread() {
                     @Override
                     public void run() {
-                        for ( Inequality in : inequalities)
-                            graph.drawInequality(in);
-                        graph.calculateInequalities();
+                        visualizeInequality(inequalities);
                     }
 
                 };
@@ -104,8 +97,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                 Thread thread = new Thread() {
                     @Override
                     public void run() {
-                        for ( Inequality in : inequalities)
-                            inequalitiesList.addInequality(in);
+                        addInequalities(inequalities);
                     }
                 };
                 thread.start();
@@ -113,9 +105,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                 Thread thread2= new Thread() {
                     @Override
                     public void run() {
-                        for ( Inequality in : inequalities)
-                            graph.drawInequality(in);
-                            graph.calculateInequalities();
+                        visualizeInequality(inequalities);
                     }
 
                 };
@@ -124,12 +114,29 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         }
     }
 
+
+    public synchronized void addInequalities(ArrayList<Inequality> inequalities) {
+        for ( Inequality in : inequalities)
+            inequalitiesList.addInequality(in);
+
+    }
+
+    public synchronized void visualizeInequality(ArrayList<Inequality> inequalities) {
+        for ( Inequality in : inequalities)
+            graph.drawInequality(in);
+        graph.calculateInequalities();
+    }
+
     @Override
     public void mousePressed(MouseEvent e) {
         if (e.getSource() instanceof JTextField) {
             JTextField enter = (JTextField) e.getSource();
             enter.setText("");
         }
+    }
+
+    public InequalitiesList getInequalitiesList() {
+        return inequalitiesList;
     }
 
     @Override

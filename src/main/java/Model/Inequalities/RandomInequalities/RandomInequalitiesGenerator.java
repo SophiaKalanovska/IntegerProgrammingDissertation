@@ -10,11 +10,12 @@ public class RandomInequalitiesGenerator {
     private Random random;
 
     public RandomInequalitiesGenerator() {
+
         this.upperLower = new RandomVariables();
         random = new Random();
     }
 
-    public DecisionVariable generateNode() {
+    public DecisionVariable generateDecisionVariable() {
         DecisionVariable decisionVariable = new DecisionVariable();
         decisionVariable.setVariable(upperLower.getIndex((int)Math.random()*upperLower.getSize()));
         return  decisionVariable;

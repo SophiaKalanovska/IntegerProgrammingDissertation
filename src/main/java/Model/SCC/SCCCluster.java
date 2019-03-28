@@ -6,7 +6,6 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Map;
 
-
 public class SCCCluster {
     private Color color;
     private int id;
@@ -21,7 +20,6 @@ public class SCCCluster {
     private ArrayList<Map.Entry<Node, Double>> attacking;
     private ArrayList<Map.Entry<Integer, Double>> attackedByClusters;
     private ArrayList<Map.Entry<Integer, Double>> attackingClusters;
-
 
 
    public SCCCluster(int id){

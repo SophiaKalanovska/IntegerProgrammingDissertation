@@ -30,7 +30,6 @@ public class IntegerAssignmentList extends Observable implements java.io.Seriali
 
     public Map<Integer, ImageIcon> populate(){
         return createImageMap(SCCCluster);
-
     }
 
     private Map<Integer, ImageIcon> createImageMap(ArrayList<SCCCluster> SCC) {
@@ -49,7 +48,6 @@ public class IntegerAssignmentList extends Observable implements java.io.Seriali
             map.put(SCC.get(i).getId(), imageIcon);
         }
         return map;
-
     }
 
     public ArrayList<Pair<Integer,SCCCluster>> getProjectWallet() {

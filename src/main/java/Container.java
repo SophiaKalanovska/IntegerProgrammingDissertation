@@ -16,6 +16,7 @@ import View.SolutionPanel.*;
 * We then load panels to this frame.
 */
 public class Container extends JFrame {
+    LayoutGUI layoutGUI;
 
 	public Container(){
 
@@ -30,13 +31,13 @@ public class Container extends JFrame {
 		InternalConstarinsClusterGUI internalConstarinsClusterGUI = new InternalConstarinsClusterGUI();
 		IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI = new IntegerAssignmentMaximizeGUI();
 		BoundsGUI boundGUI = new BoundsGUI(lowerBoundClusterGUI, upperBoundClusterGUI, integerAssignmentMinimizeGUI, internalConstarinsClusterGUI, integerAssignmentMaximizeGUI);
-		LayoutGUI layoutGUI = new LayoutGUI(this, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
+		layoutGUI = new LayoutGUI(this, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
 
 		//Create Model Classes
         InequalitiesList inequalitiesList = new InequalitiesList();
         inequalitiesList.addObserver(inequalitiesListGUI);
         inequalitiesList.tryUpdate();
-        setPanel(layoutGUI);
+//        setPanel(layoutGUI);
 
 		// Create all the Controller classes
 		GraphController graphController = new GraphController(layoutGUI) ;
@@ -50,24 +51,21 @@ public class Container extends JFrame {
 		new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
 		new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setPreferredSize(new Dimension(1137, 710));
-		this.setVisible(true);
-		this.pack();
-		this.setLocationRelativeTo(null);
+
 	}
 
-	/**
-	* Loads a new panel to the frame
-	*
-	* @param  p  the panel to be loaded into the frame
-	*/
-    private void setPanel(JPanel p){
+    public void setPanel(){
 		this.getContentPane().invalidate();
 		this.getContentPane().removeAll();
-		this.getContentPane().add(p);
+		this.getContentPane().add(layoutGUI);
 		this.revalidate();
 		this.repaint();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setPreferredSize(new Dimension(1137, 710));
+        this.setVisible(true);
+        this.pack();
+        this.setLocationRelativeTo(null);
 	}
 
+    public LayoutGUI getLayoutGUI(){return layoutGUI; }
 }

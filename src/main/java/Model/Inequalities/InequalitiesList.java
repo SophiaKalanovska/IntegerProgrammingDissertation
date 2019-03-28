@@ -64,6 +64,8 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     public boolean shouldDeleteAllInequalities(){return deleteAll; }
 
+    public ArrayList<Inequality> getInequalitiesContainer() { return inequalitiesContainer;}
+
     /**
      * Sends signal to the observers to update the View
      */

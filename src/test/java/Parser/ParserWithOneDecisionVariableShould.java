@@ -5,7 +5,7 @@ import Model.Parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ParserWithOneDecisionVariable {
+public class ParserWithOneDecisionVariableShould {
 
 
     @Test
@@ -73,18 +73,18 @@ public class ParserWithOneDecisionVariable {
         Assert.assertEquals(inequality.getFirstDecisionVariable().getLowerBound(),7.0);
     }
 
+    @Test
+    public void parse_3xGreaterThanOrEqualPoint3_AndReturn_(){
+        Parser testParser = new Parser();
+        testParser.setString("3x>=.3");
+        try {
+            testParser.parse();
+        } catch (Exception e) {
+            Assert.assertEquals(e,"not number");
+        }
+    }
 
 
 
-
-
-//
-//    @Test
-//    public void parse_3xLessThanY_AndReturn_YAsSecondDecisionVariable() throws Exception {
-//        Parser testParser = new Parser();
-//        testParser.setString("3x<y");
-//        Inequality inequality = testParser.parse();
-//        Assert.assertEquals(inequality.getSecondDecisionVariableValue(),"y");
-//    }
 
 }

@@ -36,6 +36,7 @@ public class LayoutGUI extends JPanel  {
      * @param  frame  the frame containing the panel
      */
 
+    private RandomInequalitiesGUI randomNumberInequalities;
 
     public LayoutGUI(JFrame frame, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
 
@@ -67,6 +68,7 @@ public class LayoutGUI extends JPanel  {
         //border color
         Border topBorder = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
         randomBorder = new TitledBorder(topBorder,"<html><b> Generate Random Inequalities:</html><b>" );
+        this.randomNumberInequalities = randomNumberInequalities;
         randomNumberInequalities.setBorder(randomBorder);
 
         listBorder = new TitledBorder(topBorder,"<html><b> List of Inequalities:</html><b>" );
@@ -141,5 +143,7 @@ public class LayoutGUI extends JPanel  {
         return graph;
     }
 
-
+    public RandomInequalitiesGUI getRandomNumberInequalities() {
+        return randomNumberInequalities;
+    }
 }

@@ -17,12 +17,8 @@ public class SCCAlgorithm {
     private TarjanStronglyConnectedComponents tscc;
     private SCCClusterList list;
 
-    public SCCAlgorithm(Graph graph){
+    public TarjanStronglyConnectedComponents calculateSCC(Graph graph) {
         this.graph = graph;
-
-    }
-
-    public TarjanStronglyConnectedComponents calculateSCC() {
         tscc = new TarjanStronglyConnectedComponents();
 
         tscc.init(graph);

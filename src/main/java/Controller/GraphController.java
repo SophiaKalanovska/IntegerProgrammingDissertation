@@ -19,7 +19,6 @@ import java.util.Map;
 public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
     private final Graph graph;
-    private static final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
     SCCAlgorithm algorithm ;
     private SCCClusterList SCCComponents;
     private int id;
@@ -27,7 +26,7 @@ public class GraphController implements Serializable {
     public GraphController(LayoutGUI layoutGUI) {
         this.graphGUI = layoutGUI.getGraphGUI();
         this.graph = graphGUI.getGraph();
-        this.algorithm = new SCCAlgorithm(graph);
+        algorithm = new SCCAlgorithm();
         id = 0;
 
     }
@@ -52,9 +51,7 @@ public class GraphController implements Serializable {
             node.setAttribute("upper_bound", original.getUpperBound());
             node.setAttribute("lower_bound", original.getLowerBound());
         }
-
     }
-
 
     public void drawInequality(Inequality x) {
         String decision = x.getSecondDecisionVariableValue();
@@ -69,8 +66,8 @@ public class GraphController implements Serializable {
 
     public void calculateInequalities()
     {
+        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC(graph);
         algorithm.clear();
-        TarjanStronglyConnectedComponents trj = algorithm.calculateSCC();
         SCCComponents = algorithm.cluster(trj);
     }
 
@@ -115,12 +112,6 @@ public class GraphController implements Serializable {
         }
         getPipeIn().pump();
 
-    }
-
-    public void removeAllNodes(ArrayList<Inequality> list){
-        for (int i = 0; i < list.size(); i++) {
-            undrawInequality(list.get(i));
-        }
     }
 
     public ViewerPipe getPipeIn() {
