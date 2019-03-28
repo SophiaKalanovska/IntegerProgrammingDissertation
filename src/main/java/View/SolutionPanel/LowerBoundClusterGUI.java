@@ -36,11 +36,6 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
     }
 
 
-    public void addMouseListener(LowerBoundClusterListController controller){
-        System.out.println(" ManualInequalitiesGUI mouselistener added");
-        lowerBoundClusterList.addMouseListener(controller);
-
-    }
 
     private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
         lowerBoundClusterListModel.clear();

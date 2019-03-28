@@ -29,11 +29,6 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
 
     }
 
-    public void addMouseListener(LowerBoundClusterListController controller){
-        System.out.println(" ManualInequalitiesGUI mouselistener added");
-        upperBoundClusterList.addMouseListener(controller);
-    }
-
     private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
         upperBoundClusterListModel.clear();
         for(Pair<Integer,Double> i : in){

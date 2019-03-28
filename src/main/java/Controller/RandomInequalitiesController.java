@@ -53,10 +53,6 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     @Override
     public synchronized void actionPerformed(java.awt.event.ActionEvent e) {
 
-
-        if (e.getSource() instanceof JButton) {
-            JButton enter = (JButton) e.getSource();
-        }
         if (e.getSource() instanceof JTextField) {
 
 

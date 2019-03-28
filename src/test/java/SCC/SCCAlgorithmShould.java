@@ -1,6 +1,11 @@
 package SCC;
 
+import Controller.GraphController;
+import Controller.RandomInequalitiesController;
 import Model.Inequalities.DecisionVariable;
+import Model.Inequalities.InequalitiesList;
+import Model.Inequalities.Inequality;
+import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;
 import Model.SCC.SCCCluster;
 import Model.SCC.SCCClusterList;
 import org.graphstream.algorithm.TarjanStronglyConnectedComponents;
@@ -17,11 +22,6 @@ import java.util.Map;
 
 public class SCCAlgorithmShould {
 
-    @Test
-    public void calculateSCCGGivenAGraph(){
-        SCCClusterList testClusterList = new SCCClusterList();
-        Assert.assertEquals(testClusterList.getProjectWallet().size(),1);
-    }
 
 
 }

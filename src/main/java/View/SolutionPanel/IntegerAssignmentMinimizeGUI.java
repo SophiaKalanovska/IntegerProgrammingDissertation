@@ -33,10 +33,7 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
 
     }
 
-    public void addMouseListener(LowerBoundClusterListController controller){
-        System.out.println(" ManualInequalitiesGUI mouselistener added");
-        integerAssignmentList.addMouseListener(controller);
-    }
+
 
     private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in){
         internelConstainsClusterListModel.clear();

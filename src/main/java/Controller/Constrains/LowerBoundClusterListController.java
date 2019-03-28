@@ -17,7 +17,7 @@ import java.util.Map;
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
  */
-public class LowerBoundClusterListController implements ActionListener, MouseListener {
+public class LowerBoundClusterListController implements ActionListener{
 
     private LowerBoundClusterGUI LowerBoundClusterGUI;
     private LowerBoundList lbl;
@@ -29,7 +29,6 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
      */
     public LowerBoundClusterListController( LowerBoundClusterGUI LowerBoundClusterGUI){
         this.LowerBoundClusterGUI = LowerBoundClusterGUI;
-        LowerBoundClusterGUI.addMouseListener(this);
     }
 
 
@@ -43,31 +42,6 @@ public class LowerBoundClusterListController implements ActionListener, MouseLis
         lbl.tryUpdate();
 
     }
-
-
-    /**
-     * Mouse listener for the ManualIntegerInequalities panel
-     *
-     * @param e Mouse listener that will identify the actions that the user makes
-     */
-    @Override
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
-
-
-
 
     /**
      * The action listener for the ManualIntegerInequalities panel

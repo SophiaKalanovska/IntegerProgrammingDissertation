@@ -66,6 +66,11 @@ public class InequalitiesList extends Observable implements java.io.Serializable
 
     public ArrayList<Inequality> getInequalitiesContainer() { return inequalitiesContainer;}
 
+
+    public Inequality getInequalityFromIndex(int i){
+        return inequalitiesContainer.get(i);
+    }
+
     /**
      * Sends signal to the observers to update the View
      */

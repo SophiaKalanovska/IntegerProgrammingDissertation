@@ -6,7 +6,6 @@ import View.OperationsOnInequalities.InequalitiesListGUI;
 import View.OperationsOnInequalities.ManualInequalitiesGUI;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
 import View.SolutionPanel.BoundsGUI;
-import View.SolutionPanel.InternalConstarinsClusterGUI;
 
 import java.awt.*;
 import javax.swing.*;
@@ -36,9 +35,9 @@ public class LayoutGUI extends JPanel  {
      * @param  frame  the frame containing the panel
      */
 
-    private RandomInequalitiesGUI randomNumberInequalities;
+    private RandomInequalitiesGUI randomInequalities;
 
-    public LayoutGUI(JFrame frame, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomNumberInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
+    public LayoutGUI(JFrame frame, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
 
         //welcome label
         welcomeLabel = new JLabel("Integer Programming Solver");
@@ -68,8 +67,8 @@ public class LayoutGUI extends JPanel  {
         //border color
         Border topBorder = BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(153, 218, 250));
         randomBorder = new TitledBorder(topBorder,"<html><b> Generate Random Inequalities:</html><b>" );
-        this.randomNumberInequalities = randomNumberInequalities;
-        randomNumberInequalities.setBorder(randomBorder);
+        this.randomInequalities = randomInequalities;
+        randomInequalities.setBorder(randomBorder);
 
         listBorder = new TitledBorder(topBorder,"<html><b> List of Inequalities:</html><b>" );
         inequalitiesListGUI.setBorder(listBorder);
@@ -79,11 +78,11 @@ public class LayoutGUI extends JPanel  {
         this.boundsGUI = boundGUI;
         this.inequalitiesListGUI = inequalitiesListGUI;
         this.manualInequalitiesGUI = manualInequalitiesGUI;
-        this.randomInequalitiesGUI = randomNumberInequalities;
+        this.randomInequalitiesGUI = randomInequalities;
 
         JPanel leftPanel = new JPanel(new GridLayout(3,1));
         leftPanel.add(manualInequalitiesGUI);
-        leftPanel.add(randomNumberInequalities);
+        leftPanel.add(randomInequalities);
         leftPanel.add(inequalitiesListGUI);
         leftPanel.setOpaque(false);
 
@@ -143,7 +142,14 @@ public class LayoutGUI extends JPanel  {
         return graph;
     }
 
-    public RandomInequalitiesGUI getRandomNumberInequalities() {
-        return randomNumberInequalities;
+    public RandomInequalitiesGUI getRandomInequalities() {
+        return randomInequalities;
+    }
+    public ManualInequalitiesGUI getManualInequalities() {
+        return manualInequalitiesGUI;
+    }
+
+    public InequalitiesListGUI getInequalitiesListGUI() {
+        return inequalitiesListGUI;
     }
 }

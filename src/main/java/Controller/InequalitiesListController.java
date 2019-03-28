@@ -1,12 +1,10 @@
 package Controller;
 import java.awt.event.*;
-import java.util.ArrayList;
 import javax.swing.*;
 
 import Controller.Constrains.ConstarinsController;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
-import Model.SCC.SCCClusterList;
 import View.OperationsOnInequalities.InequalitiesListGUI;
 
 /**
@@ -49,9 +47,11 @@ public class InequalitiesListController implements ActionListener, MouseListener
             if (((JButton) e.getSource()).getName().equals("delete")){
                 System.out.println(((JButton) e.getSource()).getName());
                 Inequality toBeDeleted = InequalitiesListGUI.getListSelectedValue();
-                inequalitiesList.deleteInequality(toBeDeleted);
-                graph.undrawInequality(toBeDeleted);
-                graph.calculateInequalities();
+                if (toBeDeleted != null){
+                    inequalitiesList.deleteInequality(toBeDeleted);
+                    graph.undrawInequality(toBeDeleted);
+                    graph.calculateInequalities();
+                }
             }else if (((JButton) e.getSource()).getName().equals("deleteGraph")) {
                 inequalitiesList.deleteAllInequalities();
                 graph.deleteGraph();
@@ -73,7 +73,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
     @Override
     public void mouseExited(MouseEvent e) {}
 
-
     /**
      * The action listener for the ManualIntegerInequalities panel
      *
@@ -81,6 +80,16 @@ public class InequalitiesListController implements ActionListener, MouseListener
      */
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) { }
+
+    public InequalitiesList getInequalitiesList() {
+        return inequalitiesList;
+    }
+
+    public View.OperationsOnInequalities.InequalitiesListGUI getInequalitiesListGUI() {
+        return InequalitiesListGUI;
+    }
 }
+
+
 
 

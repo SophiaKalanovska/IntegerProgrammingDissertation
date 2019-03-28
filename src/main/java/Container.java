@@ -1,10 +1,9 @@
-import javax.swing.JPanel;
+
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import Controller.*;
 import Controller.Constrains.*;
 import Model.Inequalities.InequalitiesList;
-import Model.SCC.SCCAlgorithm;
 import View.*;
 import View.OperationsOnInequalities.InequalitiesListGUI;
 import View.OperationsOnInequalities.ManualInequalitiesGUI;
@@ -17,7 +16,11 @@ import View.SolutionPanel.*;
 */
 public class Container extends JFrame {
     LayoutGUI layoutGUI;
-
+    private ConstarinsController constarinsController;
+    private InequalitiesList inequalitiesList;
+    private GraphController graphController;
+    private IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI;
+    private IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI;
 	public Container(){
 
 		// Create all the View  classes
@@ -34,19 +37,19 @@ public class Container extends JFrame {
 		layoutGUI = new LayoutGUI(this, manualInequalitiesGUI, randomInequalitiesGUI, inequalitiesListGUI,boundGUI);
 
 		//Create Model Classes
-        InequalitiesList inequalitiesList = new InequalitiesList();
+        inequalitiesList = new InequalitiesList();
         inequalitiesList.addObserver(inequalitiesListGUI);
         inequalitiesList.tryUpdate();
 //        setPanel(layoutGUI);
 
 		// Create all the Controller classes
-		GraphController graphController = new GraphController(layoutGUI) ;
+		graphController = new GraphController(layoutGUI) ;
 		LowerBoundClusterListController lowerBoundClusterListController = new LowerBoundClusterListController(lowerBoundClusterGUI);
 		UpperBoundClusterListController upperBoundClusterListController = new UpperBoundClusterListController(upperBoundClusterGUI);
 		IntegerAssignenmentMinListController integerAssignenmentMinListController = new IntegerAssignenmentMinListController(integerAssignmentMinimizeGUI);
 		IntegerAssignenmentMaxListController integerAssignenmentMaxListController = new IntegerAssignenmentMaxListController(integerAssignmentMaximizeGUI);
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
-		ConstarinsController constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
+		constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
 		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController);
 		new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
 		new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
@@ -67,5 +70,27 @@ public class Container extends JFrame {
         this.setLocationRelativeTo(null);
 	}
 
-    public LayoutGUI getLayoutGUI(){return layoutGUI; }
+    public LayoutGUI getLayoutGUI() {
+        return layoutGUI;
+    }
+
+    public ConstarinsController getConstarinsController() {
+        return constarinsController;
+    }
+
+    public InequalitiesList getInequalitiesList() {
+        return inequalitiesList;
+    }
+
+    public GraphController getGraphController() {
+        return graphController;
+    }
+
+    public IntegerAssignmentMaximizeGUI getIntegerAssignmentMaximizeGUI() {
+        return integerAssignmentMaximizeGUI;
+    }
+
+    public IntegerAssignmentMinimizeGUI getIntegerAssignmentMinimizeGUI() {
+        return integerAssignmentMinimizeGUI;
+    }
 }

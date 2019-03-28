@@ -16,7 +16,7 @@ import java.util.Map;
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
  */
-public class IntegerAssignenmentMinListController implements ActionListener, MouseListener {
+public class IntegerAssignenmentMinListController implements ActionListener{
 
     private IntegerAssignmentMinimizeGUI IntegerAssignmentMinimizeGUI;
     private IntegerAssignmentList lbl;
@@ -24,7 +24,6 @@ public class IntegerAssignenmentMinListController implements ActionListener, Mou
 
     public IntegerAssignenmentMinListController(IntegerAssignmentMinimizeGUI IntegerAssignmentMinimizeGUI){
         this.IntegerAssignmentMinimizeGUI = IntegerAssignmentMinimizeGUI;
-        IntegerAssignmentMinimizeGUI.addMouseListener(this);
     }
 
 
@@ -37,27 +36,6 @@ public class IntegerAssignenmentMinListController implements ActionListener, Mou
         IntegerAssignmentMinimizeGUI.setRender(render);
         lbl.tryUpdate();
     }
-
-    /**
-     * Mouse listener for the ManualIntegerInequalities panel
-     *
-     * @param e Mouse listener that will identify the actions that the user makes
-     */
-    @Override
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
 
     /**
      * The action listener for the ManualIntegerInequalities panel

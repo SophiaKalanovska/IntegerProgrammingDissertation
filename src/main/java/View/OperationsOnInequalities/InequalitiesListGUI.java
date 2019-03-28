@@ -21,7 +21,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     private JButton deleteGraph;
     private JButton evaluateAll;
     private DefaultListModel listModel;
-    private JList projectsList;
+    private JList inequalitiesList;
 
     /**
      * Constructs a new Home panel
@@ -30,8 +30,8 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     public InequalitiesListGUI() {
 
         this.listModel = new DefaultListModel();
-        this.projectsList = new JList(listModel);
-        JScrollPane scroll = new JScrollPane(projectsList);
+        this.inequalitiesList = new JList(listModel);
+        JScrollPane scroll = new JScrollPane(inequalitiesList);
         scroll.setBorder( BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(153, 218, 250)));
         Border border = BorderFactory.createLineBorder( new Color(153, 218, 250),1,  true);
         delete = new JButton("Delete Inequality");
@@ -42,7 +42,7 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         evaluateAll.setName("evaluate");
         evaluateAll.setPreferredSize(new Dimension(250, 25));
         evaluateAll.setBorder(border);
-        projectsList.setName("projectsList");
+        inequalitiesList.setName("projectsList");
         deleteGraph = new JButton("Delete Graph");
         deleteGraph.setName("deleteGraph");
         deleteGraph.setPreferredSize(new Dimension(250, 25));
@@ -80,12 +80,12 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     public void addMouseListener(InequalitiesListController controller){
         delete.addMouseListener(controller);
         evaluateAll.addMouseListener(controller);
-        projectsList.addMouseListener(controller);
+        inequalitiesList.addMouseListener(controller);
         deleteGraph.addMouseListener(controller);
     }
 
     public Inequality getListSelectedValue(){
-        return (Inequality) projectsList.getSelectedValue();
+        return (Inequality) inequalitiesList.getSelectedValue();
     }
 
     private void UpdateJList(final Inequality in) {
@@ -93,13 +93,17 @@ public class InequalitiesListGUI extends JPanel implements Observer {
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-
                     listModel.addElement(in);
-                    projectsList.setModel(listModel);
-                    projectsList.repaint();
-                    projectsList.ensureIndexIsVisible(listModel.size() - 1);
+                    inequalitiesList.setModel(listModel);
+                    inequalitiesList.repaint();
+                    inequalitiesList.ensureIndexIsVisible(listModel.size() - 1);
                 }
             });
+        }else{
+            listModel.addElement(in);
+            inequalitiesList.setModel(listModel);
+            inequalitiesList.repaint();
+            inequalitiesList.ensureIndexIsVisible(listModel.size() - 1);
         }
     }
 
@@ -131,8 +135,8 @@ public class InequalitiesListGUI extends JPanel implements Observer {
 
     public void changeView(boolean dark){
         if (dark){
-            projectsList.setBackground(Color.BLACK);
-            projectsList.setForeground(Color.WHITE);
+            inequalitiesList.setBackground(Color.BLACK);
+            inequalitiesList.setForeground(Color.WHITE);
 
             delete.setBackground(Color.BLACK);
             delete.setOpaque(true);
@@ -146,8 +150,8 @@ public class InequalitiesListGUI extends JPanel implements Observer {
             deleteGraph.setOpaque(true);
             deleteGraph.setForeground(Color.WHITE);
         }else{
-            projectsList.setBackground(Color.WHITE);
-            projectsList.setForeground(Color.BLACK);
+            inequalitiesList.setBackground(Color.WHITE);
+            inequalitiesList.setForeground(Color.BLACK);
 
             delete.setBackground(Color.WHITE);
             delete.setOpaque(true);
@@ -161,5 +165,9 @@ public class InequalitiesListGUI extends JPanel implements Observer {
             deleteGraph.setOpaque(true);
             deleteGraph.setForeground(Color.BLACK);
         }
+    }
+
+    public JList getInequalitiesList() {
+        return inequalitiesList;
     }
 }

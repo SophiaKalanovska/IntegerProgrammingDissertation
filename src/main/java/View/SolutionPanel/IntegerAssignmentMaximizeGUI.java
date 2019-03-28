@@ -15,8 +15,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
-
-    private SCCClusterList info;
     private IntegerAssignmentList observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
@@ -31,11 +29,6 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
         this.setOpaque(false);
         this.setPreferredSize(new Dimension(225, 150));
 
-    }
-
-    public void addMouseListener(LowerBoundClusterListController controller){
-        System.out.println(" ManualInequalitiesGUI mouselistener added");
-        integerAssignmentList.addMouseListener(controller);
     }
 
     private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in){
