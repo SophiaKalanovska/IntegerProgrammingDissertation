@@ -1,10 +1,8 @@
 package View.SolutionPanel;
 
-import Controller.Constrains.LowerBoundClusterListController;
 import Model.SCC.BoundsListRender;
 import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.SCCCluster;
-import Model.SCC.SCCClusterList;
 import javafx.util.Pair;
 import org.graphstream.graph.Node;
 

@@ -19,8 +19,8 @@ public class Container extends JFrame {
     private ConstarinsController constarinsController;
     private InequalitiesList inequalitiesList;
     private GraphController graphController;
-    private IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI;
-    private IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI;
+    private RandomInequalitiesController randomInequalitiesController;
+    private InequalitiesListController inequalitiesListController;
 	public Container(){
 
 		// Create all the View  classes
@@ -50,9 +50,9 @@ public class Container extends JFrame {
 		IntegerAssignenmentMaxListController integerAssignenmentMaxListController = new IntegerAssignenmentMaxListController(integerAssignmentMaximizeGUI);
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
 		constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
-		new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController);
+        inequalitiesListController = new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController);
 		new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
-		new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
+        randomInequalitiesController = new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
 
 
 	}
@@ -86,11 +86,11 @@ public class Container extends JFrame {
         return graphController;
     }
 
-    public IntegerAssignmentMaximizeGUI getIntegerAssignmentMaximizeGUI() {
-        return integerAssignmentMaximizeGUI;
+    public RandomInequalitiesController getRandomInequalitiesController() {
+        return randomInequalitiesController;
     }
 
-    public IntegerAssignmentMinimizeGUI getIntegerAssignmentMinimizeGUI() {
-        return integerAssignmentMinimizeGUI;
+    public InequalitiesListController getInequalitiesListController() {
+        return inequalitiesListController;
     }
 }

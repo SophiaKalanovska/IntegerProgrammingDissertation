@@ -1,10 +1,8 @@
 package View.SolutionPanel;
 
-import Controller.Constrains.LowerBoundClusterListController;
 import javafx.util.Pair;
 import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
-import Model.SCC.SCCClusterList;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -13,7 +11,6 @@ import java.util.Observer;
 
 public class LowerBoundClusterGUI extends JPanel implements Observer {
 
-    private SCCClusterList info;
     private LowerBoundList observer;
     private DefaultListModel lowerBoundClusterListModel;
     private JList lowerBoundClusterList;

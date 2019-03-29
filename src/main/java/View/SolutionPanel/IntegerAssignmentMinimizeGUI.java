@@ -1,13 +1,10 @@
 package View.SolutionPanel;
 
-import Controller.Constrains.LowerBoundClusterListController;
 import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.SCCCluster;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
-import Model.SCC.SCCClusterList;
 import org.graphstream.graph.Node;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -16,7 +13,6 @@ import java.util.Observer;
 
 public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
 
-    private SCCClusterList info;
     private IntegerAssignmentList observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;

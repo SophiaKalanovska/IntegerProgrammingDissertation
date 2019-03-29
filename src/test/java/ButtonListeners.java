@@ -18,7 +18,7 @@ public class ButtonListeners {
 
 
     @Test
-    public void InequalitiesListControllerDeleteGraph(){
+    public void InequalitiesListControllerDeleteElement(){
         Container container = new Container();
 
         InequalitiesListController controller = new InequalitiesListController(container.getInequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController());
@@ -32,10 +32,23 @@ public class ButtonListeners {
     }
 
 
+
     @Test
-    public void InequalitiesListControllerDeleteElement(){
+    public void InequalitiesListControllerEvaluate(){
         Container container = new Container();
-        InequalitiesListController controller = new InequalitiesListController(new InequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), new GraphController(container.getLayoutGUI()), container.getConstarinsController());
+//        InequalitiesListController controller = new InequalitiesListController(container.getInequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController());
+        JButton deleteGraph = new JButton("evaluate");
+        deleteGraph.setName("evaluate");
+        helperMethodAddNodes(container);
+        int uniqueId = (int) System.currentTimeMillis();
+        java.awt.event.MouseEvent e  = new MouseEvent(deleteGraph, uniqueId, System.currentTimeMillis(), 0, 0, 0, 1, false);
+        container.getInequalitiesListController().mouseClicked(e);
+    }
+
+    @Test
+    public void InequalitiesListControllerDeleteGraph(){
+        Container container = new Container();
+        InequalitiesListController controller = new InequalitiesListController(new InequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController());
         JButton deleteGraph = new JButton("deleteGraph");
         deleteGraph.setName("deleteGraph");
         int uniqueId = (int) System.currentTimeMillis();
@@ -170,16 +183,16 @@ public class ButtonListeners {
 
     public synchronized void helperMethodAddNodes( Container container ){
 
-        RandomInequalitiesController testContoller = new RandomInequalitiesController( container.getInequalitiesList(),container.getLayoutGUI().getRandomInequalities(), container.getGraphController());
         RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator();
         ArrayList nodes = new ArrayList<>();
         final ArrayList<Inequality> inequalities = new ArrayList<>();
-        for(int i = 0; i < 5; i ++) {
+        for(int i = 0; i < 50; i ++) {
             DecisionVariable variable = generator.generateDecisionVariable();
             nodes.add(variable);
             inequalities.add(generator.generateInequalityForNode(variable));
         }
-        testContoller.addInequalities(inequalities);
+        container.getRandomInequalitiesController().addInequalities(inequalities);
+        container.getRandomInequalitiesController().visualizeInequality(inequalities);
 
     }
 

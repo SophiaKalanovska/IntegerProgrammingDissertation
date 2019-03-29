@@ -1,6 +1,5 @@
 package View.SolutionPanel;
 
-import Controller.Constrains.LowerBoundClusterListController;
 import Model.SCC.ConstrainsLists.UpperBoundList;
 import javafx.util.Pair;
 import Model.SCC.*;
@@ -12,7 +11,6 @@ import java.util.Observer;
 
 public class UpperBoundClusterGUI extends JPanel implements Observer {
 
-    private SCCClusterList info;
     private UpperBoundList observer;
     private DefaultListModel upperBoundClusterListModel;
     private JList upperBoundClusterList;
