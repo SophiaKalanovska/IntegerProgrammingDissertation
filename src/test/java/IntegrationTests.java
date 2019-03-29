@@ -7,9 +7,9 @@ import Model.Inequalities.Inequality;
 import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class IntegrationTests {
@@ -106,6 +106,14 @@ public class IntegrationTests {
 
         Assert.assertEquals(numberOfNodes,50);
         Assert.assertNotEquals(container.getGraphController().getSCCComponents().getProjectWallet().size() ,0);
+    }
+
+
+    @Test
+    public void testMain() throws IOException {
+        System.out.println("main");
+        String[] args = null;
+        Main.main(args);
     }
 
 }

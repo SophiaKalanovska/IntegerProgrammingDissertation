@@ -1,5 +1,10 @@
 package Model.Parser;
 
+import Model.Parser.Exceptions.ExceptionNotATerm;
+import Model.Parser.Exceptions.ExceptionNotNumber;
+import Model.Parser.Exceptions.ExceptionNotZero;
+import Model.Parser.Exceptions.NoWeightException;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,7 +44,7 @@ public class ParseMember {
         return null;
     }
 
-    private void parse_weight(String expression, String order) throws Exceptions.NoWeightException {
+    private void parse_weight(String expression, String order) throws NoWeightException {
         try {
             parser.toParse = expression;
             signOfExpression(order);
@@ -52,7 +57,7 @@ public class ParseMember {
                 ;
             }
         } catch (Exception e) {
-            throw new Exceptions.NoWeightException(" No weight");
+            throw new NoWeightException(" No weight");
         }
     }
 
@@ -92,18 +97,18 @@ public class ParseMember {
         }
     }
 
-    String parse_term(String order) throws Exceptions.ExceptionNotATerm, Exception {
+    String parse_term(String order) throws ExceptionNotATerm, Exception {
         String term;
         try {
             term = tokenize("[+|-]*[1-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[1-9]+[0-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[0-9]+[\\.\\,][0-9]+[a-zA-Z][a-zA-Z0-9_]*");
         } catch (Exception e) {
-            throw new Exceptions.ExceptionNotATerm(" Expecting pattern term " + order);
+            throw new ExceptionNotATerm(" Expecting pattern term " + order);
         }
         if (term != null) {
             try {
                 parse_weight(term, order);
                 parse_UnknownVariable(order);
-            } catch (Exceptions.NoWeightException e) {
+            } catch (NoWeightException e) {
                 parse_UnknownVariable(order);
             }
         }
@@ -114,19 +119,19 @@ public class ParseMember {
         parser.sign = tokenize("<=|>=|<|>");
     }
 
-    void parse_null() throws Exceptions.ExceptionNotZero {
+    void parse_null() throws ExceptionNotZero {
         try {
             tokenize("0");
         } catch (Exception e) {
-            throw new Exceptions.ExceptionNotZero("something else");
+            throw new ExceptionNotZero("something else");
         }
     }
 
-    public Double parse_number() throws Exceptions.ExceptionNotNumber {
+    public Double parse_number() throws ExceptionNotNumber {
         try {
             return Double.parseDouble(tokenize("[0-9]+[\\.\\,][0-9]+|[0-9]+"));
         } catch (Exception e) {
-            throw new Exceptions.ExceptionNotNumber("not a number");
+            throw new ExceptionNotNumber("not a number");
         }
     }
 

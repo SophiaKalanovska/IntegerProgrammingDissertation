@@ -1,7 +1,6 @@
 package Parser;
 
 import Model.Inequalities.Inequality;
-import Model.Parser.Exceptions;
 import Model.Parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.Test;

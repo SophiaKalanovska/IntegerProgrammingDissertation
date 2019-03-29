@@ -1,5 +1,8 @@
 package Model.Parser;
 
+import Model.Parser.Exceptions.ExceptionNotATerm;
+import Model.Parser.Exceptions.ExceptionNotNumber;
+
 public class ParserWithOneDecisionVariable {
 
     private final Parser parser;
@@ -8,7 +11,7 @@ public class ParserWithOneDecisionVariable {
         this.parser = parser;
     }
 
-    public void parse_inequality() throws Exception, Exceptions.ExceptionNotATerm {
+    public void parse_inequality() throws Exception, ExceptionNotATerm {
         parser.toParse = "";
         double boundry = 0;
         try {
@@ -16,7 +19,7 @@ public class ParserWithOneDecisionVariable {
             parser.parseMember.parse_sign();
             try {
                 boundry = parser.parseMember.parse_number();
-            } catch (Exceptions.ExceptionNotNumber exceptionNotNumber) {
+            } catch (ExceptionNotNumber exceptionNotNumber) {
                 System.out.println("not number");
             }
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
@@ -24,10 +27,10 @@ public class ParserWithOneDecisionVariable {
             }else{
                 parser.inequality.getFirstDecisionVariable().setLowerBound(boundry);
             }
-        } catch (Exceptions.ExceptionNotATerm exceptionNotATerm) {
+        } catch (ExceptionNotATerm exceptionNotATerm) {
             try {
                 parser.parseMember.parse_number();
-            } catch (Exceptions.ExceptionNotNumber exceptionNotNumber) {
+            } catch (ExceptionNotNumber exceptionNotNumber) {
                 System.out.println("not number");
             }
             parser.parseMember.parse_sign();

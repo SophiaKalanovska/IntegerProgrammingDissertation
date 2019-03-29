@@ -2,6 +2,7 @@ package Model.Parser;
 
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.Inequality;
+import Model.Parser.Exceptions.ExceptionNotATerm;
 
 public class Parser {
     protected final ParseMember parseMember = new ParseMember(this);
@@ -51,13 +52,13 @@ public class Parser {
                 inequality.setExpression(srcOriginal);
                 return inequality;
             }
-        } catch (Exceptions.ExceptionNotATerm exceptionNotATerm) {
+        } catch (ExceptionNotATerm exceptionNotATerm) {
             try {
                 parserWithOneDecisionVariable.clear();
                 parserWithOneDecisionVariable.parse_inequality();
                 inequality.setExpression(srcOriginal);
                 return inequality;
-            } catch (Exceptions.ExceptionNotATerm exceptionNotATerm1) {
+            } catch (ExceptionNotATerm exceptionNotATerm1) {
                 throw new Exception(" Source does not match the grammar. ");
             }
         }
