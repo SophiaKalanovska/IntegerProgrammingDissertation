@@ -37,6 +37,17 @@ public class IntegerAssignenmentMinListController implements ActionListener{
         lbl.tryUpdate();
     }
 
+
+
+    public void populate(){
+        lbl = new IntegerAssignmentList();
+        lbl.addObserver(IntegerAssignmentMinimizeGUI);
+        Map<Integer, ImageIcon> map = lbl.populate();
+        BoundsListRender render = new BoundsListRender();
+        render.setImageMap(map);
+        IntegerAssignmentMinimizeGUI.setRender(render);
+        lbl.tryUpdate();
+    }
     /**
      * The action listener for the ManualIntegerInequalities panel
      *

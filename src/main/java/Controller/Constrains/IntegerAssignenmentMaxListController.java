@@ -38,11 +38,12 @@ public class IntegerAssignenmentMaxListController implements ActionListener {
     }
 
     public void populate(){
+        lbl = new IntegerAssignmentList();
         lbl.addObserver(IntegerAssignmentMaximizeGUI);
-//        Map<Integer, ImageIcon> map = lbl.populate();
-//        BoundsListRender render = new BoundsListRender();
-//        render.setImageMap(map);
-//        IntegerAssignmentMaximizeGUI.setRender(render);
+        Map<Integer, ImageIcon> map = lbl.populate();
+        BoundsListRender render = new BoundsListRender();
+        render.setImageMap(map);
+        IntegerAssignmentMaximizeGUI.setRender(render);
         lbl.tryUpdate();
     }
 

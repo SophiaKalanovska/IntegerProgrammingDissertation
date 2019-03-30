@@ -31,17 +31,22 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
 
 
 
-    private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in){
+    private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in) {
         internelConstainsClusterListModel.clear();
-        for(Pair<Integer,SCCCluster> i : in){
-            String assignmentOfIntegerValues = "";
-            for (Node node: i.getValue().getNodes()){
-                assignmentOfIntegerValues += " " + node.getAttribute("ui.label") + " = ";
-                assignmentOfIntegerValues += i.getValue().getLambdaMinus() + ";";
+        if (in.size() != 0) {
+            for (Pair<Integer, SCCCluster> i : in) {
+                String assignmentOfIntegerValues = "";
+                for (Node node : i.getValue().getNodes()) {
+                    assignmentOfIntegerValues += " " + node.getAttribute("ui.label") + " = ";
+                    assignmentOfIntegerValues += i.getValue().getLambdaMinus() + ";";
+                }
+                internelConstainsClusterListModel.addElement(new Pair(i.getKey(), assignmentOfIntegerValues));
             }
-            internelConstainsClusterListModel.addElement(new Pair(i.getKey(),assignmentOfIntegerValues));
+            integerAssignmentList.setModel(internelConstainsClusterListModel);
+        } else {
+            internelConstainsClusterListModel.addElement(new Pair(0, "No Solution"));
+            integerAssignmentList.setModel(internelConstainsClusterListModel);
         }
-        integerAssignmentList.setModel(internelConstainsClusterListModel);
     }
 
 

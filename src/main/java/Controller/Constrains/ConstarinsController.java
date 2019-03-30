@@ -34,8 +34,8 @@ public class ConstarinsController {
         if (graph.getSCCComponents().isSolvable()){
             integerAssignenmentMinListController.populate(graph);
             integerAssignenmentMaxListController.populate(graph);
-            System.out.print(Double.POSITIVE_INFINITY/ -5);
         }else{
+            integerAssignenmentMinListController.populate();
             integerAssignenmentMaxListController.populate();
             System.out.print("No solution");
         }
