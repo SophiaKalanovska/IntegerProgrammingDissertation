@@ -14,7 +14,7 @@ public class SCCCluster {
     private double lowerbound = 0;
     private double upperbound = Double.POSITIVE_INFINITY;
     private double internalConstartins = 0;
-    private int lambdaMinus = 0;
+    private double lambdaMinus = 0;
     private double lambdaPlus = Double.POSITIVE_INFINITY;
     private ArrayList<Map.Entry<Node, Double>> attackedBy;
     private ArrayList<Map.Entry<Node, Double>> attacking;
@@ -149,7 +149,7 @@ public class SCCCluster {
        return attackingClusters;
     }
 
-    public void setLambdaMinus(int lambdaMinus) {
+    public void setLambdaMinus(double lambdaMinus) {
        if (lambdaMinus > this.lambdaMinus){
            this.lambdaMinus = lambdaMinus;
        }
@@ -169,7 +169,7 @@ public class SCCCluster {
        }
     }
 
-    public int getLambdaMinus(){
+    public double getLambdaMinus(){
        return lambdaMinus;
     }
 

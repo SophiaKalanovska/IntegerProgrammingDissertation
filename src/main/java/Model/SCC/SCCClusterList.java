@@ -41,36 +41,42 @@ public class SCCClusterList {
         }
     }
 
-    public int  lambdaMinus(SCCCluster cluster){
-        double clusterLowerBound= cluster.getLowerbound();
+    public double  lambdaMinus(SCCCluster cluster) {
+        double clusterLowerBound = cluster.getLowerbound();
         int clusterLowerCeil = (int) Math.ceil(clusterLowerBound);
-        if(cluster.getAttackedByClusters().isEmpty()){
-            return clusterLowerCeil;
-        }else{
-            ArrayList<Integer> lambdas = new ArrayList<>();
-            lambdas.add(clusterLowerCeil);
-            for (Map.Entry<Integer, Double> entry : cluster.getAttackedByClusters()){
-                int lambdaOfAttacker = lambdaMinus(SCCContainerMapId.get(entry.getKey()));
-                lambdas.add((int) Math.ceil(entry.getValue() * lambdaOfAttacker));
+        if (cluster.getInternalConstartins() > 1 && cluster.getLowerbound() != 0) {
+            return Double.POSITIVE_INFINITY;
+        } else {
+            if (cluster.getAttackedByClusters().isEmpty()) {
+                return clusterLowerCeil;
+            } else {
+
+                ArrayList<Integer> lambdas = new ArrayList<>();
+                lambdas.add(clusterLowerCeil);
+                for (Map.Entry<Integer, Double> entry : cluster.getAttackedByClusters()) {
+                    double lambdaOfAttacker = lambdaMinus(SCCContainerMapId.get(entry.getKey()));
+                    lambdas.add((int) Math.ceil(entry.getValue() * lambdaOfAttacker));
+                }
+                return Collections.max(lambdas);
             }
-            return Collections.max(lambdas);
         }
     }
 
     private double lambdaPlus(SCCCluster cluster) {
         double clusterUpperBound= cluster.getUpperbound();
         double clusterUpperCeil =  Math.floor(clusterUpperBound);
-        if(cluster.getAttackingClusters().isEmpty()){
-            return clusterUpperCeil;
-        }else{
-            if (cluster.getInternalConstartins() > 1 && cluster.getUpperbound() != Double.POSITIVE_INFINITY){
-                return 0;
-            }else{
+        if (cluster.getInternalConstartins() > 1 && cluster.getUpperbound() != Double.POSITIVE_INFINITY){
+            return 0;
+        }else {
+            if (cluster.getAttackingClusters().isEmpty()) {
+                return clusterUpperCeil;
+            } else {
+
                 ArrayList<Double> lambdas = new ArrayList<>();
                 lambdas.add(clusterUpperCeil);
-                for (Map.Entry<Integer, Double> entry : cluster.getAttackingClusters()){
+                for (Map.Entry<Integer, Double> entry : cluster.getAttackingClusters()) {
                     double lambdaOfAttacker = lambdaPlus(SCCContainerMapId.get(entry.getKey()));
-                    lambdas.add(Math.floor( lambdaOfAttacker/entry.getValue()));
+                    lambdas.add(Math.floor(lambdaOfAttacker / entry.getValue()));
                 }
                 return Collections.min(lambdas);
             }
