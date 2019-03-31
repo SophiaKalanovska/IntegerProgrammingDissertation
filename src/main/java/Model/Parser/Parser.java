@@ -37,6 +37,7 @@ public class Parser {
             if (term1 == null || term2 == null || sign == null) {
                 throw new Exception("Something is null");
             }
+            inequality.getFirstDecisionVariable().setWeight(inequality.getFirstDecisionVariable().getWeight() / inequality.getSecondDecisionVariable().getWeight());
             if(hasZeroRight){
                 inequality.getSecondDecisionVariable().changeSignVariable();
             }

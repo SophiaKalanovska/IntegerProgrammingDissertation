@@ -110,7 +110,6 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         }
     }
 
-
     public synchronized void addInequalities(ArrayList<Inequality> inequalities) {
         for ( Inequality in : inequalities)
             inequalitiesList.addInequality(in);

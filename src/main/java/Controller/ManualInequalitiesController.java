@@ -2,8 +2,7 @@ package Controller;
 
 import java.awt.event.*;
 import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
@@ -18,6 +17,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
 
     private InequalitiesList inequalitiesList;
     private String enterInequality;
+    private ManualInequalitiesGUI manualInequalitiesGUI;
     private GraphController graph;
     private final Parser parser = new Parser();
     /**
@@ -27,6 +27,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
      */
     public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI,  GraphController graphController){
         this.inequalitiesList = inequalitiesList;
+        this.manualInequalitiesGUI = ManualInequalitiesGUI;
         ManualInequalitiesGUI.addControllers(this);
         ManualInequalitiesGUI.addMouseListener(this);
         graph = graphController;
@@ -53,32 +54,35 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
      */
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
-        if (e.getSource() instanceof JButton) {
-//            JButton enter = (JButton) e.getSource();
-        } else if (e.getSource() instanceof JTextField) {
+        if (e.getSource() instanceof JTextField) {
             JTextField enter = (JTextField) e.getSource();
             enterInequality = enter.getText();
             enter.setText("Enter inequality...");
             parser.setString(enterInequality);
             try {
                 final Inequality parsedExpression = parser.parse();
-                Thread thread = new Thread() {
-                    @Override
-                    public void run() {
-                        inequalitiesList.addInequality(parsedExpression);
-                    }
-                };
+                if (parsedExpression.getFirstDecisionVariable().getWeight() <1 && parsedExpression.getFirstDecisionVariable().getWeight() >0){
+                    JOptionPane.showMessageDialog(manualInequalitiesGUI.getParent().getParent(), "Coefficients between 0 and 1 are beyond the scope of this project.","Out of scope warning",
+                            JOptionPane.WARNING_MESSAGE);
+                }else{
+                    Thread thread = new Thread() {
+                        @Override
+                        public void run() {
+                            inequalitiesList.addInequality(parsedExpression);
+                        }
+                    };
 
-                thread.start();
-                Thread thread2 = new Thread() {
-                    @Override
-                    public void run() {
-                        graph.drawInequality(parsedExpression);
-                        graph.calculateInequalities();
-                    }
+                    thread.start();
+                    Thread thread2 = new Thread() {
+                        @Override
+                        public void run() {
+                            graph.drawInequality(parsedExpression);
+                            graph.calculateInequalities();
+                        }
 
-                };
-                thread2.start();
+                    };
+                    thread2.start();
+                }
             } catch (Exception r) {
                 System.out.println(r.getMessage());
             }

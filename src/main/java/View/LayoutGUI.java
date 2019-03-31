@@ -137,6 +137,9 @@ public class LayoutGUI extends JPanel  {
         }
     }
 
+//    public void createaPopUp()
+
+
 
     public GraphGUI getGraphGUI(){
         return graph;

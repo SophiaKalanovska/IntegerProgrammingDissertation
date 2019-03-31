@@ -33,7 +33,12 @@ public class DecisionVariable {
     }
 
     public void setWeight(double weight) {
-        this.weight = weight;
+        if (weight < 0 ){
+            setSign("-");
+        }else{
+            this.weight = weight;
+        }
+
     }
 
     public void setSign(String sign) {
