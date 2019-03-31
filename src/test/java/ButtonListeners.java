@@ -21,7 +21,7 @@ public class ButtonListeners {
     public void InequalitiesListControllerDeleteElement(){
         Container container = new Container();
 
-        InequalitiesListController controller = new InequalitiesListController(container.getInequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController());
+        InequalitiesListController controller = new InequalitiesListController(container.getInequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController(), container.getRandomInequalitiesController());
         JButton deleteGraph = new JButton("delete");
         deleteGraph.setName("delete");
         helperMethodAddNodes(container);
@@ -48,7 +48,7 @@ public class ButtonListeners {
     @Test
     public void InequalitiesListControllerDeleteGraph(){
         Container container = new Container();
-        InequalitiesListController controller = new InequalitiesListController(new InequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController());
+        InequalitiesListController controller = new InequalitiesListController(new InequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController(), container.getRandomInequalitiesController());
         JButton deleteGraph = new JButton("deleteGraph");
         deleteGraph.setName("deleteGraph");
         int uniqueId = (int) System.currentTimeMillis();

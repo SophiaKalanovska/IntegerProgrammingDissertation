@@ -50,12 +50,13 @@ public class Container extends JFrame {
 		IntegerAssignenmentMaxListController integerAssignenmentMaxListController = new IntegerAssignenmentMaxListController(integerAssignmentMaximizeGUI);
 		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
 		constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
-        inequalitiesListController = new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController);
-		new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
+        new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
         randomInequalitiesController = new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
+        inequalitiesListController = new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController, randomInequalitiesController);
 
 
-	}
+
+    }
 
     public void setPanel(){
 		this.getContentPane().invalidate();

@@ -17,6 +17,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
     private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
     private ConstarinsController constarinsController;
     private GraphController graph;
+    private RandomInequalitiesController randomInequalitiesController;
 
 
     /**
@@ -24,11 +25,12 @@ public class InequalitiesListController implements ActionListener, MouseListener
      *
      * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
      */
-    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, ConstarinsController constarinsController){
+    public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, ConstarinsController constarinsController, RandomInequalitiesController randomInequalitiesController){
 
         this.InequalitiesListGUI = InequalitiesListGUI;
         this.inequalitiesList = inequalitiesList;
         this.constarinsController = constarinsController;
+        this.randomInequalitiesController = randomInequalitiesController;
         graph = graphController;
         InequalitiesListGUI.addMouseListener(this);
     }
@@ -54,6 +56,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
                 inequalitiesList.deleteAllInequalities();
                 graph.deleteGraph();
                 constarinsController.delete();
+                randomInequalitiesController.resetRandomInequalitiesGenerator();
             }else{
                 constarinsController.populate(graph);
             }

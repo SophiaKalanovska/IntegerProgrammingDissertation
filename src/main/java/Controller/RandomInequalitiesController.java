@@ -135,6 +135,11 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         return inequalitiesList;
     }
 
+    public void resetRandomInequalitiesGenerator(){
+        generator =  new RandomInequalitiesGenerator();
+        nodes = new ArrayList<>();
+    }
+
     @Override
     public void mouseClicked(MouseEvent e) {}
 
