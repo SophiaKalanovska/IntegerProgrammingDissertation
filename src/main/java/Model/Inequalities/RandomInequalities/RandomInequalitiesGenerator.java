@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomInequalitiesGenerator {
-    private RandomVariables upperLower;
+    private RandomVariables upperLower ;
     private Random random;
 
     public RandomInequalitiesGenerator() {
-
-        this.upperLower = new RandomVariables();
+        upperLower = new RandomVariables();
         random = new Random();
     }
 

@@ -47,7 +47,7 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
             }
             integerAssignmentList.setModel(internelConstainsClusterListModel);
         }else{
-            internelConstainsClusterListModel.addElement(new Pair(0,"No Solution"));
+            internelConstainsClusterListModel.addElement(new Pair(0,"No Solution No IP Model Presented"));
             integerAssignmentList.setModel(internelConstainsClusterListModel);
         }
 

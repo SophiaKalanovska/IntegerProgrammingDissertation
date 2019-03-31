@@ -27,12 +27,17 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
 
     }
 
-    private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
+    private void UpdateJList(ArrayList<Pair<Integer,Double>> in) {
         upperBoundClusterListModel.clear();
-        for(Pair<Integer,Double> i : in){
-            upperBoundClusterListModel.addElement(i);
+        if (in.size() != 0) {
+            for (Pair<Integer, Double> i : in) {
+                upperBoundClusterListModel.addElement(i);
+            }
+            upperBoundClusterList.setModel(upperBoundClusterListModel);
+        } else {
+            upperBoundClusterListModel.addElement(new Pair(0, "No IP Model Presented"));
+            upperBoundClusterList.setModel(upperBoundClusterListModel);
         }
-        upperBoundClusterList.setModel(upperBoundClusterListModel);
     }
 
 

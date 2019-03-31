@@ -34,12 +34,17 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
 
 
 
-    private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
+    private void UpdateJList(ArrayList<Pair<Integer,Double>> in) {
         lowerBoundClusterListModel.clear();
-        for(Pair<Integer,Double> i : in){
-            lowerBoundClusterListModel.addElement(i);
+        if (in.size() != 0) {
+            for (Pair<Integer, Double> i : in) {
+                lowerBoundClusterListModel.addElement(i);
+            }
+            lowerBoundClusterList.setModel(lowerBoundClusterListModel);
+        } else {
+            lowerBoundClusterListModel.addElement(new Pair(0, "No IP Model Presented"));
+            lowerBoundClusterList.setModel(lowerBoundClusterListModel);
         }
-        lowerBoundClusterList.setModel(lowerBoundClusterListModel);
     }
 
 

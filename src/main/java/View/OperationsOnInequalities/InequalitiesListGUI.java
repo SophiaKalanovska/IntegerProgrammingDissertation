@@ -167,7 +167,4 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         }
     }
 
-    public JList getInequalitiesList() {
-        return inequalitiesList;
-    }
 }

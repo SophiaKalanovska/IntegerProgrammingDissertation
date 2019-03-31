@@ -2,6 +2,7 @@ package Controller.Constrains;
 
 import Controller.GraphController;
 import Model.SCC.BoundsListRender;
+import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.ConstrainsLists.UpperBoundList;
 import View.SolutionPanel.UpperBoundClusterGUI;
 
@@ -39,6 +40,17 @@ public class UpperBoundClusterListController implements ActionListener {
         lbl.tryUpdate();
 
     }
+
+    public void populate(){
+        lbl = new UpperBoundList();
+        lbl.addObserver(UpperBoundClusterGUI);
+        Map<Integer, ImageIcon> map = lbl.populate();
+        BoundsListRender render = new BoundsListRender();
+        render.setImageMap(map);
+        UpperBoundClusterGUI.setRender(render);
+        lbl.tryUpdate();
+    }
+
 
     /**
      * The action listener for the ManualIntegerInequalities panel

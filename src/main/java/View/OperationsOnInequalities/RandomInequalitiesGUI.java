@@ -42,13 +42,11 @@ public class RandomInequalitiesGUI extends JPanel {
     }
 
     public void addControllers(RandomInequalitiesController controller){
-        System.out.println("Controller added");
         randomNumberDecisionVariables.addActionListener(controller);
         randomNumberInequalities.addActionListener(controller);
     }
 
     public void addMouseListener(RandomInequalitiesController controller){
-        System.out.println("mouselistener added");
         randomNumberDecisionVariables.addMouseListener(controller);
         randomNumberInequalities.addMouseListener(controller);
     }

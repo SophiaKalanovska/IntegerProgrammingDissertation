@@ -2,6 +2,7 @@ package Controller.Constrains;
 
 import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
+import Model.SCC.ConstrainsLists.InternalConstarinsList;
 import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
 import View.SolutionPanel.LowerBoundClusterGUI;
@@ -43,6 +44,16 @@ public class LowerBoundClusterListController implements ActionListener{
 
     }
 
+    public void populate(){
+        lbl = new LowerBoundList();
+        lbl.addObserver(LowerBoundClusterGUI);
+        Map<Integer, ImageIcon> map = lbl.populate();
+        BoundsListRender render = new BoundsListRender();
+        render.setImageMap(map);
+        LowerBoundClusterGUI.setRender(render);
+        lbl.tryUpdate();
+    }
+
     /**
      * The action listener for the ManualIntegerInequalities panel
      *
@@ -51,6 +62,7 @@ public class LowerBoundClusterListController implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         }
+
 }
 
 

@@ -72,8 +72,6 @@ public class SCCCluster {
         }
         attackedByClusters = setAttackedByClusters();
         attackingClusters = setAttackingClusters();
-        System.out.println("Cluster "+ id +"attacked by" + attackedByClusters);
-        System.out.println("Cluster " + id + "attacking" +attackingClusters);
     }
 
     @Override

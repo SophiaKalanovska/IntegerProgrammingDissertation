@@ -3,6 +3,7 @@ package Controller.Constrains;
 import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.SCC.BoundsListRender;
+import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.ConstrainsLists.InternalConstarinsList;
 import View.SolutionPanel.InternalConstarinsClusterGUI;
 
@@ -31,6 +32,17 @@ public class InternalConstarinsClusterListController implements ActionListener{
 
     public void populate(GraphController graph){
         lbl = new InternalConstarinsList(graph.getSCCComponents());
+        lbl.addObserver(InternalConstarinsClusterGUI);
+        Map<Integer, ImageIcon> map = lbl.populate();
+        BoundsListRender render = new BoundsListRender();
+        render.setImageMap(map);
+        InternalConstarinsClusterGUI.setRender(render);
+        lbl.tryUpdate();
+    }
+
+
+    public void populate(){
+        lbl = new InternalConstarinsList();
         lbl.addObserver(InternalConstarinsClusterGUI);
         Map<Integer, ImageIcon> map = lbl.populate();
         BoundsListRender render = new BoundsListRender();

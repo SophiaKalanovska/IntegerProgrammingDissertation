@@ -25,6 +25,16 @@ public class ConstarinsController {
     }
 
 
+    public void delete(){
+        lowerBoundClusterListController.populate();
+        upperBoundClusterListController.populate();
+        internalConstarinsClusterListController.populate();
+        integerAssignenmentMinListController.populate();
+        integerAssignenmentMaxListController.populate();
+    }
+
+
+
     public void calculateBounds( GraphController graph){
         graph.getSCCComponents().evaluate();
     }

@@ -48,6 +48,7 @@ public class IntegerAssignenmentMinListController implements ActionListener{
         IntegerAssignmentMinimizeGUI.setRender(render);
         lbl.tryUpdate();
     }
+
     /**
      * The action listener for the ManualIntegerInequalities panel
      *

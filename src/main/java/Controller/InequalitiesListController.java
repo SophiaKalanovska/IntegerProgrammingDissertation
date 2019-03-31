@@ -40,8 +40,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
      */
     @Override
     public void mouseClicked(MouseEvent e) {
-
-        System.out.println("You clicked me manual and I don't know");
         if (e.getSource() instanceof JButton) {
             System.out.println(((JButton) e.getSource()).getName());
             if (((JButton) e.getSource()).getName().equals("delete")){
@@ -55,6 +53,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
             }else if (((JButton) e.getSource()).getName().equals("deleteGraph")) {
                 inequalitiesList.deleteAllInequalities();
                 graph.deleteGraph();
+                constarinsController.delete();
             }else{
                 constarinsController.populate(graph);
             }

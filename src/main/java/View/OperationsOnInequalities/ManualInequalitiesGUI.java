@@ -41,13 +41,11 @@ public class ManualInequalitiesGUI extends JPanel {
     }
 
     public void addControllers(ManualInequalitiesController controller){
-        System.out.println(" ManualInequalitiesGUI Controller added");
         enterInequality.addActionListener(controller);
 
     }
 
     public void addMouseListener(ManualInequalitiesController controller){
-        System.out.println(" ManualInequalitiesGUI mouselistener added");
         enterInequality.addMouseListener(controller);
     }
 

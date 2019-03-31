@@ -29,12 +29,17 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
 
     }
 
-    private void UpdateJList(ArrayList<Pair<Integer,Double>> in){
+    private void UpdateJList(ArrayList<Pair<Integer,Double>> in) {
         internelConstainsClusterListModel.clear();
-        for(Pair<Integer,Double> i : in){
-            internelConstainsClusterListModel.addElement(i);
+        if (in.size() != 0) {
+            for (Pair<Integer, Double> i : in) {
+                internelConstainsClusterListModel.addElement(i);
+            }
+            internelConstainsClusterList.setModel(internelConstainsClusterListModel);
+        } else {
+            internelConstainsClusterListModel.addElement(new Pair(0, "No IP Model Presented"));
+            internelConstainsClusterList.setModel(internelConstainsClusterListModel);
         }
-        internelConstainsClusterList.setModel(internelConstainsClusterListModel);
     }
 
     @Override

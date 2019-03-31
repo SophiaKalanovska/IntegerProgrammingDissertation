@@ -14,9 +14,6 @@ import java.util.Observable;
 public class UpperBoundList extends Observable implements java.io.Serializable {
     private ArrayList<Pair<Integer, Double>> sccUpperBoundContainer;
     private ArrayList<Model.SCC.SCCCluster> SCCCluster;
-    protected Map<Double, ImageIcon> imageMap ;
-
-
 
     /**
      * Creates a InequalitiesList object
@@ -26,6 +23,10 @@ public class UpperBoundList extends Observable implements java.io.Serializable {
         this.SCCCluster = SCCUpperBoundContainer.getProjectWallet();
     }
 
+    public UpperBoundList() {
+        this.sccUpperBoundContainer = new ArrayList<>();
+        this.SCCCluster = new ArrayList<>();
+    }
     public Map<Integer, ImageIcon> populate(){
         return createImageMap(SCCCluster);
 
@@ -33,6 +34,7 @@ public class UpperBoundList extends Observable implements java.io.Serializable {
 
     private Map<Integer, ImageIcon> createImageMap(ArrayList<SCCCluster> SCC) {
         Map<Integer, ImageIcon> map = new HashMap<>();
+        if (SCC.size() != 0) {
         for(int i = 0; i < SCC.size() ; i ++){
             BufferedImage bImg = new BufferedImage(40, 20, BufferedImage.TYPE_INT_RGB);
             Graphics2D graphics = bImg.createGraphics();
@@ -46,6 +48,19 @@ public class UpperBoundList extends Observable implements java.io.Serializable {
             sccUpperBoundContainer.add(i, pair);
             map.put(SCC.get(i).getId(), imageIcon);
         }
+        } else {
+            BufferedImage bImg = new BufferedImage(40, 20, BufferedImage.TYPE_INT_RGB);
+            Graphics2D graphics = bImg.createGraphics();
+
+            graphics.setPaint(Color.BLACK);
+            graphics.fillRect(0, 0, bImg.getWidth(), bImg.getHeight());
+
+            ImageIcon imageIcon = new ImageIcon(bImg);
+
+            Pair pair = new Pair<>(0, 0);
+            sccUpperBoundContainer.clear();
+            map.put(0, imageIcon);
+        }
         return map;
 
     }
@@ -53,8 +68,6 @@ public class UpperBoundList extends Observable implements java.io.Serializable {
     public ArrayList<Pair<Integer,Double>> getProjectWallet() {
         return sccUpperBoundContainer;
     }
-
-
 
     /**
      * Sends signal to the observers to update the View
