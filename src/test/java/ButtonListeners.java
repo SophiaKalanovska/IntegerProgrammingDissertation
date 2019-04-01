@@ -1,8 +1,7 @@
-import Controller.Constrains.IntegerAssignenmentMaxListController;
-import Controller.GraphController;
-import Controller.InequalitiesListController;
-import Controller.ManualInequalitiesController;
-import Controller.RandomInequalitiesController;
+import Controller.Listeners.GraphController;
+import Controller.Listeners.InequalitiesListController;
+import Controller.Listeners.ManualInequalitiesController;
+import Controller.Listeners.RandomInequalitiesController;
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;

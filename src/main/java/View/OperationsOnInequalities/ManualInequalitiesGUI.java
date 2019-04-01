@@ -1,6 +1,6 @@
 package View.OperationsOnInequalities;
 
-import Controller.ManualInequalitiesController;
+import Controller.Listeners.ManualInequalitiesController;
 
 import java.awt.*;
 import javax.swing.*;

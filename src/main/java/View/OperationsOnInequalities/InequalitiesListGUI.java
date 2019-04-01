@@ -1,10 +1,9 @@
 package View.OperationsOnInequalities;
 
-import Controller.InequalitiesListController;
+import Controller.Listeners.InequalitiesListController;
 import Model.Inequalities.Inequality;
 import Model.Inequalities.InequalitiesList;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Observable;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -38,12 +37,12 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         delete.setName("delete");
         delete.setPreferredSize(new Dimension(250, 25));
         delete.setBorder(border);
-        evaluateAll = new JButton("Evaluate Graph");
+        evaluateAll = new JButton("Evaluate Inequalities");
         evaluateAll.setName("evaluate");
         evaluateAll.setPreferredSize(new Dimension(250, 25));
         evaluateAll.setBorder(border);
         inequalitiesList.setName("projectsList");
-        deleteGraph = new JButton("Delete Graph");
+        deleteGraph = new JButton("Delete All Inequalities");
         deleteGraph.setName("deleteGraph");
         deleteGraph.setPreferredSize(new Dimension(250, 25));
         deleteGraph.setBorder(border);

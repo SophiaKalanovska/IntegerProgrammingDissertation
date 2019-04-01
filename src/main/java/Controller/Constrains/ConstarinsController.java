@@ -1,5 +1,5 @@
 package Controller.Constrains;
-import Controller.GraphController;
+import Controller.Listeners.GraphController;
 
 public class ConstarinsController {
     private LowerBoundClusterListController lowerBoundClusterListController;

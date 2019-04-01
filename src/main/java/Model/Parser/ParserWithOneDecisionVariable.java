@@ -23,9 +23,9 @@ public class ParserWithOneDecisionVariable {
                 System.out.println("not number");
             }
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
-                parser.inequality.getFirstDecisionVariable().setUpperBound(boundry);
+                parser.inequality.getFirstDecisionVariable().setUpperBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
             }else{
-                parser.inequality.getFirstDecisionVariable().setLowerBound(boundry);
+                parser.inequality.getFirstDecisionVariable().setLowerBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
             }
         } catch (ExceptionNotATerm exceptionNotATerm) {
             try {
@@ -36,9 +36,9 @@ public class ParserWithOneDecisionVariable {
             parser.parseMember.parse_sign();
             parser.term1 = parser.parseMember.parse_term("first");
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
-                parser.inequality.getFirstDecisionVariable().setLowerBound(boundry);
+                parser.inequality.getFirstDecisionVariable().setLowerBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
             }else{
-                parser.inequality.getFirstDecisionVariable().setUpperBound(boundry);
+                parser.inequality.getFirstDecisionVariable().setUpperBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
             }
         } catch (Exception e) {
             System.out.println("some other exception");

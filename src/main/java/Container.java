@@ -1,8 +1,12 @@
 
 import javax.swing.JFrame;
 import java.awt.Dimension;
-import Controller.*;
+
 import Controller.Constrains.*;
+import Controller.Listeners.GraphController;
+import Controller.Listeners.InequalitiesListController;
+import Controller.Listeners.ManualInequalitiesController;
+import Controller.Listeners.RandomInequalitiesController;
 import Model.Inequalities.InequalitiesList;
 import View.*;
 import View.OperationsOnInequalities.InequalitiesListGUI;

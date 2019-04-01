@@ -1,10 +1,9 @@
-package Controller;
+package Controller.Listeners;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.*;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import Model.Inequalities.DecisionVariable;

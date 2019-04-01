@@ -1,8 +1,7 @@
 package Controller.Constrains;
 
-import Controller.GraphController;
+import Controller.Listeners.GraphController;
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.ConstrainsLists.UpperBoundList;
 import View.SolutionPanel.UpperBoundClusterGUI;
 

@@ -1,6 +1,6 @@
 package Controller.Constrains;
 
-import Controller.GraphController;
+import Controller.Listeners.GraphController;
 import Model.SCC.BoundsListRender;
 import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.SCCClusterList;
@@ -9,8 +9,6 @@ import View.SolutionPanel.IntegerAssignmentMaximizeGUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Map;
 
 /**

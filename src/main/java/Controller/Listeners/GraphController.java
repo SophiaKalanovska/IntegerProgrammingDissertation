@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Listeners;
 
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.Inequality;

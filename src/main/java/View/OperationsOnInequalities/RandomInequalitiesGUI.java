@@ -1,6 +1,6 @@
 package View.OperationsOnInequalities;
 
-import Controller.RandomInequalitiesController;
+import Controller.Listeners.RandomInequalitiesController;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;

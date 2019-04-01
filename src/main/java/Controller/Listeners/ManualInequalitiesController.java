@@ -1,7 +1,6 @@
-package Controller;
+package Controller.Listeners;
 
 import java.awt.event.*;
-import java.util.ArrayList;
 import javax.swing.*;
 
 import Model.Inequalities.InequalitiesList;

@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Listeners;
 
 import View.Graph.GraphGUI;
 import View.LayoutGUI;

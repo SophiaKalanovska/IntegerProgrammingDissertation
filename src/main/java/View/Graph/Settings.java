@@ -1,6 +1,6 @@
 package View.Graph;
 
-import Controller.CheckboxActionController;
+import Controller.Listeners.CheckboxActionController;
 import View.LayoutGUI;
 import javax.swing.*;
 import java.awt.*;

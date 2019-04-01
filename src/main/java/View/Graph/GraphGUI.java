@@ -18,36 +18,40 @@ public class GraphGUI extends JPanel implements ViewerListener{
     private String cssDark;
     private Settings settings;
 	private ViewerPipe pipeIn;
-	private ConnectedComponents cc;
 
 	public GraphGUI(Settings settings){
         this.settings = settings;
         graph = new MultiGraph("Strongly connected components");
+        // create own implementation of the Viewer
+        viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_ANOTHER_THREAD);
+        //connect back the viewer to the graph,
+        pipeIn = viewer.newViewerPipe();
+        // We also install a viewer listener to the graphic events
+        pipeIn.addViewerListener(this);
+        // the graph becomes a sink for the viewer.
+        pipeIn.addSink(graph);
+        // don't create a new JFrame for the graph
+        viewPanel = viewer.addDefaultView(false);
+        //don't create nodes with the same identifier in the graph
+        graph.setStrict(false);
+        graph.setAutoCreate(true);
 
-         cssLight = "node {size: 20px;fill-color: white; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
+        //format nodes, graph and edges when in normal node
+        cssLight = "node {size: 20px;fill-color: white; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color:black, white; shadow-width: 5; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: white; }" +
                 "edge {fill-color: black;  z-index :1; text-color: black; }";
 
-         cssDark = "node {size: 20px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 10; shadow-offset:0;  z-index :2;}" +
+        //format nodes, graph and edges when in dark node
+        cssDark = "node {size: 20px;fill-color: black; stroke-color: black; text-mode: normal ; text-color: black; shadow-mode: gradient-radial;  shadow-color: white, black; shadow-width: 10; shadow-offset:0;  z-index :2;}" +
                 "graph { fill-color: black; }" +
                 "edge {fill-color: white; text-color: white; z-index :1; }";
 
         graph.setAttribute("ui.stylesheet", cssLight);
-
-        viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_ANOTHER_THREAD);
-        pipeIn = viewer.newViewerPipe();
-        pipeIn.addViewerListener(this);
-        pipeIn.addSink(graph);
-        viewPanel = viewer.addDefaultView(false);
-        graph.setStrict(false);
-        graph.setAutoCreate(true);
         graph.addAttribute("ui.quality");
         graph.addAttribute("ui.antialias");
+
+        // distribute the nodes around the graph
         viewer.enableAutoLayout();
-        cc = new ConnectedComponents();
-
-        cc.init(graph);
-
 	}
 
 	public void changeView(boolean dark){
@@ -88,7 +92,4 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	public void buttonReleased(String id) {
 		System.out.println("Button released on node "+id);
 	}
-
-
-
 }

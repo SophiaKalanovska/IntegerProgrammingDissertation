@@ -1,6 +1,6 @@
-import Controller.GraphController;
-import Controller.ManualInequalitiesController;
-import Controller.RandomInequalitiesController;
+import Controller.Listeners.GraphController;
+import Controller.Listeners.ManualInequalitiesController;
+import Controller.Listeners.RandomInequalitiesController;
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;

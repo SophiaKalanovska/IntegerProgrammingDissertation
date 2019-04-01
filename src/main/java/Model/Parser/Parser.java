@@ -57,6 +57,7 @@ public class Parser {
             try {
                 parserWithOneDecisionVariable.clear();
                 parserWithOneDecisionVariable.parse_inequality();
+
                 inequality.setExpression(srcOriginal);
                 return inequality;
             } catch (ExceptionNotATerm exceptionNotATerm1) {

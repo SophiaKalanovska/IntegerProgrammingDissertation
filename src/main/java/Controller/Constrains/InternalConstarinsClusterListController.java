@@ -1,17 +1,13 @@
 package Controller.Constrains;
 
-import Controller.GraphController;
-import Model.Inequalities.InequalitiesList;
+import Controller.Listeners.GraphController;
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.ConstrainsLists.InternalConstarinsList;
 import View.SolutionPanel.InternalConstarinsClusterGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Map;
 
 /**
