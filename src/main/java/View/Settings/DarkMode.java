@@ -1,6 +1,6 @@
 package View.Settings;
 
-import Controller.CheckboxActionController;
+import Controller.DarkModeController;
 import View.LayoutGUI;
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ import java.awt.event.KeyEvent;
          *
          */
         public DarkMode(LayoutGUI layoutGUI){
-            darkMode = new JCheckBox(new CheckboxActionController("Dark Mode", layoutGUI));
+            darkMode = new JCheckBox(new DarkModeController("Dark Mode", layoutGUI));
             darkMode.setMnemonic(KeyEvent.VK_C);
             darkMode.setSelected(false);
 

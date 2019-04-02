@@ -14,7 +14,6 @@ public class ConstarinsController {
     private IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI;
     private IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI;
 
-
     public ConstarinsController(LowerBoundClusterGUI lowerBoundClusterGUI, UpperBoundClusterGUI upperBoundClusterGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI, IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI, IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI){
         this.lowerBoundClusterGUI = lowerBoundClusterGUI;
         this.upperBoundClusterGUI = upperBoundClusterGUI;
@@ -26,13 +25,16 @@ public class ConstarinsController {
 
     public void populate(GraphController graph){
         calculateBounds(graph);
-        createMap(graph.getSCCComponents());
-        calculateLambdas(graph.getSCCComponents());
+        graph.getSCCComponents().evaluateLambdas();
+        if (graph.getSCCComponents().isSolvable()) {
+            createMap(graph.getSCCComponents());
+        }else {
+            createMap(new SCCClusterList());
+        }
     }
 
     public void delete() {
         createMap(new SCCClusterList());
-        calculateLambdas(new SCCClusterList());
     }
 
     public void createMap(SCCClusterList components){
@@ -40,29 +42,20 @@ public class ConstarinsController {
         createImageMap.addObserver(lowerBoundClusterGUI);
         createImageMap.addObserver(upperBoundClusterGUI);
         createImageMap.addObserver(internalConstarinsClusterGUI);
+        createImageMap.addObserver(integerAssignmentMinimizeGUI);
+        createImageMap.addObserver(integerAssignmentMaximizeGUI);
         Map<Integer, ImageIcon> map = createImageMap.populate();
         BoundsListRender render = new BoundsListRender();
         render.setImageMap(map);
         lowerBoundClusterGUI.setRender(render);
         upperBoundClusterGUI.setRender(render);
         internalConstarinsClusterGUI.setRender(render);
+        integerAssignmentMinimizeGUI.setRender(render);
+        integerAssignmentMaximizeGUI.setRender(render);
         createImageMap.tryUpdate();
     }
 
     public void calculateBounds( GraphController graph){
         graph.getSCCComponents().evaluate();
-    }
-
-    public void calculateLambdas( SCCClusterList components) {
-        components.evaluateLambdas();
-        CreateImageMap createImageMap = new CreateImageMap(components);
-        createImageMap.addObserver(integerAssignmentMinimizeGUI);
-        createImageMap.addObserver(integerAssignmentMaximizeGUI);
-        Map<Integer, ImageIcon> map = createImageMap.populateInteger();
-        BoundsListRender render = new BoundsListRender();
-        render.setImageMap(map);
-        integerAssignmentMinimizeGUI.setRender(render);
-        integerAssignmentMaximizeGUI.setRender(render);
-        createImageMap.tryUpdate();
     }
 }

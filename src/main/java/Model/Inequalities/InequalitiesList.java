@@ -49,6 +49,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         deleteAll = true;
         inequalitiesContainer.removeAll(inequalitiesContainer);
         tryUpdate();
+        deleteAll = false;
     }
 
     /**
