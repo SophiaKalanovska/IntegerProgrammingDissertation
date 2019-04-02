@@ -1,8 +1,6 @@
-package Controller.Listeners;
+package Controller;
 
-import View.Graph.GraphGUI;
 import View.LayoutGUI;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 

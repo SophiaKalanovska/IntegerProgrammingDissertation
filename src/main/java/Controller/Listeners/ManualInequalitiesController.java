@@ -3,6 +3,7 @@ package Controller.Listeners;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import Model.Parser.Parser;
@@ -59,28 +60,28 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
             enter.setText("Enter inequality...");
             parser.setString(enterInequality);
             try {
-                final Inequality parsedExpression = parser.parse();
-                if (parsedExpression.getFirstDecisionVariable().getWeight() <1 && parsedExpression.getFirstDecisionVariable().getWeight() >0){
+                final Inequality inequality = parser.parse();
+                if (inequality.getFirstDecisionVariable().getWeight() <1 && inequality.getFirstDecisionVariable().getWeight() >0){
                     JOptionPane.showMessageDialog(manualInequalitiesGUI.getParent().getParent(), "Coefficients between 0 and 1 are beyond the scope of this project.","Out of scope warning",
                             JOptionPane.WARNING_MESSAGE);
                 }else{
-                    Thread thread = new Thread() {
+                    Thread addInequality = new Thread() {
                         @Override
                         public void run() {
-                            inequalitiesList.addInequality(parsedExpression);
+                            inequalitiesList.addInequality(inequality);
                         }
                     };
 
-                    thread.start();
-                    Thread thread2 = new Thread() {
+                    addInequality.start();
+                    Thread drawInequality = new Thread() {
                         @Override
                         public void run() {
-                            graph.drawInequality(parsedExpression);
+                            graph.drawInequality(inequality);
                             graph.calculateInequalities();
                         }
 
                     };
-                    thread2.start();
+                    drawInequality.start();
                 }
             } catch (Exception r) {
                 System.out.println(r.getMessage());

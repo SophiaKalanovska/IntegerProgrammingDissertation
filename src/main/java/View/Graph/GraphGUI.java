@@ -1,12 +1,13 @@
 package View.Graph;
 
 import javax.swing.JPanel;
+
+import View.Settings.DarkMode;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.ui.swingViewer.ViewPanel;
 import org.graphstream.ui.view.ViewerListener;
 import org.graphstream.ui.view.ViewerPipe;
 import org.graphstream.graph.Graph;
-import org.graphstream.algorithm.ConnectedComponents;
 import org.graphstream.graph.implementations.*;
 
 
@@ -16,11 +17,11 @@ public class GraphGUI extends JPanel implements ViewerListener{
 	private Graph graph;
 	private String cssLight;
     private String cssDark;
-    private Settings settings;
+    private DarkMode darkMode;
 	private ViewerPipe pipeIn;
 
-	public GraphGUI(Settings settings){
-        this.settings = settings;
+	public GraphGUI(DarkMode darkMode){
+        this.darkMode = darkMode;
         graph = new MultiGraph("Strongly connected components");
         // create own implementation of the Viewer
         viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_ANOTHER_THREAD);
@@ -63,7 +64,7 @@ public class GraphGUI extends JPanel implements ViewerListener{
     }
 
     public void setUI(){
-	    if (settings.isSelected()){
+	    if (darkMode.isSelected()){
             graph.setAttribute("ui.stylesheet", cssDark);
         }else{
             graph.setAttribute("ui.stylesheet", cssLight);

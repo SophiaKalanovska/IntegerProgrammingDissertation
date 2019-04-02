@@ -1,6 +1,6 @@
-package View.Graph;
+package View.Settings;
 
-import Controller.Listeners.CheckboxActionController;
+import Controller.CheckboxActionController;
 import View.LayoutGUI;
 import javax.swing.*;
 import java.awt.*;
@@ -9,14 +9,14 @@ import java.awt.event.KeyEvent;
 /**
      * Home is the class where the Home panel is built implements Observer
      */
-    public class Settings extends JPanel {
+    public class DarkMode extends JPanel {
         private JCheckBox darkMode;
 
         /**
          * Constructs a new Home panel
          *
          */
-        public Settings(LayoutGUI layoutGUI){
+        public DarkMode(LayoutGUI layoutGUI){
             darkMode = new JCheckBox(new CheckboxActionController("Dark Mode", layoutGUI));
             darkMode.setMnemonic(KeyEvent.VK_C);
             darkMode.setSelected(false);

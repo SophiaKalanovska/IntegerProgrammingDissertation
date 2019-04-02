@@ -1,7 +1,7 @@
 package View;
 
 import View.Graph.GraphGUI;
-import View.Graph.Settings;
+import View.Settings.DarkMode;
 import View.OperationsOnInequalities.InequalitiesListGUI;
 import View.OperationsOnInequalities.ManualInequalitiesGUI;
 import View.OperationsOnInequalities.RandomInequalitiesGUI;
@@ -24,7 +24,7 @@ public class LayoutGUI extends JPanel  {
     private TitledBorder graphBorder;
     private TitledBorder randomBorder;
     private TitledBorder listBorder;
-    private Settings settings;
+    private DarkMode darkMode;
     private BoundsGUI boundsGUI;
     private InequalitiesListGUI inequalitiesListGUI;
     private ManualInequalitiesGUI manualInequalitiesGUI;
@@ -54,11 +54,11 @@ public class LayoutGUI extends JPanel  {
 
 
         //create border for graph
-        this.settings = new Settings(this);
-        graph = new GraphGUI(settings);
+        this.darkMode = new DarkMode(this);
+        graph = new GraphGUI(darkMode);
         JPanel graphPanel = new JPanel(new BorderLayout());
         graphPanel.add(graph.getView(),BorderLayout.CENTER);
-        graphPanel.add(settings, BorderLayout.NORTH);
+        graphPanel.add(darkMode, BorderLayout.NORTH);
         Border graphBorderWalls = BorderFactory.createMatteBorder(1, 0, 0, 1, new Color(153, 218, 250));
         graphBorder = new TitledBorder(graphBorderWalls,"<html><b> Graph:</html><b>" );
         graphPanel.setBorder(graphBorder);
@@ -115,7 +115,7 @@ public class LayoutGUI extends JPanel  {
             inequalitiesListGUI.changeView(true);
             manualInequalitiesGUI.changeView(true);
             randomInequalitiesGUI.changeView(true);
-            settings.getDarkMode().setForeground(Color.WHITE);
+            darkMode.getDarkMode().setForeground(Color.WHITE);
             welcomeLabel.setForeground(Color.WHITE);
             enterInequalitiesBorder.setTitleColor(Color.WHITE);
             graphBorder.setTitleColor(Color.WHITE);
@@ -128,7 +128,7 @@ public class LayoutGUI extends JPanel  {
             inequalitiesListGUI.changeView(false);
             manualInequalitiesGUI.changeView(false);
             randomInequalitiesGUI.changeView(false);
-            settings.getDarkMode().setForeground(Color.BLACK);
+            darkMode.getDarkMode().setForeground(Color.BLACK);
             welcomeLabel.setForeground(Color.BLACK);
             enterInequalitiesBorder.setTitleColor(Color.BLACK);
             graphBorder.setTitleColor(Color.BLACK);

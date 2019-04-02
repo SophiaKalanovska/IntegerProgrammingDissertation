@@ -1,5 +1,6 @@
 package View.SolutionPanel;
 
+import Model.SCC.CreateImageMap;
 import javafx.util.Pair;
 import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
@@ -11,7 +12,7 @@ import java.util.Observer;
 
 public class LowerBoundClusterGUI extends JPanel implements Observer {
 
-    private LowerBoundList observer;
+    private CreateImageMap observer;
     private DefaultListModel lowerBoundClusterListModel;
     private JList lowerBoundClusterList;
 
@@ -50,8 +51,8 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (LowerBoundList) obs;
-        UpdateJList(observer.getProjectWallet());
+        observer = (CreateImageMap) obs;
+        UpdateJList(observer.getLowerBoundContainer());
         repaint();
         revalidate();
     }

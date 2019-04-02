@@ -14,7 +14,6 @@ import java.util.Observer;
  */
 public class InequalitiesListGUI extends JPanel implements Observer {
 
-    private InequalitiesList info;
     private InequalitiesList observer;
     private JButton delete;
     private JButton deleteGraph;

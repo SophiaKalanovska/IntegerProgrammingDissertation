@@ -11,7 +11,7 @@ import java.util.Observer;
 
 public class UpperBoundClusterGUI extends JPanel implements Observer {
 
-    private UpperBoundList observer;
+    private CreateImageMap observer;
     private DefaultListModel upperBoundClusterListModel;
     private JList upperBoundClusterList;
 
@@ -40,11 +40,10 @@ public class UpperBoundClusterGUI extends JPanel implements Observer {
         }
     }
 
-
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (UpperBoundList) obs;
-        UpdateJList(observer.getProjectWallet());
+        observer = (CreateImageMap) obs;
+        UpdateJList(observer.getUpperBoundContainer());
         repaint();
         revalidate();
     }

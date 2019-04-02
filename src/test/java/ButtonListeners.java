@@ -1,4 +1,4 @@
-import Controller.Listeners.GraphController;
+import Controller.GraphController;
 import Controller.Listeners.InequalitiesListController;
 import Controller.Listeners.ManualInequalitiesController;
 import Controller.Listeners.RandomInequalitiesController;

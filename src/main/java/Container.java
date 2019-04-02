@@ -2,8 +2,8 @@
 import javax.swing.JFrame;
 import java.awt.Dimension;
 
-import Controller.Constrains.*;
-import Controller.Listeners.GraphController;
+import Controller.ConstarinsController;
+import Controller.GraphController;
 import Controller.Listeners.InequalitiesListController;
 import Controller.Listeners.ManualInequalitiesController;
 import Controller.Listeners.RandomInequalitiesController;
@@ -48,12 +48,7 @@ public class Container extends JFrame {
 
 		// Create all the Controller classes
 		graphController = new GraphController(layoutGUI) ;
-		LowerBoundClusterListController lowerBoundClusterListController = new LowerBoundClusterListController(lowerBoundClusterGUI);
-		UpperBoundClusterListController upperBoundClusterListController = new UpperBoundClusterListController(upperBoundClusterGUI);
-		IntegerAssignenmentMinListController integerAssignenmentMinListController = new IntegerAssignenmentMinListController(integerAssignmentMinimizeGUI);
-		IntegerAssignenmentMaxListController integerAssignenmentMaxListController = new IntegerAssignenmentMaxListController(integerAssignmentMaximizeGUI);
-		InternalConstarinsClusterListController internalConstarinsClusterListController = new InternalConstarinsClusterListController(internalConstarinsClusterGUI);
-		constarinsController = new ConstarinsController(lowerBoundClusterListController, upperBoundClusterListController, internalConstarinsClusterListController, integerAssignenmentMinListController, integerAssignenmentMaxListController);
+	    constarinsController = new ConstarinsController(lowerBoundClusterGUI, upperBoundClusterGUI,internalConstarinsClusterGUI, integerAssignmentMinimizeGUI, integerAssignmentMaximizeGUI);
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
         randomInequalitiesController = new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
         inequalitiesListController = new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController, randomInequalitiesController);

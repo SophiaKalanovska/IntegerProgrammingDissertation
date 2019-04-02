@@ -2,6 +2,7 @@ package View.SolutionPanel;
 
 import Model.SCC.BoundsListRender;
 import Model.SCC.ConstrainsLists.IntegerAssignmentList;
+import Model.SCC.CreateImageMap;
 import Model.SCC.SCCCluster;
 import javafx.util.Pair;
 import org.graphstream.graph.Node;
@@ -13,7 +14,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
-    private IntegerAssignmentList observer;
+    private CreateImageMap observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
 
@@ -66,8 +67,8 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (IntegerAssignmentList) obs;
-        UpdateJList(observer.getProjectWallet());
+        observer = (CreateImageMap) obs;
+        UpdateJList(observer.getProjectWalletCluster());
         repaint();
         revalidate();
     }

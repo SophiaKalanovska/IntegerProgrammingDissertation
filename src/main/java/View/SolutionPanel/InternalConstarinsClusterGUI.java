@@ -1,5 +1,6 @@
 package View.SolutionPanel;
 
+import Model.SCC.CreateImageMap;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
 import Model.SCC.SCCClusterList;
@@ -13,7 +14,7 @@ import java.util.Observer;
 
 public class InternalConstarinsClusterGUI extends JPanel implements Observer {
 
-    private InternalConstarinsList observer;
+    private CreateImageMap observer;
     private DefaultListModel internelConstainsClusterListModel;
     private JList internelConstainsClusterList;
 
@@ -44,8 +45,8 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
 
     @Override
     public void update(Observable obs, Object obj) {
-        observer = (InternalConstarinsList) obs;
-        UpdateJList(observer.getProjectWallet());
+        observer = (CreateImageMap) obs;
+        UpdateJList(observer.getInternalBoundContainer());
         repaint();
         revalidate();
     }

@@ -2,7 +2,8 @@ package Controller.Listeners;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Controller.Constrains.ConstarinsController;
+import Controller.ConstarinsController;
+import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import View.OperationsOnInequalities.InequalitiesListGUI;
@@ -11,7 +12,7 @@ import View.OperationsOnInequalities.InequalitiesListGUI;
  * This class will represent the Controller for the ManualIntegerInequalities Panel
  *
  */
-public class InequalitiesListController implements ActionListener, MouseListener {
+public class InequalitiesListController implements MouseListener {
 
     private InequalitiesList inequalitiesList;
     private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
@@ -35,13 +36,7 @@ public class InequalitiesListController implements ActionListener, MouseListener
         InequalitiesListGUI.addMouseListener(this);
     }
 
-    /**
-     * Mouse listener for the ManualIntegerInequalities panel
-     *
-     * @param e Mouse listener that will identify the actions that the user makes
-     */
-    @Override
-    public void mouseClicked(MouseEvent e) {
+    private void performTheAction(MouseEvent e) {
         if (e.getSource() instanceof JButton) {
             System.out.println(((JButton) e.getSource()).getName());
             if (((JButton) e.getSource()).getName().equals("delete")){
@@ -63,8 +58,20 @@ public class InequalitiesListController implements ActionListener, MouseListener
         }
     }
 
+    /**
+     * Mouse listener for the ManualIntegerInequalities panel
+     *
+     * @param e Mouse listener that will identify the actions that the user makes
+     */
     @Override
-    public void mousePressed(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+        performTheAction(e);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        performTheAction(e);
+    }
 
     @Override
     public void mouseReleased(MouseEvent e) {}
@@ -74,14 +81,6 @@ public class InequalitiesListController implements ActionListener, MouseListener
 
     @Override
     public void mouseExited(MouseEvent e) {}
-
-    /**
-     * The action listener for the ManualIntegerInequalities panel
-     *
-     * @param e the ActionEven object which will identify the performed action
-     */
-    @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) { }
 
     public InequalitiesList getInequalitiesList() {
         return inequalitiesList;

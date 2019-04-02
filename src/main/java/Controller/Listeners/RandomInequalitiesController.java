@@ -6,6 +6,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 
+import Controller.GraphController;
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
@@ -16,7 +17,7 @@ import View.OperationsOnInequalities.RandomInequalitiesGUI;
  * This class will represent the Controller for the LayoutGUI Panel
  *
  */
-public class RandomInequalitiesController implements ActionListener, MouseListener {
+public class RandomInequalitiesController implements ActionListener, MouseListener{
 
     private GraphController graph;
     private InequalitiesList inequalitiesList;
