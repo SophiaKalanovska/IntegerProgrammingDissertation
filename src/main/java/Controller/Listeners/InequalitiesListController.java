@@ -45,7 +45,7 @@ public class InequalitiesListController implements MouseListener {
                 if (toBeDeleted != null){
                     inequalitiesList.deleteInequality(toBeDeleted);
                     graph.undrawInequality(toBeDeleted);
-                    graph.calculateInequalities();
+                    graph.findStronglyConnectedComponents();
                 }
             }else if (((JButton) e.getSource()).getName().equals("deleteGraph")) {
                 inequalitiesList.deleteAllInequalities();
@@ -81,10 +81,6 @@ public class InequalitiesListController implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {}
-
-    public InequalitiesList getInequalitiesList() {
-        return inequalitiesList;
-    }
 
     public View.OperationsOnInequalities.InequalitiesListGUI getInequalitiesListGUI() {
         return InequalitiesListGUI;

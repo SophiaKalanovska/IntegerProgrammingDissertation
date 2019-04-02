@@ -119,7 +119,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     public synchronized void visualizeInequality(ArrayList<Inequality> inequalities) {
         for ( Inequality in : inequalities)
             graph.drawInequality(in);
-        graph.calculateInequalities();
+        graph.findStronglyConnectedComponents();
     }
 
     @Override

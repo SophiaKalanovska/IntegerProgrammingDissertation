@@ -77,7 +77,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                         @Override
                         public void run() {
                             graph.drawInequality(inequality);
-                            graph.calculateInequalities();
+                            graph.findStronglyConnectedComponents();
                         }
 
                     };

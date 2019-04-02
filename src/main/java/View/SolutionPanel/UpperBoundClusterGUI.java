@@ -1,6 +1,5 @@
 package View.SolutionPanel;
 
-import Model.SCC.ConstrainsLists.UpperBoundList;
 import javafx.util.Pair;
 import Model.SCC.*;
 import javax.swing.*;

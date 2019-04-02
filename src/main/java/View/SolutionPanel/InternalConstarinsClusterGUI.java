@@ -3,8 +3,6 @@ package View.SolutionPanel;
 import Model.SCC.CreateImageMap;
 import javafx.util.Pair;
 import Model.SCC.BoundsListRender;
-import Model.SCC.SCCClusterList;
-import Model.SCC.ConstrainsLists.InternalConstarinsList;
 
 import javax.swing.*;
 import java.awt.*;

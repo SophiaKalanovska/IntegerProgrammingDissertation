@@ -2,7 +2,6 @@ package View.SolutionPanel;
 
 import Model.SCC.CreateImageMap;
 import javafx.util.Pair;
-import Model.SCC.ConstrainsLists.LowerBoundList;
 import Model.SCC.BoundsListRender;
 import javax.swing.*;
 import java.awt.*;

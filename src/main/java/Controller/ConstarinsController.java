@@ -39,14 +39,14 @@ public class ConstarinsController {
 
     public void createMap(SCCClusterList components){
         CreateImageMap createImageMap = new CreateImageMap(components);
+        Map<Integer, ImageIcon> map = createImageMap.populate();
+        BoundsListRender render = new BoundsListRender();
+        render.setImageMap(map);
         createImageMap.addObserver(lowerBoundClusterGUI);
         createImageMap.addObserver(upperBoundClusterGUI);
         createImageMap.addObserver(internalConstarinsClusterGUI);
         createImageMap.addObserver(integerAssignmentMinimizeGUI);
         createImageMap.addObserver(integerAssignmentMaximizeGUI);
-        Map<Integer, ImageIcon> map = createImageMap.populate();
-        BoundsListRender render = new BoundsListRender();
-        render.setImageMap(map);
         lowerBoundClusterGUI.setRender(render);
         upperBoundClusterGUI.setRender(render);
         internalConstarinsClusterGUI.setRender(render);

@@ -64,7 +64,7 @@ public class GraphController implements Serializable {
         }
     }
 
-    public void calculateInequalities()
+    public void findStronglyConnectedComponents()
     {
         TarjanStronglyConnectedComponents trj = algorithm.calculateSCC(graph);
         algorithm.clear();

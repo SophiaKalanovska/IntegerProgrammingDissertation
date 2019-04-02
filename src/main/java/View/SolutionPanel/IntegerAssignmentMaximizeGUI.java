@@ -1,7 +1,6 @@
 package View.SolutionPanel;
 
 import Model.SCC.BoundsListRender;
-import Model.SCC.ConstrainsLists.IntegerAssignmentList;
 import Model.SCC.CreateImageMap;
 import Model.SCC.SCCCluster;
 import javafx.util.Pair;
