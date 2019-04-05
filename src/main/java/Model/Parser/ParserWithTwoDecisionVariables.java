@@ -12,12 +12,12 @@ public class ParserWithTwoDecisionVariables {
 
     public void parse_inequality() throws ExceptionNotATerm, Exception {
         try {
-            parser.term1 = parser.parseMember.parse_term("first");
+            parser.term1 = parser.parseMember.parseTerm("first");
             try {
-                parser.term2 = parser.parseMember.parse_term("second");
-                parser.parseMember.parse_sign();
+                parser.term2 = parser.parseMember.parseTerm("second");
+                parser.parseMember.parseSign();
                 try {
-                    parser.parseMember.parse_null();
+                    parser.parseMember.parseNull();
                     parser.hasZeroLeft = true;
                 } catch (ExceptionNotZero exceptionNotNull) {
                     System.out.println("not zero");
@@ -28,21 +28,21 @@ public class ParserWithTwoDecisionVariables {
         } catch (ExceptionNotATerm e) {
             System.out.println("First term is not valid");
             try {
-                parser.parseMember.parse_null();
+                parser.parseMember.parseNull();
             } catch (ExceptionNotZero exceptionNotNull) {
                 throw new ExceptionNotATerm("might be onlyOneVar");
             }
-            parser.parseMember.parse_sign();
-            parser.term1 = parser.parseMember.parse_term("first");
-            parser.term2 = parser.parseMember.parse_term("second");
+            parser.parseMember.parseSign();
+            parser.term1 = parser.parseMember.parseTerm("first");
+            parser.term2 = parser.parseMember.parseTerm("second");
             parser.hasZeroRight= true;
         }
     }
 
     private void one_term_signexpected() throws Exception, ExceptionNotATerm {
-        parser.parseMember.parse_sign();
+        parser.parseMember.parseSign();
         try {
-            parser.term2 = parser.parseMember.parse_term("second");
+            parser.term2 = parser.parseMember.parseTerm("second");
         } catch (ExceptionNotATerm exceptionNotATerm) {
             throw new ExceptionNotATerm("might be onlyOneVar");
         }

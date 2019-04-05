@@ -44,7 +44,7 @@ public class ParseMember {
         return null;
     }
 
-    private void parse_weight(String expression, String order) throws NoWeightException {
+    private void parseWeight(String expression, String order) throws NoWeightException {
         try {
             parser.toParse = expression;
             signOfExpression(order);
@@ -82,7 +82,7 @@ public class ParseMember {
         }
     }
 
-    private void parse_UnknownVariable(String order) throws Exception {
+    private void parseUnknownVariable(String order) throws Exception {
         try {
 
             String term = tokenize("[a-zA-Z][a-zA-Z0-9_]*");
@@ -97,7 +97,7 @@ public class ParseMember {
         }
     }
 
-    String parse_term(String order) throws ExceptionNotATerm, Exception {
+    String parseTerm(String order) throws ExceptionNotATerm, Exception {
         String term;
         try {
             term = tokenize("[+|-]*[1-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[1-9]+[0-9]*[a-zA-Z][a-zA-Z0-9_]*|[+|-]*[0-9]+[\\.\\,][0-9]+[a-zA-Z][a-zA-Z0-9_]*");
@@ -106,20 +106,20 @@ public class ParseMember {
         }
         if (term != null) {
             try {
-                parse_weight(term, order);
-                parse_UnknownVariable(order);
+                parseWeight(term, order);
+                parseUnknownVariable(order);
             } catch (NoWeightException e) {
-                parse_UnknownVariable(order);
+                parseUnknownVariable(order);
             }
         }
         return term;
     }
 
-    void parse_sign() throws Exception {
+    void parseSign() throws Exception {
         parser.sign = tokenize("<=|>=|<|>");
     }
 
-    void parse_null() throws ExceptionNotZero {
+    void parseNull() throws ExceptionNotZero {
         try {
             tokenize("0");
         } catch (Exception e) {
@@ -127,7 +127,7 @@ public class ParseMember {
         }
     }
 
-    public Double parse_number() throws ExceptionNotNumber {
+    public Double parseNumber() throws ExceptionNotNumber {
         try {
             return Double.parseDouble(tokenize("[0-9]+[\\.\\,][0-9]+|[0-9]+"));
         } catch (Exception e) {

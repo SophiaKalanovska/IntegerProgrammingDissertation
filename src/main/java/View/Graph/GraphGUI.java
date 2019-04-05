@@ -25,13 +25,13 @@ public class GraphGUI extends JPanel implements ViewerListener{
         graph = new MultiGraph("Strongly connected components");
         // create own implementation of the Viewer
         viewer = new Viewer(graph, Viewer.ThreadingModel.GRAPH_IN_ANOTHER_THREAD);
-        //connect back the viewer to the graph,
+        //connect the viewer to the graph back-end
         pipeIn = viewer.newViewerPipe();
-        // We also install a viewer listener to the graphic events
+        // install a viewer listener to the graphic events
         pipeIn.addViewerListener(this);
         // the graph becomes a sink for the viewer.
         pipeIn.addSink(graph);
-        // don't create a new JFrame for the graph
+        // don't create a separate JFrame for the graph
         viewPanel = viewer.addDefaultView(false);
         //don't create nodes with the same identifier in the graph
         graph.setStrict(false);

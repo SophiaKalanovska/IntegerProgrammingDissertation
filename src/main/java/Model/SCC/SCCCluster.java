@@ -16,16 +16,16 @@ public class SCCCluster {
     private double internalConstartins = 0;
     private double lambdaMinus = 0;
     private double lambdaPlus = Double.POSITIVE_INFINITY;
-    private ArrayList<Map.Entry<Node, Double>> attackedBy;
-    private ArrayList<Map.Entry<Node, Double>> attacking;
-    private ArrayList<Map.Entry<Integer, Double>> attackedByClusters;
-    private ArrayList<Map.Entry<Integer, Double>> attackingClusters;
+    private ArrayList<Map.Entry<Node, Double>> predecessor;
+    private ArrayList<Map.Entry<Node, Double>> successor;
+    private ArrayList<Map.Entry<Integer, Double>> predecessorClusters;
+    private ArrayList<Map.Entry<Integer, Double>> successorClusters;
 
 
    public SCCCluster(int id){
        nodes = new ArrayList<>();
-       attackedBy = new ArrayList<>();
-       attacking = new ArrayList<>();
+       predecessor = new ArrayList<>();
+       successor = new ArrayList<>();
        colorGenerator = new ColorGenerator();
        this.id = id;
    }
@@ -56,8 +56,8 @@ public class SCCCluster {
             double upperBoundNode = n.getAttribute("upper_bound");
             double lowerBoundNode = n.getAttribute("lower_bound");
             double internalWeightNode = n.getAttribute("internal_weight");
-            attackedBy.addAll((ArrayList<Map.Entry<Node, Double>>)n.getAttribute("attackedBy"));
-            attacking.addAll((ArrayList<Map.Entry<Node, Double>>)n.getAttribute("attacking"));
+            predecessor.addAll((ArrayList<Map.Entry<Node, Double>>)n.getAttribute("predecessor"));
+            successor.addAll((ArrayList<Map.Entry<Node, Double>>)n.getAttribute("successor"));
 
             if( internalWeightNode > internalConstartins){
                 internalConstartins = internalWeightNode;
@@ -70,8 +70,8 @@ public class SCCCluster {
             }
 
         }
-        attackedByClusters = setAttackedByClusters();
-        attackingClusters = setAttackingClusters();
+        predecessorClusters = setpredecessorClusters();
+        successorClusters = setsuccessorClusters();
     }
 
     @Override
@@ -87,38 +87,38 @@ public class SCCCluster {
     }
 
 
-    public ArrayList<Map.Entry<Integer, Double>> setAttackedByClusters(){
-       //clusterAttacking and the weight of the attack
-       ArrayList<Map.Entry<Integer, Double>> attackedByCluster = new ArrayList<>();
-       for (Map.Entry<Node, Double> node: attackedBy){
-           int sccAttacking = node.getKey().getAttribute("SCC");
-           if(!attackedByCluster.contains(sccAttacking)){
-               attackedByCluster.add( new AbstractMap.SimpleEntry<>(sccAttacking,node.getValue()));
+    public ArrayList<Map.Entry<Integer, Double>> setpredecessorClusters(){
+       //clustersuccessor and the weight of the attack
+       ArrayList<Map.Entry<Integer, Double>> predecessorCluster = new ArrayList<>();
+       for (Map.Entry<Node, Double> node: predecessor){
+           int sccsuccessor = node.getKey().getAttribute("SCC");
+           if(!predecessorCluster.contains(sccsuccessor)){
+               predecessorCluster.add( new AbstractMap.SimpleEntry<>(sccsuccessor,node.getValue()));
            }else{
-                int indexOfAttacking = attackedByCluster.indexOf(sccAttacking);
-                if (node.getValue() > attackedByCluster.get(indexOfAttacking).getValue()){
-                    attackedByCluster.set(indexOfAttacking, new AbstractMap.SimpleEntry<>(sccAttacking,node.getValue()));
+                int indexOfsuccessor = predecessorCluster.indexOf(sccsuccessor);
+                if (node.getValue() > predecessorCluster.get(indexOfsuccessor).getValue()){
+                    predecessorCluster.set(indexOfsuccessor, new AbstractMap.SimpleEntry<>(sccsuccessor,node.getValue()));
                 }
            }
        }
-       return attackedByCluster;
+       return predecessorCluster;
     }
 
-    public ArrayList<Map.Entry<Integer, Double>> setAttackingClusters(){
+    public ArrayList<Map.Entry<Integer, Double>> setsuccessorClusters(){
         //clusterAttacked and the weight of the attack
-        ArrayList<Map.Entry<Integer, Double>> attackingCluster = new ArrayList<>();
-        for (Map.Entry<Node, Double> node: attacking){
+        ArrayList<Map.Entry<Integer, Double>> successorCluster = new ArrayList<>();
+        for (Map.Entry<Node, Double> node: successor){
             int sccAttacked = node.getKey().getAttribute("SCC");
-            if(!attackingCluster.contains(sccAttacked)){
-                attackingCluster.add( new AbstractMap.SimpleEntry<>(sccAttacked,node.getValue()));
+            if(!successorCluster.contains(sccAttacked)){
+                successorCluster.add( new AbstractMap.SimpleEntry<>(sccAttacked,node.getValue()));
             }else{
-                int indexOfAttacking = attackingCluster.indexOf(sccAttacked);
-                if (node.getValue() > attackingCluster.get(indexOfAttacking).getValue()){
-                    attackingCluster.set(indexOfAttacking, new AbstractMap.SimpleEntry<>(sccAttacked,node.getValue()));
+                int indexOfsuccessor = successorCluster.indexOf(sccAttacked);
+                if (node.getValue() > successorCluster.get(indexOfsuccessor).getValue()){
+                    successorCluster.set(indexOfsuccessor, new AbstractMap.SimpleEntry<>(sccAttacked,node.getValue()));
                 }
             }
         }
-        return attackingCluster;
+        return successorCluster;
     }
     public double getLowerbound() {
         return lowerbound;
@@ -138,13 +138,13 @@ public class SCCCluster {
     }
 
 
-    public ArrayList<Map.Entry<Integer, Double>> getAttackedByClusters() {
-        return attackedByClusters;
+    public ArrayList<Map.Entry<Integer, Double>> getpredecessorClusters() {
+        return predecessorClusters;
     }
 
-    public ArrayList<Map.Entry<Integer, Double>> getAttackingClusters() {
+    public ArrayList<Map.Entry<Integer, Double>> getsuccessorClusters() {
 
-       return attackingClusters;
+       return successorClusters;
     }
 
     public void setLambdaMinus(double lambdaMinus) {

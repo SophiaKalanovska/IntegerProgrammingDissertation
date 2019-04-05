@@ -61,14 +61,14 @@ public class SCCAlgorithm {
                     w.setAttribute("internal_weight", vw.getAttribute("weight"));
                 }
             }else{
-                ArrayList<Map.Entry<Node, Double>> attacked = w.getAttribute("attackedBy");
-                ArrayList<Map.Entry<Node, Double>> attacking = n.getAttribute("attacking");
-                Map.Entry<Node,Double> attackedBy = new AbstractMap.SimpleEntry<>(n, (double)vw.getAttribute("weight"));
+                ArrayList<Map.Entry<Node, Double>> attacked = w.getAttribute("predecessor");
+                ArrayList<Map.Entry<Node, Double>> successor = n.getAttribute("successor");
+                Map.Entry<Node,Double> predecessor = new AbstractMap.SimpleEntry<>(n, (double)vw.getAttribute("weight"));
                 Map.Entry<Node,Double> attack = new AbstractMap.SimpleEntry<>(w,  (double) vw.getAttribute("weight"));
-                attacked.add(attackedBy);
-                attacking.add(attack);
-                w.setAttribute("attackedBy", attacked);
-                n.setAttribute("attacking", attacking);
+                attacked.add(predecessor);
+                successor.add(attack);
+                w.setAttribute("predecessor", attacked);
+                n.setAttribute("successor", successor);
             }
 
         }
@@ -79,8 +79,8 @@ public class SCCAlgorithm {
             node.setAttribute("internal_weight", 0.0);
             node.setAttribute("upper_bound", ((DecisionVariable)node.getAttribute("decision_variable")).getUpperBound());
             node.setAttribute("lower_bound", ((DecisionVariable)node.getAttribute("decision_variable")).getLowerBound());
-            node.setAttribute("attackedBy", new ArrayList<Map.Entry<Node, Double>>());
-            node.setAttribute("attacking", new ArrayList<Map.Entry<Node, Double>>());
+            node.setAttribute("predecessor", new ArrayList<Map.Entry<Node, Double>>());
+            node.setAttribute("successor", new ArrayList<Map.Entry<Node, Double>>());
             node.setAttribute("SCC", 0);
         }
     }

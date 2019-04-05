@@ -15,10 +15,10 @@ public class ParserWithOneDecisionVariable {
         parser.toParse = "";
         double boundry = 0;
         try {
-            parser.term1 = parser.parseMember.parse_term("first");
-            parser.parseMember.parse_sign();
+            parser.term1 = parser.parseMember.parseTerm("first");
+            parser.parseMember.parseSign();
             try {
-                boundry = parser.parseMember.parse_number();
+                boundry = parser.parseMember.parseNumber();
             } catch (ExceptionNotNumber exceptionNotNumber) {
                 System.out.println("not number");
             }
@@ -29,12 +29,12 @@ public class ParserWithOneDecisionVariable {
             }
         } catch (ExceptionNotATerm exceptionNotATerm) {
             try {
-                parser.parseMember.parse_number();
+                parser.parseMember.parseNumber();
             } catch (ExceptionNotNumber exceptionNotNumber) {
                 System.out.println("not number");
             }
-            parser.parseMember.parse_sign();
-            parser.term1 = parser.parseMember.parse_term("first");
+            parser.parseMember.parseSign();
+            parser.term1 = parser.parseMember.parseTerm("first");
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
                 parser.inequality.getFirstDecisionVariable().setLowerBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
             }else{

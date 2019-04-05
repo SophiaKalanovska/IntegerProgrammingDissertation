@@ -19,7 +19,7 @@ public class Parser {
     protected String term2;
     protected String sign;
 
-    public void setString(String src){
+    public void setString(String toParse){
         term1 = null;
         term2 = null;
         hasZeroLeft = false;
@@ -27,8 +27,8 @@ public class Parser {
         this.pos = 0;
         inequality = new Inequality();
         this.toParse = "";
-        this.src = src.replaceAll("\\s+", "");
-        this.srcOriginal = src.replaceAll("\\s+", "");
+        this.src = toParse.replaceAll("\\s+", "");
+        this.srcOriginal = toParse.replaceAll("\\s+", "");
     }
 
     public Inequality parse() throws Exception {
@@ -37,18 +37,22 @@ public class Parser {
             if (term1 == null || term2 == null || sign == null) {
                 throw new Exception("Something is null");
             }
-            inequality.getFirstDecisionVariable().setWeight(inequality.getFirstDecisionVariable().getWeight() / inequality.getSecondDecisionVariable().getWeight());
             if(hasZeroRight){
                 inequality.getSecondDecisionVariable().changeSignVariable();
             }
+
             if(hasZeroLeft){
                 inequality.getFirstDecisionVariable().changeSignVariable();
             }
+
             if (sign.equals(">") || sign.equals(">=")){
                 DecisionVariable first = inequality.getFirstDecisionVariable();
                 inequality.setFirstDecisionVariable(inequality.getSecondDecisionVariable());
                 inequality.setSecondDecisionVariable(first);
             }
+
+            inequality.getFirstDecisionVariable().setWeight(inequality.getFirstDecisionVariable().getWeight() / inequality.getSecondDecisionVariable().getWeight());
+
             if (pos == srcOriginal.length()) {
                 inequality.setExpression(srcOriginal);
                 return inequality;
