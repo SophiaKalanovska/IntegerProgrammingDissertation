@@ -48,11 +48,40 @@ public class IntegrationTests {
         Container container = new Container();
         ManualInequalitiesController testContoller = new ManualInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getManualInequalities(), new GraphController(container.getLayoutGUI()));
         int uniqueId = (int) System.currentTimeMillis();
-        JTextField field = new JTextField("3x<y");
+        JTextField field = new JTextField("3x<=y");
         java.awt.event.ActionEvent e  = new ActionEvent(field, uniqueId,"");
         testContoller.actionPerformed(e);
     }
 
+    @Test
+    public void performActionManualNegative(){
+        Container container = new Container();
+        ManualInequalitiesController testContoller = new ManualInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getManualInequalities(), new GraphController(container.getLayoutGUI()));
+        int uniqueId = (int) System.currentTimeMillis();
+        JTextField field = new JTextField("3x<=-y");
+        java.awt.event.ActionEvent e  = new ActionEvent(field, uniqueId,"");
+        testContoller.actionPerformed(e);
+    }
+
+    @Test
+    public void performActionManualOutOfScope(){
+        Container container = new Container();
+        ManualInequalitiesController testContoller = new ManualInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getManualInequalities(), new GraphController(container.getLayoutGUI()));
+        int uniqueId = (int) System.currentTimeMillis();
+        JTextField field = new JTextField("3x<=6y");
+        java.awt.event.ActionEvent e  = new ActionEvent(field, uniqueId,"");
+        testContoller.actionPerformed(e);
+    }
+
+    @Test
+    public void performActionManualNegativeNoConstrain(){
+        Container container = new Container();
+        ManualInequalitiesController testContoller = new ManualInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getManualInequalities(), new GraphController(container.getLayoutGUI()));
+        int uniqueId = (int) System.currentTimeMillis();
+        JTextField field = new JTextField("-3x<=y");
+        java.awt.event.ActionEvent e  = new ActionEvent(field, uniqueId,"");
+        testContoller.actionPerformed(e);
+    }
 
     @Test
     public void performActionOfVisualizing50Nodes(){

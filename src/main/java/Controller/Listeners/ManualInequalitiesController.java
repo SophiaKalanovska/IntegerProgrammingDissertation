@@ -61,9 +61,31 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
             parser.setString(enterInequality);
             try {
                 final Inequality inequality = parser.parse();
-                if (inequality.getFirstDecisionVariable().getWeight() <1 && inequality.getFirstDecisionVariable().getWeight() >0){
+
+
+                if (inequality.getLeftDecisionVariable().getWeight() <1 && inequality.getLeftDecisionVariable().getWeight() >0){
                     JOptionPane.showMessageDialog(manualInequalitiesGUI.getParent().getParent(), "Coefficients between 0 and 1 are beyond the scope of this project.","Out of scope warning",
                             JOptionPane.WARNING_MESSAGE);
+                }else if(inequality.getLeftDecisionVariable().getWeight() <= 0 ) {
+                    Thread addInequality = new Thread() {
+                        @Override
+                        public void run() {
+                            inequalitiesList.addInequality(inequality);
+                        }
+                    };
+
+                    addInequality.start();
+                    Thread drawInequality = new Thread() {
+                        @Override
+                        public void run() {
+                            graph.addNode(inequality.getLeftDecisionVariable());
+                            graph.addNode(inequality.getRightDecisionVariable());
+                            graph.findStronglyConnectedComponents();
+                        }
+
+                    };
+                    drawInequality.start();
+
                 }else{
                     Thread addInequality = new Thread() {
                         @Override
@@ -84,7 +106,9 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                     drawInequality.start();
                 }
             } catch (Exception r) {
-                System.out.println(r.getMessage());
+                String message = r.getMessage();
+                JOptionPane.showMessageDialog(manualInequalitiesGUI.getParent().getParent(), message , "Warning",
+                        JOptionPane.WARNING_MESSAGE);
             }
         }
     }

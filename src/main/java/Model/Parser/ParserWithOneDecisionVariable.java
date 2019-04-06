@@ -7,11 +7,11 @@ public class ParserWithOneDecisionVariable {
 
     private final Parser parser;
 
-    public ParserWithOneDecisionVariable(Parser parser) {
+    ParserWithOneDecisionVariable(Parser parser) {
         this.parser = parser;
     }
 
-    public void parse_inequality() throws Exception, ExceptionNotATerm {
+    void parseInequality() throws Exception, ExceptionNotATerm {
         parser.toParse = "";
         double boundry = 0;
         try {
@@ -23,9 +23,9 @@ public class ParserWithOneDecisionVariable {
                 System.out.println("not number");
             }
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
-                parser.inequality.getFirstDecisionVariable().setUpperBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
+                parser.inequality.getLeftDecisionVariable().setUpperBound(boundry/parser.inequality.getLeftDecisionVariable().getWeight());
             }else{
-                parser.inequality.getFirstDecisionVariable().setLowerBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
+                parser.inequality.getLeftDecisionVariable().setLowerBound(boundry/parser.inequality.getLeftDecisionVariable().getWeight());
             }
         } catch (ExceptionNotATerm exceptionNotATerm) {
             try {
@@ -36,9 +36,9 @@ public class ParserWithOneDecisionVariable {
             parser.parseMember.parseSign();
             parser.term1 = parser.parseMember.parseTerm("first");
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
-                parser.inequality.getFirstDecisionVariable().setLowerBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
+                parser.inequality.getLeftDecisionVariable().setLowerBound(boundry/parser.inequality.getLeftDecisionVariable().getWeight());
             }else{
-                parser.inequality.getFirstDecisionVariable().setUpperBound(boundry/parser.inequality.getFirstDecisionVariable().getWeight());
+                parser.inequality.getLeftDecisionVariable().setUpperBound(boundry/parser.inequality.getLeftDecisionVariable().getWeight());
             }
         } catch (Exception e) {
             System.out.println("some other exception");

@@ -56,11 +56,11 @@ public class GraphController implements Serializable {
     public void drawInequality(Inequality inequality) {
         String decision = inequality.getSecondDecisionVariableValue();
         if (decision != null) {
-            addNode(inequality.getFirstDecisionVariable());
-            addNode(inequality.getSecondDecisionVariable());
-            addEdge(inequality.getFirstDecisionVariable(), inequality.getSecondDecisionVariable());
+            addNode(inequality.getLeftDecisionVariable());
+            addNode(inequality.getRightDecisionVariable());
+            addEdge(inequality.getLeftDecisionVariable(), inequality.getRightDecisionVariable());
         } else {
-            addNode(inequality.getFirstDecisionVariable());
+            addNode(inequality.getLeftDecisionVariable());
         }
     }
 

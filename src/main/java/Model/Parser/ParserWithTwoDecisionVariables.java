@@ -3,14 +3,14 @@ package Model.Parser;
 import Model.Parser.Exceptions.ExceptionNotATerm;
 import Model.Parser.Exceptions.ExceptionNotZero;
 
-public class ParserWithTwoDecisionVariables {
+class ParserWithTwoDecisionVariables {
     private final Parser parser;
 
-    public ParserWithTwoDecisionVariables(Parser parser) {
+    ParserWithTwoDecisionVariables(Parser parser) {
         this.parser = parser;
     }
 
-    public void parse_inequality() throws ExceptionNotATerm, Exception {
+    void parseInequality() throws ExceptionNotATerm, Exception {
         try {
             parser.term1 = parser.parseMember.parseTerm("first");
             try {

@@ -21,7 +21,7 @@ public class ParserWithOneDecisionVariableShould {
         Parser testParser = new Parser();
         testParser.setString("x<7");
         Inequality inequality = testParser.parse();
-        Assert.assertEquals(inequality.getFirstDecisionVariable().getUpperBound(),7.0);
+        Assert.assertEquals(inequality.getLeftDecisionVariable().getUpperBound(),7.0);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class ParserWithOneDecisionVariableShould {
         Parser testParser = new Parser();
         testParser.setString("x<=7");
         Inequality inequality = testParser.parse();
-        Assert.assertEquals(inequality.getFirstDecisionVariable().getUpperBound(),7.0);
+        Assert.assertEquals(inequality.getLeftDecisionVariable().getUpperBound(),7.0);
     }
 
 
@@ -54,7 +54,7 @@ public class ParserWithOneDecisionVariableShould {
         Parser testParser = new Parser();
         testParser.setString("x>7");
         Inequality inequality = testParser.parse();
-        Assert.assertEquals(inequality.getFirstDecisionVariable().getLowerBound(),7.0);
+        Assert.assertEquals(inequality.getLeftDecisionVariable().getLowerBound(),7.0);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class ParserWithOneDecisionVariableShould {
         Parser testParser = new Parser();
         testParser.setString("x>=7");
         Inequality inequality = testParser.parse();
-        Assert.assertEquals(inequality.getFirstDecisionVariable().getLowerBound(),7.0);
+        Assert.assertEquals(inequality.getLeftDecisionVariable().getLowerBound(),7.0);
     }
 
     @Test

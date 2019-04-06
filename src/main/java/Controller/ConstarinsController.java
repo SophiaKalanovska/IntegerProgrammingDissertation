@@ -30,6 +30,7 @@ public class ConstarinsController {
             createMap(graph.getSCCComponents());
         }else {
             createMap(new SCCClusterList());
+            System.out.print("not solvable");
         }
     }
 

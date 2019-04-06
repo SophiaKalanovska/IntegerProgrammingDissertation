@@ -44,16 +44,16 @@ public class ParseMember {
         return null;
     }
 
-    private void parseWeight(String expression, String order) throws NoWeightException {
+    private void parseCoefficient(String expression, String order) throws NoWeightException {
         try {
             parser.toParse = expression;
             signOfExpression(order);
             String term = tokenize("[1-9]+[0-9]*|[0-9]+[\\.\\,][0-9]+");
             if (order.equals("first")) {
-                parser.inequality.getFirstDecisionVariable().setWeight(Double.parseDouble(term));
+                parser.inequality.getLeftDecisionVariable().setWeight(Double.parseDouble(term));
                 ;
             } else {
-                parser.inequality.getSecondDecisionVariable().setWeight(Double.parseDouble(term));
+                parser.inequality.getRightDecisionVariable().setWeight(Double.parseDouble(term));
                 ;
             }
         } catch (Exception e) {
@@ -67,30 +67,30 @@ public class ParseMember {
             sign = tokenize("[+|-]");
             if (order.equals("first")) {
                 if (sign.equals("-")) {
-                    parser.inequality.getFirstDecisionVariable().setSign("-");
+                    parser.inequality.getLeftDecisionVariable().setSign("-");
                 } else {
-                    parser.inequality.getFirstDecisionVariable().setSign("+");
+                    parser.inequality.getLeftDecisionVariable().setSign("+");
                 }
             } else {
                 if (sign.equals("-")) {
-                    parser.inequality.getSecondDecisionVariable().setSign("-");
+                    parser.inequality.getRightDecisionVariable().setSign("-");
                 } else {
-                    parser.inequality.getSecondDecisionVariable().setSign("+");
+                    parser.inequality.getRightDecisionVariable().setSign("+");
                 }
             }
         } catch (Exception e) {
         }
     }
 
-    private void parseUnknownVariable(String order) throws Exception {
+    private void parseDecisionVariable(String order) throws Exception {
         try {
 
             String term = tokenize("[a-zA-Z][a-zA-Z0-9_]*");
             parser.toParse = "";
             if (order.equals("first")) {
-                parser.inequality.getFirstDecisionVariable().setVariable(term);
+                parser.inequality.getLeftDecisionVariable().setVariable(term);
             } else {
-                parser.inequality.getSecondDecisionVariable().setVariable(term);
+                parser.inequality.getRightDecisionVariable().setVariable(term);
             }
         } catch (Exception e) {
             throw new Exception("");
@@ -106,10 +106,10 @@ public class ParseMember {
         }
         if (term != null) {
             try {
-                parseWeight(term, order);
-                parseUnknownVariable(order);
+                parseCoefficient(term, order);
+                parseDecisionVariable(order);
             } catch (NoWeightException e) {
-                parseUnknownVariable(order);
+                parseDecisionVariable(order);
             }
         }
         return term;

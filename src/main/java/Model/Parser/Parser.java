@@ -33,26 +33,30 @@ public class Parser {
 
     public Inequality parse() throws Exception {
         try {
-            parserWithTwoDecisionVariables.parse_inequality();
+            parserWithTwoDecisionVariables.parseInequality();
             if (term1 == null || term2 == null || sign == null) {
                 throw new Exception("Something is null");
             }
             if(hasZeroRight){
-                inequality.getSecondDecisionVariable().changeSignVariable();
+                inequality.getRightDecisionVariable().changeSignVariable();
             }
 
             if(hasZeroLeft){
-                inequality.getFirstDecisionVariable().changeSignVariable();
+                inequality.getLeftDecisionVariable().changeSignVariable();
             }
 
             if (sign.equals(">") || sign.equals(">=")){
-                DecisionVariable first = inequality.getFirstDecisionVariable();
-                inequality.setFirstDecisionVariable(inequality.getSecondDecisionVariable());
-                inequality.setSecondDecisionVariable(first);
+                DecisionVariable first = inequality.getLeftDecisionVariable();
+                inequality.setLeftDecisionVariable(inequality.getRightDecisionVariable());
+                inequality.setRightDecisionVariable(first);
             }
-
-            inequality.getFirstDecisionVariable().setWeight(inequality.getFirstDecisionVariable().getWeight() / inequality.getSecondDecisionVariable().getWeight());
-
+            if ( inequality.getRightDecisionVariable().getWeight() <= 0) {
+                inequality.getLeftDecisionVariable().setUpperBound(0);
+            }
+                inequality.getLeftDecisionVariable().setWeight(inequality.getLeftDecisionVariable().getWeight() / inequality.getRightDecisionVariable().getWeight());
+            if (sign.equals(">") || sign.equals("<")){
+                throw new Exception(" The inequality sign must be <= or >= . Otherwise the inequality is not in the form.");
+            }
             if (pos == srcOriginal.length()) {
                 inequality.setExpression(srcOriginal);
                 return inequality;
@@ -60,7 +64,7 @@ public class Parser {
         } catch (ExceptionNotATerm exceptionNotATerm) {
             try {
                 parserWithOneDecisionVariable.clear();
-                parserWithOneDecisionVariable.parse_inequality();
+                parserWithOneDecisionVariable.parseInequality();
 
                 inequality.setExpression(srcOriginal);
                 return inequality;

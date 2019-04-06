@@ -38,9 +38,7 @@ public class InequalitiesListController implements MouseListener {
 
     private void performTheAction(MouseEvent e) {
         if (e.getSource() instanceof JButton) {
-            System.out.println(((JButton) e.getSource()).getName());
             if (((JButton) e.getSource()).getName().equals("delete")){
-                System.out.println(((JButton) e.getSource()).getName());
                 Inequality toBeDeleted = InequalitiesListGUI.getListSelectedValue();
                 if (toBeDeleted != null){
                     inequalitiesList.deleteInequality(toBeDeleted);

@@ -4,18 +4,18 @@ import java.util.Observable;
 
 public class Inequality  extends Observable implements Serializable {
 
-    private DecisionVariable firstDecisionVariable;
-    private DecisionVariable secondDecisionVariable;
+    private DecisionVariable leftDecisionVariable;
+    private DecisionVariable rightDecisionVariable;
     private String expression;
-    private int bound;
+
 
     public Inequality() {
-        firstDecisionVariable = new DecisionVariable();
-        secondDecisionVariable = new DecisionVariable();
+        leftDecisionVariable = new DecisionVariable();
+        rightDecisionVariable = new DecisionVariable();
     }
 
-    public String setExpression(String expression) {
-        return this.expression = expression;
+    public void setExpression(String expression) {
+        this.expression = expression;
     }
 
     public String toString(){
@@ -24,29 +24,29 @@ public class Inequality  extends Observable implements Serializable {
 
 
     public String getFirstDecisionVariableValue() {
-        return firstDecisionVariable.toString();
+        return leftDecisionVariable.toString();
     }
 
-    public void setFirstDecisionVariable(DecisionVariable firstDecisionVariable) {
-        this.firstDecisionVariable = firstDecisionVariable;
+    public void setLeftDecisionVariable(DecisionVariable leftDecisionVariable) {
+        this.leftDecisionVariable = leftDecisionVariable;
     }
 
 
     public String getSecondDecisionVariableValue() {
-        return secondDecisionVariable.toString();
+        return rightDecisionVariable.toString();
     }
 
-    public void setSecondDecisionVariable(DecisionVariable secondDecisionVariable) {
-        this.secondDecisionVariable = secondDecisionVariable;
+    public void setRightDecisionVariable(DecisionVariable rightDecisionVariable) {
+        this.rightDecisionVariable = rightDecisionVariable;
     }
 
-    public DecisionVariable getFirstDecisionVariable() {
-        return firstDecisionVariable;
+    public DecisionVariable getLeftDecisionVariable() {
+        return leftDecisionVariable;
     }
 
 
-    public DecisionVariable getSecondDecisionVariable() {
-        return secondDecisionVariable;
+    public DecisionVariable getRightDecisionVariable() {
+        return rightDecisionVariable;
     }
 
 }
