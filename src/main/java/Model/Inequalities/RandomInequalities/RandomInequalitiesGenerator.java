@@ -16,18 +16,18 @@ public class RandomInequalitiesGenerator {
 
     public DecisionVariable generateDecisionVariable() {
         DecisionVariable decisionVariable = new DecisionVariable();
-        decisionVariable.setVariable(upperLower.getIndex((int)Math.random()*upperLower.getSize()));
-        return  decisionVariable;
+        decisionVariable.setVariable(upperLower.generate());
+        return decisionVariable;
     }
 
     public Inequality generateInequalities(ArrayList<DecisionVariable> decisionVariables) {
-        int max = 2;
+        int max = 1;
         int min = 1;
         int variableIndexFirst = (int) (Math.random() * decisionVariables.size());
         int variableIndexSecond = (int) (Math.random() * decisionVariables.size());
         Inequality newIneqiality = new Inequality();
         DecisionVariable first = decisionVariables.get(variableIndexFirst);
-//        first.setWeight(random.nextInt(max - min + 1) + min);
+        first.setWeight(random.nextInt(max - min + 1) + min);
         first.setWeight(1);
         DecisionVariable second = decisionVariables.get(variableIndexSecond);
         second.setWeight(1);

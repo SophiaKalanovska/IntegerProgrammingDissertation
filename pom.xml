@@ -48,7 +48,6 @@
         </configuration>
       </plugin>
 
-
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <groupId>org.apache.maven.plugins</groupId>
@@ -75,6 +74,12 @@
 
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.8.1</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>

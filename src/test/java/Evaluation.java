@@ -233,9 +233,9 @@ public class Evaluation {
         int uniqueId = (int) System.currentTimeMillis();
         java.awt.event.MouseEvent e  = new MouseEvent(evaluateGraph, uniqueId, System.currentTimeMillis(), 0, 0, 0, 1, false);
         long beginCreationAndEvaluation = System.currentTimeMillis();
-        ArrayList nodes = helperMethodAddNodes(container, generator, 999);
+        ArrayList nodes = helperMethodAddNodes(container, generator, 500);
         helperMethodAddInequalities(container, generator, 18000, nodes);
-        helperMethodAddBounds(container, generator, 5000, nodes);
+        helperMethodAddBounds(container, generator, 3000, nodes);
         long evaluationBegin = System.currentTimeMillis();
         container.getInequalitiesListController().mouseClicked(e);
         long evaluationEnd = System.currentTimeMillis();
