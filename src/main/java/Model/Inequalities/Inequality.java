@@ -38,6 +38,23 @@ public class Inequality  extends Observable implements Serializable {
 
 
     /**
+     *  The equals method for comparing
+     *  objects of this class
+     */
+    @Override
+    public boolean equals(Object other) {
+        boolean retVal = false;
+        if (other == null) return false;
+        if (other == this) return true;
+        if (other instanceof Inequality){
+            Inequality inequalitiy = (Inequality) other;
+            retVal = (inequalitiy.getFirstDecisionVariableValue().equals(this.getFirstDecisionVariableValue()));
+            retVal = retVal && (inequalitiy.getSecondDecisionVariableValue().equals(this.getSecondDecisionVariableValue()));
+        }
+        return retVal;
+    }
+
+    /**
      * getters of the fields
      */
     public String getFirstDecisionVariableValue() {

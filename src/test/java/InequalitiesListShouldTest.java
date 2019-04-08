@@ -1,11 +1,10 @@
-package Inequalities;
 
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class InequalitiesListShould {
+public class InequalitiesListShouldTest {
 
     @Test
     public void generateInequalityList_ThatIsEmpty(){

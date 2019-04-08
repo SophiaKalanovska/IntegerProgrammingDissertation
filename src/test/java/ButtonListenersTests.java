@@ -12,8 +12,11 @@ import org.testng.annotations.Test;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class ButtonListeners {
+public class ButtonListenersTests {
 
 
     @Test
@@ -132,9 +135,6 @@ public class ButtonListeners {
 
     }
 
-
-
-
     @Test
     public void performActionClickAndDeleteTheTextManual(){
         Container container = new Container();
@@ -181,10 +181,9 @@ public class ButtonListeners {
 
 
     public synchronized void helperMethodAddNodes( Container container ){
-
         RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator();
         ArrayList nodes = new ArrayList<>();
-        final ArrayList<Inequality> inequalities = new ArrayList<>();
+        final HashSet<Inequality> inequalities = new HashSet<>();
         for(int i = 0; i < 50; i ++) {
             DecisionVariable variable = generator.generateDecisionVariable();
             nodes.add(variable);

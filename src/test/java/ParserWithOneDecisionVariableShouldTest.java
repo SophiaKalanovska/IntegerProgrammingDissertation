@@ -1,11 +1,10 @@
-package Parser;
 
 import Model.Inequalities.Inequality;
 import Model.Parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ParserWithOneDecisionVariableShould {
+public class ParserWithOneDecisionVariableShouldTest {
 
 
     @Test

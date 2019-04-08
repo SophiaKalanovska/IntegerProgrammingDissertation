@@ -111,8 +111,6 @@ public class GraphController implements Serializable {
                 between.setAttribute("weight", weightOfEdge);
             }
         }
-
-
     }
 
     /**
@@ -134,7 +132,6 @@ public class GraphController implements Serializable {
                 graph.removeNode(first);
         }
         getPipeIn().pump();
-
     }
 
     public ViewerPipe getPipeIn() {

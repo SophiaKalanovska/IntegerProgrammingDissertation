@@ -1,5 +1,7 @@
 package Model.Inequalities;
 
+
+
 public class DecisionVariable {
     private double weight;
     private String sign;
@@ -12,7 +14,7 @@ public class DecisionVariable {
      */
     public DecisionVariable(){
         weight = 1 ;
-        variable = null;
+        variable = "";
         sign = "+";
         lowerBound = 0;
         upperBound = Double.POSITIVE_INFINITY;
@@ -72,6 +74,22 @@ public class DecisionVariable {
         if (upperBound < this.upperBound){
             this.upperBound = upperBound;
         }
+    }
+
+    /**
+     *  The equals method for comparing
+     *  objects of this class
+     */
+    @Override
+    public boolean equals(Object other) {
+        boolean retVal = false;
+        if (other == null) return false;
+        if (other == this) return true;
+        if (other instanceof DecisionVariable){
+            DecisionVariable decisionVariable = (DecisionVariable) other;
+            retVal = (decisionVariable.toString().equals(this.toString()));
+        }
+        return retVal;
     }
 
     /**

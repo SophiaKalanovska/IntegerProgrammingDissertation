@@ -1,11 +1,10 @@
-package Parser;
 
 import Model.Inequalities.Inequality;
 import Model.Parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ParserWithTwoDecisionVariablesShould {
+public class ParserWithTwoDecisionVariablesShouldTest {
 
     @Test
     public void parse_3xLessThanOrEqualsY_AndReturn_XAsFirstDecisionVariable() throws Exception {

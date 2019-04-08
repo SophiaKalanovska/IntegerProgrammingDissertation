@@ -4,6 +4,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.swing.JTextField;
 
 import Controller.GraphController;
@@ -50,8 +53,8 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
 
             if (((JTextField) e.getSource()).getName().equals("randomNumberNodes")) {
                 enter = (JTextField) e.getSource();
-                final ArrayList<Inequality> inequalities = new ArrayList<>();
-                for(int i = 0; i < Integer.parseInt(enter.getText()); i ++) {
+                final HashSet<Inequality> inequalities = new HashSet<>();
+                while(inequalities.size() < Integer.parseInt(enter.getText())){
                     DecisionVariable variable = generator.generateDecisionVariable();
                     nodes.add(variable);
                     inequalities.add(generator.generateInequalityForNode(variable));
@@ -78,7 +81,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
             } else {
                 JTextField enter = (JTextField) e.getSource();
                 int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
-                final ArrayList<Inequality> inequalities = new ArrayList<>();
+                final HashSet<Inequality> inequalities = new HashSet<>();
                 for (int i= 0; i < numberOfRandomInequalities; i++){
                     inequalities.add(generator.generateInequality(nodes));
                 }
@@ -104,12 +107,12 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         }
     }
 
-    public synchronized void addInequalities(ArrayList<Inequality> inequalities) {
+    public synchronized void addInequalities(HashSet<Inequality> inequalities) {
         for ( Inequality in : inequalities)
             inequalitiesList.addInequality(in);
     }
 
-    public synchronized void visualizeInequality(ArrayList<Inequality> inequalities) {
+    public synchronized void visualizeInequality(HashSet<Inequality> inequalities) {
         for ( Inequality in : inequalities)
             graph.drawInequality(in);
         graph.findStronglyConnectedComponents();

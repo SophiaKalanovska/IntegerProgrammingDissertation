@@ -1,4 +1,4 @@
-package Inequalities;
+
 
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.Inequality;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class RandomInequalityGeneratorShould {
+public class RandomInequalityGeneratorShouldTest {
     @Test
     public void generateDecisionVariable_And_ReturnIt(){
         RandomInequalitiesGenerator testGenerator = new RandomInequalitiesGenerator();
