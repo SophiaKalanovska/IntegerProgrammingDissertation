@@ -7,6 +7,9 @@ public class DecisionVariable {
     private double lowerBound;
     private double upperBound;
 
+    /**
+     * DecisionVariable object with default assignments to fields
+     */
     public DecisionVariable(){
         weight = 1 ;
         variable = null;
@@ -15,6 +18,9 @@ public class DecisionVariable {
         upperBound = Double.POSITIVE_INFINITY;
     }
 
+    /**
+     * Changes sign
+     */
     public void changeSignVariable(){
         if (sign.equals("+")){
             setSign("-");
@@ -23,6 +29,9 @@ public class DecisionVariable {
         }
     }
 
+    /**
+     * Returns the weight with the sign
+     */
     public double getWeight() {
         if (sign.equals("+")){
             return weight;
@@ -32,6 +41,9 @@ public class DecisionVariable {
 
     }
 
+    /**
+     * Sets the weight of the sign
+     */
     public void setWeight(double weight) {
         if (weight < 0 ){
             setSign("-");
@@ -39,6 +51,34 @@ public class DecisionVariable {
             this.weight = weight;
         }
 
+    }
+
+
+    /**
+     * Sets the lower bound to the more restrictive value
+     */
+    public void setLowerBound(double lowerBound) {
+        if (lowerBound > this.lowerBound){
+            this.lowerBound = lowerBound;
+        }
+    }
+
+
+
+    /**
+     * Sets the upper bound to the more restrictive value
+     */
+    public void setUpperBound(double upperBound) {
+        if (upperBound < this.upperBound){
+            this.upperBound = upperBound;
+        }
+    }
+
+    /**
+     * getters and setters of the fields
+     */
+    public double getUpperBound() {
+        return upperBound;
     }
 
     public void setSign(String sign) {
@@ -55,22 +95,5 @@ public class DecisionVariable {
 
     public double getLowerBound() {
         return lowerBound;
-    }
-
-    public void setLowerBound(double lowerBound) {
-        if (lowerBound > this.lowerBound){
-            this.lowerBound = lowerBound;
-        }
-    }
-
-    public double getUpperBound() {
-        return upperBound;
-    }
-
-    public void setUpperBound(double upperBound) {
-        if (upperBound < this.upperBound){
-            this.upperBound = upperBound;
-        }
-
     }
 }

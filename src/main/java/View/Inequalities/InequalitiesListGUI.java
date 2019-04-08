@@ -1,4 +1,4 @@
-package View.OperationsOnInequalities;
+package View.Inequalities;
 
 import Controller.Listeners.InequalitiesListController;
 import Model.Inequalities.Inequality;
@@ -22,8 +22,10 @@ public class InequalitiesListGUI extends JPanel implements Observer {
     private JList inequalitiesList;
 
     /**
-     * Constructs a new Home panel
-     *
+     * Three buttons are is created, which
+     * allows the user to delete an inequality, delete all inequalities
+     * evaluate the IP model.
+     * It also contains a list, that has the inequalities in the model
      */
     public InequalitiesListGUI() {
 
@@ -75,6 +77,12 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         this.setOpaque(false);
     }
 
+    /**
+     * InequalitiesListController is added
+     * as a MouseListener to the delete, evaluateAll and delete Graph buttons
+     * inequalitiesList contains a mouseListener, so that the model knows,
+     * which element is selected by the user at each point
+     */
     public void addMouseListener(InequalitiesListController controller){
         delete.addMouseListener(controller);
         evaluateAll.addMouseListener(controller);
@@ -82,10 +90,17 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         deleteGraph.addMouseListener(controller);
     }
 
+    /**
+     * returns the selected value
+     */
     public Inequality getListSelectedValue(){
         return (Inequality) inequalitiesList.getSelectedValue();
     }
 
+
+    /**
+     * updates the list
+     */
     private void UpdateJList(final Inequality in) {
         if (!SwingUtilities.isEventDispatchThread()) {
             SwingUtilities.invokeLater(new Runnable() {
@@ -105,6 +120,12 @@ public class InequalitiesListGUI extends JPanel implements Observer {
         }
     }
 
+
+    /**
+     * overrides the update method and indicated
+     * whether a given element must be removed, added or
+     * the whole model should be deleted
+     */
     @Override
     public void update(Observable obs, Object obj) {
         observer = (InequalitiesList) obs;

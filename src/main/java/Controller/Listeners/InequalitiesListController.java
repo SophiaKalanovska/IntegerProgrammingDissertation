@@ -6,7 +6,7 @@ import Controller.ConstarinsController;
 import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
-import View.OperationsOnInequalities.InequalitiesListGUI;
+import View.Inequalities.InequalitiesListGUI;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel
@@ -15,7 +15,7 @@ import View.OperationsOnInequalities.InequalitiesListGUI;
 public class InequalitiesListController implements MouseListener {
 
     private InequalitiesList inequalitiesList;
-    private View.OperationsOnInequalities.InequalitiesListGUI InequalitiesListGUI;
+    private View.Inequalities.InequalitiesListGUI InequalitiesListGUI;
     private ConstarinsController constarinsController;
     private GraphController graph;
     private RandomInequalitiesController randomInequalitiesController;
@@ -80,7 +80,7 @@ public class InequalitiesListController implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    public View.OperationsOnInequalities.InequalitiesListGUI getInequalitiesListGUI() {
+    public View.Inequalities.InequalitiesListGUI getInequalitiesListGUI() {
         return InequalitiesListGUI;
     }
 }

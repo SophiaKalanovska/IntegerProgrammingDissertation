@@ -20,9 +20,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     }
 
     /**
-     * Adds a project to the wallet
-     *
-     * @param x the project that is to be added to the wallet
+     * Adds an inequality to the container
      */
     public void addInequality(Inequality x) {
         this.inequalitiesContainer.add(x);
@@ -33,9 +31,7 @@ public class InequalitiesList extends Observable implements java.io.Serializable
     }
 
     /**
-     * Deletes a project that has the same name as the one supplied
-     *
-     * @param x the name of the projects that has to be deleted
+     * Deletes an inequality that has the same sting id
      */
     public void deleteInequality(Inequality x) {
         lastDeleted = x;
@@ -45,6 +41,9 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         lastDeleted = null;
     }
 
+    /**
+     * Deletes all inequalities from the container
+     */
     public void deleteAllInequalities() {
         deleteAll = true;
         inequalitiesContainer.removeAll(inequalitiesContainer);
@@ -52,10 +51,10 @@ public class InequalitiesList extends Observable implements java.io.Serializable
         deleteAll = false;
     }
 
+
     /**
-     * Returns the wallet as an ArrayList of Projects
-     *
-     * @return an ArrayList of projects that are contained in this wallet
+     * Returns a parameter indicating whether the last
+     * change in the list was deletion or addition
      */
     public Inequality getLastAdded() {
         return lastAdded;

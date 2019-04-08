@@ -10,6 +10,11 @@ class ParserWithTwoDecisionVariables {
         this.parser = parser;
     }
 
+    /**
+     * this method checks if the user input
+     * can be converted to the general form
+     * and if so returns the inequality object
+     */
     void parseInequality() throws ExceptionNotATerm, Exception {
         try {
             parser.term1 = parser.parseMember.parseTerm("first");

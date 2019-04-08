@@ -1,4 +1,4 @@
-package View.OperationsOnInequalities;
+package View.Inequalities;
 
 import Controller.Listeners.RandomInequalitiesController;
 import javax.swing.*;
@@ -12,8 +12,13 @@ public class RandomInequalitiesGUI extends JPanel {
     private JLabel randomNumberInequalitiesLabel;
     private JTextField randomNumberInequalities;
 
-    public RandomInequalitiesGUI(){
 
+    /**
+     * Two JTextField is created, which
+     * allows the user to import a the number of
+     * random decision variables and inequalities they wish to create
+     */
+    public RandomInequalitiesGUI(){
         this.randomNumberDecisionVariableLabel = new JLabel("Enter the number of random decision variables to be generated:");
         Border border = BorderFactory.createLineBorder( new Color(153, 218, 250),1,  true);
         this.randomNumberDecisionVariables = new JTextField("Number of Decision Variables...", 20);
@@ -41,11 +46,21 @@ public class RandomInequalitiesGUI extends JPanel {
 
     }
 
+    /**
+     * ManualInequalitiesController is added
+     * as an ActionListener tothe randomNumberDecisionVariables field and
+     * randomNumberInequalities field
+     */
     public void addControllers(RandomInequalitiesController controller){
         randomNumberDecisionVariables.addActionListener(controller);
         randomNumberInequalities.addActionListener(controller);
     }
 
+    /**
+     * RandomInequalitiesController is added
+     * as a MouseListener to the randomNumberDecisionVariables field and
+     * randomNumberInequalities field
+     */
     public void addMouseListener(RandomInequalitiesController controller){
         randomNumberDecisionVariables.addMouseListener(controller);
         randomNumberInequalities.addMouseListener(controller);

@@ -16,6 +16,10 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
     private JList lowerBoundClusterList;
 
 
+    /**
+     * This method creates a list that contains the lower Bound
+     * corresponding to the cluster ID
+     */
     public LowerBoundClusterGUI(){
         this.lowerBoundClusterListModel = new DefaultListModel();
         this.lowerBoundClusterList = new JList(lowerBoundClusterListModel);
@@ -26,14 +30,13 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
         this.setOpaque(false);
 
         this.setPreferredSize(new Dimension(225, 150));
-
-//
-//
-//        scroll.setPreferredSize(new Dimension(300, 400));
     }
 
 
-
+    /**
+     * This method loops through each pair of Pair<Integer,double>,
+     * It adds the lower bound that is corresponding to the cluster ID
+     */
     private void UpdateJList(ArrayList<Pair<Integer,Double>> in) {
         lowerBoundClusterListModel.clear();
         if (in.size() != 0) {
@@ -47,7 +50,10 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
         }
     }
 
-
+    /**
+     * This method overrides the update method and calls
+     * UpdateJList with the list of lower bounds to cluster ID
+     */
     @Override
     public void update(Observable obs, Object obj) {
         observer = (CreateImageMap) obs;
@@ -56,11 +62,18 @@ public class LowerBoundClusterGUI extends JPanel implements Observer {
         revalidate();
     }
 
+    /**
+     * This method overrides the default render
+     */
     public void setRender(BoundsListRender lbr){
         lowerBoundClusterList.setCellRenderer(lbr);
     }
 
 
+    /**
+     * This method calls changeView in all JFrames and
+     * changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             lowerBoundClusterList.setBackground(Color.BLACK);

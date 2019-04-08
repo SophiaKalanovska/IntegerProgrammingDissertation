@@ -1,4 +1,4 @@
-package View.OperationsOnInequalities;
+package View.Inequalities;
 
 import Controller.Listeners.ManualInequalitiesController;
 
@@ -15,7 +15,7 @@ public class ManualInequalitiesGUI extends JPanel {
     private JLabel enterInequalityLabel;
 
     /**
-     * A JTextField is created, which 
+     * A JTextField is created, which
      * allows the user to import a new inequality into the IP model
      */
     public ManualInequalitiesGUI() {

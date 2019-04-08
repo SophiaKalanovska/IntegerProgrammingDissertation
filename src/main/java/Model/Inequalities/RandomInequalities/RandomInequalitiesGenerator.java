@@ -14,12 +14,21 @@ public class RandomInequalitiesGenerator {
         random = new Random();
     }
 
+
+    /**
+     * calls the generate() in RandomVariables and returns the decisionVariable
+     */
     public DecisionVariable generateDecisionVariable() {
         DecisionVariable decisionVariable = new DecisionVariable();
         decisionVariable.setVariable(upperLower.generate());
         return decisionVariable;
     }
 
+    /**
+     * takes two random decision variables from the provided list and
+     * generates a random weight for the first one (k / n )
+     * assigns a string representation of the variable decisionVar <= decisionVar
+     */
     public Inequality generateInequality(ArrayList<DecisionVariable> decisionVariables) {
         int max = 1;
         int min = 1;
@@ -36,7 +45,11 @@ public class RandomInequalitiesGenerator {
         return newIneqiality;
     }
 
-
+    /**
+     * takes a random decision variable from the provided list and
+     * generates a random bound it then randomly chooses
+     * whether to generate a upper or lower bound and assignes the bound to the variable
+     */
     public Inequality generateBound(ArrayList<DecisionVariable> decisionVariables) {
         int maxLower = 50;
         int minLower = 1;
@@ -60,6 +73,11 @@ public class RandomInequalitiesGenerator {
         return newIneqiality;
     }
 
+    /**
+     * takes a decision variables an generates a bound inequality,
+     * all decision variables are bound to be more than or equal to 0
+     * the string assignment is for the list presentation
+     */
     public Inequality generateInequalityForNode(DecisionVariable decisionVariable) {
         Inequality newIneqiality = new Inequality();
         newIneqiality.setLeftDecisionVariable(decisionVariable);

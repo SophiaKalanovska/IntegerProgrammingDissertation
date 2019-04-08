@@ -5,20 +5,25 @@ import Model.Inequalities.Inequality;
 import Model.Parser.Exceptions.ExceptionNotATerm;
 
 public class Parser {
-    protected final ParseMember parseMember = new ParseMember(this);
+    final ParseMember parseMember = new ParseMember(this);
     private final ParserWithOneDecisionVariable parserWithOneDecisionVariable = new ParserWithOneDecisionVariable(this);
     private final ParserWithTwoDecisionVariables parserWithTwoDecisionVariables = new ParserWithTwoDecisionVariables(this);
-    protected String src;
-    protected String srcOriginal;
-    protected int pos;
-    protected boolean hasZeroLeft;
-    protected boolean hasZeroRight;
+    String src;
+    String srcOriginal;
+    int pos;
+    boolean hasZeroLeft;
+    boolean hasZeroRight;
     protected Inequality inequality;
-    protected String toParse;
-    protected String term1;
-    protected String term2;
-    protected String sign;
+    String toParse;
+    String term1;
+    String term2;
+    String sign;
 
+
+    /**
+     * this method sets the string that is about to be parsed
+     * and resets the parsing pointers to 0;
+     */
     public void setString(String toParse){
         term1 = null;
         term2 = null;
@@ -31,7 +36,15 @@ public class Parser {
         this.srcOriginal = toParse.replaceAll("\\s+", "");
     }
 
-    public Inequality parse() throws Exception {
+    /**
+     * first tries to parse an inequality with two decision variables by
+     * calling parseInequality() method in ParserWithTwoDecisionVariables.
+     * If theparseInequality()method completes without throwing anexceptionNotATermException,
+     * the inequality object must be translated into k/n x <= y
+     * In this case where ParserWithTwoDecisionVariables is unsuccessful
+     * the method tries to runparseInequality()method in theParserWithOneDecisionVariableclass.
+     */
+     public Inequality parse() throws Exception {
         try {
             parserWithTwoDecisionVariables.parseInequality();
             if (term1 == null || term2 == null || sign == null) {

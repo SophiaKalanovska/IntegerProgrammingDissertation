@@ -11,7 +11,7 @@ import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;
-import View.OperationsOnInequalities.RandomInequalitiesGUI;
+import View.Inequalities.RandomInequalitiesGUI;
 
 /**
  * This class will represent the Controller for the LayoutGUI Panel
@@ -39,17 +39,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         randomInequalitiesGUI.addMouseListener(this);
     }
 
-    /**
-     * Mouse listener for the LayoutGUI panel
-     *
-     * @param e Mouse listener that will identify the actions that the user makes
-     */
 
-    /**
-     * The action listener for the LayoutGUI panel
-     *
-     * @param e the ActionEven object which will identify the performed action
-     */
     @Override
     public synchronized void actionPerformed(java.awt.event.ActionEvent e) {
 

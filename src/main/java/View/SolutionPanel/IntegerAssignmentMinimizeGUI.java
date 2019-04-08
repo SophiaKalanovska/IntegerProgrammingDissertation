@@ -17,6 +17,10 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
 
+    /**
+     * This method creates a list that contains the Lambda Minus
+     * corresponding to the decision valiables
+     */
     public IntegerAssignmentMinimizeGUI(){
         this.internelConstainsClusterListModel = new DefaultListModel();
         this.integerAssignmentList = new JList(internelConstainsClusterListModel);
@@ -30,7 +34,12 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
     }
 
 
-
+    /**
+     * This method loops through each pair of Pair<Integer,SCCCluster>,
+     * which contains the ID of the cluster and the cluster
+     * The elements label is obtained and the Lambda Minus Value is assigned
+     * If the list is empty "No Solution or No IP Model Presented" is printed
+     */
     private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in) {
         internelConstainsClusterListModel.clear();
         if (in.size() != 0) {
@@ -50,6 +59,10 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
     }
 
 
+    /**
+     * This method calls changeView in all JFrames and
+     * changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             integerAssignmentList.setBackground(Color.BLACK);
@@ -60,6 +73,11 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
         }
     }
 
+
+    /**
+     * This method overrides the update method and calls
+     * UpdateJList with the appropriate value
+     */
     @Override
     public void update(Observable obs, Object obj) {
         observer = (CreateImageMap) obs;
@@ -68,6 +86,10 @@ public class IntegerAssignmentMinimizeGUI extends JPanel implements Observer {
         revalidate();
     }
 
+
+    /**
+     * This method overrides the default render
+     */
     public void setRender(BoundsListRender lbr){
         integerAssignmentList.setCellRenderer(lbr);
     }

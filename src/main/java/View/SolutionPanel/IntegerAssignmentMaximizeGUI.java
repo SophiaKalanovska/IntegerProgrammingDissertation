@@ -17,6 +17,10 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
     private DefaultListModel internelConstainsClusterListModel;
     private JList integerAssignmentList;
 
+    /**
+     * This method creates a list that contains the Lambda Plus
+     * corresponding to the decision valiables
+     */
     public IntegerAssignmentMaximizeGUI(){
         this.internelConstainsClusterListModel = new DefaultListModel();
         this.integerAssignmentList = new JList(internelConstainsClusterListModel);
@@ -29,6 +33,12 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
 
     }
 
+    /**
+     * This method loops through each pair of Pair<Integer,SCCCluster>,
+     * which contains the ID of the cluster and the cluster
+     * The elements label is obtained and the Lambda Plus Value is assigned.
+     * If the list is empty "No Solution or No IP Model Presented" is printed
+     */
     private void UpdateJList(ArrayList<Pair<Integer,SCCCluster>> in){
         internelConstainsClusterListModel.clear();
         if(in.size() != 0){
@@ -47,13 +57,16 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
             }
             integerAssignmentList.setModel(internelConstainsClusterListModel);
         }else{
-            internelConstainsClusterListModel.addElement(new Pair(0,"No Solution No IP Model Presented"));
+            internelConstainsClusterListModel.addElement(new Pair(0,"No Solution or No IP Model Presented"));
             integerAssignmentList.setModel(internelConstainsClusterListModel);
         }
 
     }
 
-
+    /**
+     * This method calls changeView in all JFrames and
+     * changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             integerAssignmentList.setBackground(Color.BLACK);
@@ -64,6 +77,10 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
         }
     }
 
+    /**
+     * This method overrides the update method and calls
+     * UpdateJList with the appropriate value
+     */
     @Override
     public void update(Observable obs, Object obj) {
         observer = (CreateImageMap) obs;
@@ -72,6 +89,10 @@ public class IntegerAssignmentMaximizeGUI extends JPanel implements Observer {
         revalidate();
     }
 
+
+    /**
+     * This method overrides the default render
+     */
     public void setRender(BoundsListRender lbr){
         integerAssignmentList.setCellRenderer(lbr);
     }

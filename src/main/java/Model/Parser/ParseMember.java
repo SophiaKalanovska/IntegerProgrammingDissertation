@@ -15,6 +15,11 @@ public class ParseMember {
         this.parser = parser;
     }
 
+
+    /**
+     * This method mapps the string to reges,
+     * if the regex is found the sub-sting is returned
+     */
     private String tokenize(String regex) throws Exception {
 
         Pattern reg = Pattern.compile("^(" + regex + ")");
@@ -44,6 +49,10 @@ public class ParseMember {
         return null;
     }
 
+
+    /**
+     * This method calls tokenize with a regex that matches a coefficient
+     */
     private void parseCoefficient(String expression, String order) throws NoWeightException {
         try {
             parser.toParse = expression;
@@ -51,16 +60,17 @@ public class ParseMember {
             String term = tokenize("[1-9]+[0-9]*|[0-9]+[\\.\\,][0-9]+");
             if (order.equals("first")) {
                 parser.inequality.getLeftDecisionVariable().setWeight(Double.parseDouble(term));
-                ;
             } else {
                 parser.inequality.getRightDecisionVariable().setWeight(Double.parseDouble(term));
-                ;
             }
         } catch (Exception e) {
             throw new NoWeightException(" No weight");
         }
     }
 
+    /**
+     * This method calls tokenize with a regex that matches a sign
+     */
     private void signOfExpression(String order) {
         String sign = null;
         try {
@@ -82,6 +92,10 @@ public class ParseMember {
         }
     }
 
+    /**
+     * This method calls tokenize with a regex that matches a decision variable
+     * and assigned the DecisionVariable in the inequality depenting on the order
+     */
     private void parseDecisionVariable(String order) throws Exception {
         try {
 
@@ -97,6 +111,9 @@ public class ParseMember {
         }
     }
 
+    /**
+     * This method calls tokenize with a regex that matches a term
+     */
     String parseTerm(String order) throws ExceptionNotATerm, Exception {
         String term;
         try {
@@ -115,10 +132,16 @@ public class ParseMember {
         return term;
     }
 
+    /**
+     * This method calls tokenize with a regex that matches a sign
+     */
     void parseSign() throws Exception {
         parser.sign = tokenize("<=|>=|<|>");
     }
 
+    /**
+     * This method calls tokenize with a regex that matches 0
+     */
     void parseNull() throws ExceptionNotZero {
         try {
             tokenize("0");
@@ -127,6 +150,9 @@ public class ParseMember {
         }
     }
 
+    /**
+     * This method calls tokenize with a regex that matches a positive number
+     */
     public Double parseNumber() throws ExceptionNotNumber {
         try {
             return Double.parseDouble(tokenize("[0-9]+[\\.\\,][0-9]+|[0-9]+"));

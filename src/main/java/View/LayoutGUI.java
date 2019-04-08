@@ -2,9 +2,9 @@ package View;
 
 import View.Graph.GraphGUI;
 import View.Settings.DarkMode;
-import View.OperationsOnInequalities.InequalitiesListGUI;
-import View.OperationsOnInequalities.ManualInequalitiesGUI;
-import View.OperationsOnInequalities.RandomInequalitiesGUI;
+import View.Inequalities.InequalitiesListGUI;
+import View.Inequalities.ManualInequalitiesGUI;
+import View.Inequalities.RandomInequalitiesGUI;
 import View.SolutionPanel.BoundsGUI;
 
 import java.awt.*;
@@ -12,10 +12,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
-
-/**
- * Home is the class where the Home panel is built implements Observer
- */
 public class LayoutGUI extends JPanel  {
 
     private GraphGUI graph;
@@ -31,10 +27,8 @@ public class LayoutGUI extends JPanel  {
     private RandomInequalitiesGUI randomInequalitiesGUI;
 
     /**
-     * Constructs a new Home panel
-     * @param  frame  the frame containing the panel
+     * This class contains all JPanels the application has and is set a conted of the JFrame.
      */
-
     private RandomInequalitiesGUI randomInequalities;
 
     public LayoutGUI(JFrame frame, ManualInequalitiesGUI manualInequalitiesGUI, RandomInequalitiesGUI randomInequalities, InequalitiesListGUI inequalitiesListGUI, BoundsGUI boundGUI){
@@ -107,6 +101,10 @@ public class LayoutGUI extends JPanel  {
 
     }
 
+    /**
+     * This method calls changeView in all JFrames and
+     * changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             this.setBackground(Color.black);
@@ -137,21 +135,18 @@ public class LayoutGUI extends JPanel  {
         }
     }
 
-//    public void createaPopUp()
-
-
-
+    /**
+     * Getter methods for some of the LayoutGUI fields.
+     */
     public GraphGUI getGraphGUI(){
         return graph;
     }
-
     public RandomInequalitiesGUI getRandomInequalities() {
         return randomInequalities;
     }
     public ManualInequalitiesGUI getManualInequalities() {
         return manualInequalitiesGUI;
     }
-
     public InequalitiesListGUI getInequalitiesListGUI() {
         return inequalitiesListGUI;
     }

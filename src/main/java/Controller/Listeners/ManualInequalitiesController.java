@@ -7,7 +7,7 @@ import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
 import Model.Parser.Parser;
-import View.OperationsOnInequalities.ManualInequalitiesGUI;
+import View.Inequalities.ManualInequalitiesGUI;
 
 /**
  * This class will represent the Controller for the ManualIntegerInequalities Panel

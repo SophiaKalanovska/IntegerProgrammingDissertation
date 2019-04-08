@@ -9,9 +9,9 @@ import Controller.Listeners.ManualInequalitiesController;
 import Controller.Listeners.RandomInequalitiesController;
 import Model.Inequalities.InequalitiesList;
 import View.*;
-import View.OperationsOnInequalities.InequalitiesListGUI;
-import View.OperationsOnInequalities.ManualInequalitiesGUI;
-import View.OperationsOnInequalities.RandomInequalitiesGUI;
+import View.Inequalities.InequalitiesListGUI;
+import View.Inequalities.ManualInequalitiesGUI;
+import View.Inequalities.RandomInequalitiesGUI;
 import View.SolutionPanel.*;
 
 /**
@@ -28,7 +28,6 @@ public class Container extends JFrame {
 	public Container(){
 
 		// Create all the View  classes
-
 		ManualInequalitiesGUI manualInequalitiesGUI = new ManualInequalitiesGUI();
 		RandomInequalitiesGUI randomInequalitiesGUI = new RandomInequalitiesGUI();
 		InequalitiesListGUI inequalitiesListGUI = new InequalitiesListGUI();
@@ -44,7 +43,6 @@ public class Container extends JFrame {
         inequalitiesList = new InequalitiesList();
         inequalitiesList.addObserver(inequalitiesListGUI);
         inequalitiesList.tryUpdate();
-//        setPanel(layoutGUI);
 
 		// Create all the Controller classes
 		graphController = new GraphController(layoutGUI) ;
@@ -52,9 +50,6 @@ public class Container extends JFrame {
         new ManualInequalitiesController(inequalitiesList,manualInequalitiesGUI, graphController);
         randomInequalitiesController = new RandomInequalitiesController(inequalitiesList,randomInequalitiesGUI, graphController);
         inequalitiesListController = new InequalitiesListController(inequalitiesList, inequalitiesListGUI, graphController, constarinsController, randomInequalitiesController);
-
-
-
     }
 
     public void setPanel(){
@@ -70,6 +65,9 @@ public class Container extends JFrame {
         this.setLocationRelativeTo(null);
 	}
 
+
+
+    // Creates getters used in the testing
     public LayoutGUI getLayoutGUI() {
         return layoutGUI;
     }

@@ -16,6 +16,11 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
     private DefaultListModel internelConstainsClusterListModel;
     private JList internelConstainsClusterList;
 
+
+    /**
+     * This method creates a list that contains the internal Bound
+     * corresponding to the cluster ID
+     */
     public InternalConstarinsClusterGUI(){
         this.internelConstainsClusterListModel = new DefaultListModel();
         this.internelConstainsClusterList = new JList(internelConstainsClusterListModel);
@@ -28,6 +33,10 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
 
     }
 
+    /**
+     * This method loops through each pair of Pair<Integer,double>,
+     * It adds the internal bound that is corresponding to the cluster ID
+     */
     private void UpdateJList(ArrayList<Pair<Integer,Double>> in) {
         internelConstainsClusterListModel.clear();
         if (in.size() != 0) {
@@ -41,6 +50,10 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
         }
     }
 
+    /**
+     * This method overrides the update method and calls
+     * UpdateJList with the list of internal bounds to cluster ID
+     */
     @Override
     public void update(Observable obs, Object obj) {
         observer = (CreateImageMap) obs;
@@ -49,11 +62,18 @@ public class InternalConstarinsClusterGUI extends JPanel implements Observer {
         revalidate();
     }
 
+    /**
+     * This method overrides the default render
+     */
     public void setRender(BoundsListRender lbr){
         internelConstainsClusterList.setCellRenderer(lbr);
     }
 
 
+    /**
+     * This method calls changeView in all JFrames and
+     * changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             internelConstainsClusterList.setBackground(Color.BLACK);

@@ -11,6 +11,10 @@ public class ParserWithOneDecisionVariable {
         this.parser = parser;
     }
 
+    /**
+     * This method checks if the user input contains
+     * one DecisionVariable and a bound.
+     */
     void parseInequality() throws Exception, ExceptionNotATerm {
         parser.toParse = "";
         double boundry = 0;
@@ -41,7 +45,7 @@ public class ParserWithOneDecisionVariable {
                 parser.inequality.getLeftDecisionVariable().setUpperBound(boundry/parser.inequality.getLeftDecisionVariable().getWeight());
             }
         } catch (Exception e) {
-            System.out.println("some other exception");
+            System.out.println("An Error has occurred ");
         }
     }
 

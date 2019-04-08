@@ -21,6 +21,9 @@ public class BoundsGUI extends JPanel{
     private TitledBorder upperBound ;
     private TitledBorder constrain;
 
+    /**
+     * This class contains all JPanels that are contain a bound list.
+     */
     public BoundsGUI(LowerBoundClusterGUI lowerBoundClusterGUI, UpperBoundClusterGUI upperBoundClusterGUI, IntegerAssignmentMinimizeGUI integerAssignmentMinimizeGUI, InternalConstarinsClusterGUI internalConstarinsClusterGUI, IntegerAssignmentMaximizeGUI integerAssignmentMaximizeGUI){
         this.lowerBoundClusterGUI = lowerBoundClusterGUI;
         this.upperBoundClusterGUI = upperBoundClusterGUI;
@@ -80,6 +83,11 @@ public class BoundsGUI extends JPanel{
         this.setOpaque(false);
     }
 
+
+    /**
+     * This method calls changeView in all JFrames and
+     * changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             solution.setTitleColor(Color.WHITE);
