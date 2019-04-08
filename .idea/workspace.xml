@@ -5,80 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="some test changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Listeners/InequalitiesListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Listeners/InequalitiesListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Listeners/ManualInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Listeners/ManualInequalitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Inequalities/InequalitiesListGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Inequalities/InequalitiesListGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Inequalities/ManualInequalitiesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Inequalities/ManualInequalitiesGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Inequalities/RandomInequalitiesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Inequalities/RandomInequalitiesGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Settings/DarkMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Settings/DarkMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/BoundsGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/BoundsGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentMaximizeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentMaximizeGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentMinimizeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/IntegerAssignmentMinimizeGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/InternalConstarinsClusterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/LowerBoundClusterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/LowerBoundClusterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/UpperBoundClusterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SolutionPanel/UpperBoundClusterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ConstarinsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ConstarinsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DarkModeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DarkModeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GraphController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GraphController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/InequalitiesListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/InequalitiesListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/DecisionVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/DecisionVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/Inequality.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/Inequality.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomVariables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotATerm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotATerm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotZero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotZero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/NoWeightException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/NoWeightException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParseMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/ParseMember.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithOneDecisionVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithOneDecisionVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithTwoDecisionVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithTwoDecisionVariables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/BoundsListRender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/BoundsListRender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/ColorGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/ColorGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/CreateImageMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/CreateImageMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/LayoutGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LayoutGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/InequalitiesListGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/InequalitiesListGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/ManualInequalitiesGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/OperationsOnInequalities/RandomInequalitiesGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Settings/DarkMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Settings/DarkMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/BoundsGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/BoundsGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentMaximizeGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentMaximizeGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentMinimizeGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/IntegerAssignmentMinimizeGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/InternalConstarinsClusterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/InternalConstarinsClusterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/LowerBoundClusterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/LowerBoundClusterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SolutionPanel/UpperBoundClusterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SolutionPanel/UpperBoundClusterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ButtonListeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ButtonListeners.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DarkModeShould.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DarkModeShould.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Evaluation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Evaluation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Graph/TestSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Graph/TestSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Inequalities/InequalitiesListShould.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Inequalities/InequalitiesListShould.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Inequalities/RandomInequalityGeneratorShould.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Inequalities/RandomInequalityGeneratorShould.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/IntegrationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/IntegrationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithOneDecisionVariableShould.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithOneDecisionVariableShould.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithTwoDecisionVariablesShould.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithTwoDecisionVariablesShould.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/ColorGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/ColorGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,22 +47,30 @@
     <option name="OPEN_IN_BROWSER" value="true" />
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="IntegerProgrammingDissertation" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RandomVariables.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomVariables.java">
+      <file leaf-file-name="ConstarinsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ConstarinsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="24" selection-end-column="7" />
+            <state relative-caret-position="620">
+              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2590#2591#0" expanded="true" />
+                <element signature="e#2641#2642#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java">
+      <file leaf-file-name="ParseMember.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="7" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="7" />
+            <state relative-caret-position="-692">
+              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,7 +81,7 @@
       <file leaf-file-name="ParserWithOneDecisionVariable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="-17">
               <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -150,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParseMember.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java">
+      <file leaf-file-name="BoundsListRender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+            <state>
+              <caret selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,46 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExceptionNotATerm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/ExceptionNotATerm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExceptionNotNumber.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/ExceptionNotNumber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExceptionNotZero.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/ExceptionNotZero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoWeightException.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/NoWeightException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ParserWithTwoDecisionVariables.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="43">
               <caret line="16" column="7" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -210,11 +114,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RandomInequalitiesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java">
+      <file leaf-file-name="SCCAlgorithm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="403">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SCCClusterList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="80" column="9" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="80" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SCCCluster.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1537">
+              <caret line="179" column="30" lean-forward="true" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateImageMap.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="39" column="93" lean-forward="true" selection-start-line="39" selection-start-column="93" selection-end-line="39" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ColorGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,7 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Controller/ManualInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Listeners/CheckboxActionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Constrains/InternalConstarinsClusterListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Constrains/LowerBoundClusterListController.java" />
@@ -288,11 +239,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Controller/Constrains/AssignmentList.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/CheckboxActionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Listeners/ManualInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Listeners/InequalitiesListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ConstarinsController.java" />
@@ -300,9 +249,6 @@
         <option value="$PROJECT_DIR$/src/test/java/IntegrationTests.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Evaluation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/OperationsOnInequalities/RandomInequalitiesGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/OperationsOnInequalities/InequalitiesListGUI.java" />
@@ -329,6 +275,12 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/ColorGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java" />
       </list>
     </option>
   </component>
@@ -409,36 +361,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Inequalities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IntegerProgrammingDissertation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Inequalities" type="462c0819:PsiDirectoryNode" />
-              <item name="RandomInequalities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IntegerProgrammingDissertation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IntegerProgrammingDissertation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
@@ -888,17 +811,17 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.4076923" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32948717" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.45433614" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.1423077" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.1423077" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.68908817" visible="true" weight="0.26153848" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32820514" />
-      <window_info id="Structure" order="6" sideWeight="0.3109118" side_tool="true" visible="true" weight="0.26153848" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.68846154" visible="true" weight="0.26153848" />
+      <window_info anchor="bottom" id="Find" order="5" visible="true" weight="0.0" />
+      <window_info id="Structure" order="6" sideWeight="0.3109118" side_tool="true" weight="0.26153848" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.33205128" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Favorites" order="3" sideWeight="0.31153846" side_tool="true" visible="true" weight="0.26153848" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32876712" />
@@ -1055,16 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ColorGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="61" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/GraphController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1072,53 +985,6 @@
           <folding>
             <element signature="e#4822#4823#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="53" column="77" lean-forward="true" selection-start-line="53" selection-start-column="77" selection-end-line="53" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ConstarinsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2590#2591#0" expanded="true" />
-            <element signature="e#2641#2642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -1328,54 +1194,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="7" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/ExceptionNotATerm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/ExceptionNotNumber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
@@ -1393,6 +1212,122 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Exceptions/ExceptionNotNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-332">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ConstarinsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2590#2591#0" expanded="true" />
+            <element signature="e#2641#2642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-692">
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCCluster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1537">
+          <caret line="179" column="30" lean-forward="true" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="80" column="9" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="80" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/BoundsListRender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/ColorGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/CreateImageMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="39" column="93" lean-forward="true" selection-start-line="39" selection-start-column="93" selection-end-line="39" selection-end-column="93" />
         </state>
       </provider>
     </entry>

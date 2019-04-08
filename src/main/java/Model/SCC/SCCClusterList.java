@@ -20,27 +20,37 @@ public class SCCClusterList {
 
     }
 
+    /**
+     * this method adda a cluster to the SCCContainerMapId
+     * */
     public void addCluster(SCCCluster cluster) {
             this.SCCContainerMapId.put(cluster.getId(), cluster);
             this.SCCContainer.add(cluster);
 
     }
 
-    /**
-     * Returns the wallet as an ArrayList of Projects
-     *
-     * @return an ArrayList of projects that are contained in this wallet
-     */
+
     public ArrayList<SCCCluster> getProjectWallet() {
         return SCCContainer;
     }
 
+
+    /**
+     * calls the evaluate method in each cluster
+     * */
     public void evaluate() {
         for (SCCCluster cluster : SCCContainer){
             cluster.evaluate();
         }
     }
 
+    /**
+     * if the bound is higher than 1 and the lower bound different from
+     * 0 the method assigns infinity. If the list of successors for that
+     * cluster is empty the lambdaPlus is assigned to the clusters lowerBound
+     * If the cluster has predecessors the function is calculated recursively and
+     * the highest value is assigned
+     * */
     public double  lambdaMinus(SCCCluster cluster) {
         double clusterLowerBound = cluster.getLowerbound();
         int clusterLowerCeil = (int) Math.ceil(clusterLowerBound);
@@ -62,6 +72,13 @@ public class SCCClusterList {
         }
     }
 
+    /**
+     * if the bound is higher than 1 and the upper bound different from
+     * infinity the method assigns zero. If the list of successors for that
+     * cluster is empty the lambdaPlus is assigned to the clusters upperBound
+     * If the cluster has successors the function is calculated recursivelty and
+     * the lowers value is assigned
+     * */
     private double lambdaPlus(SCCCluster cluster) {
         double clusterUpperBound= cluster.getUpperbound();
         double clusterUpperCeil =  Math.floor(clusterUpperBound);

@@ -51,6 +51,13 @@ public class SCCCluster {
     }
 
 
+
+    /**
+     *  goes trough the list of nodes and compares
+     *  the node's lower and upper bounds to the current one
+     *  that belongs to the cluster and if the node's one is more
+     *  restrictive it's value is assigned.
+     */
     public void evaluate() {
         for ( Node n : nodes){
             double upperBoundNode = n.getAttribute("upper_bound");
@@ -74,6 +81,11 @@ public class SCCCluster {
         successorClusters = setsuccessorClusters();
     }
 
+
+    /**
+     *  The equals method for comparing
+     *  objects of this class is overridden
+     */
     @Override
     public boolean equals(Object other) {
         boolean retVal = false;
@@ -87,6 +99,12 @@ public class SCCCluster {
     }
 
 
+    /**
+     * The method goes through the list of predecessor nodes. For each node,
+     * it checks if the cluster ID of that node is already in the list of predecessor clusters.
+     * If it is not, it creates a new entry that contains the
+     * cluster ID and the weight of the attacking edge.
+     */
     public ArrayList<Map.Entry<Integer, Double>> setpredecessorClusters(){
        //cluster successor and the weight of the attack
        ArrayList<Map.Entry<Integer, Double>> predecessorCluster = new ArrayList<>();
@@ -104,6 +122,12 @@ public class SCCCluster {
        return predecessorCluster;
     }
 
+    /**
+     * The method goes through the list of succesor nodes. For each node,
+     * it checks if the cluster ID of that node is already in the list of successors clusters.
+     * If it is not, it creates a new entry that contains the
+     * cluster ID and the weight of the attacking edge.
+     */
     public ArrayList<Map.Entry<Integer, Double>> setsuccessorClusters(){
         //cluster Attacked and the weight of the attack
         ArrayList<Map.Entry<Integer, Double>> successorCluster = new ArrayList<>();
@@ -120,6 +144,11 @@ public class SCCCluster {
         }
         return successorCluster;
     }
+
+
+    /**
+     * Getter and setter methods for the fields in the class
+     */
     public double getLowerbound() {
         return lowerbound;
     }

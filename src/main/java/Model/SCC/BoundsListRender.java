@@ -9,8 +9,11 @@ public class BoundsListRender extends DefaultListCellRenderer {
 
     private Map<Integer, ImageIcon> imageMap;
 
-
-
+    /**
+     * takes the map that was send from the CreateImageMap class
+     * and maps the cluster ID provided of the elements list to
+     * the Image Icon List
+     * */
     @Override
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 
@@ -20,11 +23,11 @@ public class BoundsListRender extends DefaultListCellRenderer {
         return label;
     }
 
-
+    /**
+     * setsTheImageMap
+     * */
     public void setImageMap(Map<Integer,ImageIcon> map) {
         imageMap = map;
     }
-
-
 
 }

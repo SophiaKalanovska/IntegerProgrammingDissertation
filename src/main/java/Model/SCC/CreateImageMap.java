@@ -34,6 +34,11 @@ public class CreateImageMap extends Observable implements java.io.Serializable{
         return createImageMap(SCCCluster);
     }
 
+    /**
+     *  If the list is not empty the method creates a map,
+     *  each cluster ID is a separate key and has an assigned Image Icon (coloured box).
+     *  The color assigned to the ImageIcon corresponds to the color assigned to the cluster.
+     * */
     private Map createImageMap(ArrayList<SCCCluster> SCC) {
         Map<Integer, ImageIcon> map = new HashMap<>();
         if (SCC.size() != 0) {
@@ -72,6 +77,9 @@ public class CreateImageMap extends Observable implements java.io.Serializable{
         return map;
     }
 
+    /**
+     *  Getter and Setter method for the classes fields
+     * */
 
     public ArrayList getLowerBoundContainer() {
         return lowerBoundContainer;

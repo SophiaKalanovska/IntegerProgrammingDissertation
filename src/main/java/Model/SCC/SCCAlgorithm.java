@@ -17,6 +17,10 @@ public class SCCAlgorithm {
     private TarjanStronglyConnectedComponents tscc;
     private SCCClusterList list;
 
+
+    /**
+     * this method runns the out-of-the-box strongly connected algorithm
+     */
     public TarjanStronglyConnectedComponents calculateSCC(Graph graph) {
         this.graph = graph;
         tscc = new TarjanStronglyConnectedComponents();
@@ -26,6 +30,10 @@ public class SCCAlgorithm {
         return tscc;
     }
 
+    /**
+     * The nodes that are assigned to the same cluster by the algorithm are added
+     * to the same SCCCluster object.
+     */
     public SCCClusterList cluster(TarjanStronglyConnectedComponents trj) {
         this.list = new SCCClusterList();
         for (Node n : graph.getEachNode()) {
@@ -51,10 +59,15 @@ public class SCCAlgorithm {
         return list;
     }
 
+    /**
+     * While going trough the graph if the successor
+     * of a node is not in the same SCC the successor is added in the node's list of successors
+     * mapped with the weight value of the edge and the successor adds the node as a predecessor
+     */
     private void setAttackedNodes(Node n,TarjanStronglyConnectedComponents trj) {
-        Iterator i$ = n.getEachLeavingEdge().iterator();
-        while(i$.hasNext()){
-            Edge vw = (Edge)i$.next();
+        Iterator i = n.getEachLeavingEdge().iterator();
+        while(i.hasNext()){
+            Edge vw = (Edge)i.next();
             Node w = vw.getOpposite(n);
             if (w.getAttribute(trj.getSCCIndexAttribute()) == n.getAttribute(trj.getSCCIndexAttribute())){
                 if ((double)w.getAttribute("internal_weight") < (double) vw.getAttribute("weight") ) {
@@ -74,6 +87,9 @@ public class SCCAlgorithm {
         }
     }
 
+    /**
+     * that method resets the attributes stored in  each node.
+     */
     public void clear(){
         for (Node node : graph.getEachNode()) {
             node.setAttribute("internal_weight", 0.0);
