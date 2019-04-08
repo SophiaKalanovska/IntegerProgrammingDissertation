@@ -123,14 +123,11 @@ public class InequalitiesListGUI extends JPanel implements Observer {
 
         repaint();
         revalidate();
-
-//        JList wordList = getWordListScroller();
-//        int lastIndex = wordList.getModel().getSize() - 1;
-//        if (lastIndex >= 0) {
-//            wordList.ensureIndexIsVisible(lastIndex);
-//        }
     }
 
+    /**
+     * Changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark){
         if (dark){
             inequalitiesList.setBackground(Color.BLACK);

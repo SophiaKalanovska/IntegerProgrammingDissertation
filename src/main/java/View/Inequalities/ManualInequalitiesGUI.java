@@ -15,8 +15,8 @@ public class ManualInequalitiesGUI extends JPanel {
     private JLabel enterInequalityLabel;
 
     /**
-     * Constructs a new Home panel
-     *
+     * A JTextField is created, which 
+     * allows the user to import a new inequality into the IP model
      */
     public ManualInequalitiesGUI() {
 
@@ -40,15 +40,25 @@ public class ManualInequalitiesGUI extends JPanel {
 
     }
 
+    /**
+     * ManualInequalitiesController is added
+     * as an ActionListener to the enterInequality field
+     */
     public void addControllers(ManualInequalitiesController controller){
         enterInequality.addActionListener(controller);
 
     }
-
+    /**
+     * ManualInequalitiesController is added
+     * as a MouseListener to the enterInequality field
+     */
     public void addMouseListener(ManualInequalitiesController controller){
         enterInequality.addMouseListener(controller);
     }
 
+    /**
+     * Changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark) {
         if (dark){
             enterInequalityLabel.setForeground(Color.WHITE);

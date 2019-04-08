@@ -53,7 +53,9 @@ public class RandomInequalitiesGUI extends JPanel {
 
 
 
-
+    /**
+     * Changes the color scheme to dark mode and back
+     */
     public void changeView(boolean dark) {
         if (dark){
             randomNumberDecisionVariableLabel.setForeground(Color.WHITE);
