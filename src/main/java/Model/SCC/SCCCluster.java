@@ -88,7 +88,7 @@ public class SCCCluster {
 
 
     public ArrayList<Map.Entry<Integer, Double>> setpredecessorClusters(){
-       //clustersuccessor and the weight of the attack
+       //cluster successor and the weight of the attack
        ArrayList<Map.Entry<Integer, Double>> predecessorCluster = new ArrayList<>();
        for (Map.Entry<Node, Double> node: predecessor){
            int sccsuccessor = node.getKey().getAttribute("SCC");
@@ -105,7 +105,7 @@ public class SCCCluster {
     }
 
     public ArrayList<Map.Entry<Integer, Double>> setsuccessorClusters(){
-        //clusterAttacked and the weight of the attack
+        //cluster Attacked and the weight of the attack
         ArrayList<Map.Entry<Integer, Double>> successorCluster = new ArrayList<>();
         for (Map.Entry<Node, Double> node: successor){
             int sccAttacked = node.getKey().getAttribute("SCC");
@@ -142,7 +142,7 @@ public class SCCCluster {
         return predecessorClusters;
     }
 
-    public ArrayList<Map.Entry<Integer, Double>> getsuccessorClusters() {
+    public ArrayList<Map.Entry<Integer, Double>> getSuccessorClusters() {
 
        return successorClusters;
     }

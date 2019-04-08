@@ -233,7 +233,7 @@ public class Evaluation {
         int uniqueId = (int) System.currentTimeMillis();
         java.awt.event.MouseEvent e  = new MouseEvent(evaluateGraph, uniqueId, System.currentTimeMillis(), 0, 0, 0, 1, false);
         long beginCreationAndEvaluation = System.currentTimeMillis();
-        ArrayList nodes = helperMethodAddNodes(container, generator, 500);
+        ArrayList nodes = helperMethodAddNodes(container, generator, 5000);
         helperMethodAddInequalities(container, generator, 18000, nodes);
         helperMethodAddBounds(container, generator, 3000, nodes);
         long evaluationBegin = System.currentTimeMillis();
@@ -266,7 +266,7 @@ public class Evaluation {
     public synchronized void helperMethodAddInequalities( final Container container, final RandomInequalitiesGenerator generator, int amount, ArrayList nodes ){
         ArrayList<Inequality> inequalities = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
-            inequalities.add(generator.generateInequalities(nodes));
+            inequalities.add(generator.generateInequality(nodes));
         }
         container.getRandomInequalitiesController().addInequalities(inequalities);
         container.getRandomInequalitiesController().visualizeInequality(inequalities);

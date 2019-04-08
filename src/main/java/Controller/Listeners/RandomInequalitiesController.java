@@ -86,7 +86,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                 int numberOfRandomInequalities=  Integer.parseInt(enter.getText());
                 final ArrayList<Inequality> inequalities = new ArrayList<>();
                 for (int i= 0; i < numberOfRandomInequalities; i++){
-                    inequalities.add(generator.generateInequalities(nodes));
+                    inequalities.add(generator.generateInequality(nodes));
                 }
                 enter.setText("Number of Inequalities...");
 

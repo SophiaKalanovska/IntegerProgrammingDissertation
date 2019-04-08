@@ -31,7 +31,7 @@ public class RandomInequalityGeneratorShould {
         for(int i = 0; i < 49; i ++){
             testDecisionVariables.add(testGenerator.generateDecisionVariable());
         }
-        Inequality testInequality = testGenerator.generateInequalities(testDecisionVariables);
+        Inequality testInequality = testGenerator.generateInequality(testDecisionVariables);
         Assert.assertNotEquals(testInequality,null);
     }
 

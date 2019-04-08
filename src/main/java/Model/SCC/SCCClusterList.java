@@ -68,18 +68,19 @@ public class SCCClusterList {
         if (cluster.getInternalConstartins() > 1 && cluster.getUpperbound() != Double.POSITIVE_INFINITY){
             return 0;
         }else {
-            if (cluster.getsuccessorClusters().isEmpty()) {
+            if (cluster.getSuccessorClusters().isEmpty()) {
                 return clusterUpperCeil;
             } else {
 
                 ArrayList<Double> lambdas = new ArrayList<>();
                 lambdas.add(clusterUpperCeil);
-                for (Map.Entry<Integer, Double> entry : cluster.getsuccessorClusters()) {
+                for (Map.Entry<Integer, Double> entry : cluster.getSuccessorClusters()) {
                     double lambdaOfAttacker = lambdaPlus(SCCContainerMapId.get(entry.getKey()));
                     lambdas.add(Math.floor(lambdaOfAttacker / entry.getValue()));
                 }
                 return Collections.min(lambdas);
             }
+
         }
     }
 

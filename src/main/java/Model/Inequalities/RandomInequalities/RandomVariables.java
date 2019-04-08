@@ -1,29 +1,24 @@
 package Model.Inequalities.RandomInequalities;
-
 import org.apache.commons.lang3.RandomStringUtils;
 
-import java.util.ArrayList;
 
-public class RandomVariables {
+class RandomVariables {
 
-    private static ArrayList<String> lowerUpper;
+    private static int lowerUpper;
     private int threshold ;
     private int currentSize;
 
     public RandomVariables() {
-        lowerUpper = new ArrayList<>();
-        threshold = 26*13;
+        lowerUpper = 0;
+        threshold = 338;
         currentSize = 2;
     }
 
 
     public String generate() {
-        if (lowerUpper.size() <= threshold) {
+        if (lowerUpper <= threshold) {
             String random = RandomStringUtils.randomAlphabetic(currentSize);
-//            while (lowerUpper.contains(random)) {
-//                random = generate();
-//            }
-            lowerUpper.add(random);
+            lowerUpper ++;
             return random;
         } else {
             threshold = threshold*26;

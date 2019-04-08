@@ -20,7 +20,7 @@ public class RandomInequalitiesGenerator {
         return decisionVariable;
     }
 
-    public Inequality generateInequalities(ArrayList<DecisionVariable> decisionVariables) {
+    public Inequality generateInequality(ArrayList<DecisionVariable> decisionVariables) {
         int max = 1;
         int min = 1;
         int variableIndexFirst = (int) (Math.random() * decisionVariables.size());
@@ -28,7 +28,6 @@ public class RandomInequalitiesGenerator {
         Inequality newIneqiality = new Inequality();
         DecisionVariable first = decisionVariables.get(variableIndexFirst);
         first.setWeight(random.nextInt(max - min + 1) + min);
-        first.setWeight(1);
         DecisionVariable second = decisionVariables.get(variableIndexSecond);
         second.setWeight(1);
         newIneqiality.setLeftDecisionVariable(first);

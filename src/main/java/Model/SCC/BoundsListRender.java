@@ -1,7 +1,6 @@
 package Model.SCC;
 
 import javafx.util.Pair;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
@@ -16,7 +15,7 @@ public class BoundsListRender extends DefaultListCellRenderer {
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 
         JLabel label = (JLabel) super.getListCellRendererComponent(list, ((Pair) value).getValue(), index, isSelected, cellHasFocus);
-        label.setIcon(imageMap.get((Integer) ((Pair) value).getKey()));
+        label.setIcon(imageMap.get(((Pair) value).getKey()));
         label.setHorizontalTextPosition(JLabel.RIGHT);
         return label;
     }
