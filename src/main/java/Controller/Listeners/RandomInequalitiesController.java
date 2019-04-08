@@ -25,11 +25,7 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     private JTextField enter;
 
     private RandomInequalitiesGenerator generator;
-    /**
-     * Constructs a Controller for the LayoutGUI panel
-     *
-     * @param randomInequalitiesGUI the LayoutGUI panel that this class will control
-     */
+
     public RandomInequalitiesController(InequalitiesList inequalitiesList, RandomInequalitiesGUI randomInequalitiesGUI, GraphController graphController){
         this.inequalitiesList = inequalitiesList;
         this.graph = graphController;
@@ -40,6 +36,12 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     }
 
 
+    /**
+     * This method is triggered once the user presses enter.
+     * It checks whether the number corresponds to creating
+     * random decision variables or random inequalities.
+     * The information is then send to the RandomInequalities generator.
+     **/
     @Override
     public synchronized void actionPerformed(java.awt.event.ActionEvent e) {
 
@@ -55,14 +57,16 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
                     inequalities.add(generator.generateInequalityForNode(variable));
                 }
                 enter.setText("Number of Decision Variables...");
+                ///a separate thread that represents the inequality object in the list
                 Thread thread = new Thread() {
                     @Override
                     public void run() {
                         addInequalities(inequalities);
                     }
                 };
-
                 thread.start();
+                ///new thread that represents the inequality object in the graph is
+                //run in parallel.
                 Thread thread2= new Thread() {
                     @Override
                     public void run() {
@@ -103,7 +107,6 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
     public synchronized void addInequalities(ArrayList<Inequality> inequalities) {
         for ( Inequality in : inequalities)
             inequalitiesList.addInequality(in);
-
     }
 
     public synchronized void visualizeInequality(ArrayList<Inequality> inequalities) {
@@ -129,6 +132,9 @@ public class RandomInequalitiesController implements ActionListener, MouseListen
         nodes = new ArrayList<>();
     }
 
+    /**
+     * Methods needed for the implementation of MouseListener
+     **/
     @Override
     public void mouseClicked(MouseEvent e) {}
 

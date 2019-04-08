@@ -23,6 +23,9 @@ public class ConstarinsController {
 
     }
 
+    /**
+     * This method calls createMap with the current SCCComponents
+     */
     public void populate(GraphController graph){
         calculateBounds(graph);
         graph.getSCCComponents().evaluateLambdas();
@@ -38,6 +41,14 @@ public class ConstarinsController {
         createMap(new SCCClusterList());
     }
 
+
+    /**
+     * This method creates an instance of the CreateImageMap class
+     * and calls populate(), which assigns the ImageIcons to the cluster ID's
+     * It creates a BoundsListRender and assigns is as the render
+     * for all Solution Panel classes. It also makes the Observable to the
+     * createImageMap instance
+     */
     public void createMap(SCCClusterList components){
         CreateImageMap createImageMap = new CreateImageMap(components);
         Map<Integer, ImageIcon> map = createImageMap.populate();
@@ -56,7 +67,8 @@ public class ConstarinsController {
         createImageMap.tryUpdate();
     }
 
-    public void calculateBounds( GraphController graph){
+    /** call back-end to calculate bounds */
+    private void calculateBounds(GraphController graph){
         graph.getSCCComponents().evaluate();
     }
 }

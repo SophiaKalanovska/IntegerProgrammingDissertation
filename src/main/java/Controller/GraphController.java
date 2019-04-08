@@ -19,7 +19,7 @@ import java.util.Map;
 public class GraphController implements Serializable {
     private final GraphGUI graphGUI;
     private final Graph graph;
-    SCCAlgorithm algorithm ;
+    private SCCAlgorithm algorithm ;
     private SCCClusterList SCCComponents;
     private int id;
 
@@ -31,6 +31,11 @@ public class GraphController implements Serializable {
 
     }
 
+    /**
+     * This method takes a decision variable
+     * checks if the node representation is in the graph.
+     * If it is not it adds it with the necessary attributes
+     */
     public void addNode(DecisionVariable decisionVariable){
         if (graph.getNode(decisionVariable.toString()) == null ){
             graph.addNode(decisionVariable.toString());
@@ -53,6 +58,11 @@ public class GraphController implements Serializable {
         }
     }
 
+    /**
+     * This takes an inequality and add an edge
+     * if the inequality contains two decision variables
+     * if it contains one, it adds the bound to the node
+     */
     public void drawInequality(Inequality inequality) {
         String decision = inequality.getSecondDecisionVariableValue();
         if (decision != null) {
@@ -64,6 +74,9 @@ public class GraphController implements Serializable {
         }
     }
 
+    /**
+     * This method runs the back-end to calculate the SCC
+     */
     public void findStronglyConnectedComponents()
     {
         TarjanStronglyConnectedComponents trj = algorithm.calculateSCC(graph);
@@ -72,10 +85,16 @@ public class GraphController implements Serializable {
     }
 
 
+    /**
+     * This method removes an inequality from the list
+     */
     public void undrawInequality(Inequality x){
         removeNodes(x.getFirstDecisionVariableValue(), x.getSecondDecisionVariableValue());
     }
 
+    /**
+     * This method adds an edge given two decision variables
+     */
     public void addEdge(DecisionVariable firstDecisionVariable, DecisionVariable secondDecisionVariable){
         Node node = graph.getNode(firstDecisionVariable.toString());
         Edge between = node.getEdgeToward(graph.getNode(secondDecisionVariable.toString()));
@@ -96,6 +115,10 @@ public class GraphController implements Serializable {
 
     }
 
+    /**
+     * This method removes the nodes if they are not
+     * connected to any other component in the graph
+     */
     public void removeNodes(String firstUnknownVariable, String secondUnknownVariable) {
         Node first = graph.getNode(firstUnknownVariable);
         Node second = graph.getNode(secondUnknownVariable);
@@ -122,11 +145,13 @@ public class GraphController implements Serializable {
         return graph;
     }
 
-
     public SCCClusterList getSCCComponents() {
         return SCCComponents;
     }
 
+    /**
+     * This method removes all component from the graph
+     */
     public void deleteGraph() {
         graph.clear();
         graphGUI.setUI();

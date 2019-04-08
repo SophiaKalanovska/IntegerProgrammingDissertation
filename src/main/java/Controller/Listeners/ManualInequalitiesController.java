@@ -2,7 +2,6 @@ package Controller.Listeners;
 
 import java.awt.event.*;
 import javax.swing.*;
-
 import Controller.GraphController;
 import Model.Inequalities.InequalitiesList;
 import Model.Inequalities.Inequality;
@@ -20,11 +19,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     private ManualInequalitiesGUI manualInequalitiesGUI;
     private GraphController graph;
     private final Parser parser = new Parser();
-    /**
-     * Constructs a Controller for the ManualIntegerInequalities panel
-     *
-     * @param ManualInequalitiesGUI the ManualIntegerInequalities  JFrame that this class will control
-     */
+
     public ManualInequalitiesController(InequalitiesList inequalitiesList, ManualInequalitiesGUI ManualInequalitiesGUI,  GraphController graphController){
         this.inequalitiesList = inequalitiesList;
         this.manualInequalitiesGUI = ManualInequalitiesGUI;
@@ -34,11 +29,8 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     }
 
     /**
-     * Mouse listener for the ManualIntegerInequalities panel
-     *
-     * @param e Mouse listener that will identify the actions that the user makes
-     */
-
+     * Tiggered once the user presses the mouse the text in the JTextField is deleted
+     **/
     @Override
     public void mousePressed(MouseEvent e) {
         if (e.getSource() instanceof JTextField) {
@@ -48,10 +40,9 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
     }
 
     /**
-     * The action listener for the ManualIntegerInequalities panel
-     *
-     * @param e the ActionEven object which will identify the performed action
-     */
+     * Tiggered once the user manually inputs an inequality and presses enter.
+     * This method obtains the user input and sends the data to the Parser
+     **/
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
         if (e.getSource() instanceof JTextField) {
@@ -67,6 +58,7 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                     JOptionPane.showMessageDialog(manualInequalitiesGUI.getParent().getParent(), "Coefficients between 0 and 1 are beyond the scope of this project.","Out of scope warning",
                             JOptionPane.WARNING_MESSAGE);
                 }else if(inequality.getLeftDecisionVariable().getWeight() <= 0 ) {
+                    //new thread that adds the inequality object to the list of inequalities
                     Thread addInequality = new Thread() {
                         @Override
                         public void run() {
@@ -75,25 +67,31 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
                     };
 
                     addInequality.start();
-                    Thread drawInequality = new Thread() {
+                    ///new thread that presents the inequality object in the graph
+                    //run in parallel This method is envoked when s negative weight is
+                    //present, so the addNode() method is used instead of drawInequality()
+                     Thread drawInequality = new Thread() {
                         @Override
                         public void run() {
                             graph.addNode(inequality.getLeftDecisionVariable());
                             graph.addNode(inequality.getRightDecisionVariable());
-                            graph.findStronglyConnectedComponents();
                         }
 
                     };
                     drawInequality.start();
 
                 }else{
+                    //new thread that adds the inequality object to the list of inequalities
                     Thread addInequality = new Thread() {
                         @Override
                         public void run() {
                             inequalitiesList.addInequality(inequality);
                         }
                     };
-
+                    //new thread that presents the inequality object in
+                    //the graph is run in parallel
+                    //as a new dependency might have been created the
+                    // findStronglyConnectedComponents is run as well
                     addInequality.start();
                     Thread drawInequality = new Thread() {
                         @Override
@@ -113,6 +111,9 @@ public class ManualInequalitiesController implements ActionListener, MouseListen
         }
     }
 
+    /**
+     * Methods needed for the implementation of MouseListener
+     **/
     @Override
     public void mouseClicked(MouseEvent e) {}
 

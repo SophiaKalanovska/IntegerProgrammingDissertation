@@ -9,8 +9,7 @@ import Model.Inequalities.Inequality;
 import View.Inequalities.InequalitiesListGUI;
 
 /**
- * This class will represent the Controller for the ManualIntegerInequalities Panel
- *
+ * This class will represent the Controller for the InequalitiesListGUI
  */
 public class InequalitiesListController implements MouseListener {
 
@@ -22,10 +21,8 @@ public class InequalitiesListController implements MouseListener {
 
 
     /**
-     * Constructs a Controller for the ManualIntegerInequalities panel
-     *
-     * @param InequalitiesListGUI the ManualIntegerInequalities  JFrame that this class will control
-     */
+     * Constructs a Controller for the InequalityGUI panel
+     **/
     public InequalitiesListController(InequalitiesList inequalitiesList, InequalitiesListGUI InequalitiesListGUI, GraphController graphController, ConstarinsController constarinsController, RandomInequalitiesController randomInequalitiesController){
 
         this.InequalitiesListGUI = InequalitiesListGUI;
@@ -36,31 +33,47 @@ public class InequalitiesListController implements MouseListener {
         InequalitiesListGUI.addMouseListener(this);
     }
 
+
+    /**
+     * Tiggered once the user manually clicks a button.
+     * This method first checks which button is pressed.
+     **/
     private void performTheAction(MouseEvent e) {
         if (e.getSource() instanceof JButton) {
             if (((JButton) e.getSource()).getName().equals("delete")){
                 Inequality toBeDeleted = InequalitiesListGUI.getListSelectedValue();
                 if (toBeDeleted != null){
+                    ///a single inequality from the list is deleted
                     inequalitiesList.deleteInequality(toBeDeleted);
+                    ///this inequality is removed from the list
                     graph.undrawInequality(toBeDeleted);
+                    ///and the graph is reevaluated.
                     graph.findStronglyConnectedComponents();
                 }
             }else if (((JButton) e.getSource()).getName().equals("deleteGraph")) {
+                // the inequalityList container is emptied
                 inequalitiesList.deleteAllInequalities();
+                // all graph elements are deleted
                 graph.deleteGraph();
+                // the lists values are deleted
                 constarinsController.delete();
+                // the lists values are deleted
                 randomInequalitiesController.resetRandomInequalitiesGenerator();
             }else{
+                // the back-end is called for evaluation  of lambda plus and minus
                 constarinsController.populate(graph);
             }
         }
     }
 
+    public View.Inequalities.InequalitiesListGUI getInequalitiesListGUI() {
+        return InequalitiesListGUI;
+    }
+
+
     /**
-     * Mouse listener for the ManualIntegerInequalities panel
-     *
-     * @param e Mouse listener that will identify the actions that the user makes
-     */
+     * Methods needed for the implementation of MouseListener
+     **/
     @Override
     public void mouseClicked(MouseEvent e) {
         performTheAction(e);
@@ -79,10 +92,6 @@ public class InequalitiesListController implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {}
-
-    public View.Inequalities.InequalitiesListGUI getInequalitiesListGUI() {
-        return InequalitiesListGUI;
-    }
 }
 
 

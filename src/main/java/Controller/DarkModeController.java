@@ -14,7 +14,10 @@ public class DarkModeController extends AbstractAction {
         this.layoutGUI = layoutGUI;
     }
 
-
+    /**
+     * This method overrides actionPerformed and
+     * triggers change view in layoutGUI
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         JCheckBox cbLog = (JCheckBox) e.getSource();
