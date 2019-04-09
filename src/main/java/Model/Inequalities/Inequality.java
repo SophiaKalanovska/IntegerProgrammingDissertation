@@ -48,8 +48,12 @@ public class Inequality  extends Observable implements Serializable {
         if (other == this) return true;
         if (other instanceof Inequality){
             Inequality inequalitiy = (Inequality) other;
-            retVal = (inequalitiy.getFirstDecisionVariableValue().equals(this.getFirstDecisionVariableValue()));
-            retVal = retVal && (inequalitiy.getSecondDecisionVariableValue().equals(this.getSecondDecisionVariableValue()));
+            if (inequalitiy.getFirstDecisionVariableValue() != null && this.getFirstDecisionVariableValue() != null) {
+                retVal = (inequalitiy.getFirstDecisionVariableValue().equals(this.getFirstDecisionVariableValue()));
+            }
+            if (inequalitiy.getSecondDecisionVariableValue() != null && this.getSecondDecisionVariableValue() != null){
+                retVal = retVal && (inequalitiy.getSecondDecisionVariableValue().equals(this.getSecondDecisionVariableValue()));
+            }
         }
         return retVal;
     }

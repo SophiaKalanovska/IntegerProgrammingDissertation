@@ -20,24 +20,7 @@
 
   <build>
 
-    <!-- You can override the source path here. Default
-    is "src/main/java". -->
-    <!-- <sourceDirectory></sourceDirectory> -->
-
-    <!-- You can override the output path here. This is the
-    path where classes will be created. Default is
-    "target/classes". -->
-    <!-- <outputDirectory></outputDirectory> -->
-
-    <!-- You can override the source path of your test classes
-    here. Default is "src/test/java". -->
-    <!-- <testSourceDirectory></testSourceDirectory> -->
-    <!-- <testOutputDirectory></testOutputDirectory> -->
-
     <plugins>
-      <!-- Configuration of the workspace path. You can change
-      the path of your workspace here. The workspace can
-      be configured using the "mvn eclipse:configure-workspace". -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>

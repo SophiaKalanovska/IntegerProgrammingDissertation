@@ -14,7 +14,7 @@ public class DecisionVariable {
      */
     public DecisionVariable(){
         weight = 1 ;
-        variable = "";
+        variable = null;
         sign = "+";
         lowerBound = 0;
         upperBound = Double.POSITIVE_INFINITY;
@@ -87,7 +87,9 @@ public class DecisionVariable {
         if (other == this) return true;
         if (other instanceof DecisionVariable){
             DecisionVariable decisionVariable = (DecisionVariable) other;
-            retVal = (decisionVariable.toString().equals(this.toString()));
+            if (other.toString() != null){
+                retVal = (decisionVariable.toString().equals(this.toString()));
+            }
         }
         return retVal;
     }

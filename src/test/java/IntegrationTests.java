@@ -109,7 +109,6 @@ public class IntegrationTests {
         testContoller.actionPerformed(e);
     }
 
-
 //    @Test
     public void testMain(){
         System.out.println("main");
