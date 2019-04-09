@@ -26,8 +26,8 @@ public class EvaluationTests {
         container.getInequalitiesListController().mouseClicked(e);
         long evaluationEnd = System.currentTimeMillis();
         long endCreationAndEvaluation = System.currentTimeMillis();
-        System.out.println("CreationAndEvaluationBounds" + ((double)(endCreationAndEvaluation - beginCreationAndEvaluation))/1000);
-        System.out.println("EvaluationBounds" + ((double)(evaluationEnd - evaluationBegin))/1000);
+//        System.out.println("CreationAndEvaluationBounds" + ((double)(endCreationAndEvaluation - beginCreationAndEvaluation))/1000);
+//        System.out.println("EvaluationBounds" + ((double)(evaluationEnd - evaluationBegin))/1000);
     }
 
     @Test
@@ -45,8 +45,8 @@ public class EvaluationTests {
         container.getInequalitiesListController().mouseClicked(e);
         long evaluationEnd = System.currentTimeMillis();
         long endCreationAndEvaluation = System.currentTimeMillis();
-        System.out.println("CreationAndEvaluation" + ((double)(endCreationAndEvaluation - beginCreationAndEvaluation))/1000);
-        System.out.println("EvaluationTests" + ((double)(evaluationEnd - evaluationBegin))/1000);
+//        System.out.println("CreationAndEvaluation" + ((double)(endCreationAndEvaluation - beginCreationAndEvaluation))/1000);
+//        System.out.println("EvaluationTests" + ((double)(evaluationEnd - evaluationBegin))/1000);
     }
 
     @Test
@@ -65,9 +65,9 @@ public class EvaluationTests {
         container.getInequalitiesListController().mouseClicked(e);
         long evaluationEnd = System.currentTimeMillis();
         long endCreationAndEvaluation = System.currentTimeMillis();
-        System.out.print(Runtime.getRuntime().totalMemory());
-        System.out.println("CreationAndEvaluationBounds" + ((double)(endCreationAndEvaluation - beginCreationAndEvaluation))/1000);
-        System.out.println("EvaluationBounds" + ((double)(evaluationEnd - evaluationBegin))/1000);
+//        System.out.print(Runtime.getRuntime().totalMemory());
+//        System.out.println("CreationAndEvaluationBounds" + ((double)(endCreationAndEvaluation - beginCreationAndEvaluation))/1000);
+//        System.out.println("EvaluationBounds" + ((double)(evaluationEnd - evaluationBegin))/1000);
     }
 
 

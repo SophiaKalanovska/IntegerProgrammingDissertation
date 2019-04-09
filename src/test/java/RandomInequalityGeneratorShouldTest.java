@@ -1,5 +1,4 @@
 
-
 import Model.Inequalities.DecisionVariable;
 import Model.Inequalities.Inequality;
 import Model.Inequalities.RandomInequalities.RandomInequalitiesGenerator;

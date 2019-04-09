@@ -3,64 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2c2f4c43-81e3-449b-b4bb-ee01c8dc38ec" name="Default" comment="some test changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IntegerProgrammingDissertation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IntegerProgrammingDissertation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ButtonListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ButtonListenersTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DarkModeShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DarkModeShouldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Evaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EvaluationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Graph/TestSetter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Inequalities/InequalitiesListShould.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Inequalities/RandomInequalityGeneratorShould.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ButtonListenersTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ButtonListenersTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EvaluationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EvaluationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/IntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IntegrationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Parser/ParserWithOneDecisionVariableShould.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Parser/ParserWithTwoDecisionVariablesShould.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ConstarinsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ConstarinsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/DarkModeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DarkModeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GraphController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GraphController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/InequalitiesListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/InequalitiesListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/ManualInequalitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Listeners/RandomInequalitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/DecisionVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/DecisionVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/InequalitiesList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/Inequality.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/Inequality.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Inequalities/RandomInequalities/RandomVariables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotATerm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotATerm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotZero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/ExceptionNotZero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/NoWeightException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Exceptions/NoWeightException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParseMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/ParseMember.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithOneDecisionVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithOneDecisionVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithTwoDecisionVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Parser/ParserWithTwoDecisionVariables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/BoundsListRender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/BoundsListRender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/ColorGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/ColorGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/CreateImageMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/CreateImageMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCCluster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SCC/SCCClusterList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Graph/GraphGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ButtonListeners.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DarkModeShould.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Evaluation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Graph/TestSetter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Inequalities/InequalitiesListShould.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Inequalities/RandomInequalityGeneratorShould.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/IntegrationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/IntegrationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithOneDecisionVariableShould.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Parser/ParserWithTwoDecisionVariablesShould.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RandomInequalityGeneratorShouldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RandomInequalityGeneratorShouldTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,17 +53,8 @@
       <file leaf-file-name="EvaluationTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/EvaluationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="277" selection-start-line="277" selection-end-line="277" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IntegrationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/IntegrationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="-17">
+              <caret line="69" column="100" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="69" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,11 +62,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParserWithOneDecisionVariableShouldTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithOneDecisionVariableShouldTest.java">
+      <file leaf-file-name="DarkModeShouldTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DarkModeShouldTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonListenersTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ButtonListenersTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1802">
+              <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomInequalityGeneratorShouldTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/RandomInequalityGeneratorShouldTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-137">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,67 +98,8 @@
       <file leaf-file-name="ParserWithTwoDecisionVariablesShouldTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithTwoDecisionVariablesShouldTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="-1142">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
-              <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ButtonListenersTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ButtonListenersTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="187" column="75" selection-start-line="187" selection-start-column="75" selection-end-line="187" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inequality.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-                <element signature="e#638#639#0" expanded="true" />
-                <element signature="e#1850#1851#0" expanded="true" />
-                <element signature="e#1905#1906#0" expanded="true" />
-                <element signature="e#1961#1962#0" expanded="true" />
-                <element signature="e#2004#2005#0" expanded="true" />
-                <element signature="e#2061#2062#0" expanded="true" />
-                <element signature="e#2105#2106#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="303" selection-start-line="303" selection-end-line="303" />
-              <folding>
-                <element signature="e#11117#11118#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomInequalitiesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="104" column="32" lean-forward="true" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,11 +107,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DecisionVariable.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java">
+      <file leaf-file-name="ParserWithOneDecisionVariableShouldTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithOneDecisionVariableShouldTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="380">
+              <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntegrationTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/IntegrationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InequalitiesListShouldTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/InequalitiesListShouldTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-317">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParserWithTwoDecisionVariables.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -274,11 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Model/SCC/ConstrainsLists/IntegerAssignmentList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/Constrains/ConstarinsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/CheckboxActionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/View/Graph/GraphGUI.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Parser/ParserWithTwoDecisionVariablesShould.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LayoutGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/OperationsOnInequalities/RandomInequalitiesGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/OperationsOnInequalities/InequalitiesListGUI.java" />
@@ -299,8 +243,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomVariables.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Inequalities/RandomInequalities/RandomInequalitiesGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Parser/Parser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/SCC/SCCClusterList.java" />
@@ -321,10 +263,17 @@
         <option value="$PROJECT_DIR$/src/main/java/Controller/GraphController.java" />
         <option value="$PROJECT_DIR$/src/test/java/Evaluation.java" />
         <option value="$PROJECT_DIR$/src/test/java/ButtonListeners.java" />
-        <option value="$PROJECT_DIR$/src/test/java/IntegrationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Listeners/RandomInequalitiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DarkModeShouldTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParserWithOneDecisionVariableShouldTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/RandomInequalityGeneratorShouldTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ButtonListenersTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java" />
+        <option value="$PROJECT_DIR$/src/test/java/EvaluationTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/IntegrationTests.java" />
       </list>
     </option>
   </component>
@@ -336,8 +285,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="38" />
-    <option name="y" value="23" />
+    <option name="x" value="32" />
+    <option name="y" value="68" />
     <option name="width" value="1237" />
     <option name="height" value="877" />
   </component>
@@ -416,6 +365,15 @@
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Inequalities" type="462c0819:PsiDirectoryNode" />
               <item name="RandomInequalities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IntegerProgrammingDissertation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IntegerProgrammingDissertation" type="b2602c69:ProjectViewProjectNode" />
@@ -795,15 +753,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_default_ - 2019.04.09 at 00h 10m 57s.xml">
-      <configuration name="&lt;default&gt;" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="_default_ - 2019.04.09 at 00h 13m 00s.xml">
-      <configuration name="&lt;default&gt;" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="_default_ - 2019.04.09 at 00h 13m 41s.xml">
-      <configuration name="&lt;default&gt;" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="IntegrationTests_performActionOfVisualizing50Nodes - 2019.04.09 at 00h 17m 41s.xml">
       <configuration name="IntegrationTests.performActionOfVisualizing50Nodes" configurationId="TestNG" />
     </history-entry>
@@ -825,6 +774,15 @@
     <history-entry file="_default_ - 2019.04.09 at 00h 44m 22s.xml">
       <configuration name="&lt;default&gt;" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="_default_ - 2019.04.09 at 00h 45m 39s.xml">
+      <configuration name="&lt;default&gt;" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_default_ - 2019.04.09 at 00h 46m 15s.xml">
+      <configuration name="&lt;default&gt;" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_default_ - 2019.04.09 at 00h 48m 53s.xml">
+      <configuration name="&lt;default&gt;" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1237" height="877" extended-state="0" />
@@ -838,20 +796,20 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3794872" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.5205128" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32948717" />
-      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.45433614" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3897436" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.1832636" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.13461539" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.68801653" visible="true" weight="0.29874477" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6888889" visible="true" weight="0.29874477" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.33461538" />
       <window_info id="Structure" order="6" sideWeight="0.3109118" side_tool="true" weight="0.26153848" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.33205128" />
-      <window_info id="Favorites" order="3" sideWeight="0.31198347" side_tool="true" visible="true" weight="0.29874477" />
+      <window_info id="Favorites" order="3" sideWeight="0.31111112" side_tool="true" visible="true" weight="0.29874477" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32876712" />
@@ -870,28 +828,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/EvaluationTests.java</url>
-          <line>231</line>
-          <properties />
-          <option name="timeStamp" value="366" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/IntegrationTests.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="373" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/ButtonListenersTests.java</url>
-          <line>185</line>
-          <properties class="ButtonListenersTests" method="helperMethodAddNodes">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="371" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="374" />
     </breakpoint-manager>
   </component>
@@ -917,26 +853,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/LayoutGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="153" selection-end-line="153" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/Inequalities/ManualInequalitiesGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/Inequalities/RandomInequalitiesGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
@@ -1072,36 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-692">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/SCC/SCCAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -1213,34 +1099,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/RandomInequalityGeneratorShouldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/GraphController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1222">
           <caret line="133" column="27" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/InequalitiesListShouldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="14" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1299,47 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/EvaluationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="277" selection-start-line="277" selection-end-line="277" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ButtonListenersTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="187" column="75" selection-start-line="187" selection-start-column="75" selection-end-line="187" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithTwoDecisionVariablesShouldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithOneDecisionVariableShouldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/IntegrationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180">
@@ -1367,10 +1188,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/InequalitiesList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="14" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/Inequality.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="572">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="38" selection-end-line="54" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
@@ -1385,10 +1223,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Inequalities/DecisionVariable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParseMember.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="1056">
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithOneDecisionVariable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Parser/ParserWithTwoDecisionVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithTwoDecisionVariablesShouldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1142">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParserWithOneDecisionVariableShouldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/InequalitiesListShouldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-317">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DarkModeShouldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ButtonListenersTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1802">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/RandomInequalityGeneratorShouldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/EvaluationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="69" column="100" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="69" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/IntegrationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

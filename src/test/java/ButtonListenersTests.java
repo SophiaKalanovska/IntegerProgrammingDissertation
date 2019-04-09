@@ -13,8 +13,6 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class ButtonListenersTests {
 
@@ -38,7 +36,6 @@ public class ButtonListenersTests {
     @Test
     public void InequalitiesListControllerEvaluate(){
         Container container = new Container();
-//        InequalitiesListController controller = new InequalitiesListController(container.getInequalitiesList(), container.getLayoutGUI().getInequalitiesListGUI(), container.getGraphController(), container.getConstarinsController());
         JButton deleteGraph = new JButton("evaluate");
         deleteGraph.setName("evaluate");
         helperMethodAddNodes(container);

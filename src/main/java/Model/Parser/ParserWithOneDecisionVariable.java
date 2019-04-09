@@ -24,7 +24,7 @@ public class ParserWithOneDecisionVariable {
             try {
                 boundry = parser.parseMember.parseNumber();
             } catch (ExceptionNotNumber exceptionNotNumber) {
-                System.out.println("not number");
+//                System.out.println("not number");
             }
             if (parser.sign.equals("<") || parser.sign.equals("<=")){
                 parser.inequality.getLeftDecisionVariable().setUpperBound(boundry/parser.inequality.getLeftDecisionVariable().getWeight());

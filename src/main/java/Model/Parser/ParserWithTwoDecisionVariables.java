@@ -31,7 +31,6 @@ class ParserWithTwoDecisionVariables {
                 one_term_signexpected();
             }
         } catch (ExceptionNotATerm e) {
-            System.out.println("First term is not valid");
             try {
                 parser.parseMember.parseNull();
             } catch (ExceptionNotZero exceptionNotNull) {

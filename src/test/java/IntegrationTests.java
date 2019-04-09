@@ -9,11 +9,46 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
 import java.util.HashSet;
 
 public class IntegrationTests {
 
+    @Test
+    public void performActionOfAdding50InequalitiesInTheList(){
+        Container container = new Container();
+        RandomInequalitiesController testContoller = new RandomInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getRandomInequalities(), new GraphController(container.getLayoutGUI()));
+        RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator();
+        HashSet<DecisionVariable> nodes = new HashSet<>();
+        final HashSet<Inequality> inequalities = new HashSet<>();
+        for(int i = 0; i < 50; i ++) {
+            DecisionVariable variable = generator.generateDecisionVariable();
+            nodes.add(variable);
+            inequalities.add(generator.generateInequalityForNode(variable));
+        }
+        testContoller.addInequalities(inequalities);
+        int numberOfNodes = testContoller.getInequalitiesList().getInequalitiesContainer().size();
+        Assert.assertEquals(numberOfNodes,50);
+    }
+
+    @Test
+    public void calculateSCCGGivenAGraph(){
+        Container container = new Container();
+        RandomInequalitiesController testContoller = new RandomInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getRandomInequalities(), container.getGraphController());
+        RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator();
+        HashSet<DecisionVariable> nodes = new HashSet<>();
+        final HashSet<Inequality> inequalities = new HashSet<>();
+        for(int i = 0; i < 50; i ++) {
+            DecisionVariable variable = generator.generateDecisionVariable();
+            nodes.add(variable);
+            inequalities.add(generator.generateInequalityForNode(variable));
+        }
+        testContoller.addInequalities(inequalities);
+        testContoller.visualizeInequality(inequalities);
+        int numberOfNodes = testContoller.getInequalitiesList().getInequalitiesContainer().size();
+
+        Assert.assertEquals(numberOfNodes,50);
+        Assert.assertNotEquals(container.getGraphController().getSCCComponents().getProjectWallet().size() ,0);
+    }
 
     @Test
     public void performActionNumberOfRandomDecisionVaraibles(){
@@ -74,45 +109,8 @@ public class IntegrationTests {
         testContoller.actionPerformed(e);
     }
 
-    @Test
-    public void performActionOfAdding50InequalitiesInTheList(){
-        Container container = new Container();
-        RandomInequalitiesController testContoller = new RandomInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getRandomInequalities(), new GraphController(container.getLayoutGUI()));
-        RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator();
-        HashSet<DecisionVariable> nodes = new HashSet<>();
-        final HashSet<Inequality> inequalities = new HashSet<>();
-        for(int i = 0; i < 50; i ++) {
-            DecisionVariable variable = generator.generateDecisionVariable();
-            nodes.add(variable);
-            inequalities.add(generator.generateInequalityForNode(variable));
-        }
-        testContoller.addInequalities(inequalities);
-        int numberOfNodes = testContoller.getInequalitiesList().getInequalitiesContainer().size();
-        Assert.assertEquals(numberOfNodes,50);
-    }
 
-    @Test
-    public void calculateSCCGGivenAGraph(){
-        Container container = new Container();
-        RandomInequalitiesController testContoller = new RandomInequalitiesController(new InequalitiesList(),container.getLayoutGUI().getRandomInequalities(), container.getGraphController());
-        RandomInequalitiesGenerator generator = new RandomInequalitiesGenerator();
-        HashSet<DecisionVariable> nodes = new HashSet<>();
-        final HashSet<Inequality> inequalities = new HashSet<>();
-        for(int i = 0; i < 50; i ++) {
-            DecisionVariable variable = generator.generateDecisionVariable();
-            nodes.add(variable);
-            inequalities.add(generator.generateInequalityForNode(variable));
-        }
-        testContoller.addInequalities(inequalities);
-        testContoller.visualizeInequality(inequalities);
-        int numberOfNodes = testContoller.getInequalitiesList().getInequalitiesContainer().size();
-
-        Assert.assertEquals(numberOfNodes,50);
-        Assert.assertNotEquals(container.getGraphController().getSCCComponents().getProjectWallet().size() ,0);
-    }
-
-
-    @Test
+//    @Test
     public void testMain(){
         System.out.println("main");
         String[] args = null;
